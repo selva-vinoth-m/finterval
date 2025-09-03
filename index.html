@@ -186,7 +186,7 @@
       backendURL: "https://script.google.com/macros/s/AKfycbwqZyaWQ1pH9e5US0h69mSccgI2jneLkcwDGwe6Csrj9DbYva8gKevGn9oiLxDgnbQh/exec", // Google Apps Script (AI)
       MODE: "auto",              // "auto" = try AI then fallback; "local" = only local bank
       BATCH_SIZE: 10,            // how many AI questions to fetch at once
-      QUESTION_TIME: 20          // seconds per question
+      QUESTION_TIME: 30          // seconds per question
     };
 
     // =========================
@@ -432,7 +432,7 @@
         if(idx===i && i!==q.answer) btn.classList.add('incorrect');
       });
       const ok = i===q.answer;
-      if(ok){ state.correct++; state.streak++; state.score += 10 + Math.min(20, state.streak*2); eEl.className='explain ok'; }
+      if(ok){ state.correct++; state.streak++; state.score += 10 + Math.min(30, state.streak*2); eEl.className='explain ok'; }
       else { state.streak=0; eEl.className='explain err'; }
       eEl.innerHTML = `<strong>${ok ? 'Correct!' : 'Not quite.'}</strong> ${q.explain}`; eEl.classList.remove('hidden');
       state.asked++; correctNow.textContent = state.correct; streakNow.textContent = state.streak; scoreNow.textContent = state.score;
