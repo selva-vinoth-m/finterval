@@ -278,9 +278,6 @@
         const totalNow = document.getElementById('totalNow');
 
         document.getElementById('year').textContent = new Date().getFullYear();
-aiBtn.setAttribute('aria-pressed', String(play.ai));
-aiBtn.textContent = `AI Mode: ${play.ai ? 'On' : 'Off'}`;
-document.getElementById('aiStatus').textContent = `AI: ${play.ai ? 'On' : 'Off'}`;
 
         // Best score badge
         const BEST_KEY = 'finterval_best';
@@ -481,5 +478,6 @@ document.getElementById('aiStatus').textContent = `AI: ${play.ai ? 'On' : 'Off'}
   </script>
 </body>
 </html>
+
 
 
