@@ -115,6 +115,7 @@
           <span id="qCounter" class="pill">Q 1 of 10</span>
           <span id="qCategory" class="pill">Category: Basics</span>
           <span id="qDifficulty" class="pill">Level: Easy</span>
+          <span id="aiStatus" class="pill">AI: Off</span>
         </div>
         <div class="progress" aria-label="Quiz progress"><div id="progressBar"></div></div>
 
@@ -189,7 +190,7 @@
         // —— Configuration ——————————————————————————————
         const CONFIG = {
           bookCallURL: "https://calendly.com/calendar-labham/finterval",
-          enableAIMode: true,
+          enableAIMode: true,   // default AI ON
           saveBestScore: true
         };
 
@@ -277,6 +278,9 @@
         const totalNow = document.getElementById('totalNow');
 
         document.getElementById('year').textContent = new Date().getFullYear();
+aiBtn.setAttribute('aria-pressed', String(play.ai));
+aiBtn.textContent = `AI Mode: ${play.ai ? 'On' : 'Off'}`;
+document.getElementById('aiStatus').textContent = `AI: ${play.ai ? 'On' : 'Off'}`;
 
         // Best score badge
         const BEST_KEY = 'finterval_best';
@@ -477,4 +481,5 @@
   </script>
 </body>
 </html>
+
 
