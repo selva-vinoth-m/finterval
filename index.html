@@ -308,26 +308,56 @@
 
         // AI Mode – live questions from your backend (Google Apps Script Web App)
         const BACKEND_URL = "https://script.google.com/macros/s/AKfycbwqZyaWQ1pH9e5US0h69mSccgI2jneLkcwDGwe6Csrj9DbYva8gKevGn9oiLxDgnbQh/exec";
-        async function generateWithAI(total){
-          const r = await fetch(BACKEND_URL, {
-            method: "POST",
-            headers: {"Content-Type": "text/plain"},
-            body: JSON.stringify({ total })
-          });
-          const txt = await r.text();
-          let arr = [];
-          try { arr = JSON.parse(txt); } catch(e){ console.warn("Bad JSON from backend", e, txt); }
-          if(!Array.isArray(arr) || arr.length === 0) return pickQuestions(total);
-          return arr.slice(0, total).map((x,i)=>({
-            id: 9000+i,
-            cat: x.cat || "basics",
-            difficulty: x.difficulty || "Easy",
-            q: String(x.q || ""),
-            options: Array.isArray(x.options) ? x.options.slice(0,4) : [],
-            answer: Number.isInteger(x.answer) ? x.answer : 0,
-            explain: String(x.explain || "")
-          }));
-        }
+       function setAIStatus(s){ const t=document.getElementById('aiStatus'); if(t){ t.textContent = `AI: ${s}`; } }
+
+async function generateWithAI(total){
+  if(!BACKEND_URL){ setAIStatus('Not set'); return pickQuestions(total); }
+
+  setAIStatus('Connecting…');
+  let txt = '';
+  try {
+    const r = await fetch(BACKEND_URL, {
+      method: 'POST',
+      headers: { 'Content-Type': 'text/plain' }, // simple CORS
+      body: JSON.stringify({ total })
+    });
+    if(!r.ok){ setAIStatus('HTTP '+r.status); return pickQuestions(total); }
+    txt = await r.text();
+  } catch (e) {
+    console.error('AI fetch error', e);
+    setAIStatus('Error');
+    return pickQuestions(total);
+  }
+
+  // Clean wrappers (code fences, etc.)
+  let cleaned = (txt||'').trim();
+  if (cleaned.startsWith('```')) {
+    cleaned = cleaned.replace(/^```(?:json)?/i,'').replace(/```$/,'').trim();
+  }
+
+  // Parse JSON or JSON-as-string
+  let out = null;
+  try {
+    const first = JSON.parse(cleaned);
+    out = Array.isArray(first) ? first
+         : (typeof first === 'string' && first.trim().startsWith('[') ? JSON.parse(first) : null);
+  } catch {
+    const m = cleaned.match(/\[[\s\S]*\]/);
+    if (m) { try { out = JSON.parse(m[0]); } catch {} }
+  }
+
+  if (!Array.isArray(out) || out.length === 0) { setAIStatus('Empty'); return pickQuestions(total); }
+
+  setAIStatus('OK');
+  return out.slice(0, total).map((x,i)=>{
+    const options = Array.isArray(x.options) ? x.options.slice(0,4).map(String) : [];
+    let ans = Number.isInteger(x.answer) ? x.answer : 0;
+    if (ans < 0 || ans >= options.length) ans = 0;
+    return { id: 9000+i, cat: x.cat||'basics', difficulty: x.difficulty||'Easy',
+             q: String(x.q||''), options, answer: ans, explain: String(x.explain||'') };
+  });
+}
+
 
         // —— Game Flow ————————————————————————————
         function reset(total){
