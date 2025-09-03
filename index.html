@@ -12,17 +12,9 @@
        Updated: 2025-09-03
        ========================= */
     :root{
-      --brand:#2563eb;         /* Primary accent (change to match Labham brand) */
-      --brand-600:#1d4ed8;
-      --brand-700:#1e40af;
-      --bg:#0b1220;            /* Page backdrop */
-      --card:#0f172a;          /* Card surface */
-      --muted:#94a3b8;         /* Muted text */
-      --text:#e5e7eb;          /* Main text */
-      --ok:#10b981;            /* Correct */
-      --err:#ef4444;           /* Incorrect */
-      --warn:#f59e0b;          /* Warnings */
-      --ring: 0 0 0 3px rgba(37,99,235,.35);
+      --brand:#2563eb; --brand-600:#1d4ed8; --brand-700:#1e40af;
+      --bg:#0b1220; --card:#0f172a; --muted:#94a3b8; --text:#e5e7eb;
+      --ok:#10b981; --err:#ef4444; --warn:#f59e0b; --ring: 0 0 0 3px rgba(37,99,235,.35);
     }
     *{box-sizing:border-box}
     html,body{height:100%}
@@ -32,7 +24,7 @@
                   radial-gradient(900px 700px at 110% 10%, rgba(16,185,129,.18), transparent 50%),
                   var(--bg);
       color:var(--text);
-      -webkit-font-smoothing:antialiased;  -moz-osx-font-smoothing:grayscale;
+      -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale;
     }
     a{color:var(--brand)}
     .container{max-width:1040px; margin:0 auto; padding:24px}
@@ -45,17 +37,13 @@
     .brand-title{font-size: clamp(34px, 5.2vw, 64px); font-weight:900; line-height:1.05; letter-spacing:.3px; background:linear-gradient(90deg, var(--brand) 0%, #22c55e 100%); -webkit-background-clip:text; -webkit-text-fill-color:transparent}
     .title .tagline{margin-top:4px; font-size:clamp(16px,2.2vw,22px); font-weight:700; color:#e2e8f0}
     .title .powered{margin-top:2px; font-size:13px; color:var(--muted)}
-    .title p{display:none}
 
     .top-cta{display:flex; align-items:center; gap:10px; flex-wrap:wrap}
     .badge{font-size:12px; padding:6px 10px; border-radius:999px; background:rgba(37,99,235,.12); color:#cbd5e1; border:1px solid rgba(255,255,255,.08)}
 
     .card{background: linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,.0)); border:1px solid rgba(255,255,255,.08); border-radius:20px; padding:20px; box-shadow: 0 10px 40px rgba(0,0,0,.35)}
     .grid{display:grid; grid-template-columns:1fr; gap:28px; margin-top:24px}
-
-    @media(min-width:960px){
-      .grid{grid-template-columns: 1.2fr .8fr}
-    }
+    @media(min-width:960px){ .grid{grid-template-columns: 1.2fr .8fr} }
 
     .controls{display:flex; gap:10px; flex-wrap:wrap; align-items:center}
     button, .btn{appearance:none; border:1px solid rgba(255,255,255,.12); background: rgba(255,255,255,.04); color:var(--text); padding:10px 14px; border-radius:12px; cursor:pointer; font-weight:600}
@@ -63,9 +51,6 @@
     .btn-primary{background:linear-gradient(180deg,var(--brand),var(--brand-700)); border-color:transparent}
     .btn-primary:hover{filter:brightness(1.05)}
     .btn-ghost{background:transparent}
-
-    .progress{height:10px; background:rgba(255,255,255,.06); border-radius:999px; overflow:hidden}
-    .progress>div{height:100%; width:0%; background: linear-gradient(90deg, var(--brand), #22c55e); transition:width .35s ease}
 
     .question{font-size: clamp(18px, 2.2vw, 22px); margin:8px 0 6px; line-height:1.35}
     .q-meta{display:flex; gap:10px; align-items:center; color:var(--muted); font-size:13px}
@@ -87,13 +72,12 @@
     .stat{display:flex; align-items:center; justify-content:space-between; gap:12px; padding:14px; border-radius:14px; border:1px solid rgba(255,255,255,.08); background:rgba(255,255,255,.02)}
     .stat strong{font-size:20px}
 
-    .result{display:none}
-    .result h2{margin-top:0}
-
     footer{margin:20px auto 8px; text-align:center; color:var(--muted); font-size:12px}
     .small{font-size:12px; color:var(--muted)}
     .hidden{display:none !important}
-  .timerWrap{margin:8px 0 6px}
+
+    /* timer */
+    .timerWrap{margin:8px 0 6px}
     .tline{height:8px; background:rgba(255,255,255,.06); border-radius:999px; overflow:hidden}
     #tbar{height:100%; width:100%; background:linear-gradient(90deg, var(--warn), var(--err)); transition: width .1s linear}
     .ttext{margin-top:6px; font-size:13px; color:var(--muted)}
@@ -150,7 +134,6 @@
           <div class="stat"><span>Score</span><strong id="scoreNow">0</strong></div>
           <div class="stat"><span>Correct</span><strong id="correctNow">0</strong></div>
           <div class="stat"><span>Streak</span><strong id="streakNow">0</strong></div>
-          
         </section>
 
         <section class="card">
@@ -163,18 +146,9 @@
           </div>
         </section>
 
-        <section class="card result" id="resultCard">
-          <h2 id="resultTitle">Your Result</h2>
-          <p id="resultMsg" class="small"></p>
-          <div class="controls">
-            <a id="whatsBtn" class="btn" href="#" target="_blank" rel="noopener">Share on WhatsApp</a>
-            <button id="copyBtn" class="btn">Copy Result</button>
-          </div>
-        </section>
-
         <section class="card">
           <h3 style="margin-top:0">About</h3>
-          <p class="small">Finterval is a bite-sized finance quiz for learners and future wealth-builders. Educational only. For India-focused personal finance context. Updated: <time>Sep 3, 2025</time>.</p>
+          <p class="small">Finterval is a bite-sized finance quiz for learners and future wealth-builders. Educational only. For India-focused personal finance context.</p>
           <p class="small"><strong>Finterval is powered by Labham</strong>, AMFI Registered Mutual Fund Distributor.</p>
           <div class="controls" style="margin-top:10px">
             <a id="bookCallBottom" class="btn btn-primary" href="#" target="_blank" rel="noopener">Start Investing with Labham</a>
@@ -191,297 +165,304 @@
   <noscript><div style="max-width:1040px;margin:8px auto;color:#ef4444;padding:8px 12px;border:1px solid rgba(239,68,68,.45);border-radius:10px;background:rgba(239,68,68,.08)">JavaScript is required to run Finterval. Please enable it in your browser.</div></noscript>
 
   <script>
-  // Wrapped for mobile reliability
   (function(){
-    function boot(){
+    // =========================
+    // === FUNCTIONALITIES: CONFIG
+    // =========================
+    const CONFIG = {
+      calendly: "https://calendly.com/calendar-labham/finterval",
+      backendURL: "https://script.google.com/macros/s/AKfycbwqZyaWQ1pH9e5US0h69mSccgI2jneLkcwDGwe6Csrj9DbYva8gKevGn9oiLxDgnbQh/exec", // Google Apps Script (AI)
+      MODE: "auto",              // "auto" = try AI then fallback; "local" = only local bank
+      BATCH_SIZE: 10,            // how many AI questions to fetch at once
+      QUESTION_TIME: 20          // seconds per question
+    };
+
+    // =========================
+    // === FUNCTIONALITIES: CATEGORY CHIPS
+    // =========================
+    const CATS = [
+      { id: 'basics', label: 'Basics' },
+      { id: 'invest', label: 'Investing' },
+      { id: 'tax',    label: 'Tax & Jargon' },
+      { id: 'india',  label: 'India Context' },
+    ];
+
+    // =========================
+    // === FUNCTIONALITIES: 100-QUESTION LOCAL BANK (fallback/offline)
+    // =========================
+    const BANK = [
+      /* ------- BASICS (25) ------- */
+      {cat:'basics',difficulty:'Easy',q:'What does SIP stand for in mutual funds?',options:['Systematic Investment Plan','Savings & Insurance Plan','Secure Income Portfolio','Scheduled Investment Period'],answer:0,explain:'SIP = Systematic Investment Plan: fixed amount at regular intervals.'},
+      {cat:'basics',difficulty:'Easy',q:'CAGR stands for:',options:['Cumulative Annual Gross Return','Compound Annual Growth Rate','Computed Average Growth Rate','Consolidated Annual Gain Rate'],answer:1,explain:'CAGR is the smoothed annual growth rate assuming compounding.'},
+      {cat:'basics',difficulty:'Easy',q:'A common emergency fund thumb rule is:',options:['One month of salary','3–6 months of expenses','12 months of income','No fixed rule'],answer:1,explain:'3–6 months of essential expenses is a widely used starting rule.'},
+      {cat:'basics',difficulty:'Medium',q:'Diversification primarily reduces:',options:['Systematic (market) risk','Unsystematic (stock-specific) risk','Taxes','Inflation'],answer:1,explain:'Diversification lowers company/sector-specific risk.'},
+      {cat:'basics',difficulty:'Easy',q:'Higher credit score generally means:',options:['Better loan terms','Higher interest rates','No need to pay EMIs','Guaranteed loan approval'],answer:0,explain:'Lenders usually offer lower rates to better credit profiles.'},
+      {cat:'basics',difficulty:'Easy',q:'Compound interest means:',options:['Interest on principal only','Interest on interest as well','No interest charged','Simple interest is higher'],answer:1,explain:'Compounding = earning interest on interest.'},
+      {cat:'basics',difficulty:'Easy',q:'Inflation generally:',options:['Increases purchasing power','Reduces purchasing power','Has no effect on money','Only affects exporters'],answer:1,explain:'Prices rise → the same money buys less.'},
+      {cat:'basics',difficulty:'Easy',q:'Asset allocation refers to:',options:['Picking one best stock','Mix of assets like equity, debt, gold','Timing the market','Only holding cash'],answer:1,explain:'Allocation across asset classes drives most long-term returns.'},
+      {cat:'basics',difficulty:'Easy',q:'Net worth is calculated as:',options:['Income − expenses','Assets − liabilities','Assets + income','Savings × returns'],answer:1,explain:'Net worth = what you own minus what you owe.'},
+      {cat:'basics',difficulty:'Easy',q:'Liquidity of an investment means:',options:['Potential return','Ease of converting to cash','Taxability','Guaranteed capital'],answer:1,explain:'More liquid = easier & faster to access cash.'},
+      {cat:'basics',difficulty:'Easy',q:'Term insurance primarily provides:',options:['Investment returns','Pure life cover','Guaranteed maturity value','ULIP benefits'],answer:1,explain:'Term plans are protection-only and most cost-effective for cover.'},
+      {cat:'basics',difficulty:'Medium',q:'A key purpose of nomination is:',options:['Avoid taxes','Enable easier claim to beneficiary','Increase returns','Reduce lock-in'],answer:1,explain:'Nomination eases transfer/claim in case of death.'},
+      {cat:'basics',difficulty:'Easy',q:'Rupee-cost averaging happens when you:',options:['Invest a random amount randomly','Invest a fixed amount regularly','Time the market perfectly','Switch funds often'],answer:1,explain:'Regular fixed investments average purchase costs over time.'},
+      {cat:'basics',difficulty:'Easy',q:'Time horizon refers to:',options:['Your daily expenses','How long you plan to invest','Your risk appetite','Your credit limit'],answer:1,explain:'Longer horizons allow riding out volatility.'},
+      {cat:'basics',difficulty:'Easy',q:'The risk–return relationship implies:',options:['Higher return, lower risk','Higher potential return usually needs higher risk','No link','All assets give same risk'],answer:1,explain:'Potentially higher returns come with higher risk.'},
+      {cat:'basics',difficulty:'Easy',q:'Best place for emergency funds is usually:',options:['Small-cap equity fund','Illiquid property','High-liquidity options (savings/liquid funds)','Crypto'],answer:2,explain:'Emergency funds need safety + liquidity.'},
+      {cat:'basics',difficulty:'Easy',q:'50/30/20 budgeting rule: 50% is usually for:',options:['Wants','Savings','Needs','Investments'],answer:2,explain:'50% needs, 30% wants, 20% savings/investments (guideline).'},
+      {cat:'basics',difficulty:'Medium',q:'Debt-to-Income (DTI) ratio measures:',options:['Tax bracket','Share of income going to EMIs','Credit card limit','Insurance needs'],answer:1,explain:'Lower DTI = healthier borrowing level.'},
+      {cat:'basics',difficulty:'Easy',q:'KYC stands for:',options:['Know Your Customer','Keep Your Credit','Key Yield Certificate','Know Your Capital'],answer:0,explain:'KYC verifies identity before financial transactions.'},
+      {cat:'basics',difficulty:'Easy',q:'Compounding works best when you:',options:['Start late with big amount','Start early and stay invested','Switch funds frequently','Avoid SIPs'],answer:1,explain:'Time + consistency = compounding power.'},
+      {cat:'basics',difficulty:'Easy',q:'Which is NOT a fixed-income instrument?',options:['Equity shares','Government bond','Bank FD','Treasury bill'],answer:0,explain:'Equity is ownership; others are debt/fixed-income.'},
+      {cat:'basics',difficulty:'Easy',q:'Which is an asset?',options:['Car loan','Outstanding credit card dues','Mutual fund units','Unpaid bills'],answer:2,explain:'MF units are assets; loans/dues are liabilities.'},
+      {cat:'basics',difficulty:'Medium',q:'Main reason to rebalance a portfolio:',options:['Maximize taxes','Match target asset allocation','Follow friends','Increase trades'],answer:1,explain:'Rebalancing maintains intended risk profile.'},
+      {cat:'basics',difficulty:'Easy',q:'Insurance is primarily for:',options:['Creating quick profits','Risk transfer/protection','Tax evasion','Beating inflation'],answer:1,explain:'Insurance protects against financial risk of adverse events.'},
+      {cat:'basics',difficulty:'Medium',q:'A financial goal is best defined as:',options:['Vague hope of wealth','Specific, time-bound target','Any random purchase','Daily expense list'],answer:1,explain:'SMART goals help pick the right instruments.'},
+
+      /* ------- INVESTING (25) ------- */
+      {cat:'invest',difficulty:'Easy',q:'ELSS mutual funds have a mandatory lock-in of:',options:['1 year','3 years','5 years','No lock-in'],answer:1,explain:'ELSS lock-in = 3 years (also eligible u/s 80C).'},
+      {cat:'invest',difficulty:'Easy',q:'Index funds primarily aim to:',options:['Beat the market','Replicate a benchmark','Hold only bonds','Time the market'],answer:1,explain:'They track an index like Nifty 50.'},
+      {cat:'invest',difficulty:'Easy',q:'Direct plan vs Regular plan typically:',options:['Higher expenses in direct','Lower expenses in direct','Same expenses','No expenses'],answer:1,explain:'Direct excludes distributor commission.'},
+      {cat:'invest',difficulty:'Medium',q:'Exit load is:',options:['Entry fee','Charge on early redemption','Tax on dividends','Brokerage fee'],answer:1,explain:'Funds may levy exit load if redeemed within a period.'},
+      {cat:'invest',difficulty:'Easy',q:'NAV of a fund is:',options:['Unit’s market value','Fund manager’s salary','Brokerage rate','Lock-in period'],answer:0,explain:'NAV = (Assets − Liabilities) / Units outstanding.'},
+      {cat:'invest',difficulty:'Easy',q:'Key SIP benefit is:',options:['Guaranteed returns','Rupee-cost averaging','No market risk','No charges ever'],answer:1,explain:'Fixed periodic investing averages cost across cycles.'},
+      {cat:'invest',difficulty:'Medium',q:'Arbitrage funds mainly aim to:',options:['Speculate on crypto','Exploit price gaps between cash & futures','Hold only gold','Lend to govt'],answer:1,explain:'They capture price differentials; taxed as equity in India.'},
+      {cat:'invest',difficulty:'Easy',q:'Overnight funds invest in:',options:['1-day maturity instruments','30-year bonds','Small-cap stocks','Real estate'],answer:0,explain:'They hold securities maturing overnight.'},
+      {cat:'invest',difficulty:'Medium',q:'Tracking error measures:',options:['Fund expense ratio','How closely index fund follows benchmark','IPO listing gains','Broker margin'],answer:1,explain:'Lower tracking error = better index replication.'},
+      {cat:'invest',difficulty:'Easy',q:'Small-cap funds generally have:',options:['Lowest volatility','Moderate volatility','Higher volatility','No volatility'],answer:2,explain:'Smaller companies can fluctuate more.'},
+      {cat:'invest',difficulty:'Easy',q:'Growth option of a fund:',options:['Pays regular cash dividends','Reinvests profits back into NAV','Guarantees income','Cuts taxes'],answer:1,explain:'No cash payout; value compounds in NAV.'},
+      {cat:'invest',difficulty:'Easy',q:'STP stands for:',options:['Systematic Transfer Plan','Short Term Profit','Stock Trading Plan','Systematic Tax Plan'],answer:0,explain:'Transfers a fixed amount between schemes periodically.'},
+      {cat:'invest',difficulty:'Easy',q:'SWP stands for:',options:['Smart Wealth Program','Systematic Withdrawal Plan','Secure Wealth Policy','Savings With Profit'],answer:1,explain:'Withdraw a fixed amount periodically from your investment.'},
+      {cat:'invest',difficulty:'Easy',q:'NFO stands for:',options:['Net Fund Outflow','New Fund Offer','NAV Final Offer','No Fee Offer'],answer:1,explain:'Launch of a new mutual fund scheme.'},
+      {cat:'invest',difficulty:'Medium',q:'ETF vs Index fund: ETFs generally:',options:['Trade on exchanges like stocks','Are sold once a day only','Have lock-in','Are only debt'],answer:0,explain:'ETFs are exchange-traded; index funds are bought from AMC at day-end NAV.'},
+      {cat:'invest',difficulty:'Easy',q:'REITs mainly invest in:',options:['Startups','Gold bars','Income-generating real estate','Crypto'],answer:2,explain:'REITs distribute rental/operating income.'},
+      {cat:'invest',difficulty:'Medium',q:'Rebalancing a portfolio helps:',options:['Increase brokerage','Maintain desired risk level','Avoid taxes fully','Beat markets for sure'],answer:1,explain:'It restores target asset mix.'},
+      {cat:'invest',difficulty:'Medium',q:'SIP Pause feature allows you to:',options:['Cancel the scheme','Skip instalments temporarily','Change benchmark','Waive expenses forever'],answer:1,explain:'Pause without cancelling mandate.'},
+      {cat:'invest',difficulty:'Easy',q:'Liquid funds are suitable for:',options:['Long-term equity growth','Short-term parking of surplus','Real estate exposure','Crypto savings'],answer:1,explain:'Designed for short-term, low-volatility parking.'},
+      {cat:'invest',difficulty:'Easy',q:'Expense ratio in a fund:',options:['Increases returns','Reduces net returns','No impact','Paid by govt'],answer:1,explain:'Fees are deducted from fund assets.'},
+      {cat:'invest',difficulty:'Medium',q:'Thematic funds primarily:',options:['Track a broad market','Focus on a specific sector/theme','Hold only bonds','Guarantee returns'],answer:1,explain:'Concentrated exposure → higher risk.'},
+      {cat:'invest',difficulty:'Medium',q:'AUM stands for:',options:['Average Unit Margin','Assets Under Management','Annualized Unit Market','Asset Utility Metric'],answer:1,explain:'Total value managed by the fund.'},
+      {cat:'invest',difficulty:'Medium',q:'“Alpha” of a fund measures:',options:['Size of fund','Volatility only','Excess return over benchmark','Dividend yield'],answer:2,explain:'Alpha > 0 indicates outperformance vs benchmark (after risk).'},
+      {cat:'invest',difficulty:'Medium',q:'Credit risk in debt funds is:',options:['Risk of issuer default/downgrade','Risk of high returns','No risk','Only FX risk'],answer:0,explain:'Lower-quality issuers carry higher credit risk.'},
+      {cat:'invest',difficulty:'Easy',q:'Best SIP date is:',options:['Always 1st','Always 15th','No perfect date; consistency matters','End of month only'],answer:2,explain:'Long-term results are similar; regularity matters most.'},
+
+      /* ------- TAX & JARGON (25) ------- */
+      {cat:'tax',difficulty:'Easy',q:'Section 80C maximum deduction (current framework) is:',options:['₹50,000','₹1,00,000','₹1,50,000','₹5,00,000'],answer:2,explain:'80C overall limit is ₹1.5 lakh (subject to law changes).'},
+      {cat:'tax',difficulty:'Easy',q:'ELSS qualifies for deduction under:',options:['Section 24(b)','Section 80C','Section 80D','Section 80G'],answer:1,explain:'ELSS investments can be claimed under 80C.'},
+      {cat:'tax',difficulty:'Easy',q:'Additional ₹50,000 deduction for NPS is under:',options:['80CCD(1B)','80TTA','80G','24(b)'],answer:0,explain:'Over and above 80C, 80CCD(1B) for NPS Tier I.'},
+      {cat:'tax',difficulty:'Medium',q:'PPF enjoys which tax treatment?',options:['EEE (tax-free at all three stages)','TDS on maturity','Fully taxable','Only dividend taxed'],answer:0,explain:'Contributions, interest and maturity are exempt (EEE).'},
+      {cat:'tax',difficulty:'Medium',q:'Sovereign Gold Bond (SGB) interest is:',options:['Tax-free','Taxable as income','Taxed only on maturity','Always TDS-free'],answer:1,explain:'Interest is taxable; capital gains at redemption may be exempt.'},
+      {cat:'tax',difficulty:'Medium',q:'Dividends from mutual funds in India are:',options:['Tax-free always','Taxed as per slab for investor','Taxed at flat 10% only','Not allowed'],answer:1,explain:'Post-2020, dividends are added to your income.'},
+      {cat:'tax',difficulty:'Easy',q:'STT stands for:',options:['Short Term Tax','Securities Transaction Tax','Standard Trade Tariff','Service Trade Tax'],answer:1,explain:'Levy on specified securities transactions.'},
+      {cat:'tax',difficulty:'Medium',q:'Form 15G/15H is used to:',options:['Claim HRA','Avoid TDS on eligible interest income','Get GST refund','Apply for IPO'],answer:1,explain:'Subject to conditions & limits.'},
+      {cat:'tax',difficulty:'Medium',q:'Form 26AS primarily shows:',options:['List of mutual funds','Taxes deducted/paid and reported','Only bank balance','Passport status'],answer:1,explain:'Tax credit statement linked to PAN.'},
+      {cat:'tax',difficulty:'Easy',q:'PAN is generally required for:',options:['Most financial investments','Buying vegetables','School exams','Metro card recharge'],answer:0,explain:'PAN is the key tax identifier for investments.'},
+      {cat:'tax',difficulty:'Easy',q:'HRA is a tax benefit generally for:',options:['Self-employed only','Salaried paying house rent','Everyone owning a house','NRIs only'],answer:1,explain:'Subject to eligibility and calculation rules.'},
+      {cat:'tax',difficulty:'Easy',q:'TDS expands to:',options:['Tax Deferred Savings','Tax Deducted at Source','Total Deduction Summary','Tax Division System'],answer:1,explain:'Tax collected at the time of payment by the payer.'},
+      {cat:'tax',difficulty:'Medium',q:'Equity MF units held > 12 months are treated as:',options:['Short-term','Long-term','Speculative','Tax-exempt income forever'],answer:1,explain:'> 1 year = long-term for equity-oriented funds.'},
+      {cat:'tax',difficulty:'Easy',q:'Capital gains arise when you:',options:['Buy an asset','Hold an asset','Sell asset for more than cost','Get salary'],answer:2,explain:'Profit on sale of capital assets.'},
+      {cat:'tax',difficulty:'Easy',q:'Section 80D allows deduction for:',options:['Health insurance premiums','Car insurance only','Home insurance','Travel insurance'],answer:0,explain:'Medical/health insurance premium subject to limits.'},
+      {cat:'tax',difficulty:'Medium',q:'Savings a/c interest deduction for non-seniors is under:',options:['80TTB','80TTA','80CCD','24(b)'],answer:1,explain:'80TTA up to a prescribed limit (separate for seniors under 80TTB).'},
+      {cat:'tax',difficulty:'Medium',q:'AIS stands for:',options:['Annual Investment Statement','Annual Information Statement','Asset Income Summary','Assessment Info Sheet'],answer:1,explain:'Consolidated view of financial information reported to ITD.'},
+      {cat:'tax',difficulty:'Medium',q:'HUF stands for:',options:['Hindu Undivided Family','Household Utility Fund','High Utility Finance','Hybrid Unit Fund'],answer:0,explain:'A separate tax entity recognized under law.'},
+      {cat:'tax',difficulty:'Medium',q:'Short-term capital loss (STCL) can be set off against:',options:['Only STCG','Only LTCG','Both STCG and LTCG','Neither'],answer:2,explain:'STCL can be set off against both; LTC losses only against LTCG.'},
+      {cat:'tax',difficulty:'Medium',q:'Residential status affects:',options:['Loan EMI','Scope of income taxable in India','Mutual fund NAV','GST on groceries'],answer:1,explain:'Resident vs non-resident rules determine taxable scope.'},
+      {cat:'tax',difficulty:'Medium',q:'Home loan interest (self-occupied) deduction falls under:',options:['80C','24(b)','80G','10(10D)'],answer:1,explain:'Section 24(b) subject to limits.'},
+      {cat:'tax',difficulty:'Easy',q:'Donations to eligible charities are claimed under:',options:['80G','80D','80E','24(b)'],answer:0,explain:'80G subject to qualifying institutions/limits.'},
+      {cat:'tax',difficulty:'Medium',q:'Form 16 is:',options:['Employer’s TDS certificate','Bank FD receipt','Demat statement','GST invoice'],answer:0,explain:'It summarizes salary and TDS details.'},
+      {cat:'tax',difficulty:'Medium',q:'Advance tax is payable when:',options:['No tax is due','Tax liability exceeds threshold during the year','Only on salary income','Only by companies'],answer:1,explain:'Paid in instalments during the FY if liability exceeds limits.'},
+      {cat:'tax',difficulty:'Easy',q:'GST is:',options:['Goods & Services Tax','Government Savings Token','Gold Storage Tax','General Sales Tariff'],answer:0,explain:'Indirect tax on supply of goods/services.'},
+
+      /* ------- INDIA CONTEXT (25) ------- */
+      {cat:'india',difficulty:'Easy',q:'PPF maturity period is typically:',options:['5 years','10 years','15 years','20 years'],answer:2,explain:'PPF matures in 15 years with extension options.'},
+      {cat:'india',difficulty:'Easy',q:'India’s central bank is:',options:['SEBI','RBI','IRDAI','PFRDA'],answer:1,explain:'Reserve Bank of India.'},
+      {cat:'india',difficulty:'Easy',q:'SEBI is the regulator for:',options:['Insurance','Securities markets','Pension','Bank deposits'],answer:1,explain:'Securities and Exchange Board of India.'},
+      {cat:'india',difficulty:'Easy',q:'AMFI stands for:',options:['Association of Mutual Funds in India','Automated MF Interface','Asset Monitoring Fund India','Allied Mutual Finance Institution'],answer:0,explain:'Industry body for mutual funds.'},
+      {cat:'india',difficulty:'Easy',q:'IRDAI regulates:',options:['Banks','Mutual funds','Insurance sector','Stock exchanges'],answer:2,explain:'Insurance Regulatory and Development Authority of India.'},
+      {cat:'india',difficulty:'Medium',q:'DICGC provides bank deposit insurance up to:',options:['₹1 lakh','₹2 lakh','₹5 lakh','Unlimited'],answer:2,explain:'Per depositor per bank (current framework).'},
+      {cat:'india',difficulty:'Easy',q:'UPI stands for:',options:['Unified Payments Interface','Universal Payment Instruction','User Payment Index','Unified Pricing Info'],answer:0,explain:'Real-time payments via mobile.'},
+      {cat:'india',difficulty:'Medium',q:'For instant 24×7 transfers, you generally use:',options:['NEFT','RTGS','IMPS','Cheque'],answer:2,explain:'IMPS is instant; NEFT works in batches; RTGS for large value.'},
+      {cat:'india',difficulty:'Medium',q:'When RBI raises the repo rate, borrowing usually becomes:',options:['Cheaper','Costlier','Unaffected','Tax-free'],answer:1,explain:'Higher policy rate → higher lending rates typically.'},
+      {cat:'india',difficulty:'Medium',q:'Sovereign Gold Bond (SGB) maturity is:',options:['5 years','7 years','8 years','12 years'],answer:2,explain:'8-year tenure with early exit options after 5th year.'},
+      {cat:'india',difficulty:'Easy',q:'NPS is regulated by:',options:['SEBI','PFRDA','RBI','IRDAI'],answer:1,explain:'Pension Fund Regulatory and Development Authority.'},
+      {cat:'india',difficulty:'Medium',q:'eKYC enables:',options:['Only offline paperwork','Paperless KYC using Aadhaar/OTP etc.','No KYC ever','PAN cancellation'],answer:1,explain:'Electronic KYC for quick onboarding.'},
+      {cat:'india',difficulty:'Easy',q:'A Demat account is used to:',options:['Store cash','Hold securities electronically','Pay taxes','Apply for credit cards'],answer:1,explain:'Shares/MFs/ETFs held in electronic form.'},
+      {cat:'india',difficulty:'Medium',q:'ASBA in IPOs stands for:',options:['Application Supported by Blocked Amount','Annual Savings Bank Amount','Added Secondary Bid Amount','Automatic SIP & Bank Authorization'],answer:0,explain:'Funds stay blocked until allotment.'},
+      {cat:'india',difficulty:'Easy',q:'EPF is primarily for:',options:['Short-term loans','Salaried retirement savings','Buying stocks','Paying GST'],answer:1,explain:'Employees’ Provident Fund.'},
+      {cat:'india',difficulty:'Medium',q:'Small Savings examples include:',options:['PPF, NSC, Sukanya Samriddhi','Corporate bonds only','Crypto ETFs','Commodity futures'],answer:0,explain:'Govt-backed savings schemes.'},
+      {cat:'india',difficulty:'Medium',q:'IFSC code is used for:',options:['Credit score','Bank branch identification for transfers','Tax filing','Stock symbol'],answer:1,explain:'Required for NEFT/RTGS/IMPS.'},
+      {cat:'india',difficulty:'Medium',q:'NACH e-mandate is commonly used for:',options:['UPI PIN creation','SIP auto-debits','PAN application','Passport renewal'],answer:1,explain:'Automates recurring debits like SIP/EMI.'},
+      {cat:'india',difficulty:'Medium',q:'Sensex tracks companies listed on:',options:['NSE','BSE','MCX','NCD'],answer:1,explain:'BSE’s 30 leading companies.'},
+      {cat:'india',difficulty:'Medium',q:'Nifty 50 belongs to:',options:['BSE','NSE','NSDL','CDSL'],answer:1,explain:'NSE’s broad market index of 50 companies.'},
+      {cat:'india',difficulty:'Medium',q:'Commercial banks are primarily regulated by:',options:['SEBI','RBI','IRDAI','AMFI'],answer:1,explain:'RBI supervises banking operations.'},
+      {cat:'india',difficulty:'Medium',q:'MF NAV for open-ended schemes is normally:',options:['Updated every hour','Calculated once at end of day','Weekly only','Never published'],answer:1,explain:'Day-end NAV except intraday traded ETFs.'},
+      {cat:'india',difficulty:'Medium',q:'KRA stands for:',options:['KYC Registration Agency','Key Risk Assessment','Known Risk Account','KYC Review Authority'],answer:0,explain:'Manages KYC records across intermediaries.'},
+      {cat:'india',difficulty:'Medium',q:'Capital market instruments include:',options:['Only bank deposits','Equity, bonds, derivatives','Only gold','Only real estate'],answer:1,explain:'Broad categories traded in capital markets.'},
+      {cat:'india',difficulty:'Medium',q:'PMJJBY is a government-backed:',options:['Health insurance','Life insurance','Pension scheme','Education loan'],answer:1,explain:'Pradhan Mantri Jeevan Jyoti Bima Yojana (life cover).'}
+    ];
+
+    // =========================
+    // === FUNCTIONALITIES: STATE + DOM
+    // =========================
+    const state = {
+      list: [], idx: 0, score: 0, correct: 0, streak: 0, answered: false, asked: 0, timerId: null
+    };
+    const qEl = document.getElementById('question');
+    const cEl = document.getElementById('choices');
+    const eEl = document.getElementById('explain');
+    const nextBtn = document.getElementById('nextBtn');
+    const retryBtn = document.getElementById('retryBtn');
+    const qCategory = document.getElementById('qCategory');
+    const qDifficulty = document.getElementById('qDifficulty');
+    const aiStatus = document.getElementById('aiStatus');
+    const tsec = document.getElementById('tsec');
+    const tbar = document.getElementById('tbar');
+    const scoreNow = document.getElementById('scoreNow');
+    const correctNow = document.getElementById('correctNow');
+    const streakNow = document.getElementById('streakNow');
+    document.getElementById('year').textContent = new Date().getFullYear();
+    const BEST_KEY = 'finterval_best';
+
+    // Header CTA
+    document.getElementById('bookCallBottom').href = CONFIG.calendly;
+    document.getElementById('bestBadge').textContent = `Best FinScore: ${localStorage.getItem(BEST_KEY) || '—'}`;
+
+    // Build category checkboxes
+    const catList = document.getElementById('catList');
+    CATS.forEach(c=>{
+      const id = `cat_${c.id}`;
+      const label = document.createElement('label');
+      label.className = 'pill';
+      label.style.display='flex'; label.style.alignItems='center'; label.style.gap='8px'; label.style.padding='8px 10px';
+      label.innerHTML = `<input type="checkbox" id="${id}" checked aria-label="${c.label} category" /> <span>${c.label}</span>`;
+      catList.appendChild(label);
+    });
+    function selectedCategories(){ return CATS.filter(c => document.getElementById(`cat_${c.id}`).checked).map(c=>c.id); }
+    const shuffle = arr => arr.map(v=>[Math.random(),v]).sort((a,b)=>a[0]-b[0]).map(v=>v[1]);
+
+    // =========================
+    // === FUNCTIONALITIES: LOCAL PICKER & AI FETCH
+    // =========================
+    function pickLocal(total){
+      const sel = new Set(selectedCategories());
+      let pool = BANK.filter(q => sel.has(q.cat));
+      if(pool.length===0) pool = BANK;
+      return shuffle(pool).slice(0,total);
+    }
+    async function generateWithAI(total){
+      if(CONFIG.MODE === 'local') return pickLocal(total);
+      if(!CONFIG.backendURL){ setAIStatus('Not set'); return pickLocal(total); }
+      setAIStatus('Connecting…');
+      let text='';
       try{
-        // —— Configuration ——————————————————————————————
-        const CONFIG = {
-          bookCallURL: "https://calendly.com/calendar-labham/finterval",
-          enableAIMode: true,   // default AI ON
-          saveBestScore: true
-        };
+        const r = await fetch(CONFIG.backendURL, { method:'POST', headers:{'Content-Type':'text/plain'}, body: JSON.stringify({ total }) });
+        if(!r.ok){ setAIStatus('HTTP '+r.status); return pickLocal(total); }
+        text = await r.text();
+      }catch(e){ console.error('AI fetch error', e); setAIStatus('Error'); return pickLocal(total); }
 
-        // Wire CTAs
-        document.getElementById('bookCall').href = CONFIG.bookCallURL;
+      let s = (text||'').trim();
+      if(s.startsWith('```')) s = s.replace(/^```(?:json)?/i,'').replace(/```$/,'').trim();
+      let out=null;
+      try{ const first = JSON.parse(s); out = Array.isArray(first)? first : (typeof first==='string' && first.trim().startsWith('[') ? JSON.parse(first) : null); }
+      catch{ const m = s.match(/\[[\s\S]*\]/); if(m){ try{ out = JSON.parse(m[0]); }catch{} } }
+      if(!Array.isArray(out) || out.length===0){ setAIStatus('Empty'); return pickLocal(total); }
+      setAIStatus('OK');
+      return out.map((x,i)=>({ id:9000+i, cat:x.cat||'basics', difficulty:x.difficulty||'Easy', q:String(x.q||''), options:(Array.isArray(x.options)? x.options.slice(0,4).map(String):[]), answer:(Number.isInteger(x.answer)? x.answer:0), explain:String(x.explain||'') }));
+    }
+    function setAIStatus(s){ if(aiStatus) aiStatus.textContent = `AI: ${s}`; }
 
-        // —— Categories & Bank ——————————————————————————
-        const CATS = [
-          { id: 'basics', label: 'Basics' },
-          { id: 'invest', label: 'Investing' },
-          { id: 'tax',    label: 'Tax & Jargon' },
-          { id: 'india',  label: 'India Context' },
-        ];
-
-        // Helper to build category chips
-        const catList = document.getElementById('catList');
-        CATS.forEach(c => {
-          const id = `cat_${c.id}`;
-          const w = document.createElement('label');
-          w.className = 'pill';
-          w.style.display = 'flex';
-          w.style.alignItems = 'center';
-          w.style.gap = '8px';
-          w.style.padding = '8px 10px';
-          w.innerHTML = `<input type="checkbox" id="${id}" checked aria-label="${c.label} category"/> <span>${c.label}</span>`;
-          catList.appendChild(w);
-        });
-
-        // Question Bank (starter)
-        const BANK = [
-          {id:1, cat:'basics', difficulty:'Easy', q:'What does SIP stand for in mutual funds?', options:['Systematic Investment Plan','Savings & Insurance Plan','Secure Income Portfolio','Scheduled Investment Period'], answer:0, explain:'SIP = Systematic Investment Plan: you invest a fixed amount at regular intervals.'},
-          {id:2, cat:'basics', difficulty:'Easy', q:'NAV in mutual funds refers to…', options:['Net Asset Value per unit','Net Annual Variation','Nominal Asset Value','Normalized Average Value'], answer:0, explain:'NAV is the per-unit market value of a mutual fund after accounting for expenses.'},
-          {id:3, cat:'invest', difficulty:'Easy', q:'ELSS funds typically have a mandatory lock-in of:', options:['1 year','3 years','5 years','No lock-in'], answer:1, explain:'Equity Linked Savings Schemes (ELSS) have a 3-year lock-in.'},
-          {id:4, cat:'invest', difficulty:'Medium', q:'What does “expense ratio” represent?', options:['Broker’s commission','Annual fund cost as % of AUM','Entry load charge','Tax on capital gains'], answer:1, explain:'Expense ratio is the annual operating cost of a fund expressed as a percentage of assets.'},
-          {id:5, cat:'invest', difficulty:'Easy', q:'An index fund primarily aims to:', options:['Beat the market with stock picking','Replicate a benchmark’s returns','Hold only government securities','Invest only in IPOs'], answer:1, explain:'Index funds passively track a benchmark (e.g., Nifty 50) to match its performance.'},
-          {id:6, cat:'basics', difficulty:'Easy', q:'CAGR stands for:', options:['Cumulative Annual Gross Return','Compound Annual Growth Rate','Computed Average Growth Rate','Consolidated Annual Gain Rate'], answer:1, explain:'CAGR is the smoothed annual growth rate over a period, assuming compounding.'},
-          {id:7, cat:'india', difficulty:'Easy', q:'REITs primarily invest in:', options:['Government bonds','Gold bullion','Income-generating real estate','Art & collectibles'], answer:2, explain:'REITs pool money to invest in income-producing real estate and distribute rentals/dividends.'},
-          {id:8, cat:'invest', difficulty:'Easy', q:'SWP stands for:', options:['Systematic Withdrawal Plan','Secure Wealth Policy','Smart Wealth Program','Scheduled Withdrawal Period'], answer:0, explain:'SWP allows periodic withdrawals from your mutual fund investments.'},
-          {id:9, cat:'india', difficulty:'Easy', q:'PPF has a typical maturity of:', options:['5 years','10 years','15 years','20 years'], answer:2, explain:'Public Provident Fund has a 15-year maturity with options to extend in blocks.'},
-          {id:10, cat:'basics', difficulty:'Medium', q:'Diversification primarily helps reduce:', options:['Systematic (market) risk','Unsystematic (stock-specific) risk','Taxes','Time to goal'], answer:1, explain:'Diversification reduces unsystematic risk; market risk cannot be fully diversified away.'},
-          {id:11, cat:'invest', difficulty:'Easy', q:'Which is usually more volatile in the short term?', options:['Liquid fund','Equity fund','Arbitrage fund','Overnight fund'], answer:1, explain:'Equity funds fluctuate more in the short term compared to cash-like categories.'},
-          {id:12, cat:'tax', difficulty:'Easy', q:'KYC expands to:', options:['Know Your Customer','Keep Your Credit','Know Your Capital','Key Yield Certificate'], answer:0, explain:'KYC is a regulatory process to verify identity before investing.'},
-          {id:13, cat:'basics', difficulty:'Medium', q:'Rupee-cost averaging refers to:', options:['Timing the market perfectly','Investing a fixed amount regularly','Buying only during dips','Switching funds frequently'], answer:1, explain:'Investing a fixed amount at regular intervals averages your purchase cost over time.'},
-          {id:14, cat:'tax', difficulty:'Medium', q:'“Capital gains” best describes:', options:['Salary income','Rental income','Profit from sale of a capital asset','Dividend received'], answer:2, explain:'Capital gains are profits from selling capital assets like equity, property, or gold.'},
-          {id:15, cat:'india', difficulty:'Medium', q:'Sovereign Gold Bonds (SGB) offer:', options:['Only gold price return','Fixed annual interest + gold price return','Only fixed interest','Neither interest nor price return'], answer:1, explain:'SGBs pay fixed annual interest (as notified) plus exposure to gold price movement.'},
-          {id:16, cat:'invest', difficulty:'Medium', q:'Direct mutual fund plans typically have:', options:['Higher expense ratios','Lower expense ratios','Same as regular plans','No expense ratio'], answer:1, explain:'Direct plans exclude distributor commissions, so expense ratios are lower.'},
-          {id:17, cat:'basics', difficulty:'Medium', q:'A commonly suggested emergency fund size is:', options:['One month of salary','3–6 months of expenses','12 months of income','No fixed rule'], answer:1, explain:'Many planners suggest 3–6 months of essential expenses as an initial buffer.'},
-          {id:18, cat:'invest', difficulty:'Medium', q:'Debt mutual funds primarily invest in:', options:['Company shares','Commodities','Fixed-income securities','Cryptocurrencies'], answer:2, explain:'Debt funds invest in bonds, money market instruments, and other fixed-income securities.'},
-          {id:19, cat:'basics', difficulty:'Easy', q:'Goal-based investing means:', options:['Chasing high returns','Aligning investments to specific life goals','Timing markets quarterly','Copying others’ portfolios'], answer:1, explain:'You match each life goal (education, retirement, etc.) with an appropriate investment plan.'},
-          {id:20, cat:'india', difficulty:'Easy', q:'NPS Tier I is generally designed for:', options:['Short-term trading','Long-term retirement saving','Only NRIs','Only government staff'], answer:1, explain:'NPS Tier I is a retirement-focused account with restrictions on early withdrawal.'},
-          {id:21, cat:'tax', difficulty:'Medium', q:'Expense ratio impacts investors by:', options:['Increasing gross returns','Reducing net returns','Changing tax slabs','Guaranteeing outperformance'], answer:1, explain:'Fund expenses are deducted from assets, lowering investor net returns.'},
-          {id:22, cat:'invest', difficulty:'Medium', q:'A “balanced” or “hybrid” fund typically:', options:['Holds only equities','Holds only debt','Mixes equity and debt','Holds only gold'], answer:2, explain:'Hybrid funds blend equity and debt to balance risk and return.'},
-          {id:23, cat:'basics', difficulty:'Easy', q:'Compounding works best when you:', options:['Invest late and large','Start early and stay invested','Switch funds frequently','Avoid SIPs'], answer:1, explain:'Time in the market and consistency allow compounding to work wonders.'},
-          {id:24, cat:'india', difficulty:'Easy', q:'Which is typically the safest category among these?', options:['Equity small-cap fund','Overnight fund','Thematic equity fund','Sectoral equity fund'], answer:1, explain:'Among listed options, overnight funds hold very short-term instruments and are low-risk.'}
-        ];
-
-        // —— State ——————————————————————————————————
-        let play = {
-          total: 10,
-          list: [],
-          idx: 0,
-          score: 0,
-          correct: 0,
-          streak: 0,
-          answered: false,
-          ai: CONFIG.enableAIMode
-        };
-
-        // —— DOM ————————————————————————————————————
-        const qEl = document.getElementById('question');
-        const cEl = document.getElementById('choices');
-        const eEl = document.getElementById('explain');
-        const nextBtn = document.getElementById('nextBtn');
-        const retryBtn = document.getElementById('retryBtn');
-        const aiBtn = document.getElementById('aiBtn');
-
-        const qCounter = document.getElementById('qCounter');
-        const qCategory = document.getElementById('qCategory');
-        const qDifficulty = document.getElementById('qDifficulty');
-        const bar = document.getElementById('progressBar');
-
-        const scoreNow = document.getElementById('scoreNow');
-        const correctNow = document.getElementById('correctNow');
-        const streakNow = document.getElementById('streakNow');
-        const totalNow = document.getElementById('totalNow');
-
-        document.getElementById('year').textContent = new Date().getFullYear();
-
-        // Best score badge
-        const BEST_KEY = 'finterval_best';
-        function updateBestBadge(){
-          const best = localStorage.getItem(BEST_KEY);
-          document.getElementById('bestBadge').textContent = `Best FinScore: ${best ? best : '—'}`;
-        }
-        updateBestBadge();
-
-        // —— Utilities ——————————————————————————————
-        const sleep = ms => new Promise(r => setTimeout(r, ms));
-        const shuffle = arr => arr.map(v=>[Math.random(),v]).sort((a,b)=>a[0]-b[0]).map(v=>v[1]);
-
-        function selectedCategories(){
-          return CATS.filter(c => document.getElementById(`cat_${c.id}`).checked).map(c=>c.id);
-        }
-
-        function pickQuestions(total){
-          const cats = new Set(selectedCategories());
-          let pool = BANK.filter(q => cats.has(q.cat));
-          if(pool.length === 0){
-            throw new Error('No categories selected.');
-          }
-          if(pool.length < total) total = pool.length;
-          pool = shuffle(pool).slice(0,total);
-          return pool;
-        }
-
-        // AI Mode – live questions from your backend (Google Apps Script Web App)
-        const BACKEND_URL = "https://script.google.com/macros/s/AKfycbwqZyaWQ1pH9e5US0h69mSccgI2jneLkcwDGwe6Csrj9DbYva8gKevGn9oiLxDgnbQh/exec";
-        async function generateWithAI(total){
-          const r = await fetch(BACKEND_URL, {
-            method: "POST",
-            headers: {"Content-Type": "text/plain"},
-            body: JSON.stringify({ total })
-          });
-          const txt = await r.text();
-          let arr = [];
-          try { arr = JSON.parse(txt); } catch(e){ console.warn("Bad JSON from backend", e, txt); }
-          if(!Array.isArray(arr) || arr.length === 0) return pickQuestions(total);
-          return arr.slice(0, total).map((x,i)=>({
-            id: 9000+i,
-            cat: x.cat || "basics",
-            difficulty: x.difficulty || "Easy",
-            q: String(x.q || ""),
-            options: Array.isArray(x.options) ? x.options.slice(0,4) : [],
-            answer: Number.isInteger(x.answer) ? x.answer : 0,
-            explain: String(x.explain || "")
-          }));
-        }
-
-        // —— Game Flow ————————————————————————————
-        function reset(total){
-          play.total = total;
-          play.idx = 0; play.score = 0; play.correct = 0; play.streak = 0; play.answered = false;
-          scoreNow.textContent = 0; correctNow.textContent = 0; streakNow.textContent = 0; totalNow.textContent = total;
-          bar.style.width = '0%';
-          eEl.classList.add('hidden'); eEl.textContent = '';
-          nextBtn.disabled = true; retryBtn.classList.add('hidden');
-          document.getElementById('resultCard').style.display='none';
-        }
-
-        async function start(){
-          const total = clamp(parseInt(document.getElementById('countInput').value||'10',10),5,20);
-          reset(total);
-          play.list = play.ai ? await generateWithAI(total) : pickQuestions(total);
-          render();
-        }
-
-        function clamp(n,min,max){ return Math.max(min, Math.min(max, n)); }
-
-        function render(){
-          const q = play.list[play.idx];
-          if(!q){
-            qEl.textContent = 'Could not load questions. Please tap Restart.';
-            return;
-          }
-          qEl.textContent = q.q;
-          qCounter.textContent = `Q ${play.idx+1} of ${play.total}`;
-          qCategory.textContent = `Category: ${labelCat(q.cat)}`;
-          qDifficulty.textContent = `Level: ${q.difficulty}`;
-          bar.style.width = `${(play.idx)/(play.total)*100}%`;
-          cEl.innerHTML = '';
-          eEl.classList.add('hidden'); eEl.textContent = '';
-          nextBtn.disabled = true;
-          play.answered = false;
-
-          q.options.forEach((opt, i) => {
-            const btn = document.createElement('button');
-            btn.className = 'choice';
-            btn.setAttribute('role','button');
-            btn.setAttribute('aria-pressed','false');
-            btn.innerHTML = `<span class="key">${String.fromCharCode(65+i)}</span><span>${opt}</span>`;
-            btn.addEventListener('click', () => handleAnswer(i));
-            cEl.appendChild(btn);
-          });
-        }
-
-        function labelCat(id){ return (CATS.find(c=>c.id===id)||{}).label || id; }
-
-        function handleAnswer(i){
-          if(play.answered) return;
-          play.answered = true;
-          const q = play.list[play.idx];
-          const nodes = Array.from(cEl.children);
-          nodes.forEach((btn, idx) => {
-            btn.disabled = true;
-            if(idx === q.answer){ btn.classList.add('correct'); }
-            if(idx === i && i !== q.answer){ btn.classList.add('incorrect'); }
-          });
-
-          const ok = i === q.answer;
-          if(ok){
-            play.correct++; play.streak++; play.score += 10 + Math.min(20, play.streak*2);
-            eEl.className = 'explain ok';
-          } else {
-            play.streak = 0; eEl.className = 'explain err';
-          }
-          eEl.innerHTML = `<strong>${ok ? 'Correct!' : 'Not quite.'}</strong> ${q.explain}`;
-          eEl.classList.remove('hidden');
-
-          correctNow.textContent = play.correct;
-          streakNow.textContent = play.streak;
-          scoreNow.textContent = play.score;
-
-          nextBtn.disabled = false;
-        }
-
-        document.getElementById('nextBtn').addEventListener('click', () => {
-          if(play.idx < play.total - 1){
-            play.idx++;
-            render();
-          } else {
-            finish();
-          }
-        });
-
-        document.getElementById('retryBtn').addEventListener('click', start);
-
-        function finish(){
-          bar.style.width = '100%';
-          document.getElementById('nextBtn').disabled = true; document.getElementById('retryBtn').classList.remove('hidden');
-          const pct = Math.round((play.correct / play.total) * 100);
-          let title = 'Fin Explorer';
-          let msg = 'Nice start! Keep playing to level up your money skills.';
-          if(pct >= 80){ title = 'Fin Genius'; msg = 'Stellar! You clearly know your finance basics and beyond.'; }
-          else if(pct >= 60){ title = 'Fin Smart'; msg = 'Good grasp! A few more laps and you’ll be unstoppable.'; }
-          else if(pct >= 40){ title = 'Fin Learner'; msg = 'On your way. Try another round and watch your score climb.'; }
-
-          const BEST_KEY = 'finterval_best';
-          if(true){
-            const best = parseInt(localStorage.getItem(BEST_KEY)||'0',10);
-            if(play.score > best){ localStorage.setItem(BEST_KEY, String(play.score)); updateBestBadge(); }
-          }
-
-          const shareText = `I scored ${play.score} (${pct}%) on Finterval – the Fun Finance quiz by Labham. Try it now!`;
-          document.getElementById('resultTitle').textContent = title;
-          document.getElementById('resultMsg').textContent = msg + ` Your FinScore: ${play.score} | Correct: ${play.correct}/${play.total}.`;
-          document.getElementById('whatsBtn').href = `https://wa.me/?text=${encodeURIComponent(shareText)}`;
-
-          document.getElementById('copyBtn').onclick = async () => {
-            try { await navigator.clipboard.writeText(shareText); const cb=document.getElementById('copyBtn'); cb.textContent = 'Copied!'; setTimeout(()=>cb.textContent='Copy Result', 1200);} catch(e){ alert('Copy failed'); }
-          };
-
-          document.getElementById('shareBtn').onclick = async () => {
-            try{
-              if(navigator.share){ await navigator.share({title:'Finterval – Labham', text: shareText}); }
-              else { alert('Sharing not supported on this device. Use WhatsApp or Copy.'); }
-            }catch(e){ }
-          };
-
-          document.getElementById('resultCard').style.display = 'block';
-        }
-
-        document.getElementById('startBtn').addEventListener('click', start);
-
-        document.getElementById('aiBtn').addEventListener('click', () => {
-          play.ai = !play.ai; document.getElementById('aiBtn').setAttribute('aria-pressed', String(play.ai));
-          document.getElementById('aiBtn').textContent = `AI Mode: ${play.ai ? 'On' : 'Off'}`;
-          start();
-        });
-
-        // Kick off initial render
-        start();
-      } catch(err){
-        const qEl = document.getElementById('question');
-        if(qEl){ qEl.textContent = 'There was a loading error on this device. Please tap Restart. (Details in console)'; }
-        console.error('Finterval error:', err);
+    // =========================
+    // === FUNCTIONALITIES: ENDLESS PLAY + TIMER
+    // =========================
+    async function ensureBuffer(min=3){
+      const remaining = state.list.length - state.idx - 1;
+      if(remaining < min){
+        const batch = await generateWithAI(CONFIG.BATCH_SIZE);
+        state.list = state.list.concat(batch);
       }
     }
-
-    if(document.readyState === 'loading'){
-      document.addEventListener('DOMContentLoaded', boot);
-    } else {
-      boot();
+    function stopTimer(){ if(state.timerId){ clearInterval(state.timerId); state.timerId=null; } }
+    function startTimer(){
+      stopTimer();
+      let left = CONFIG.QUESTION_TIME;
+      tsec.textContent = left; tbar.style.width = '100%';
+      state.timerId = setInterval(()=>{
+        left -= 0.1;
+        if(left<=0){ left=0; tsec.textContent=0; tbar.style.width='0%'; stopTimer(); timeUp(); return;}
+        tsec.textContent = Math.ceil(left);
+        tbar.style.width = `${(left/CONFIG.QUESTION_TIME)*100}%`;
+      },100);
     }
+
+    function render(){
+      const q = state.list[state.idx];
+      if(!q){ qEl.textContent='Loading…'; nextBtn.disabled=true; return; }
+      qEl.textContent = q.q;
+      qCategory.textContent = `Category: ${q.cat||'—'}`;
+      qDifficulty.textContent = `Level: ${q.difficulty||'—'}`;
+      cEl.innerHTML = ''; eEl.classList.add('hidden'); eEl.textContent=''; nextBtn.disabled=true; state.answered=false;
+
+      q.options.forEach((opt,i)=>{
+        const btn = document.createElement('button');
+        btn.className='choice';
+        btn.innerHTML = `<span class="key">${String.fromCharCode(65+i)}</span><span>${opt}</span>`;
+        btn.addEventListener('click',()=>handleAnswer(i));
+        cEl.appendChild(btn);
+      });
+      startTimer();
+    }
+
+    function handleAnswer(i){
+      if(state.answered) return; state.answered=true; stopTimer();
+      const q = state.list[state.idx];
+      Array.from(cEl.children).forEach((btn,idx)=>{
+        btn.disabled=true;
+        if(idx===q.answer) btn.classList.add('correct');
+        if(idx===i && i!==q.answer) btn.classList.add('incorrect');
+      });
+      const ok = i===q.answer;
+      if(ok){ state.correct++; state.streak++; state.score += 10 + Math.min(20, state.streak*2); eEl.className='explain ok'; }
+      else { state.streak=0; eEl.className='explain err'; }
+      eEl.innerHTML = `<strong>${ok ? 'Correct!' : 'Not quite.'}</strong> ${q.explain}`; eEl.classList.remove('hidden');
+      state.asked++; correctNow.textContent = state.correct; streakNow.textContent = state.streak; scoreNow.textContent = state.score;
+      // update best score
+      const best = parseInt(localStorage.getItem(BEST_KEY)||'0',10);
+      if(state.score > best){ localStorage.setItem(BEST_KEY, String(state.score)); document.getElementById('bestBadge').textContent = `Best FinScore: ${state.score}`; }
+      nextBtn.disabled=false;
+    }
+    function timeUp(){
+      if(state.answered) return; state.answered=true;
+      const q = state.list[state.idx];
+      Array.from(cEl.children).forEach((btn,idx)=>{ btn.disabled=true; if(idx===q.answer) btn.classList.add('correct'); });
+      state.streak=0; eEl.className='explain err'; eEl.innerHTML = `<strong>Time’s up!</strong> ${q.explain}`; eEl.classList.remove('hidden');
+      state.asked++; nextBtn.disabled=false;
+    }
+
+    document.getElementById('startBtn').addEventListener('click', start);
+    document.getElementById('retryBtn').addEventListener('click', start);
+    document.getElementById('shareBtn').addEventListener('click', async ()=>{
+      const pct = state.asked ? Math.round((state.correct/state.asked)*100) : 0;
+      const text = `I’m playing Finterval by Labham — FinScore: ${state.score} (${pct}% correct). Try it!`;
+      try{
+        if(navigator.share){ await navigator.share({title:'Finterval – Labham', text}); }
+        else { await navigator.clipboard.writeText(text); alert('Result copied!'); }
+      }catch{}
+    });
+    document.getElementById('nextBtn').addEventListener('click', async ()=>{
+      state.idx++; await ensureBuffer(3); render();
+    });
+
+    // =========================
+    // === FUNCTIONALITIES: START/RESET
+    // =========================
+    async function start(){
+      stopTimer();
+      state.list=[]; state.idx=0; state.score=0; state.correct=0; state.streak=0; state.answered=false; state.asked=0;
+      scoreNow.textContent=0; correctNow.textContent=0; streakNow.textContent=0; eEl.classList.add('hidden'); eEl.textContent='';
+      await ensureBuffer(10); render();
+    }
+
+    // boot
+    start();
   })();
   </script>
 </body>
