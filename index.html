@@ -81,7 +81,20 @@
     .tline{height:8px; background:rgba(255,255,255,.06); border-radius:999px; overflow:hidden}
     #tbar{height:100%; width:100%; background:linear-gradient(90deg, var(--warn), var(--err)); transition: width .1s linear}
     .ttext{margin-top:6px; font-size:13px; color:var(--muted)}
-  </style>
+ /* Prevent accidental text selection + tap highlight on iOS */
+.stat, .stat * {
+  -webkit-user-select: none;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Optional: also disable the blue band on buttons/choices/chips */
+.choice, .btn, .pill {
+  -webkit-user-select: none;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+</style>
 </head>
 <body>
   <div class="container">
