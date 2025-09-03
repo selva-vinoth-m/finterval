@@ -1,216 +1,488 @@
-<script>
-(function(){
-  function boot(){
-    try{
-      const CONFIG = {
-        bookCallURL: "https://calendly.com/calendar-labham/finterval",
-        saveBestScore: true
-      };
-
-      // wire bottom CTA (About section)
-      const bc = document.getElementById('bookCallBottom');
-      if (bc) bc.href = CONFIG.bookCallURL;
-
-      // categories
-      const CATS = [
-        { id: 'basics', label: 'Basics' },
-        { id: 'invest', label: 'Investing' },
-        { id: 'tax',    label: 'Tax & Jargon' },
-        { id: 'india',  label: 'India Context' },
-      ];
-      const catList = document.getElementById('catList');
-      CATS.forEach(c => {
-        const id = `cat_${c.id}`;
-        const w = document.createElement('label');
-        w.className = 'pill';
-        w.style.display = 'flex';
-        w.style.alignItems = 'center';
-        w.style.gap = '8px';
-        w.style.padding = '8px 10px';
-        w.innerHTML = `<input type="checkbox" id="${id}" checked aria-label="${c.label} category"/> <span>${c.label}</span>`;
-        catList.appendChild(w);
-      });
-
-      // small local fallback bank (used only if AI hiccups)
-      const BANK = [
-        {id:1, cat:'basics', difficulty:'Easy', q:'What does SIP stand for in mutual funds?', options:['Systematic Investment Plan','Savings & Insurance Plan','Secure Income Portfolio','Scheduled Investment Period'], answer:0, explain:'SIP = Systematic Investment Plan: you invest a fixed amount at regular intervals.'},
-        {id:2, cat:'basics', difficulty:'Easy', q:'NAV in mutual funds refers to…', options:['Net Asset Value per unit','Net Annual Variation','Nominal Asset Value','Normalized Average Value'], answer:0, explain:'NAV is the per-unit market value of a mutual fund after accounting for expenses.'},
-        {id:3, cat:'invest', difficulty:'Easy', q:'ELSS funds typically have a mandatory lock-in of:', options:['1 year','3 years','5 years','No lock-in'], answer:1, explain:'ELSS has a 3-year lock-in.'},
-      ];
-
-      // state
-      const QUESTION_TIME = 20; // seconds per question
-      const BATCH_SIZE = 10;    // fetch this many AI questions at a time
-      let play = { list: [], idx: 0, score: 0, correct: 0, streak: 0, answered: false, asked: 0, timerId: null };
-
-      // dom
-      const qEl = document.getElementById('question');
-      const cEl = document.getElementById('choices');
-      const eEl = document.getElementById('explain');
-      const nextBtn = document.getElementById('nextBtn');
-      const retryBtn = document.getElementById('retryBtn');
-      const qCategory = document.getElementById('qCategory');
-      const qDifficulty = document.getElementById('qDifficulty');
-      const aiStatus = document.getElementById('aiStatus');
-      const tsec = document.getElementById('tsec');
-      const tbar = document.getElementById('tbar');
-
-      const scoreNow = document.getElementById('scoreNow');
-      const correctNow = document.getElementById('correctNow');
-      const streakNow = document.getElementById('streakNow');
-      document.getElementById('year').textContent = new Date().getFullYear();
-
-      // best score badge
-      const BEST_KEY = 'finterval_best';
-      function updateBestBadge(){
-        const best = localStorage.getItem(BEST_KEY);
-        document.getElementById('bestBadge').textContent = `Best FinScore: ${best ? best : '—'}`;
-      }
-      updateBestBadge();
-
-      function setAIStatus(s){ if(aiStatus) aiStatus.textContent = `AI: ${s}`; }
-      const shuffle = arr => arr.map(v=>[Math.random(),v]).sort((a,b)=>a[0]-b[0]).map(v=>v[1]);
-      function selectedCategories(){ return CATS.filter(c => document.getElementById(`cat_${c.id}`).checked).map(c=>c.id); }
-      function pickQuestions(total){
-        const cats = new Set(selectedCategories());
-        let pool = BANK.filter(q => cats.has(q.cat));
-        if(pool.length === 0) pool = BANK;
-        return shuffle(pool).slice(0,total);
-      }
-
-      // your Apps Script URL
-      const BACKEND_URL = "https://script.google.com/macros/s/AKfycbwqZyaWQ1pH9e5US0h69mSccgI2jneLkcwDGwe6Csrj9DbYva8gKevGn9oiLxDgnbQh/exec";
-      async function generateWithAI(total){
-        if(!BACKEND_URL){ setAIStatus('Not set'); return pickQuestions(total); }
-        setAIStatus('Connecting…');
-        let txt='';
-        try{
-          const r = await fetch(BACKEND_URL, { method:'POST', headers:{'Content-Type':'text/plain'}, body: JSON.stringify({ total }) });
-          if(!r.ok){ setAIStatus('HTTP '+r.status); return pickQuestions(total); }
-          txt = await r.text();
-        }catch(e){ console.error('AI fetch error', e); setAIStatus('Error'); return pickQuestions(total); }
-
-        let s = (txt||'').trim();
-        if(s.startsWith('```')) s = s.replace(/^```(?:json)?/i,'').replace(/```$/,'').trim();
-        let out=null;
-        try{
-          const first = JSON.parse(s);
-          out = Array.isArray(first) ? first : (typeof first==='string' && first.trim().startsWith('[') ? JSON.parse(first) : null);
-        }catch{
-          const m = s.match(/\[[\s\S]*\]/); if(m){ try{ out = JSON.parse(m[0]); }catch{} }
-        }
-        if(!Array.isArray(out) || out.length===0){ setAIStatus('Empty'); return pickQuestions(total); }
-        setAIStatus('OK');
-        return out.map((x,i)=>({ id:9000+i, cat:x.cat||'basics', difficulty:x.difficulty||'Easy', q:String(x.q||''), options:(Array.isArray(x.options)? x.options.slice(0,4).map(String):[]), answer:(Number.isInteger(x.answer)? x.answer:0), explain:String(x.explain||'') }));
-      }
-
-      async function ensureBuffer(min=3){
-        const remaining = play.list.length - play.idx - 1;
-        if(remaining < min){
-          const batch = await generateWithAI(BATCH_SIZE);
-          play.list = play.list.concat(batch);
-        }
-      }
-
-      function reset(){
-        play.idx = 0; play.score=0; play.correct=0; play.streak=0; play.answered=false; play.asked=0; play.list=[];
-        scoreNow.textContent = 0; correctNow.textContent = 0; streakNow.textContent = 0;
-        eEl.classList.add('hidden'); eEl.textContent='';
-        nextBtn.disabled = true; retryBtn.classList.add('hidden');
-      }
-
-      async function start(){
-        reset();
-        await ensureBuffer(10);
-        render();
-      }
-
-      function startTimer(){
-        stopTimer();
-        let left = QUESTION_TIME; tsec.textContent = left; tbar.style.width = '100%';
-        play.timerId = setInterval(() => {
-          left -= 0.1; // update every 100ms
-          if(left <= 0){ left = 0; tsec.textContent = 0; tbar.style.width = '0%'; stopTimer(); timeUp(); return; }
-          tsec.textContent = Math.ceil(left);
-          tbar.style.width = `${(left/QUESTION_TIME)*100}%`;
-        }, 100);
-      }
-      function stopTimer(){ if(play.timerId){ clearInterval(play.timerId); play.timerId=null; } }
-
-      function render(){
-        const q = play.list[play.idx];
-        if(!q){ qEl.textContent='Loading…'; nextBtn.disabled=true; return; }
-        qEl.textContent = q.q;
-        qCategory.textContent = `Category: ${q.cat||'—'}`;
-        qDifficulty.textContent = `Level: ${q.difficulty||'—'}`;
-        cEl.innerHTML = '';
-        eEl.classList.add('hidden'); eEl.textContent='';
-        nextBtn.disabled = true; play.answered=false;
-
-        q.options.forEach((opt, i) => {
-          const btn = document.createElement('button');
-          btn.className = 'choice';
-          btn.innerHTML = `<span class="key">${String.fromCharCode(65+i)}</span><span>${opt}</span>`;
-          btn.addEventListener('click', () => handleAnswer(i));
-          cEl.appendChild(btn);
-        });
-
-        startTimer();
-      }
-
-      function handleAnswer(i){
-        if(play.answered) return; play.answered = true; stopTimer();
-        const q = play.list[play.idx];
-        const nodes = Array.from(cEl.children);
-        nodes.forEach((btn, idx) => {
-          btn.disabled = true;
-          if(idx === q.answer){ btn.classList.add('correct'); }
-          if(idx === i && i !== q.answer){ btn.classList.add('incorrect'); }
-        });
-        const ok = i === q.answer;
-        if(ok){ play.correct++; play.streak++; play.score += 10 + Math.min(20, play.streak*2); eEl.className='explain ok'; }
-        else { play.streak=0; eEl.className='explain err'; }
-        eEl.innerHTML = `<strong>${ok ? 'Correct!' : 'Not quite.'}</strong> ${q.explain}`;
-        eEl.classList.remove('hidden');
-        play.asked++;
-        correctNow.textContent = play.correct; streakNow.textContent = play.streak; scoreNow.textContent = play.score;
-        nextBtn.disabled = false;
-      }
-
-      function timeUp(){
-        if(play.answered) return; play.answered = true;
-        const q = play.list[play.idx];
-        Array.from(cEl.children).forEach((btn, idx) => { btn.disabled = true; if(idx === q.answer){ btn.classList.add('correct'); } });
-        play.streak = 0; eEl.className='explain err';
-        eEl.innerHTML = `<strong>Time’s up!</strong> ${q.explain}`;
-        eEl.classList.remove('hidden');
-        play.asked++; nextBtn.disabled = false; stopTimer();
-      }
-
-      document.getElementById('nextBtn').addEventListener('click', async () => {
-        play.idx++;
-        await ensureBuffer(3);
-        render();
-      });
-
-      document.getElementById('retryBtn').addEventListener('click', start);
-
-      document.getElementById('shareBtn').onclick = async () => {
-        const pct = play.asked ? Math.round((play.correct/play.asked)*100) : 0;
-        const shareText = `I’m playing Finterval by Labham — FinScore: ${play.score} (${pct}% correct). Try it!`;
-        try{
-          if(navigator.share){ await navigator.share({title:'Finterval – Labham', text: shareText}); }
-          else { await navigator.clipboard.writeText(shareText); alert('Result copied!'); }
-        }catch(e){ }
-      };
-
-      // go!
-      start();
-    }catch(err){
-      console.error('Finterval boot error:', err);
-      const qEl = document.getElementById('question'); if(qEl){ qEl.textContent = 'There was a loading error. Please tap Restart.'; }
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Finterval – Your Fun Finance Break – Powered by Labham</title>
+  <meta name="description" content="Finterval by Labham – a quick, fun finance quiz. Learn, play, and share your FinScore." />
+  <meta name="theme-color" content="#2563eb" />
+  <style>
+    /* =========================
+       Finterval – Starter Kit
+       Updated: 2025-09-03
+       ========================= */
+    :root{
+      --brand:#2563eb;         /* Primary accent (change to match Labham brand) */
+      --brand-600:#1d4ed8;
+      --brand-700:#1e40af;
+      --bg:#0b1220;            /* Page backdrop */
+      --card:#0f172a;          /* Card surface */
+      --muted:#94a3b8;         /* Muted text */
+      --text:#e5e7eb;          /* Main text */
+      --ok:#10b981;            /* Correct */
+      --err:#ef4444;           /* Incorrect */
+      --warn:#f59e0b;          /* Warnings */
+      --ring: 0 0 0 3px rgba(37,99,235,.35);
     }
-  }
-  if(document.readyState==='loading'){ document.addEventListener('DOMContentLoaded', boot);} else { boot(); }
-})();
-</script>
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0; font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      background: radial-gradient(1200px 800px at 10% -10%, rgba(37,99,235,.25), transparent 50%),
+                  radial-gradient(900px 700px at 110% 10%, rgba(16,185,129,.18), transparent 50%),
+                  var(--bg);
+      color:var(--text);
+      -webkit-font-smoothing:antialiased;  -moz-osx-font-smoothing:grayscale;
+    }
+    a{color:var(--brand)}
+    .container{max-width:1040px; margin:0 auto; padding:24px}
+    header{display:flex; align-items:center; gap:16px; flex-wrap:wrap; justify-content:space-between;}
+    .brand{display:flex; align-items:center; gap:14px}
+    .logo{width:52px; height:52px; border-radius:12px; background:linear-gradient(135deg,var(--brand),var(--brand-700)); display:grid; place-items:center; font-weight:800}
+    .logo span{color:white}
+    .title{display:flex; flex-direction:column}
+    .title h1{margin:0; letter-spacing:.3px}
+    .brand-title{font-size: clamp(34px, 5.2vw, 64px); font-weight:900; line-height:1.05; letter-spacing:.3px; background:linear-gradient(90deg, var(--brand) 0%, #22c55e 100%); -webkit-background-clip:text; -webkit-text-fill-color:transparent}
+    .title .tagline{margin-top:4px; font-size:clamp(16px,2.2vw,22px); font-weight:700; color:#e2e8f0}
+    .title .powered{margin-top:2px; font-size:13px; color:var(--muted)}
+    .title p{display:none}
+
+    .top-cta{display:flex; align-items:center; gap:10px; flex-wrap:wrap}
+    .badge{font-size:12px; padding:6px 10px; border-radius:999px; background:rgba(37,99,235,.12); color:#cbd5e1; border:1px solid rgba(255,255,255,.08)}
+
+    .card{background: linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,.0)); border:1px solid rgba(255,255,255,.08); border-radius:20px; padding:20px; box-shadow: 0 10px 40px rgba(0,0,0,.35)}
+    .grid{display:grid; grid-template-columns:1fr; gap:28px; margin-top:24px}
+
+    @media(min-width:960px){
+      .grid{grid-template-columns: 1.2fr .8fr}
+    }
+
+    .controls{display:flex; gap:10px; flex-wrap:wrap; align-items:center}
+    button, .btn{appearance:none; border:1px solid rgba(255,255,255,.12); background: rgba(255,255,255,.04); color:var(--text); padding:10px 14px; border-radius:12px; cursor:pointer; font-weight:600}
+    button:hover, .btn:hover{border-color: rgba(255,255,255,.25)}
+    .btn-primary{background:linear-gradient(180deg,var(--brand),var(--brand-700)); border-color:transparent}
+    .btn-primary:hover{filter:brightness(1.05)}
+    .btn-ghost{background:transparent}
+
+    .progress{height:10px; background:rgba(255,255,255,.06); border-radius:999px; overflow:hidden}
+    .progress>div{height:100%; width:0%; background: linear-gradient(90deg, var(--brand), #22c55e); transition:width .35s ease}
+
+    .question{font-size: clamp(18px, 2.2vw, 22px); margin:8px 0 6px; line-height:1.35}
+    .q-meta{display:flex; gap:10px; align-items:center; color:var(--muted); font-size:13px}
+
+    .choices{display:grid; gap:10px; margin-top:12px}
+    .choice{display:flex; align-items:center; gap:12px; width:100%; text-align:left; padding:14px; border-radius:14px; border:1px solid rgba(255,255,255,.12); background:rgba(255,255,255,.03)}
+    .choice:focus-visible{outline:none; box-shadow:var(--ring)}
+    .choice .key{width:28px; height:28px; border-radius:8px; background:rgba(255,255,255,.06); display:grid; place-items:center; font-weight:700; color:#cbd5e1}
+    .choice.correct{border-color: rgba(16,185,129,.65); background: rgba(16,185,129,.12)}
+    .choice.incorrect{border-color: rgba(239,68,68,.65); background: rgba(239,68,68,.10)}
+
+    .explain{margin-top:12px; padding:12px; border-left:4px solid rgba(255,255,255,.12); background:rgba(255,255,255,.03); border-radius:10px}
+    .explain.ok{border-left-color: var(--ok)}
+    .explain.err{border-left-color: var(--err)}
+
+    .pill{font-size:12px; padding:6px 10px; border-radius:999px; border:1px solid rgba(255,255,255,.12); background:rgba(255,255,255,.03)}
+
+    .side{display:grid; gap:16px; height:fit-content}
+    .stat{display:flex; align-items:center; justify-content:space-between; gap:12px; padding:14px; border-radius:14px; border:1px solid rgba(255,255,255,.08); background:rgba(255,255,255,.02)}
+    .stat strong{font-size:20px}
+
+    .result{display:none}
+    .result h2{margin-top:0}
+
+    footer{margin:20px auto 8px; text-align:center; color:var(--muted); font-size:12px}
+    .small{font-size:12px; color:var(--muted)}
+    .hidden{display:none !important}
+  .timerWrap{margin:8px 0 6px}
+    .tline{height:8px; background:rgba(255,255,255,.06); border-radius:999px; overflow:hidden}
+    #tbar{height:100%; width:100%; background:linear-gradient(90deg, var(--warn), var(--err)); transition: width .1s linear}
+    .ttext{margin-top:6px; font-size:13px; color:var(--muted)}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="brand">
+        <div class="logo" aria-hidden="true"><span>L</span></div>
+        <div class="title">
+          <h1 class="brand-title">Finterval</h1>
+          <div class="tagline">Your Fun Finance Break</div>
+          <div class="powered">Powered by Labham</div>
+        </div>
+      </div>
+      <div class="top-cta">
+        <span class="badge" id="bestBadge" title="Your all-time best FinScore">Best FinScore: —</span>
+      </div>
+    </header>
+
+    <div class="grid" role="main">
+      <!-- QUIZ AREA -->
+      <section class="card" aria-live="polite">
+        <div class="q-meta" style="margin-bottom:10px">
+          <span id="qCategory" class="pill">Category: —</span>
+          <span id="qDifficulty" class="pill">Level: —</span>
+          <span id="aiStatus" class="pill">AI: —</span>
+        </div>
+
+        <h2 id="question" class="question">Loading…</h2>
+
+        <!-- Per-question timer -->
+        <div id="timer" class="timerWrap">
+          <div class="tline"><div id="tbar"></div></div>
+          <div class="ttext">Time: <span id="tsec">20</span>s</div>
+        </div>
+
+        <div id="choices" class="choices" role="group" aria-label="Answer choices"></div>
+
+        <div id="explain" class="explain hidden"></div>
+
+        <div class="controls" style="margin-top:12px">
+          <button id="nextBtn" class="btn-primary" disabled>Next</button>
+          <button id="retryBtn" class="btn hidden">Restart</button>
+          <span class="small">Tip: You can filter categories on the right before starting.</span>
+        </div>
+      </section>
+
+      <!-- SIDE PANEL -->
+      <aside class="side">
+        <section class="card">
+          <h3 style="margin-top:0">Your FinScore</h3>
+          <div class="stat"><span>Score</span><strong id="scoreNow">0</strong></div>
+          <div class="stat"><span>Correct</span><strong id="correctNow">0</strong></div>
+          <div class="stat"><span>Streak</span><strong id="streakNow">0</strong></div>
+          
+        </section>
+
+        <section class="card">
+          <h3 style="margin-top:0">Play Settings</h3>
+          <div class="small" style="margin:6px 0 10px">Categories</div>
+          <div id="catList" class="controls" role="group" aria-label="Categories"></div>
+          <div class="controls">
+            <button id="startBtn" class="btn btn-primary">Start/Restart</button>
+            <button id="shareBtn" class="btn" title="Share your FinScore">Share</button>
+          </div>
+        </section>
+
+        <section class="card result" id="resultCard">
+          <h2 id="resultTitle">Your Result</h2>
+          <p id="resultMsg" class="small"></p>
+          <div class="controls">
+            <a id="whatsBtn" class="btn" href="#" target="_blank" rel="noopener">Share on WhatsApp</a>
+            <button id="copyBtn" class="btn">Copy Result</button>
+          </div>
+        </section>
+
+        <section class="card">
+          <h3 style="margin-top:0">About</h3>
+          <p class="small">Finterval is a bite-sized finance quiz for learners and future wealth-builders. Educational only. For India-focused personal finance context. Updated: <time>Sep 3, 2025</time>.</p>
+          <p class="small"><strong>Finterval is powered by Labham</strong>, AMFI Registered Mutual Fund Distributor.</p>
+          <div class="controls" style="margin-top:10px">
+            <a id="bookCallBottom" class="btn btn-primary" href="#" target="_blank" rel="noopener">Start Investing with Labham</a>
+          </div>
+        </section>
+      </aside>
+    </div>
+
+    <footer>
+      © <span id="year"></span> Labham • <span class="small">Made with ❤ for clarity in money matters.</span>
+    </footer>
+  </div>
+
+  <noscript><div style="max-width:1040px;margin:8px auto;color:#ef4444;padding:8px 12px;border:1px solid rgba(239,68,68,.45);border-radius:10px;background:rgba(239,68,68,.08)">JavaScript is required to run Finterval. Please enable it in your browser.</div></noscript>
+
+  <script>
+  // Wrapped for mobile reliability
+  (function(){
+    function boot(){
+      try{
+        // —— Configuration ——————————————————————————————
+        const CONFIG = {
+          bookCallURL: "https://calendly.com/calendar-labham/finterval",
+          enableAIMode: true,   // default AI ON
+          saveBestScore: true
+        };
+
+        // Wire CTAs
+        document.getElementById('bookCall').href = CONFIG.bookCallURL;
+
+        // —— Categories & Bank ——————————————————————————
+        const CATS = [
+          { id: 'basics', label: 'Basics' },
+          { id: 'invest', label: 'Investing' },
+          { id: 'tax',    label: 'Tax & Jargon' },
+          { id: 'india',  label: 'India Context' },
+        ];
+
+        // Helper to build category chips
+        const catList = document.getElementById('catList');
+        CATS.forEach(c => {
+          const id = `cat_${c.id}`;
+          const w = document.createElement('label');
+          w.className = 'pill';
+          w.style.display = 'flex';
+          w.style.alignItems = 'center';
+          w.style.gap = '8px';
+          w.style.padding = '8px 10px';
+          w.innerHTML = `<input type="checkbox" id="${id}" checked aria-label="${c.label} category"/> <span>${c.label}</span>`;
+          catList.appendChild(w);
+        });
+
+        // Question Bank (starter)
+        const BANK = [
+          {id:1, cat:'basics', difficulty:'Easy', q:'What does SIP stand for in mutual funds?', options:['Systematic Investment Plan','Savings & Insurance Plan','Secure Income Portfolio','Scheduled Investment Period'], answer:0, explain:'SIP = Systematic Investment Plan: you invest a fixed amount at regular intervals.'},
+          {id:2, cat:'basics', difficulty:'Easy', q:'NAV in mutual funds refers to…', options:['Net Asset Value per unit','Net Annual Variation','Nominal Asset Value','Normalized Average Value'], answer:0, explain:'NAV is the per-unit market value of a mutual fund after accounting for expenses.'},
+          {id:3, cat:'invest', difficulty:'Easy', q:'ELSS funds typically have a mandatory lock-in of:', options:['1 year','3 years','5 years','No lock-in'], answer:1, explain:'Equity Linked Savings Schemes (ELSS) have a 3-year lock-in.'},
+          {id:4, cat:'invest', difficulty:'Medium', q:'What does “expense ratio” represent?', options:['Broker’s commission','Annual fund cost as % of AUM','Entry load charge','Tax on capital gains'], answer:1, explain:'Expense ratio is the annual operating cost of a fund expressed as a percentage of assets.'},
+          {id:5, cat:'invest', difficulty:'Easy', q:'An index fund primarily aims to:', options:['Beat the market with stock picking','Replicate a benchmark’s returns','Hold only government securities','Invest only in IPOs'], answer:1, explain:'Index funds passively track a benchmark (e.g., Nifty 50) to match its performance.'},
+          {id:6, cat:'basics', difficulty:'Easy', q:'CAGR stands for:', options:['Cumulative Annual Gross Return','Compound Annual Growth Rate','Computed Average Growth Rate','Consolidated Annual Gain Rate'], answer:1, explain:'CAGR is the smoothed annual growth rate over a period, assuming compounding.'},
+          {id:7, cat:'india', difficulty:'Easy', q:'REITs primarily invest in:', options:['Government bonds','Gold bullion','Income-generating real estate','Art & collectibles'], answer:2, explain:'REITs pool money to invest in income-producing real estate and distribute rentals/dividends.'},
+          {id:8, cat:'invest', difficulty:'Easy', q:'SWP stands for:', options:['Systematic Withdrawal Plan','Secure Wealth Policy','Smart Wealth Program','Scheduled Withdrawal Period'], answer:0, explain:'SWP allows periodic withdrawals from your mutual fund investments.'},
+          {id:9, cat:'india', difficulty:'Easy', q:'PPF has a typical maturity of:', options:['5 years','10 years','15 years','20 years'], answer:2, explain:'Public Provident Fund has a 15-year maturity with options to extend in blocks.'},
+          {id:10, cat:'basics', difficulty:'Medium', q:'Diversification primarily helps reduce:', options:['Systematic (market) risk','Unsystematic (stock-specific) risk','Taxes','Time to goal'], answer:1, explain:'Diversification reduces unsystematic risk; market risk cannot be fully diversified away.'},
+          {id:11, cat:'invest', difficulty:'Easy', q:'Which is usually more volatile in the short term?', options:['Liquid fund','Equity fund','Arbitrage fund','Overnight fund'], answer:1, explain:'Equity funds fluctuate more in the short term compared to cash-like categories.'},
+          {id:12, cat:'tax', difficulty:'Easy', q:'KYC expands to:', options:['Know Your Customer','Keep Your Credit','Know Your Capital','Key Yield Certificate'], answer:0, explain:'KYC is a regulatory process to verify identity before investing.'},
+          {id:13, cat:'basics', difficulty:'Medium', q:'Rupee-cost averaging refers to:', options:['Timing the market perfectly','Investing a fixed amount regularly','Buying only during dips','Switching funds frequently'], answer:1, explain:'Investing a fixed amount at regular intervals averages your purchase cost over time.'},
+          {id:14, cat:'tax', difficulty:'Medium', q:'“Capital gains” best describes:', options:['Salary income','Rental income','Profit from sale of a capital asset','Dividend received'], answer:2, explain:'Capital gains are profits from selling capital assets like equity, property, or gold.'},
+          {id:15, cat:'india', difficulty:'Medium', q:'Sovereign Gold Bonds (SGB) offer:', options:['Only gold price return','Fixed annual interest + gold price return','Only fixed interest','Neither interest nor price return'], answer:1, explain:'SGBs pay fixed annual interest (as notified) plus exposure to gold price movement.'},
+          {id:16, cat:'invest', difficulty:'Medium', q:'Direct mutual fund plans typically have:', options:['Higher expense ratios','Lower expense ratios','Same as regular plans','No expense ratio'], answer:1, explain:'Direct plans exclude distributor commissions, so expense ratios are lower.'},
+          {id:17, cat:'basics', difficulty:'Medium', q:'A commonly suggested emergency fund size is:', options:['One month of salary','3–6 months of expenses','12 months of income','No fixed rule'], answer:1, explain:'Many planners suggest 3–6 months of essential expenses as an initial buffer.'},
+          {id:18, cat:'invest', difficulty:'Medium', q:'Debt mutual funds primarily invest in:', options:['Company shares','Commodities','Fixed-income securities','Cryptocurrencies'], answer:2, explain:'Debt funds invest in bonds, money market instruments, and other fixed-income securities.'},
+          {id:19, cat:'basics', difficulty:'Easy', q:'Goal-based investing means:', options:['Chasing high returns','Aligning investments to specific life goals','Timing markets quarterly','Copying others’ portfolios'], answer:1, explain:'You match each life goal (education, retirement, etc.) with an appropriate investment plan.'},
+          {id:20, cat:'india', difficulty:'Easy', q:'NPS Tier I is generally designed for:', options:['Short-term trading','Long-term retirement saving','Only NRIs','Only government staff'], answer:1, explain:'NPS Tier I is a retirement-focused account with restrictions on early withdrawal.'},
+          {id:21, cat:'tax', difficulty:'Medium', q:'Expense ratio impacts investors by:', options:['Increasing gross returns','Reducing net returns','Changing tax slabs','Guaranteeing outperformance'], answer:1, explain:'Fund expenses are deducted from assets, lowering investor net returns.'},
+          {id:22, cat:'invest', difficulty:'Medium', q:'A “balanced” or “hybrid” fund typically:', options:['Holds only equities','Holds only debt','Mixes equity and debt','Holds only gold'], answer:2, explain:'Hybrid funds blend equity and debt to balance risk and return.'},
+          {id:23, cat:'basics', difficulty:'Easy', q:'Compounding works best when you:', options:['Invest late and large','Start early and stay invested','Switch funds frequently','Avoid SIPs'], answer:1, explain:'Time in the market and consistency allow compounding to work wonders.'},
+          {id:24, cat:'india', difficulty:'Easy', q:'Which is typically the safest category among these?', options:['Equity small-cap fund','Overnight fund','Thematic equity fund','Sectoral equity fund'], answer:1, explain:'Among listed options, overnight funds hold very short-term instruments and are low-risk.'}
+        ];
+
+        // —— State ——————————————————————————————————
+        let play = {
+          total: 10,
+          list: [],
+          idx: 0,
+          score: 0,
+          correct: 0,
+          streak: 0,
+          answered: false,
+          ai: CONFIG.enableAIMode
+        };
+
+        // —— DOM ————————————————————————————————————
+        const qEl = document.getElementById('question');
+        const cEl = document.getElementById('choices');
+        const eEl = document.getElementById('explain');
+        const nextBtn = document.getElementById('nextBtn');
+        const retryBtn = document.getElementById('retryBtn');
+        const aiBtn = document.getElementById('aiBtn');
+
+        const qCounter = document.getElementById('qCounter');
+        const qCategory = document.getElementById('qCategory');
+        const qDifficulty = document.getElementById('qDifficulty');
+        const bar = document.getElementById('progressBar');
+
+        const scoreNow = document.getElementById('scoreNow');
+        const correctNow = document.getElementById('correctNow');
+        const streakNow = document.getElementById('streakNow');
+        const totalNow = document.getElementById('totalNow');
+
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Best score badge
+        const BEST_KEY = 'finterval_best';
+        function updateBestBadge(){
+          const best = localStorage.getItem(BEST_KEY);
+          document.getElementById('bestBadge').textContent = `Best FinScore: ${best ? best : '—'}`;
+        }
+        updateBestBadge();
+
+        // —— Utilities ——————————————————————————————
+        const sleep = ms => new Promise(r => setTimeout(r, ms));
+        const shuffle = arr => arr.map(v=>[Math.random(),v]).sort((a,b)=>a[0]-b[0]).map(v=>v[1]);
+
+        function selectedCategories(){
+          return CATS.filter(c => document.getElementById(`cat_${c.id}`).checked).map(c=>c.id);
+        }
+
+        function pickQuestions(total){
+          const cats = new Set(selectedCategories());
+          let pool = BANK.filter(q => cats.has(q.cat));
+          if(pool.length === 0){
+            throw new Error('No categories selected.');
+          }
+          if(pool.length < total) total = pool.length;
+          pool = shuffle(pool).slice(0,total);
+          return pool;
+        }
+
+        // AI Mode – live questions from your backend (Google Apps Script Web App)
+        const BACKEND_URL = "https://script.google.com/macros/s/AKfycbwqZyaWQ1pH9e5US0h69mSccgI2jneLkcwDGwe6Csrj9DbYva8gKevGn9oiLxDgnbQh/exec";
+        async function generateWithAI(total){
+          const r = await fetch(BACKEND_URL, {
+            method: "POST",
+            headers: {"Content-Type": "text/plain"},
+            body: JSON.stringify({ total })
+          });
+          const txt = await r.text();
+          let arr = [];
+          try { arr = JSON.parse(txt); } catch(e){ console.warn("Bad JSON from backend", e, txt); }
+          if(!Array.isArray(arr) || arr.length === 0) return pickQuestions(total);
+          return arr.slice(0, total).map((x,i)=>({
+            id: 9000+i,
+            cat: x.cat || "basics",
+            difficulty: x.difficulty || "Easy",
+            q: String(x.q || ""),
+            options: Array.isArray(x.options) ? x.options.slice(0,4) : [],
+            answer: Number.isInteger(x.answer) ? x.answer : 0,
+            explain: String(x.explain || "")
+          }));
+        }
+
+        // —— Game Flow ————————————————————————————
+        function reset(total){
+          play.total = total;
+          play.idx = 0; play.score = 0; play.correct = 0; play.streak = 0; play.answered = false;
+          scoreNow.textContent = 0; correctNow.textContent = 0; streakNow.textContent = 0; totalNow.textContent = total;
+          bar.style.width = '0%';
+          eEl.classList.add('hidden'); eEl.textContent = '';
+          nextBtn.disabled = true; retryBtn.classList.add('hidden');
+          document.getElementById('resultCard').style.display='none';
+        }
+
+        async function start(){
+          const total = clamp(parseInt(document.getElementById('countInput').value||'10',10),5,20);
+          reset(total);
+          play.list = play.ai ? await generateWithAI(total) : pickQuestions(total);
+          render();
+        }
+
+        function clamp(n,min,max){ return Math.max(min, Math.min(max, n)); }
+
+        function render(){
+          const q = play.list[play.idx];
+          if(!q){
+            qEl.textContent = 'Could not load questions. Please tap Restart.';
+            return;
+          }
+          qEl.textContent = q.q;
+          qCounter.textContent = `Q ${play.idx+1} of ${play.total}`;
+          qCategory.textContent = `Category: ${labelCat(q.cat)}`;
+          qDifficulty.textContent = `Level: ${q.difficulty}`;
+          bar.style.width = `${(play.idx)/(play.total)*100}%`;
+          cEl.innerHTML = '';
+          eEl.classList.add('hidden'); eEl.textContent = '';
+          nextBtn.disabled = true;
+          play.answered = false;
+
+          q.options.forEach((opt, i) => {
+            const btn = document.createElement('button');
+            btn.className = 'choice';
+            btn.setAttribute('role','button');
+            btn.setAttribute('aria-pressed','false');
+            btn.innerHTML = `<span class="key">${String.fromCharCode(65+i)}</span><span>${opt}</span>`;
+            btn.addEventListener('click', () => handleAnswer(i));
+            cEl.appendChild(btn);
+          });
+        }
+
+        function labelCat(id){ return (CATS.find(c=>c.id===id)||{}).label || id; }
+
+        function handleAnswer(i){
+          if(play.answered) return;
+          play.answered = true;
+          const q = play.list[play.idx];
+          const nodes = Array.from(cEl.children);
+          nodes.forEach((btn, idx) => {
+            btn.disabled = true;
+            if(idx === q.answer){ btn.classList.add('correct'); }
+            if(idx === i && i !== q.answer){ btn.classList.add('incorrect'); }
+          });
+
+          const ok = i === q.answer;
+          if(ok){
+            play.correct++; play.streak++; play.score += 10 + Math.min(20, play.streak*2);
+            eEl.className = 'explain ok';
+          } else {
+            play.streak = 0; eEl.className = 'explain err';
+          }
+          eEl.innerHTML = `<strong>${ok ? 'Correct!' : 'Not quite.'}</strong> ${q.explain}`;
+          eEl.classList.remove('hidden');
+
+          correctNow.textContent = play.correct;
+          streakNow.textContent = play.streak;
+          scoreNow.textContent = play.score;
+
+          nextBtn.disabled = false;
+        }
+
+        document.getElementById('nextBtn').addEventListener('click', () => {
+          if(play.idx < play.total - 1){
+            play.idx++;
+            render();
+          } else {
+            finish();
+          }
+        });
+
+        document.getElementById('retryBtn').addEventListener('click', start);
+
+        function finish(){
+          bar.style.width = '100%';
+          document.getElementById('nextBtn').disabled = true; document.getElementById('retryBtn').classList.remove('hidden');
+          const pct = Math.round((play.correct / play.total) * 100);
+          let title = 'Fin Explorer';
+          let msg = 'Nice start! Keep playing to level up your money skills.';
+          if(pct >= 80){ title = 'Fin Genius'; msg = 'Stellar! You clearly know your finance basics and beyond.'; }
+          else if(pct >= 60){ title = 'Fin Smart'; msg = 'Good grasp! A few more laps and you’ll be unstoppable.'; }
+          else if(pct >= 40){ title = 'Fin Learner'; msg = 'On your way. Try another round and watch your score climb.'; }
+
+          const BEST_KEY = 'finterval_best';
+          if(true){
+            const best = parseInt(localStorage.getItem(BEST_KEY)||'0',10);
+            if(play.score > best){ localStorage.setItem(BEST_KEY, String(play.score)); updateBestBadge(); }
+          }
+
+          const shareText = `I scored ${play.score} (${pct}%) on Finterval – the Fun Finance quiz by Labham. Try it now!`;
+          document.getElementById('resultTitle').textContent = title;
+          document.getElementById('resultMsg').textContent = msg + ` Your FinScore: ${play.score} | Correct: ${play.correct}/${play.total}.`;
+          document.getElementById('whatsBtn').href = `https://wa.me/?text=${encodeURIComponent(shareText)}`;
+
+          document.getElementById('copyBtn').onclick = async () => {
+            try { await navigator.clipboard.writeText(shareText); const cb=document.getElementById('copyBtn'); cb.textContent = 'Copied!'; setTimeout(()=>cb.textContent='Copy Result', 1200);} catch(e){ alert('Copy failed'); }
+          };
+
+          document.getElementById('shareBtn').onclick = async () => {
+            try{
+              if(navigator.share){ await navigator.share({title:'Finterval – Labham', text: shareText}); }
+              else { alert('Sharing not supported on this device. Use WhatsApp or Copy.'); }
+            }catch(e){ }
+          };
+
+          document.getElementById('resultCard').style.display = 'block';
+        }
+
+        document.getElementById('startBtn').addEventListener('click', start);
+
+        document.getElementById('aiBtn').addEventListener('click', () => {
+          play.ai = !play.ai; document.getElementById('aiBtn').setAttribute('aria-pressed', String(play.ai));
+          document.getElementById('aiBtn').textContent = `AI Mode: ${play.ai ? 'On' : 'Off'}`;
+          start();
+        });
+
+        // Kick off initial render
+        start();
+      } catch(err){
+        const qEl = document.getElementById('question');
+        if(qEl){ qEl.textContent = 'There was a loading error on this device. Please tap Restart. (Details in console)'; }
+        console.error('Finterval error:', err);
+      }
+    }
+
+    if(document.readyState === 'loading'){
+      document.addEventListener('DOMContentLoaded', boot);
+    } else {
+      boot();
+    }
+  })();
+  </script>
+</body>
+</html>
