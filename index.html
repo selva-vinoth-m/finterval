@@ -124,6 +124,37 @@ html, body, .container, header, .grid,
 .card{
   background: rgba(255,255,255,.02); /* flat, no gradient */
 }
+    /* 1) Score tiles shouldn't react to touches at all */
+.stat { 
+  pointer-events: none;            /* prevents the press highlight band */
+}
+
+/* 2) Make sure no press/selection shade appears anywhere interactive */
+* { -webkit-tap-highlight-color: transparent; }
+.choice, .btn, .pill {
+  -webkit-user-select: none; user-select: none;
+  -webkit-touch-callout: none;
+}
+
+/* 3) Compositing fix for mobile (prevents odd banding while scrolling) */
+.card, .stat { 
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+
+/* 4) (Optional) Move the page gradients to a fixed layer to avoid any viewport shading */
+body { background: var(--bg); }
+body::before{
+  content:"";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background:
+    radial-gradient(1200px 800px at 10% -10%, rgba(37,99,235,.25), transparent 50%),
+    radial-gradient(900px 700px at 110% 10%, rgba(16,185,129,.18), transparent 50%),
+    var(--bg);
+}
 </style>
 </head>
 <body>
