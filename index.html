@@ -7,9 +7,9 @@
         saveBestScore: true
       };
 
-      // wire CTA under About
-      const book = document.getElementById('bookCallBottom');
-      if(book) book.href = CONFIG.bookCallURL;
+      // wire bottom CTA (About section)
+      const bc = document.getElementById('bookCallBottom');
+      if (bc) bc.href = CONFIG.bookCallURL;
 
       // categories
       const CATS = [
@@ -31,16 +31,16 @@
         catList.appendChild(w);
       });
 
-      // fallback local bank (used only if AI hiccups)
+      // small local fallback bank (used only if AI hiccups)
       const BANK = [
         {id:1, cat:'basics', difficulty:'Easy', q:'What does SIP stand for in mutual funds?', options:['Systematic Investment Plan','Savings & Insurance Plan','Secure Income Portfolio','Scheduled Investment Period'], answer:0, explain:'SIP = Systematic Investment Plan: you invest a fixed amount at regular intervals.'},
         {id:2, cat:'basics', difficulty:'Easy', q:'NAV in mutual funds refers to…', options:['Net Asset Value per unit','Net Annual Variation','Nominal Asset Value','Normalized Average Value'], answer:0, explain:'NAV is the per-unit market value of a mutual fund after accounting for expenses.'},
-        {id:3, cat:'invest', difficulty:'Easy', q:'ELSS funds typically have a mandatory lock-in of:', options:['1 year','3 years','5 years','No lock-in'], answer:1, explain:'Equity Linked Savings Schemes (ELSS) have a 3-year lock-in.'},
+        {id:3, cat:'invest', difficulty:'Easy', q:'ELSS funds typically have a mandatory lock-in of:', options:['1 year','3 years','5 years','No lock-in'], answer:1, explain:'ELSS has a 3-year lock-in.'},
       ];
 
       // state
       const QUESTION_TIME = 20; // seconds per question
-      const BATCH_SIZE = 10;    // fetch this many at a time
+      const BATCH_SIZE = 10;    // fetch this many AI questions at a time
       let play = { list: [], idx: 0, score: 0, correct: 0, streak: 0, answered: false, asked: 0, timerId: null };
 
       // dom
@@ -58,30 +58,27 @@
       const scoreNow = document.getElementById('scoreNow');
       const correctNow = document.getElementById('correctNow');
       const streakNow = document.getElementById('streakNow');
-
       document.getElementById('year').textContent = new Date().getFullYear();
 
+      // best score badge
       const BEST_KEY = 'finterval_best';
       function updateBestBadge(){
         const best = localStorage.getItem(BEST_KEY);
-        const badge = document.getElementById('bestBadge');
-        if(badge) badge.textContent = `Best FinScore: ${best ? best : '—'}`;
+        document.getElementById('bestBadge').textContent = `Best FinScore: ${best ? best : '—'}`;
       }
       updateBestBadge();
 
-      const shuffle = arr => arr.map(v=>[Math.random(),v]).sort((a,b)=>a[0]-b[0]).map(v=>v[1]);
-      function selectedCategories(){
-        return CATS.filter(c => document.getElementById(`cat_${c.id}`).checked).map(c=>c.id);
-      }
       function setAIStatus(s){ if(aiStatus) aiStatus.textContent = `AI: ${s}`; }
-
+      const shuffle = arr => arr.map(v=>[Math.random(),v]).sort((a,b)=>a[0]-b[0]).map(v=>v[1]);
+      function selectedCategories(){ return CATS.filter(c => document.getElementById(`cat_${c.id}`).checked).map(c=>c.id); }
       function pickQuestions(total){
         const cats = new Set(selectedCategories());
         let pool = BANK.filter(q => cats.has(q.cat));
-        if(pool.length === 0){ pool = BANK; }
+        if(pool.length === 0) pool = BANK;
         return shuffle(pool).slice(0,total);
       }
 
+      // your Apps Script URL
       const BACKEND_URL = "https://script.google.com/macros/s/AKfycbwqZyaWQ1pH9e5US0h69mSccgI2jneLkcwDGwe6Csrj9DbYva8gKevGn9oiLxDgnbQh/exec";
       async function generateWithAI(total){
         if(!BACKEND_URL){ setAIStatus('Not set'); return pickQuestions(total); }
@@ -91,9 +88,8 @@
           const r = await fetch(BACKEND_URL, { method:'POST', headers:{'Content-Type':'text/plain'}, body: JSON.stringify({ total }) });
           if(!r.ok){ setAIStatus('HTTP '+r.status); return pickQuestions(total); }
           txt = await r.text();
-        }catch(e){
-          console.error('AI fetch error', e); setAIStatus('Error'); return pickQuestions(total);
-        }
+        }catch(e){ console.error('AI fetch error', e); setAIStatus('Error'); return pickQuestions(total); }
+
         let s = (txt||'').trim();
         if(s.startsWith('```')) s = s.replace(/^```(?:json)?/i,'').replace(/```$/,'').trim();
         let out=null;
@@ -133,7 +129,7 @@
         stopTimer();
         let left = QUESTION_TIME; tsec.textContent = left; tbar.style.width = '100%';
         play.timerId = setInterval(() => {
-          left -= 0.1;
+          left -= 0.1; // update every 100ms
           if(left <= 0){ left = 0; tsec.textContent = 0; tbar.style.width = '0%'; stopTimer(); timeUp(); return; }
           tsec.textContent = Math.ceil(left);
           tbar.style.width = `${(left/QUESTION_TIME)*100}%`;
@@ -205,7 +201,7 @@
         try{
           if(navigator.share){ await navigator.share({title:'Finterval – Labham', text: shareText}); }
           else { await navigator.clipboard.writeText(shareText); alert('Result copied!'); }
-        }catch(e){}
+        }catch(e){ }
       };
 
       // go!
