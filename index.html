@@ -9,78 +9,83 @@
 
 <style>
 /* =========================================================
-   Finterval v2 (flat UI) — Sep 2025
-   - Clean header, no meta pills
-   - Larger options, Restart next to Next
-   - Share below FinScore
-   - Flat (no gradients/shades), no mobile highlight band
+   Finterval v2.1  (Sep 2025)
+   - No AI; local bank + optional questions.json
+   - Colorful background (like v1), flat cards
+   - Larger options & clean spacing
+   - Q n of 100; 10 pts each; no repeats within session
+   - RAF timer; numeric questions ≤ ~10% of session
    ========================================================= */
 :root{
-  --brand:#2563eb; --brand-600:#1d4ed8;
-  --bg:#0b1220; --card:#0f172a;
-  --muted:#94a3b8; --text:#e5e7eb;
-  --ok:#10b981; --err:#ef4444; --warn:#f59e0b;
-  --ring: 0 0 0 3px rgba(37,99,235,.35);
+  --brand:#2563eb; --brand-600:#1d4ed8; --brand-700:#1e40af;
+  --bg:#0b1220; --card:#0f172a; --muted:#94a3b8; --text:#e5e7eb;
+  --ok:#10b981; --err:#ef4444; --warn:#f59e0b; --ring:0 0 0 3px rgba(37,99,235,.35);
 }
 *{box-sizing:border-box; -webkit-tap-highlight-color:transparent}
 html,body{height:100%}
 body{
   margin:0;
   font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
-  background: var(--bg);
+  background:
+    radial-gradient(1200px 800px at 10% -10%, rgba(37,99,235,.25), transparent 50%),
+    radial-gradient(900px 700px at 110% 10%, rgba(16,185,129,.18), transparent 50%),
+    var(--bg);
   color:var(--text);
   -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale;
 }
 a{color:var(--brand)}
 
-.container{max-width:1040px; margin:0 auto; padding:24px}
-header{display:flex; align-items:center; gap:12px; flex-wrap:wrap; justify-content:space-between;}
-.brand{display:flex; align-items:center; gap:8px}
+.container{max-width:1040px; margin:0 auto; padding:28px}
+header{display:flex; align-items:flex-start; gap:16px; flex-wrap:wrap; justify-content:space-between;}
 .title{display:flex; flex-direction:column}
-.title h1{margin:0; letter-spacing:.3px; font-size: clamp(34px, 5.2vw, 64px); font-weight:900; line-height:1.05}
-.title .tagline{margin-top:4px; font-size:clamp(16px,2.2vw,22px); font-weight:700; color:#e2e8f0}
+.title h1{margin:0; letter-spacing:.3px; font-size: clamp(36px, 5.2vw, 64px); font-weight:900; line-height:1.05;
+  background:linear-gradient(90deg, var(--brand) 0%, #22c55e 100%); -webkit-background-clip:text; -webkit-text-fill-color:transparent}
+.title .tagline{margin-top:6px; font-size:clamp(16px,2.2vw,22px); font-weight:700; color:#e2e8f0}
 .title .powered{margin-top:2px; font-size:13px; color:var(--muted)}
-.badge{font-size:12px; padding:6px 10px; border-radius:999px; background:rgba(255,255,255,.04); color:#cbd5e1; border:1px solid rgba(255,255,255,.10)}
+.badge{font-size:12px; padding:6px 10px; border-radius:999px; background:rgba(37,99,235,.12); color:#cbd5e1; border:1px solid rgba(255,255,255,.10)}
 
-.card{background:var(--card); border:1px solid rgba(255,255,255,.10); border-radius:20px; padding:20px}
-.grid{display:grid; grid-template-columns:1fr; gap:28px; margin-top:24px}
+.grid{display:grid; grid-template-columns:1fr; gap:32px; margin-top:28px}
 @media(min-width:960px){ .grid{grid-template-columns:1.2fr .8fr} }
 
-button,.btn{appearance:none; border:1px solid rgba(255,255,255,.12); background:rgba(255,255,255,.04); color:var(--text); padding:12px 16px; border-radius:12px; cursor:pointer; font-weight:700}
-button:hover,.btn:hover{border-color:rgba(255,255,255,.24)}
-.btn-primary{background:var(--brand); border-color:var(--brand); color:#fff}
-.btn-primary:hover{background:var(--brand-600); border-color:var(--brand-600)}
-.controls{display:flex; gap:10px; flex-wrap:wrap; align-items:center}
+.card{background:linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,0)); border:1px solid rgba(255,255,255,.10); border-radius:20px; padding:24px}
 
-.counter{color:var(--muted); font-size:13px; margin-bottom:6px}
-.question{font-size: clamp(20px, 2.4vw, 26px); margin:4px 0 8px; line-height:1.35}
+button,.btn{appearance:none; border:1px solid rgba(255,255,255,.12); background: rgba(255,255,255,.06);
+  color:var(--text); padding:12px 16px; border-radius:12px; cursor:pointer; font-weight:700}
+button:hover,.btn:hover{border-color:rgba(255,255,255,.22)}
+.btn-primary{background:linear-gradient(180deg,var(--brand),var(--brand-700)); border-color:transparent; color:#fff}
+.btn-primary:hover{filter:brightness(1.05)}
 
-/* Options – bigger, easy to tap */
-.choices{display:grid; gap:12px; margin-top:12px}
-.choice{display:flex; align-items:center; gap:12px; width:100%; text-align:left; padding:16px; border-radius:14px; border:1px solid rgba(255,255,255,.12); background:transparent; font-size:18px}
+.counter{color:var(--muted); font-size:13px; margin-bottom:8px}
+.question{font-size: clamp(20px, 2.4vw, 26px); margin:6px 0 10px; line-height:1.35}
+
+/* Options – big & comfy */
+.choices{display:grid; gap:14px; margin-top:14px}
+.choice{display:flex; align-items:center; gap:14px; width:100%; text-align:left; padding:16px; border-radius:16px;
+  border:1px solid rgba(255,255,255,.12); background:rgba(255,255,255,.04); font-size:18px}
 .choice:focus-visible{outline:none; box-shadow:var(--ring)}
-.key{min-width:34px; height:34px; border-radius:8px; background:rgba(255,255,255,.08); display:grid; place-items:center; font-weight:800; color:#cbd5e1}
+.key{min-width:34px; height:34px; border-radius:10px; background:rgba(255,255,255,.10); display:grid; place-items:center; font-weight:800; color:#cbd5e1}
 .choice.correct{border-color:rgba(16,185,129,.65); background:rgba(16,185,129,.10)}
-.choice.incorrect{border-color:rgba(239,68,68,.65); background:rgba(239,68,68,.08)}
-/* Disable selection to avoid blue/grey bands on mobile */
+.choice.incorrect{border-color:rgba(239,68,68,.65); background:rgba(239,68,68,.10)}
 .choice, .choice *{user-select:none; -webkit-user-select:none; -webkit-touch-callout:none}
 
-.explain{margin-top:12px; padding:12px; border-left:4px solid rgba(255,255,255,.12); background:transparent; border-radius:10px}
+.explain{margin-top:14px; padding:12px; border-left:4px solid rgba(255,255,255,.18); background:rgba(255,255,255,.04); border-radius:10px}
 .explain.ok{border-left-color:var(--ok)}
 .explain.err{border-left-color:var(--err)}
 
-.side{display:grid; gap:16px; height:fit-content}
-.stat{display:flex; align-items:center; justify-content:space-between; gap:12px; padding:14px; border-radius:14px; border:1px solid rgba(255,255,255,.10); background:transparent; pointer-events:none}
+.controls{display:flex; gap:12px; flex-wrap:wrap; align-items:center; margin-top:14px}
+
+.side{display:grid; gap:18px}
+.stat{display:flex; align-items:center; justify-content:space-between; gap:12px; padding:16px; border-radius:16px; border:1px solid rgba(255,255,255,.10); background:rgba(255,255,255,.04)}
 .stat strong{font-size:20px}
 
-footer{margin:20px auto 8px; text-align:center; color:var(--muted); font-size:12px}
+footer{margin:22px auto 10px; text-align:center; color:var(--muted); font-size:12px}
 .small{font-size:12px; color:var(--muted)}
 .hidden{display:none !important}
 
-/* Timer – flat */
-.timerWrap{margin:10px 0 6px}
-.tline{height:8px; background:rgba(255,255,255,.10); border-radius:999px; overflow:hidden}
-#tbar{height:100%; width:100%; background:var(--warn); transform-origin:left center}
+/* Timer */
+.timerWrap{margin:12px 0 8px}
+.tline{height:10px; background:rgba(255,255,255,.10); border-radius:999px; overflow:hidden}
+#tbar{height:100%; width:100%; background:linear-gradient(90deg, var(--warn), var(--err)); transform-origin:left center}
 .ttext{margin-top:6px; font-size:13px; color:var(--muted)}
 </style>
 </head>
@@ -88,12 +93,10 @@ footer{margin:20px auto 8px; text-align:center; color:var(--muted); font-size:12
 <body>
   <div class="container">
     <header>
-      <div class="brand">
-        <div class="title">
-          <h1>Finterval</h1>
-          <div class="tagline">Your Fun Finance Break</div>
-          <div class="powered">Powered by Labham</div>
-        </div>
+      <div class="title">
+        <h1>Finterval</h1>
+        <div class="tagline">Your Fun Finance Break</div>
+        <div class="powered">Powered by Labham</div>
       </div>
       <span class="badge" id="bestBadge">Best FinScore: —</span>
     </header>
@@ -113,7 +116,7 @@ footer{margin:20px auto 8px; text-align:center; color:var(--muted); font-size:12
         <div id="choices" class="choices" role="group" aria-label="Answer choices"></div>
         <div id="explain" class="explain hidden"></div>
 
-        <div class="controls" style="margin-top:12px">
+        <div class="controls">
           <button id="nextBtn" class="btn-primary" disabled>Next</button>
           <button id="restartBtn" class="btn">Restart</button>
         </div>
@@ -126,8 +129,8 @@ footer{margin:20px auto 8px; text-align:center; color:var(--muted); font-size:12
           <div class="stat"><span>Score</span><strong id="scoreNow">0</strong></div>
           <div class="stat"><span>Correct</span><strong id="correctNow">0</strong></div>
           <div class="stat"><span>Streak</span><strong id="streakNow">0</strong></div>
-          <div class="controls">
-            <button id="shareBtn" class="btn" title="Share your FinScore">Share</button>
+          <div class="controls" style="margin-top:12px">
+            <button id="shareBtn" class="btn-primary" title="Share your FinScore">Share</button>
           </div>
         </section>
 
@@ -142,32 +145,26 @@ footer{margin:20px auto 8px; text-align:center; color:var(--muted); font-size:12
       </aside>
     </div>
 
-    <footer>
-      © <span id="year"></span> Labham • <span class="small">Made with ❤ for clarity in money matters.</span>
-    </footer>
+    <footer>© <span id="year"></span> Labham • <span class="small">Made with ❤ for clarity in money matters.</span></footer>
   </div>
 
   <noscript><div style="max-width:1040px;margin:8px auto;color:#ef4444;padding:8px 12px;border:1px solid rgba(239,68,68,.45);border-radius:10px;background:rgba(239,68,68,.08)">JavaScript is required to run Finterval. Please enable it in your browser.</div></noscript>
 
 <script>
 /* =========================================================
-   Finterval v2 logic
-   - Non-repeating questions within a session
-   - 10 points per correct (no streak bonus)
-   - Option order shuffled per question (fixes B/C bias)
-   - Smooth RAF timer (no back/forth)
-   - Fixed-length session: 100 Q (shows 1/100, 2/100…)
-   - Share text updated with link
-   - AI backend optional, falls back to local 300-question bank
+   FUNCTIONALITIES (v2.1)
+   ---------------------------------------------------------
+   CONFIG: tweak session size & timer
+   BANK:   edit/add Qs here (or in /questions.json)
+   FLOW:   non-repeating, 10 pts per correct, RAF timer
    ========================================================= */
 (function(){
   // ---------- CONFIG ----------
   const CONFIG = {
-    SESSION_TOTAL: 100,                      // show 1/100, 2/100…
-    TIME_PER_Q: 20,                          // seconds
-    BACKEND_URL: "https://script.google.com/macros/s/AKfycbwqZyaWQ1pH9e5US0h69mSccgI2jneLkcwDGwe6Csrj9DbYva8gKevGn9oiLxDgnbQh/exec",
-    USE_AI: true,                            // try AI first
-    AI_BATCH: 50                             // how many to ask from AI in one call
+    SESSION_TOTAL: 100,       // Shows "Q n of 100"
+    TIME_PER_Q: 20,           // seconds
+    EXTERNAL_BANK_URL: 'questions.json', // optional; same folder
+    COMPUTED_CAP_RATIO: 0.10  // numeric/compute items ≤ 10% of session
   };
 
   // ---------- DOM ----------
@@ -191,105 +188,98 @@ footer{margin:20px auto 8px; text-align:center; color:var(--muted); font-size:12
     `Best FinScore: ${localStorage.getItem(BEST_KEY) || '—'}`;
 
   // ---------- UTILS ----------
-  const rnd = (min,max)=> Math.floor(Math.random()*(max-min+1))+min;
-  const shuffleInPlace = (a)=>{
-    for(let i=a.length-1;i>0;i--){ const j=Math.floor(Math.random()*(i+1)); [a[i],a[j]]=[a[j],a[i]]; }
-    return a;
-  };
   const clamp=(n,min,max)=>Math.max(min,Math.min(max,n));
+  const rnd=(min,max)=> Math.floor(Math.random()*(max-min+1))+min;
+  function shuffle(a){ for(let i=a.length-1;i>0;i--){ const j=(Math.random()* (i+1))|0; [a[i],a[j]]=[a[j],a[i]]; } return a; }
 
-  // ---------- BANK (base) ----------
-  // Small curated base:
-  const BASE = [
-    {cat:'basics',difficulty:'Easy',q:'What does SIP stand for in mutual funds?',options:['Systematic Investment Plan','Savings & Insurance Plan','Secure Income Portfolio','Scheduled Investment Period'],answer:0,explain:'SIP = investing a fixed amount at regular intervals.'},
-    {cat:'invest',difficulty:'Easy',q:'ELSS mutual funds have a mandatory lock-in of:',options:['1 year','3 years','5 years','No lock-in'],answer:1,explain:'ELSS lock-in is 3 years.'},
-    {cat:'tax',difficulty:'Easy',q:'KYC stands for:',options:['Know Your Customer','Keep Your Credit','Key Yield Certificate','Know Your Capital'],answer:0,explain:'Customer identification before investing.'},
-    {cat:'india',difficulty:'Easy',q:'India’s capital market regulator is:',options:['RBI','SEBI','IRDAI','PFRDA'],answer:1,explain:'SEBI regulates securities markets.'},
+  // ---------- LOCAL BANK ----------
+  // Add as many as you like. Schema:
+  // {cat:'basics|invest|tax|india|banking|money', difficulty:'Easy|Medium', q:'Question?', options:['A','B','C','D'], answer:0-3, explain:'1–2 lines'}
+  const LOCAL_BANK = [
+    // --- Personal Finance Basics ---
+    {cat:'basics',difficulty:'Easy',q:'What does SIP stand for in mutual funds?',options:['Systematic Investment Plan','Savings & Insurance Plan','Secure Income Portfolio','Scheduled Investment Period'],answer:0,explain:'Invest a fixed amount at regular intervals.'},
     {cat:'basics',difficulty:'Easy',q:'CAGR stands for:',options:['Cumulative Annual Gross Return','Compound Annual Growth Rate','Computed Average Growth Rate','Consolidated Annual Gain Rate'],answer:1,explain:'Smoothed annual growth rate with compounding.'},
-    {cat:'invest',difficulty:'Easy',q:'Index funds primarily aim to:',options:['Beat the market','Replicate a benchmark','Hold only bonds','Time the market'],answer:1,explain:'They track an index like Nifty 50.'},
-    {cat:'basics',difficulty:'Medium',q:'Diversification mainly reduces:',options:['Systematic (market) risk','Unsystematic (stock-specific) risk','Taxes','Inflation'],answer:1,explain:'Company/sector specific risk gets diversified.'},
-    {cat:'india',difficulty:'Easy',q:'PPF typically matures in:',options:['5 years','10 years','15 years','20 years'],answer:2,explain:'15-year maturity with extension options.'},
-    {cat:'invest',difficulty:'Medium',q:'Expense ratio of a fund:',options:['Increases net returns','Reduces net returns','No impact','Paid by government'],answer:1,explain:'Fees are deducted from assets.'},
-    {cat:'basics',difficulty:'Easy',q:'An emergency fund is typically:',options:['Illiquid investment','3–6 months of expenses','2 years of salary','Crypto only'],answer:1,explain:'Safety + liquidity is key.'}
+    {cat:'basics',difficulty:'Medium',q:'Diversification mainly reduces:',options:['Systematic (market) risk','Unsystematic (stock-specific) risk','Taxes','Inflation'],answer:1,explain:'Company/sector-specific risk gets diversified.'},
+    {cat:'basics',difficulty:'Easy',q:'A good emergency corpus thumb rule is:',options:['1 month income','3–6 months expenses','2 years income','No rule'],answer:1,explain:'Safety + liquidity for unexpected events.'},
+    {cat:'money',difficulty:'Easy',q:'Liquidity of an investment means:',options:['Guaranteed return','Ease of converting to cash','Tax treatment','Risk rating'],answer:1,explain:'More liquid = easier access to money.'},
+    {cat:'money',difficulty:'Easy',q:'Which is NOT a fixed-income product?',options:['Equity shares','Government bond','Bank FD','Treasury bill'],answer:0,explain:'Equity is ownership, not lending.'},
+
+    // --- Investing / Mutual Funds ---
+    {cat:'invest',difficulty:'Easy',q:'ELSS lock-in period is:',options:['1 year','3 years','5 years','No lock-in'],answer:1,explain:'ELSS has a 3-year lock-in (80C).'},
+    {cat:'invest',difficulty:'Easy',q:'Index funds primarily aim to:',options:['Beat the market','Replicate a benchmark','Hold only bonds','Time the market'],answer:1,explain:'They track indices like Nifty 50.'},
+    {cat:'invest',difficulty:'Medium',q:'Expense ratio of a fund:',options:['Increases net returns','Reduces net returns','No impact','Paid by govt'],answer:1,explain:'Fees are deducted from assets.'},
+    {cat:'invest',difficulty:'Easy',q:'STP stands for:',options:['Systematic Transfer Plan','Short Term Profit','Stock Trading Plan','Systematic Tax Plan'],answer:0,explain:'Transfers a fixed amount between schemes.'},
+    {cat:'invest',difficulty:'Easy',q:'SWP stands for:',options:['Smart Wealth Program','Systematic Withdrawal Plan','Secure Wealth Policy','Savings With Profit'],answer:1,explain:'Withdraw a fixed amount periodically.'},
+    {cat:'invest',difficulty:'Medium',q:'Tracking error measures:',options:['How closely an index fund follows its benchmark','Brokerage fee','IPO gains','Exit load percent'],answer:0,explain:'Lower tracking error is better.'},
+
+    // --- Tax & Jargon ---
+    {cat:'tax',difficulty:'Easy',q:'KYC stands for:',options:['Know Your Customer','Keep Your Credit','Key Yield Certificate','Know Your Capital'],answer:0,explain:'Customer verification before investing.'},
+    {cat:'tax',difficulty:'Easy',q:'ELSS qualifies for deduction under:',options:['Section 24(b)','Section 80C','Section 80D','Section 80G'],answer:1,explain:'Investments can be claimed u/s 80C.'},
+    {cat:'tax',difficulty:'Medium',q:'PPF enjoys which tax treatment (current framework)?',options:['EEE (exempt at all stages)','EET','TTE','TET'],answer:0,explain:'Contribution, interest, and maturity exempt.'},
+
+    // --- India / Banking ---
+    {cat:'india',difficulty:'Easy',q:'India’s securities market regulator is:',options:['RBI','SEBI','IRDAI','PFRDA'],answer:1,explain:'Securities and Exchange Board of India.'},
+    {cat:'india',difficulty:'Easy',q:'PPF maturity period is typically:',options:['5 years','10 years','15 years','20 years'],answer:2,explain:'15-year maturity with extension option.'},
+    {cat:'banking',difficulty:'Easy',q:'UPI stands for:',options:['Unified Payments Interface','Universal Payment Instruction','User Payment Index','Unified Pricing Info'],answer:0,explain:'Real-time mobile payments.'},
+    {cat:'banking',difficulty:'Medium',q:'DICGC insures bank deposits up to:',options:['₹1 lakh','₹2 lakh','₹5 lakh','Unlimited'],answer:2,explain:'Per depositor per bank (current framework).'},
+    {cat:'india',difficulty:'Medium',q:'SGB normal maturity is:',options:['3 years','5 years','8 years','12 years'],answer:2,explain:'8-year tenure with early exit windows.'},
+
+    /* — Add more Qs above this line —
+       Tip: keep options exactly 4, and answer = 0..3 (index of correct option). */
   ];
 
-  // Programmatic generator for extra unique Qs (no AI)
-  function makeComputedBank(n=220){
+  // ---------- OPTIONAL: load /questions.json & merge ----------
+  async function loadExternalBank(){
+    try{
+      const r = await fetch(CONFIG.EXTERNAL_BANK_URL, {cache:'no-store'});
+      if(!r.ok) return [];
+      const j = await r.json();
+      return Array.isArray(j) ? j.filter(x => x && x.q && Array.isArray(x.options) && x.options.length===4) : [];
+    }catch{ return []; }
+  }
+
+  // ---------- Computed questions (kept ≤ 10% of session) ----------
+  function makeComputed(n){
     const out=[];
-    for(let k=0;k<n;k++){
-      const kind = k%4;
+    for(let i=0;i<n;i++){
+      const kind = i%2;
       if(kind===0){
-        // CAGR from start to end over years
-        const start = rnd(10,200)*1000;
-        const years = rnd(2,8);
-        const rate  = rnd(6,15);
-        const end   = Math.round(start*Math.pow(1+rate/100,years));
-        const ans   = rate;
-        const opts  = shuffleInPlace([ans, ans+rnd(1,4), Math.max(2,ans-rnd(1,4)), ans+rnd(5,8)]);
-        out.push({
-          cat:'basics', difficulty:'Medium',
-          q:`If ₹${start.toLocaleString()} grows to about ₹${end.toLocaleString()} in ${years} years, the CAGR is closest to:`,
-          options: opts.map(x=>`${x}%`),
-          answer: opts.indexOf(ans),
-          explain:`CAGR ≈ (End/Start)^(1/${years}) − 1 ≈ ${ans}%.`
-        });
-      } else if(kind===1){
-        // Future value with compounding
-        const p=rnd(5,50)*1000, r=rnd(5,12), y=rnd(2,7);
-        const fv=Math.round(p*Math.pow(1+r/100,y));
-        const opts=shuffleInPlace([fv, Math.round(fv*0.9), Math.round(fv*1.1), Math.round(fv*0.8)]);
+        // Simple compounding MCQ (FV) — rounded
+        const p = (rnd(5,50)*1000);
+        const r = rnd(6,12);
+        const y = rnd(2,6);
+        const fv = Math.round(p*Math.pow(1+r/100,y)/100)*100;
+        const opts = shuffle([fv, Math.round(fv*0.9/100)*100, Math.round(fv*1.1/100)*100, Math.round(fv*0.8/100)*100]);
         out.push({
           cat:'invest', difficulty:'Easy',
-          q:`Approx future value of ₹${p.toLocaleString()} at ${r}% p.a. for ${y} years (annual compounding)?`,
-          options: opts.map(v=>"₹"+v.toLocaleString()),
+          q:`Approx future value of ₹${p.toLocaleString()} at ${r}% p.a. for ${y} years (annual compounding):`,
+          options: opts.map(v=>'₹'+v.toLocaleString()),
           answer: opts.indexOf(fv),
-          explain:`FV = P×(1+r)^n.`
-        });
-      } else if(kind===2){
-        // Risk order
-        const sets = [
-          {q:'Which is typically the lowest short-term risk?', opts:['Overnight fund','Small-cap equity','Crypto','Sectoral equity'], ans:0, cat:'invest'},
-          {q:'Which is generally the highest short-term volatility?', opts:['Liquid fund','Arbitrage fund','Equity small-cap fund','Overnight fund'], ans:2, cat:'invest'},
-          {q:'A suitable parking place for emergency corpus is usually:', opts:['Equity mid-cap','Liquid/Overnight fund','Real estate','Penny stocks'], ans:1, cat:'basics'}
-        ];
-        const pick = sets[rnd(0,sets.length-1)];
-        const order = shuffleInPlace([0,1,2,3]);
-        out.push({
-          cat:pick.cat, difficulty:'Easy',
-          q:pick.q,
-          options: order.map(i=>pick.opts[i]),
-          answer: order.indexOf(pick.ans),
-          explain:'Based on typical risk characteristics.'
+          explain:'FV ≈ P×(1+r)^n (rounded).'
         });
       } else {
-        // India finance trivia set
+        // Quick risk/fit questions
         const sets = [
-          {q:'Who regulates securities markets in India?', opts:['RBI','SEBI','IRDAI','PFRDA'], ans:1},
-          {q:'ELSS lock-in period is:', opts:['1 year','3 years','5 years','No lock-in'], ans:1},
-          {q:'UPI stands for:', opts:['Unified Payments Interface','Universal Payment Instruction','User Payment Index','Unified Pricing Info'], ans:0},
-          {q:'SGB normal maturity is:', opts:['3 years','5 years','8 years','12 years'], ans:2}
+          {q:'A suitable place for emergency funds is usually:', opts:['Equity small-cap fund','Liquid/Overnight fund','Crypto','Sectoral equity'], ans:1},
+          {q:'Lower short-term risk among these is typically:', opts:['Overnight fund','Small-cap equity','Crypto','Theme fund'], ans:0}
         ];
-        const pick=sets[rnd(0,sets.length-1)];
-        const order=shuffleInPlace([0,1,2,3]);
+        const pick = sets[rnd(0,sets.length-1)];
+        const order = shuffle([0,1,2,3]);
         out.push({
-          cat:'india', difficulty:'Easy',
-          q:pick.q,
-          options:order.map(i=>pick.opts[i]),
-          answer:order.indexOf(pick.ans),
-          explain:'Standard Indian finance fact.'
+          cat:'basics', difficulty:'Easy',
+          q:pick.q, options:order.map(i=>pick.opts[i]),
+          answer: order.indexOf(pick.ans),
+          explain:'Based on typical risk/liquidity characteristics.'
         });
       }
     }
     return out;
   }
 
-  // Build a ~300-question local pool
-  const LOCAL_BANK = BASE.concat(makeComputedBank(290 - BASE.length)); // ≈290–300 total
-
   // ---------- STATE ----------
   const state = {
     sessionTotal: CONFIG.SESSION_TOTAL,
-    list: [],           // questions for this session (AI + local), prebuilt without repeats
+    list: [],
     idx: 0,
     score: 0,
     correct: 0,
@@ -299,79 +289,62 @@ footer{margin:20px auto 8px; text-align:center; color:var(--muted); font-size:12
     endTime: 0
   };
 
-  // ---------- AI fetch (optional) ----------
-  async function getAIQuestions(want){
-    if(!CONFIG.USE_AI || !CONFIG.BACKEND_URL) return [];
-    try{
-      const r = await fetch(CONFIG.BACKEND_URL, {
-        method:'POST',
-        headers:{'Content-Type':'text/plain'},
-        body: JSON.stringify({ total: clamp(want, 1, CONFIG.AI_BATCH) })
-      });
-      const txt = await r.text();
-      let arr=[]; try{ arr=JSON.parse(txt); }catch{ /* ignore */ }
-      if(!Array.isArray(arr)) return [];
-      // sanitize & cap to 4 options
-      return arr.map((x,i)=>({
-        id: 90000+i,
-        cat: x.cat || 'basics',
-        difficulty: x.difficulty || 'Easy',
-        q: String(x.q||''),
-        options: Array.isArray(x.options) ? x.options.slice(0,4).map(String) : [],
-        answer: Number.isInteger(x.answer) ? x.answer : 0,
-        explain: String(x.explain||'')
-      })).filter(q=>q.q && q.options.length===4);
-    }catch(e){
-      return [];
+  // ---------- TIMER (RAF) ----------
+  function stopTimer(){ if(state.rafId){ cancelAnimationFrame(state.rafId); state.rafId=null; } }
+  function startTimer(){
+    stopTimer();
+    const dur = CONFIG.TIME_PER_Q*1000;
+    const start = performance.now();
+    state.endTime = start + dur;
+    function tick(now){
+      const left = Math.max(0, state.endTime - now);
+      tsec.textContent = Math.ceil(left/1000);
+      const pct = left/dur;
+      tbar.style.transform = `scaleX(${pct})`;
+      if(left<=0){ stopTimer(); timeUp(); return; }
+      state.rafId = requestAnimationFrame(tick);
     }
+    tbar.style.transform = 'scaleX(1)';
+    state.rafId = requestAnimationFrame(tick);
   }
 
-  // ---------- Session builder (no repeats) ----------
+  // ---------- BUILD SESSION (no repeats; ≤10% computed) ----------
   async function buildSession(){
-    // try AI first
-    const ai = await getAIQuestions(state.sessionTotal);
-    const pool = ai.concat(LOCAL_BANK); // fallback appended
-    // dedupe by "q" text
+    const external = await loadExternalBank();          // 0..N from questions.json
+    const pool = external.concat(LOCAL_BANK);
+
+    // de-dup by normalized text
+    const uniq = [];
     const seen = new Set();
-    const session=[];
     for(const q of pool){
       if(!q || !q.q) continue;
       const key = q.q.trim().toLowerCase();
       if(seen.has(key)) continue;
       seen.add(key);
-      // shuffle options per question to avoid B/C bias
-      const order=[0,1,2,3]; shuffleInPlace(order);
-      const shuffled=order.map(i=>q.options[i]);
-      const ans=order.indexOf(q.answer);
-      session.push({cat:q.cat,difficulty:q.difficulty,q:q.q,options:shuffled,answer:ans,explain:q.explain});
-      if(session.length>=state.sessionTotal) break;
+      uniq.push(q);
     }
+
+    // limit computed questions to ≤10% of session
+    const maxComputed = Math.floor(CONFIG.SESSION_TOTAL * CONFIG.COMPUTED_CAP_RATIO);
+    const computed = makeComputed(maxComputed);
+
+    // pick rest from bank randomly
+    shuffle(uniq);
+    const needFromBank = CONFIG.SESSION_TOTAL - computed.length;
+    const picked = uniq.slice(0, Math.max(0, needFromBank));
+
+    // combine & shuffle; also shuffle options per question
+    const session = shuffle(picked.concat(computed)).slice(0, CONFIG.SESSION_TOTAL).map(q=>{
+      const order = [0,1,2,3]; shuffle(order);
+      const opts = order.map(i=>q.options[i]);
+      const ans  = order.indexOf(q.answer);
+      return {cat:q.cat||'basics', difficulty:q.difficulty||'Easy', q:q.q, options:opts, answer:ans, explain:q.explain||''};
+    });
+
     return session;
   }
 
-  // ---------- Timer (requestAnimationFrame – smooth, no oscillation) ----------
-  function stopTimer(){ if(state.rafId){ cancelAnimationFrame(state.rafId); state.rafId=null; } }
-  function startTimer(){
-    stopTimer();
-    const durMs = CONFIG.TIME_PER_Q*1000;
-    const start = performance.now();
-    state.endTime = start + durMs;
-
-    function tick(now){
-      const left = Math.max(0, state.endTime - now);
-      tsec.textContent = Math.ceil(left/1000);
-      const pct = left / durMs;
-      // set width via transform (smoother)
-      tbar.style.transform = `scaleX(${pct})`;
-      if(left<=0){ stopTimer(); timeUp(); return; }
-      state.rafId = requestAnimationFrame(tick);
-    }
-    // reset bar and begin
-    tbar.style.transform = 'scaleX(1)';
-    state.rafId = requestAnimationFrame(tick);
-  }
-
-  // ---------- Rendering ----------
+  // ---------- RENDER ----------
   function render(){
     const q = state.list[state.idx];
     if(!q){ qEl.textContent='Loading…'; nextBtn.disabled=true; return; }
@@ -383,9 +356,9 @@ footer{margin:20px auto 8px; text-align:center; color:var(--muted); font-size:12
     state.answered = false;
 
     q.options.forEach((opt,i)=>{
-      const btn=document.createElement('button');
+      const btn = document.createElement('button');
       btn.className='choice';
-      btn.innerHTML=`<span class="key">${String.fromCharCode(65+i)}</span><span>${opt}</span>`;
+      btn.innerHTML = `<span class="key">${String.fromCharCode(65+i)}</span><span>${opt}</span>`;
       btn.addEventListener('click',()=>handleAnswer(i));
       cEl.appendChild(btn);
     });
@@ -399,8 +372,7 @@ footer{margin:20px auto 8px; text-align:center; color:var(--muted); font-size:12
     stopTimer();
 
     const q = state.list[state.idx];
-    const nodes = Array.from(cEl.children);
-    nodes.forEach((btn,idx)=>{
+    Array.from(cEl.children).forEach((btn,idx)=>{
       btn.disabled = true;
       if(idx===q.answer) btn.classList.add('correct');
       if(idx===i && i!==q.answer) btn.classList.add('incorrect');
@@ -409,14 +381,13 @@ footer{margin:20px auto 8px; text-align:center; color:var(--muted); font-size:12
     const ok = i===q.answer;
     if(ok){ state.correct++; state.streak++; state.score += 10; eEl.className='explain ok'; }
     else  { state.streak=0; eEl.className='explain err'; }
-    eEl.innerHTML = `<strong>${ok ? 'Correct!' : 'Not quite.'}</strong> ${q.explain||''}`;
+    eEl.innerHTML = `<strong>${ok ? 'Correct!' : 'Not quite.'}</strong> ${q.explain}`;
     eEl.classList.remove('hidden');
 
     correctNow.textContent = state.correct;
     streakNow.textContent  = state.streak;
     scoreNow.textContent   = state.score;
 
-    // Update best
     const best = parseInt(localStorage.getItem(BEST_KEY)||'0',10);
     if(state.score>best){
       localStorage.setItem(BEST_KEY, String(state.score));
@@ -432,12 +403,12 @@ footer{margin:20px auto 8px; text-align:center; color:var(--muted); font-size:12
     const q = state.list[state.idx];
     Array.from(cEl.children).forEach((btn,idx)=>{ btn.disabled=true; if(idx===q.answer) btn.classList.add('correct'); });
     state.streak=0; eEl.className='explain err';
-    eEl.innerHTML = `<strong>Time’s up!</strong> ${q.explain||''}`;
+    eEl.innerHTML = `<strong>Time’s up!</strong> ${q.explain}`;
     eEl.classList.remove('hidden');
     nextBtn.disabled = false;
   }
 
-  // ---------- Flow ----------
+  // ---------- FLOW ----------
   nextBtn.addEventListener('click',()=>{
     if(state.idx < state.sessionTotal-1){
       state.idx++;
@@ -474,12 +445,11 @@ footer{margin:20px auto 8px; text-align:center; color:var(--muted); font-size:12
     scoreNow.textContent=0; correctNow.textContent=0; streakNow.textContent=0;
     eEl.classList.add('hidden'); eEl.textContent='';
     qEl.textContent='Loading…';
-    // Build a new non-repeating session
-    state.list = await buildSession();
+    state.list = await buildSession();   // build from local + optional json
     render();
   }
 
-  // boot!
+  // boot
   start();
 })();
 </script>
