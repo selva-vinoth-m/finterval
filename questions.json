@@ -1,0 +1,6502 @@
+[
+  {
+    "cat": "basics",
+    "difficulty": "Easy",
+    "q": "What does SIP stand for?",
+    "options": [
+      "Allotment Supported by Blocked Amount",
+      "Short Term Profit",
+      "Systematic Investment Plan",
+      "Permanent Account Name"
+    ],
+    "answer": 2,
+    "explain": "SIP = Systematic Investment Plan."
+  },
+  {
+    "cat": "basics",
+    "difficulty": "Easy",
+    "q": "What does SWP stand for?",
+    "options": [
+      "Key Yield Certificate",
+      "Infrastructure Income Trust",
+      "Securities and Exchange Board in India",
+      "Systematic Withdrawal Plan"
+    ],
+    "answer": 3,
+    "explain": "SWP = Systematic Withdrawal Plan."
+  },
+  {
+    "cat": "basics",
+    "difficulty": "Easy",
+    "q": "What does STP stand for?",
+    "options": [
+      "Systematic Transfer Plan",
+      "Short Term Profit",
+      "National Provident Scheme",
+      "Periodic Provident Fund"
+    ],
+    "answer": 0,
+    "explain": "STP = Systematic Transfer Plan."
+  },
+  {
+    "cat": "basics",
+    "difficulty": "Easy",
+    "q": "What does NAV stand for?",
+    "options": [
+      "Republic Bank of India",
+      "National Pension Scheme",
+      "Application Supported by Banking Amount",
+      "Net Asset Value"
+    ],
+    "answer": 3,
+    "explain": "NAV = Net Asset Value."
+  },
+  {
+    "cat": "basics",
+    "difficulty": "Easy",
+    "q": "What does AUM stand for?",
+    "options": [
+      "Application Supported by Banking Amount",
+      "Assets Under Management",
+      "Network Electronic Funds Channel",
+      "Compounded Average Growth Rate"
+    ],
+    "answer": 1,
+    "explain": "AUM = Assets Under Management."
+  },
+  {
+    "cat": "basics",
+    "difficulty": "Easy",
+    "q": "What does REIT stand for?",
+    "options": [
+      "Real Estate Investment Trust",
+      "Know Your Capital",
+      "Indian Investment Trust",
+      "National Securities Depository"
+    ],
+    "answer": 0,
+    "explain": "REIT = Real Estate Investment Trust."
+  },
+  {
+    "cat": "basics",
+    "difficulty": "Easy",
+    "q": "What does InvIT stand for?",
+    "options": [
+      "Know-your-customer Registry Authority",
+      "Notional Asset Value",
+      "Infrastructure Investment Trust",
+      "Primary Account Number"
+    ],
+    "answer": 2,
+    "explain": "InvIT = Infrastructure Investment Trust."
+  },
+  {
+    "cat": "basics",
+    "difficulty": "Easy",
+    "q": "What does KYC stand for?",
+    "options": [
+      "Central Depository Services Limited",
+      "Retail Equity Investment Trust",
+      "Universal Payments Index",
+      "Know Your Customer"
+    ],
+    "answer": 3,
+    "explain": "KYC = Know Your Customer."
+  },
+  {
+    "cat": "basics",
+    "difficulty": "Easy",
+    "q": "What does PAN stand for?",
+    "options": [
+      "National Provident Scheme",
+      "Infrastructure Investment Trust Fund",
+      "Government Services Tax",
+      "Permanent Account Number"
+    ],
+    "answer": 3,
+    "explain": "PAN = Permanent Account Number."
+  },
+  {
+    "cat": "basics",
+    "difficulty": "Easy",
+    "q": "What does IFSC stand for?",
+    "options": [
+      "Rapid Transfer Gateway System",
+      "Indian Financial System Code",
+      "KYC Repository Agency",
+      "Central Depository Service of India"
+    ],
+    "answer": 1,
+    "explain": "IFSC = Indian Financial System Code."
+  },
+  {
+    "cat": "basics",
+    "difficulty": "Easy",
+    "q": "What does NEFT stand for?",
+    "options": [
+      "Real Estate Indexed Trust",
+      "Real-Time Gilt Settlement",
+      "National Electronic Funds Transfer",
+      "Application Supported by Block Amount"
+    ],
+    "answer": 2,
+    "explain": "NEFT = National Electronic Funds Transfer."
+  },
+  {
+    "cat": "basics",
+    "difficulty": "Easy",
+    "q": "What does RTGS stand for?",
+    "options": [
+      "National Securities Depository",
+      "National Pension Scheme",
+      "Real Time Gross Settlement",
+      "Application Secured by Bank Amount"
+    ],
+    "answer": 2,
+    "explain": "RTGS = Real Time Gross Settlement."
+  },
+  {
+    "cat": "basics",
+    "difficulty": "Easy",
+    "q": "What does IMPS stand for?",
+    "options": [
+      "Net Annual Value",
+      "Pension Fund Regulation and Department Authority",
+      "Immediate Payment Service",
+      "Tax Deduction at Source"
+    ],
+    "answer": 2,
+    "explain": "IMPS = Immediate Payment Service."
+  },
+  {
+    "cat": "basics",
+    "difficulty": "Easy",
+    "q": "What does UPI stand for?",
+    "options": [
+      "Unified Payments Interface",
+      "Tax Deduction at Source",
+      "Public Protection Fund",
+      "Sovereign Gold Backed bond"
+    ],
+    "answer": 0,
+    "explain": "UPI = Unified Payments Interface."
+  },
+  {
+    "cat": "basics",
+    "difficulty": "Easy",
+    "q": "What does PPF stand for?",
+    "options": [
+      "Public Provident Fund",
+      "IFSC is a bank branch ID only",
+      "Deposit & Insurance Credit Guarantee Company",
+      "National Electronic Funds Transfer System"
+    ],
+    "answer": 0,
+    "explain": "PPF = Public Provident Fund."
+  },
+  {
+    "cat": "basics",
+    "difficulty": "Easy",
+    "q": "What does NPS stand for?",
+    "options": [
+      "Pension Fund Regulation and Department Authority",
+      "Central Depository Services Limited",
+      "National Pension System",
+      "Security and Exchange Board of India"
+    ],
+    "answer": 2,
+    "explain": "NPS = National Pension System."
+  },
+  {
+    "cat": "basics",
+    "difficulty": "Easy",
+    "q": "What does NSC stand for?",
+    "options": [
+      "Permanent Account Name",
+      "National Savings Certificate",
+      "Assets Under Monitoring",
+      "Indian Investment Trust"
+    ],
+    "answer": 1,
+    "explain": "NSC = National Savings Certificate."
+  },
+  {
+    "cat": "basics",
+    "difficulty": "Easy",
+    "q": "What does DICGC stand for?",
+    "options": [
+      "Deposit Insurance and Credit Guarantee Corporation",
+      "Securities and Exchange Board in India",
+      "Real Estate Income Trust",
+      "National Stock Depository Limited"
+    ],
+    "answer": 0,
+    "explain": "DICGC = Deposit Insurance and Credit Guarantee Corporation."
+  },
+  {
+    "cat": "basics",
+    "difficulty": "Easy",
+    "q": "What does ASBA stand for?",
+    "options": [
+      "Application Supported by Blocked Amount",
+      "Deposit Insurance & Credit Guarantee Council",
+      "Personal Account Number",
+      "Systematic Income Plan"
+    ],
+    "answer": 0,
+    "explain": "ASBA = Application Supported by Blocked Amount."
+  },
+  {
+    "cat": "basics",
+    "difficulty": "Easy",
+    "q": "What does GST stand for?",
+    "options": [
+      "Goods and Supply Tax",
+      "Goods and Services Tax",
+      "Securities and Equity Board of India",
+      "Permanent Account Name"
+    ],
+    "answer": 1,
+    "explain": "GST = Goods and Services Tax."
+  },
+  {
+    "cat": "basics",
+    "difficulty": "Easy",
+    "q": "What does STT stand for?",
+    "options": [
+      "Deposit & Insurance Credit Guarantee Company",
+      "Securities Transaction Tax",
+      "Know Your Company",
+      "Immediate Payments System"
+    ],
+    "answer": 1,
+    "explain": "STT = Securities Transaction Tax."
+  },
+  {
+    "cat": "basics",
+    "difficulty": "Easy",
+    "q": "What does TDS stand for?",
+    "options": [
+      "Rapid Transfer Gateway System",
+      "Network Electronic Funds Channel",
+      "Central Depository Securities Limited",
+      "Tax Deducted at Source"
+    ],
+    "answer": 3,
+    "explain": "TDS = Tax Deducted at Source."
+  },
+  {
+    "cat": "basics",
+    "difficulty": "Easy",
+    "q": "What does CAGR stand for?",
+    "options": [
+      "Permanent Account Name",
+      "Compound Annual Growth Rate",
+      "Sovereign Gold Bond Note",
+      "Systematic Wealth Program"
+    ],
+    "answer": 1,
+    "explain": "CAGR = Compound Annual Growth Rate."
+  },
+  {
+    "cat": "basics",
+    "difficulty": "Easy",
+    "q": "What does EPF stand for?",
+    "options": [
+      "Infrastructure Investment Trust Fund",
+      "Asset Utility Metric",
+      "National Savings Coupon",
+      "Employees’ Provident Fund"
+    ],
+    "answer": 3,
+    "explain": "EPF = Employees’ Provident Fund."
+  },
+  {
+    "cat": "basics",
+    "difficulty": "Easy",
+    "q": "What does CDSL stand for?",
+    "options": [
+      "Central Depository Services (India) Limited",
+      "Indian Financial Services Code",
+      "Annual Investment Statement",
+      "Retail Equity Investment Trust"
+    ],
+    "answer": 0,
+    "explain": "CDSL = Central Depository Services (India) Limited."
+  },
+  {
+    "cat": "basics",
+    "difficulty": "Easy",
+    "q": "What does NSDL stand for?",
+    "options": [
+      "National Securities Depository Limited",
+      "Public Protection Fund",
+      "User Payments Interface",
+      "Stock Trading Tariff"
+    ],
+    "answer": 0,
+    "explain": "NSDL = National Securities Depository Limited."
+  },
+  {
+    "cat": "india",
+    "difficulty": "Easy",
+    "q": "What does PFRDA stand for?",
+    "options": [
+      "Public Account Number",
+      "Rural Bank of India",
+      "Pension Fund Regulatory and Development Authority",
+      "Reserve Bank for India"
+    ],
+    "answer": 2,
+    "explain": "PFRDA = Pension Fund Regulatory and Development Authority."
+  },
+  {
+    "cat": "india",
+    "difficulty": "Easy",
+    "q": "What does IRDAI stand for?",
+    "options": [
+      "New Pension Savings",
+      "Savings Withdrawal Plan",
+      "Insurance Regulatory and Development Authority of India",
+      "Consolidated Annual Growth Rate"
+    ],
+    "answer": 2,
+    "explain": "IRDAI = Insurance Regulatory and Development Authority of India."
+  },
+  {
+    "cat": "india",
+    "difficulty": "Easy",
+    "q": "What does SEBI stand for?",
+    "options": [
+      "New Pension Savings",
+      "Retail Equity Investment Trust",
+      "Annualized Unit Market",
+      "Securities and Exchange Board of India"
+    ],
+    "answer": 3,
+    "explain": "SEBI = Securities and Exchange Board of India."
+  },
+  {
+    "cat": "india",
+    "difficulty": "Easy",
+    "q": "What does RBI stand for?",
+    "options": [
+      "Sovereign Gold Bond Scheme",
+      "Reserve Bank of India",
+      "Application Supported by Banking Amount",
+      "National Savings Certificate Scheme"
+    ],
+    "answer": 1,
+    "explain": "RBI = Reserve Bank of India."
+  },
+  {
+    "cat": "basics",
+    "difficulty": "Easy",
+    "q": "What does KRA stand for?",
+    "options": [
+      "Insurance Regulatory and Development Authority",
+      "National Small Certificate",
+      "KYC Registration Agency",
+      "Annual Investment Statement"
+    ],
+    "answer": 2,
+    "explain": "KRA = KYC Registration Agency."
+  },
+  {
+    "cat": "basics",
+    "difficulty": "Easy",
+    "q": "What does AIS stand for?",
+    "options": [
+      "Employees Provident Fund Scheme",
+      "Annual Information Statement",
+      "Securities and Exchange Bureau of India",
+      "Securities and Exchange Board in India"
+    ],
+    "answer": 1,
+    "explain": "AIS = Annual Information Statement."
+  },
+  {
+    "cat": "basics",
+    "difficulty": "Easy",
+    "q": "What does SGB stand for?",
+    "options": [
+      "Keep Your Credit",
+      "Pension Finance Regulatory Development Authority",
+      "Sovereign Gold Bond",
+      "Annualized Unit Market"
+    ],
+    "answer": 2,
+    "explain": "SGB = Sovereign Gold Bond."
+  },
+  {
+    "cat": "india",
+    "difficulty": "Easy",
+    "q": "Which regulator oversees Securities markets in India?",
+    "options": [
+      "RBI",
+      "SEBI",
+      "PFRDA",
+      "IRDAI"
+    ],
+    "answer": 1,
+    "explain": "SEBI is the regulator for securities markets in india."
+  },
+  {
+    "cat": "india",
+    "difficulty": "Easy",
+    "q": "Which regulator oversees Insurance sector in India?",
+    "options": [
+      "RBI",
+      "SEBI",
+      "PFRDA",
+      "IRDAI"
+    ],
+    "answer": 3,
+    "explain": "IRDAI is the regulator for insurance sector in india."
+  },
+  {
+    "cat": "india",
+    "difficulty": "Easy",
+    "q": "Which regulator oversees Pension system (NPS) in India?",
+    "options": [
+      "RBI",
+      "IRDAI",
+      "PFRDA",
+      "SEBI"
+    ],
+    "answer": 2,
+    "explain": "PFRDA is the regulator for pension system (nps) in india."
+  },
+  {
+    "cat": "india",
+    "difficulty": "Easy",
+    "q": "Which regulator oversees Banking & monetary policy in India?",
+    "options": [
+      "IRDAI",
+      "PFRDA",
+      "RBI",
+      "SEBI"
+    ],
+    "answer": 2,
+    "explain": "RBI is the regulator for banking & monetary policy in india."
+  },
+  {
+    "cat": "banking",
+    "difficulty": "Easy",
+    "q": "Which funds transfer is generally instant and 24×7 in India?",
+    "options": [
+      "RTGS",
+      "NEFT",
+      "IMPS",
+      "Cheque"
+    ],
+    "answer": 2,
+    "explain": "IMPS is correct."
+  },
+  {
+    "cat": "banking",
+    "difficulty": "Easy",
+    "q": "Which method is commonly used for large-value real-time gross settlement?",
+    "options": [
+      "RTGS",
+      "UPI",
+      "IMPS",
+      "NEFT"
+    ],
+    "answer": 0,
+    "explain": "RTGS is correct."
+  },
+  {
+    "cat": "banking",
+    "difficulty": "Easy",
+    "q": "Which transfer works in batches and is widely available across banks?",
+    "options": [
+      "NEFT",
+      "RTGS",
+      "IMPS",
+      "UPI"
+    ],
+    "answer": 0,
+    "explain": "NEFT is correct."
+  },
+  {
+    "cat": "banking",
+    "difficulty": "Easy",
+    "q": "The mobile-first interface enabling bank-to-bank payments is called:",
+    "options": [
+      "NEFT",
+      "SWIFT",
+      "UPI",
+      "RTGS"
+    ],
+    "answer": 2,
+    "explain": "UPI is correct."
+  },
+  {
+    "cat": "india",
+    "difficulty": "Easy",
+    "q": "PPF maturity period is typically:",
+    "options": [
+      "20 years",
+      "10 years",
+      "15 years",
+      "5 years"
+    ],
+    "answer": 2,
+    "explain": "Correct: 15 years."
+  },
+  {
+    "cat": "india",
+    "difficulty": "Easy",
+    "q": "ELSS lock-in period is:",
+    "options": [
+      "1 year",
+      "No lock-in",
+      "3 years",
+      "5 years"
+    ],
+    "answer": 2,
+    "explain": "Correct: 3 years."
+  },
+  {
+    "cat": "india",
+    "difficulty": "Easy",
+    "q": "Tax-saver bank FD lock-in is usually:",
+    "options": [
+      "1 year",
+      "5 years",
+      "3 years",
+      "10 years"
+    ],
+    "answer": 1,
+    "explain": "Correct: 5 years."
+  },
+  {
+    "cat": "india",
+    "difficulty": "Easy",
+    "q": "Sovereign Gold Bond (SGB) normal maturity is:",
+    "options": [
+      "3 years",
+      "12 years",
+      "5 years",
+      "8 years"
+    ],
+    "answer": 3,
+    "explain": "Correct: 8 years."
+  },
+  {
+    "cat": "india",
+    "difficulty": "Easy",
+    "q": "NSC typical maturity is:",
+    "options": [
+      "10 years",
+      "7 years",
+      "5 years",
+      "3 years"
+    ],
+    "answer": 2,
+    "explain": "Correct: 5 years."
+  },
+  {
+    "cat": "invest",
+    "difficulty": "Easy",
+    "q": "Sensex belongs to which exchange?",
+    "options": [
+      "MCX",
+      "BSE",
+      "NSDL",
+      "NSE"
+    ],
+    "answer": 1,
+    "explain": "BSE is correct."
+  },
+  {
+    "cat": "invest",
+    "difficulty": "Easy",
+    "q": "Nifty 50 belongs to which exchange?",
+    "options": [
+      "CDSL",
+      "NSE",
+      "MCX",
+      "BSE"
+    ],
+    "answer": 1,
+    "explain": "NSE is correct."
+  },
+  {
+    "cat": "invest",
+    "difficulty": "Easy",
+    "q": "A Demat account is primarily used to:",
+    "options": [
+      "Apply for passports",
+      "Pay taxes",
+      "Store cash",
+      "Hold securities electronically"
+    ],
+    "answer": 3,
+    "explain": "Hold securities electronically is correct."
+  },
+  {
+    "cat": "invest",
+    "difficulty": "Easy",
+    "q": "REITs primarily invest in:",
+    "options": [
+      "Commodities",
+      "Gold bars",
+      "Income-generating real estate",
+      "Crypto"
+    ],
+    "answer": 2,
+    "explain": "Income-generating real estate is correct."
+  },
+  {
+    "cat": "invest",
+    "difficulty": "Easy",
+    "q": "An index fund mainly aims to:",
+    "options": [
+      "Replicate a benchmark",
+      "Hold only bonds",
+      "Speculate on IPOs",
+      "Beat the market with stock picking"
+    ],
+    "answer": 0,
+    "explain": "Replicate a benchmark is correct."
+  },
+  {
+    "cat": "basics",
+    "difficulty": "Easy",
+    "q": "NAV refers to:",
+    "options": [
+      "Net Asset Value per unit of a fund",
+      "Notional Average Value",
+      "Nominal Asset Value",
+      "Net Annual Variation"
+    ],
+    "answer": 0,
+    "explain": "Net Asset Value per unit of a fund."
+  },
+  {
+    "cat": "basics",
+    "difficulty": "Easy",
+    "q": "AUM stands for:",
+    "options": [
+      "Asset Utility Metric",
+      "Assets Under Management",
+      "Average Unit Margin",
+      "Annualized Unit Market"
+    ],
+    "answer": 1,
+    "explain": "Assets Under Management."
+  },
+  {
+    "cat": "basics",
+    "difficulty": "Easy",
+    "q": "Expense ratio represents:",
+    "options": [
+      "Entry load tax",
+      "Guaranteed fee cap",
+      "Broker’s commission to you",
+      "Annual fund cost as % of AUM"
+    ],
+    "answer": 3,
+    "explain": "Annual fund cost as % of AUM."
+  },
+  {
+    "cat": "basics",
+    "difficulty": "Easy",
+    "q": "Tracking error measures:",
+    "options": [
+      "Manager’s salary",
+      "Exit load",
+      "IPO gains",
+      "How closely a fund follows its benchmark"
+    ],
+    "answer": 3,
+    "explain": "How closely a fund follows its benchmark."
+  },
+  {
+    "cat": "basics",
+    "difficulty": "Easy",
+    "q": "Alpha of a fund indicates:",
+    "options": [
+      "Dividend yield",
+      "Fund size",
+      "Excess return over benchmark (risk-adjusted)",
+      "Volatility only"
+    ],
+    "answer": 2,
+    "explain": "Excess return over benchmark (risk-adjusted)."
+  },
+  {
+    "cat": "basics",
+    "difficulty": "Easy",
+    "q": "Beta roughly indicates:",
+    "options": [
+      "Tax bracket",
+      "Expense ratio",
+      "AUM growth",
+      "Sensitivity to market movements"
+    ],
+    "answer": 3,
+    "explain": "Sensitivity to market movements."
+  },
+  {
+    "cat": "basics",
+    "difficulty": "Easy",
+    "q": "Diversification mainly reduces:",
+    "options": [
+      "Inflation always",
+      "Systematic market risk",
+      "Unsystematic (stock-specific) risk",
+      "Taxes"
+    ],
+    "answer": 2,
+    "explain": "Unsystematic (stock-specific) risk."
+  },
+  {
+    "cat": "basics",
+    "difficulty": "Easy",
+    "q": "Term insurance mainly provides:",
+    "options": [
+      "Guaranteed investment returns",
+      "Pure life cover",
+      "No underwriting",
+      "ULIP benefits"
+    ],
+    "answer": 1,
+    "explain": "Pure life cover."
+  },
+  {
+    "cat": "basics",
+    "difficulty": "Easy",
+    "q": "Liquidity of an asset refers to:",
+    "options": [
+      "Guaranteed returns",
+      "Ease of converting to cash",
+      "Credit score impact",
+      "Tax efficiency"
+    ],
+    "answer": 1,
+    "explain": "Ease of converting to cash."
+  },
+  {
+    "cat": "basics",
+    "difficulty": "Easy",
+    "q": "Rupee-cost averaging happens when you:",
+    "options": [
+      "Switch funds frequently",
+      "Invest a fixed amount regularly",
+      "Invest only during dips",
+      "Time the market perfectly"
+    ],
+    "answer": 1,
+    "explain": "Invest a fixed amount regularly."
+  },
+  {
+    "cat": "tax",
+    "difficulty": "Medium",
+    "q": "ELSS investments qualify under:",
+    "options": [
+      "Section 24(b)",
+      "Section 80G",
+      "Section 80D",
+      "Section 80C"
+    ],
+    "answer": 3,
+    "explain": "Section 80C."
+  },
+  {
+    "cat": "tax",
+    "difficulty": "Medium",
+    "q": "Health insurance premiums are generally claimed under:",
+    "options": [
+      "Section 24(b)",
+      "Section 80D",
+      "Section 80C",
+      "Section 80G"
+    ],
+    "answer": 1,
+    "explain": "Section 80D."
+  },
+  {
+    "cat": "tax",
+    "difficulty": "Medium",
+    "q": "Additional NPS (Tier I) deduction is commonly referred to as:",
+    "options": [
+      "80G",
+      "80TTA",
+      "80CCD(1B)",
+      "80E"
+    ],
+    "answer": 2,
+    "explain": "80CCD(1B)."
+  },
+  {
+    "cat": "tax",
+    "difficulty": "Medium",
+    "q": "Form 26AS primarily shows:",
+    "options": [
+      "List of mutual funds",
+      "Taxes deducted/paid and reported",
+      "Only bank balances",
+      "Passport status"
+    ],
+    "answer": 1,
+    "explain": "Taxes deducted/paid and reported."
+  },
+  {
+    "cat": "tax",
+    "difficulty": "Medium",
+    "q": "AIS stands for:",
+    "options": [
+      "Aggregated Information Summary",
+      "Annual Investment Summary",
+      "Assessed Income Statement",
+      "Annual Information Statement"
+    ],
+    "answer": 3,
+    "explain": "Annual Information Statement."
+  },
+  {
+    "cat": "tax",
+    "difficulty": "Medium",
+    "q": "TDS stands for:",
+    "options": [
+      "Total Deduction Summary",
+      "Tax Division System",
+      "Tax Deducted at Source",
+      "Tax Deferred Savings"
+    ],
+    "answer": 2,
+    "explain": "Tax Deducted at Source."
+  },
+  {
+    "cat": "tax",
+    "difficulty": "Medium",
+    "q": "STT stands for:",
+    "options": [
+      "Securities Transfer Toll",
+      "Security Trading Tariff",
+      "Securities Transaction Tax",
+      "Stock Trade Tax"
+    ],
+    "answer": 2,
+    "explain": "Securities Transaction Tax."
+  },
+  {
+    "cat": "invest",
+    "difficulty": "Easy",
+    "q": "Which is typically lowest risk among these?",
+    "options": [
+      "Overnight fund",
+      "Crypto",
+      "Sectoral equity fund",
+      "Small-cap equity fund"
+    ],
+    "answer": 0,
+    "explain": "Overnight fund."
+  },
+  {
+    "cat": "invest",
+    "difficulty": "Easy",
+    "q": "For short-term parking of surplus, a common choice is:",
+    "options": [
+      "Small-cap equity",
+      "Liquid fund",
+      "Gold ETF",
+      "Real estate"
+    ],
+    "answer": 1,
+    "explain": "Liquid fund."
+  },
+  {
+    "cat": "invest",
+    "difficulty": "Easy",
+    "q": "Which is generally more volatile in the short term?",
+    "options": [
+      "Liquid fund",
+      "Arbitrage fund",
+      "Overnight fund",
+      "Equity fund"
+    ],
+    "answer": 3,
+    "explain": "Equity fund."
+  },
+  {
+    "cat": "invest",
+    "difficulty": "Easy",
+    "q": "Hybrid funds typically:",
+    "options": [
+      "Hold only debt",
+      "Hold only gold",
+      "Hold only equities",
+      "Mix equity and debt"
+    ],
+    "answer": 3,
+    "explain": "Mix equity and debt."
+  },
+  {
+    "cat": "invest",
+    "difficulty": "Easy",
+    "q": "Arbitrage funds mainly aim to:",
+    "options": [
+      "Speculate on crypto",
+      "Hold only gold",
+      "Exploit cash–futures price gaps",
+      "Lend to govt"
+    ],
+    "answer": 2,
+    "explain": "Exploit cash–futures price gaps."
+  },
+  {
+    "cat": "banking",
+    "difficulty": "Easy",
+    "q": "A Demat account is used to:",
+    "options": [
+      "Apply for loans",
+      "Hold securities electronically",
+      "Store cash",
+      "Pay taxes"
+    ],
+    "answer": 1,
+    "explain": "Hold securities electronically."
+  },
+  {
+    "cat": "banking",
+    "difficulty": "Easy",
+    "q": "ASBA in IPOs means:",
+    "options": [
+      "Allotment Supported by Blocked Amount",
+      "Application Supported by Bank Amount",
+      "Application Supported by Blocked Amount",
+      "Application Secured by Bank Amount"
+    ],
+    "answer": 2,
+    "explain": "Application Supported by Blocked Amount."
+  },
+  {
+    "cat": "banking",
+    "difficulty": "Easy",
+    "q": "IFSC is used for:",
+    "options": [
+      "IPO allotment",
+      "Tax filing",
+      "Assessing credit score",
+      "Identifying bank branches for transfers"
+    ],
+    "answer": 3,
+    "explain": "Identifying bank branches for transfers."
+  },
+  {
+    "cat": "banking",
+    "difficulty": "Easy",
+    "q": "DICGC provides deposit insurance up to:",
+    "options": [
+      "Only for NRI accounts",
+      "Only for government employees",
+      "A specified limit per depositor per bank",
+      "Unlimited for all banks"
+    ],
+    "answer": 2,
+    "explain": "A specified limit per depositor per bank."
+  },
+  {
+    "cat": "banking",
+    "difficulty": "Easy",
+    "q": "eKYC enables:",
+    "options": [
+      "Only offline paperwork",
+      "Electronic KYC using Aadhaar/OTP etc.",
+      "PAN cancellation",
+      "No KYC ever again"
+    ],
+    "answer": 1,
+    "explain": "Electronic KYC using Aadhaar/OTP etc.."
+  },
+  {
+    "cat": "basics",
+    "difficulty": "Medium",
+    "q": "Which statement is TRUE about index funds?",
+    "options": [
+      "They aim to mirror a benchmark’s return.",
+      "They are always more expensive than active funds.",
+      "They hold only bonds.",
+      "They guarantee beating the market."
+    ],
+    "answer": 0,
+    "explain": "They aim to mirror a benchmark’s return."
+  },
+  {
+    "cat": "basics",
+    "difficulty": "Medium",
+    "q": "Which is TRUE about term insurance?",
+    "options": [
+      "It guarantees maturity value.",
+      "It’s primarily pure life cover without investment.",
+      "It’s a tax evasion tool.",
+      "It’s the same as ULIPs."
+    ],
+    "answer": 1,
+    "explain": "It’s primarily pure life cover without investment."
+  },
+  {
+    "cat": "basics",
+    "difficulty": "Medium",
+    "q": "Which is TRUE about SIPs?",
+    "options": [
+      "They remove all market risk.",
+      "They guarantee positive returns monthly.",
+      "They help average purchase costs over time.",
+      "They time the market perfectly."
+    ],
+    "answer": 2,
+    "explain": "They help average purchase costs over time."
+  },
+  {
+    "cat": "basics",
+    "difficulty": "Medium",
+    "q": "Which is TRUE about expense ratio?",
+    "options": [
+      "It’s charged only on exit.",
+      "It is paid back to investors annually.",
+      "It reduces investor’s net returns.",
+      "It decides tax slabs."
+    ],
+    "answer": 2,
+    "explain": "It reduces investor’s net returns."
+  },
+  {
+    "cat": "money",
+    "difficulty": "Medium",
+    "q": "A higher credit score generally leads to:",
+    "options": [
+      "Guaranteed approval always",
+      "No need to repay EMIs",
+      "Better loan terms on average",
+      "Higher interest rates"
+    ],
+    "answer": 2,
+    "explain": "Better loan terms on average."
+  },
+  {
+    "cat": "money",
+    "difficulty": "Medium",
+    "q": "DTI (Debt-to-Income) ratio represents:",
+    "options": [
+      "Insurance needs",
+      "Share of income going to EMIs",
+      "Tax bracket",
+      "Credit card limit"
+    ],
+    "answer": 1,
+    "explain": "Share of income going to EMIs."
+  },
+  {
+    "cat": "money",
+    "difficulty": "Medium",
+    "q": "In early loan EMIs, the larger portion is usually:",
+    "options": [
+      "Insurance cost",
+      "Processing fee",
+      "Interest component",
+      "Principal component"
+    ],
+    "answer": 2,
+    "explain": "Interest component."
+  },
+  {
+    "cat": "money",
+    "difficulty": "Medium",
+    "q": "LTV in secured loans means:",
+    "options": [
+      "Loan-to-Value",
+      "Lease-to-Value",
+      "Long-Term Value",
+      "Liability-to-Value"
+    ],
+    "answer": 0,
+    "explain": "Loan-to-Value."
+  },
+  {
+    "cat": "invest",
+    "difficulty": "Easy",
+    "q": "Approx future value of ₹12,000 at 12% p.a. for 4 years (annual compounding):",
+    "options": [
+      "₹18,882",
+      "₹16,994",
+      "₹15,106",
+      "₹20,770"
+    ],
+    "answer": 0,
+    "explain": "FV ≈ P×(1+r)^n (rounded)."
+  },
+  {
+    "cat": "invest",
+    "difficulty": "Easy",
+    "q": "Approx future value of ₹75,000 at 12% p.a. for 6 years (annual compounding):",
+    "options": [
+      "₹133,233",
+      "₹118,430",
+      "₹148,037",
+      "₹162,841"
+    ],
+    "answer": 2,
+    "explain": "FV ≈ P×(1+r)^n (rounded)."
+  },
+  {
+    "cat": "invest",
+    "difficulty": "Easy",
+    "q": "Approx future value of ₹25,000 at 7% p.a. for 6 years (annual compounding):",
+    "options": [
+      "₹33,766",
+      "₹30,014",
+      "₹37,518",
+      "₹41,270"
+    ],
+    "answer": 2,
+    "explain": "FV ≈ P×(1+r)^n (rounded)."
+  },
+  {
+    "cat": "invest",
+    "difficulty": "Easy",
+    "q": "Approx future value of ₹60,000 at 9% p.a. for 4 years (annual compounding):",
+    "options": [
+      "₹67,756",
+      "₹84,695",
+      "₹76,226",
+      "₹93,165"
+    ],
+    "answer": 1,
+    "explain": "FV ≈ P×(1+r)^n (rounded)."
+  },
+  {
+    "cat": "invest",
+    "difficulty": "Easy",
+    "q": "Approx future value of ₹32,000 at 10% p.a. for 3 years (annual compounding):",
+    "options": [
+      "₹34,074",
+      "₹38,333",
+      "₹42,592",
+      "₹46,851"
+    ],
+    "answer": 2,
+    "explain": "FV ≈ P×(1+r)^n (rounded)."
+  },
+  {
+    "cat": "invest",
+    "difficulty": "Easy",
+    "q": "Approx future value of ₹10,000 at 10% p.a. for 6 years (annual compounding):",
+    "options": [
+      "₹17,716",
+      "₹19,488",
+      "₹14,173",
+      "₹15,944"
+    ],
+    "answer": 0,
+    "explain": "FV ≈ P×(1+r)^n (rounded)."
+  },
+  {
+    "cat": "invest",
+    "difficulty": "Easy",
+    "q": "Approx future value of ₹12,000 at 11% p.a. for 4 years (annual compounding):",
+    "options": [
+      "₹16,395",
+      "₹18,217",
+      "₹14,574",
+      "₹20,039"
+    ],
+    "answer": 1,
+    "explain": "FV ≈ P×(1+r)^n (rounded)."
+  },
+  {
+    "cat": "invest",
+    "difficulty": "Easy",
+    "q": "Approx future value of ₹25,000 at 10% p.a. for 4 years (annual compounding):",
+    "options": [
+      "₹36,603",
+      "₹40,263",
+      "₹32,943",
+      "₹29,282"
+    ],
+    "answer": 0,
+    "explain": "FV ≈ P×(1+r)^n (rounded)."
+  },
+  {
+    "cat": "invest",
+    "difficulty": "Easy",
+    "q": "Approx future value of ₹25,000 at 10% p.a. for 3 years (annual compounding):",
+    "options": [
+      "₹33,275",
+      "₹36,602",
+      "₹26,620",
+      "₹29,948"
+    ],
+    "answer": 0,
+    "explain": "FV ≈ P×(1+r)^n (rounded)."
+  },
+  {
+    "cat": "invest",
+    "difficulty": "Easy",
+    "q": "Approx future value of ₹75,000 at 11% p.a. for 3 years (annual compounding):",
+    "options": [
+      "₹82,058",
+      "₹102,572",
+      "₹92,315",
+      "₹112,829"
+    ],
+    "answer": 1,
+    "explain": "FV ≈ P×(1+r)^n (rounded)."
+  },
+  {
+    "cat": "invest",
+    "difficulty": "Easy",
+    "q": "Approx future value of ₹25,000 at 8% p.a. for 3 years (annual compounding):",
+    "options": [
+      "₹31,493",
+      "₹28,344",
+      "₹34,642",
+      "₹25,194"
+    ],
+    "answer": 0,
+    "explain": "FV ≈ P×(1+r)^n (rounded)."
+  },
+  {
+    "cat": "invest",
+    "difficulty": "Easy",
+    "q": "Approx future value of ₹40,000 at 9% p.a. for 5 years (annual compounding):",
+    "options": [
+      "₹61,545",
+      "₹49,236",
+      "₹67,700",
+      "₹55,390"
+    ],
+    "answer": 0,
+    "explain": "FV ≈ P×(1+r)^n (rounded)."
+  },
+  {
+    "cat": "invest",
+    "difficulty": "Easy",
+    "q": "Approx future value of ₹15,000 at 11% p.a. for 2 years (annual compounding):",
+    "options": [
+      "₹18,482",
+      "₹16,634",
+      "₹14,786",
+      "₹20,330"
+    ],
+    "answer": 0,
+    "explain": "FV ≈ P×(1+r)^n (rounded)."
+  },
+  {
+    "cat": "invest",
+    "difficulty": "Easy",
+    "q": "Approx future value of ₹12,000 at 12% p.a. for 3 years (annual compounding):",
+    "options": [
+      "₹15,173",
+      "₹13,487",
+      "₹16,859",
+      "₹18,545"
+    ],
+    "answer": 2,
+    "explain": "FV ≈ P×(1+r)^n (rounded)."
+  },
+  {
+    "cat": "invest",
+    "difficulty": "Easy",
+    "q": "Approx future value of ₹15,000 at 6% p.a. for 2 years (annual compounding):",
+    "options": [
+      "₹18,539",
+      "₹16,854",
+      "₹13,483",
+      "₹15,169"
+    ],
+    "answer": 1,
+    "explain": "FV ≈ P×(1+r)^n (rounded)."
+  },
+  {
+    "cat": "invest",
+    "difficulty": "Easy",
+    "q": "Approx future value of ₹40,000 at 9% p.a. for 6 years (annual compounding):",
+    "options": [
+      "₹67,084",
+      "₹53,667",
+      "₹73,792",
+      "₹60,376"
+    ],
+    "answer": 0,
+    "explain": "FV ≈ P×(1+r)^n (rounded)."
+  },
+  {
+    "cat": "invest",
+    "difficulty": "Easy",
+    "q": "Approx future value of ₹40,000 at 9% p.a. for 3 years (annual compounding):",
+    "options": [
+      "₹41,441",
+      "₹51,801",
+      "₹56,981",
+      "₹46,621"
+    ],
+    "answer": 1,
+    "explain": "FV ≈ P×(1+r)^n (rounded)."
+  },
+  {
+    "cat": "invest",
+    "difficulty": "Easy",
+    "q": "Approx future value of ₹12,000 at 12% p.a. for 5 years (annual compounding):",
+    "options": [
+      "₹23,263",
+      "₹16,918",
+      "₹21,148",
+      "₹19,033"
+    ],
+    "answer": 2,
+    "explain": "FV ≈ P×(1+r)^n (rounded)."
+  },
+  {
+    "cat": "invest",
+    "difficulty": "Easy",
+    "q": "Approx future value of ₹10,000 at 10% p.a. for 3 years (annual compounding):",
+    "options": [
+      "₹14,641",
+      "₹10,648",
+      "₹11,979",
+      "₹13,310"
+    ],
+    "answer": 3,
+    "explain": "FV ≈ P×(1+r)^n (rounded)."
+  },
+  {
+    "cat": "invest",
+    "difficulty": "Easy",
+    "q": "Approx future value of ₹40,000 at 11% p.a. for 6 years (annual compounding):",
+    "options": [
+      "₹74,817",
+      "₹59,854",
+      "₹67,335",
+      "₹82,299"
+    ],
+    "answer": 0,
+    "explain": "FV ≈ P×(1+r)^n (rounded)."
+  },
+  {
+    "cat": "invest",
+    "difficulty": "Easy",
+    "q": "Approx future value of ₹50,000 at 9% p.a. for 3 years (annual compounding):",
+    "options": [
+      "₹64,751",
+      "₹71,226",
+      "₹58,276",
+      "₹51,801"
+    ],
+    "answer": 0,
+    "explain": "FV ≈ P×(1+r)^n (rounded)."
+  },
+  {
+    "cat": "invest",
+    "difficulty": "Easy",
+    "q": "Approx future value of ₹20,000 at 12% p.a. for 4 years (annual compounding):",
+    "options": [
+      "₹28,323",
+      "₹31,470",
+      "₹34,617",
+      "₹25,176"
+    ],
+    "answer": 1,
+    "explain": "FV ≈ P×(1+r)^n (rounded)."
+  },
+  {
+    "cat": "invest",
+    "difficulty": "Easy",
+    "q": "Approx future value of ₹25,000 at 9% p.a. for 2 years (annual compounding):",
+    "options": [
+      "₹23,762",
+      "₹26,733",
+      "₹29,703",
+      "₹32,673"
+    ],
+    "answer": 2,
+    "explain": "FV ≈ P×(1+r)^n (rounded)."
+  },
+  {
+    "cat": "invest",
+    "difficulty": "Easy",
+    "q": "Approx future value of ₹30,000 at 8% p.a. for 6 years (annual compounding):",
+    "options": [
+      "₹42,845",
+      "₹52,367",
+      "₹38,085",
+      "₹47,606"
+    ],
+    "answer": 3,
+    "explain": "FV ≈ P×(1+r)^n (rounded)."
+  },
+  {
+    "cat": "invest",
+    "difficulty": "Easy",
+    "q": "Approx future value of ₹20,000 at 9% p.a. for 3 years (annual compounding):",
+    "options": [
+      "₹28,491",
+      "₹20,721",
+      "₹25,901",
+      "₹23,311"
+    ],
+    "answer": 2,
+    "explain": "FV ≈ P×(1+r)^n (rounded)."
+  },
+  {
+    "cat": "invest",
+    "difficulty": "Easy",
+    "q": "Approx future value of ₹32,000 at 8% p.a. for 6 years (annual compounding):",
+    "options": [
+      "₹55,858",
+      "₹50,780",
+      "₹45,702",
+      "₹40,624"
+    ],
+    "answer": 1,
+    "explain": "FV ≈ P×(1+r)^n (rounded)."
+  },
+  {
+    "cat": "invest",
+    "difficulty": "Easy",
+    "q": "Approx future value of ₹20,000 at 12% p.a. for 5 years (annual compounding):",
+    "options": [
+      "₹31,722",
+      "₹35,247",
+      "₹38,772",
+      "₹28,198"
+    ],
+    "answer": 1,
+    "explain": "FV ≈ P×(1+r)^n (rounded)."
+  },
+  {
+    "cat": "invest",
+    "difficulty": "Easy",
+    "q": "Approx future value of ₹60,000 at 9% p.a. for 5 years (annual compounding):",
+    "options": [
+      "₹73,854",
+      "₹101,549",
+      "₹83,085",
+      "₹92,317"
+    ],
+    "answer": 3,
+    "explain": "FV ≈ P×(1+r)^n (rounded)."
+  },
+  {
+    "cat": "invest",
+    "difficulty": "Easy",
+    "q": "Approx future value of ₹32,000 at 12% p.a. for 5 years (annual compounding):",
+    "options": [
+      "₹62,035",
+      "₹56,395",
+      "₹45,116",
+      "₹50,756"
+    ],
+    "answer": 1,
+    "explain": "FV ≈ P×(1+r)^n (rounded)."
+  },
+  {
+    "cat": "invest",
+    "difficulty": "Easy",
+    "q": "Approx future value of ₹25,000 at 9% p.a. for 5 years (annual compounding):",
+    "options": [
+      "₹30,773",
+      "₹42,313",
+      "₹34,619",
+      "₹38,466"
+    ],
+    "answer": 3,
+    "explain": "FV ≈ P×(1+r)^n (rounded)."
+  },
+  {
+    "cat": "invest",
+    "difficulty": "Easy",
+    "q": "Approx future value of ₹75,000 at 11% p.a. for 5 years (annual compounding):",
+    "options": [
+      "₹139,017",
+      "₹126,379",
+      "₹101,103",
+      "₹113,741"
+    ],
+    "answer": 1,
+    "explain": "FV ≈ P×(1+r)^n (rounded)."
+  },
+  {
+    "cat": "invest",
+    "difficulty": "Easy",
+    "q": "Approx future value of ₹60,000 at 10% p.a. for 2 years (annual compounding):",
+    "options": [
+      "₹65,340",
+      "₹72,600",
+      "₹79,860",
+      "₹58,080"
+    ],
+    "answer": 1,
+    "explain": "FV ≈ P×(1+r)^n (rounded)."
+  },
+  {
+    "cat": "invest",
+    "difficulty": "Easy",
+    "q": "Approx future value of ₹12,000 at 11% p.a. for 5 years (annual compounding):",
+    "options": [
+      "₹22,243",
+      "₹20,221",
+      "₹16,177",
+      "₹18,199"
+    ],
+    "answer": 1,
+    "explain": "FV ≈ P×(1+r)^n (rounded)."
+  },
+  {
+    "cat": "invest",
+    "difficulty": "Easy",
+    "q": "Approx future value of ₹10,000 at 8% p.a. for 5 years (annual compounding):",
+    "options": [
+      "₹11,754",
+      "₹13,224",
+      "₹14,693",
+      "₹16,162"
+    ],
+    "answer": 2,
+    "explain": "FV ≈ P×(1+r)^n (rounded)."
+  },
+  {
+    "cat": "invest",
+    "difficulty": "Easy",
+    "q": "Approx future value of ₹30,000 at 8% p.a. for 5 years (annual compounding):",
+    "options": [
+      "₹44,080",
+      "₹35,264",
+      "₹39,672",
+      "₹48,488"
+    ],
+    "answer": 0,
+    "explain": "FV ≈ P×(1+r)^n (rounded)."
+  },
+  {
+    "cat": "invest",
+    "difficulty": "Easy",
+    "q": "Approx future value of ₹12,000 at 9% p.a. for 2 years (annual compounding):",
+    "options": [
+      "₹15,683",
+      "₹11,406",
+      "₹12,831",
+      "₹14,257"
+    ],
+    "answer": 3,
+    "explain": "FV ≈ P×(1+r)^n (rounded)."
+  },
+  {
+    "cat": "invest",
+    "difficulty": "Easy",
+    "q": "Approx future value of ₹75,000 at 6% p.a. for 2 years (annual compounding):",
+    "options": [
+      "₹75,843",
+      "₹92,697",
+      "₹67,416",
+      "₹84,270"
+    ],
+    "answer": 3,
+    "explain": "FV ≈ P×(1+r)^n (rounded)."
+  },
+  {
+    "cat": "invest",
+    "difficulty": "Easy",
+    "q": "Approx future value of ₹75,000 at 6% p.a. for 6 years (annual compounding):",
+    "options": [
+      "₹106,389",
+      "₹117,028",
+      "₹85,111",
+      "₹95,750"
+    ],
+    "answer": 0,
+    "explain": "FV ≈ P×(1+r)^n (rounded)."
+  },
+  {
+    "cat": "invest",
+    "difficulty": "Easy",
+    "q": "Approx future value of ₹30,000 at 7% p.a. for 6 years (annual compounding):",
+    "options": [
+      "₹49,524",
+      "₹40,520",
+      "₹36,018",
+      "₹45,022"
+    ],
+    "answer": 3,
+    "explain": "FV ≈ P×(1+r)^n (rounded)."
+  },
+  {
+    "cat": "invest",
+    "difficulty": "Easy",
+    "q": "Approx future value of ₹12,000 at 10% p.a. for 2 years (annual compounding):",
+    "options": [
+      "₹14,520",
+      "₹13,068",
+      "₹11,616",
+      "₹15,972"
+    ],
+    "answer": 0,
+    "explain": "FV ≈ P×(1+r)^n (rounded)."
+  },
+  {
+    "cat": "invest",
+    "difficulty": "Easy",
+    "q": "Approx future value of ₹32,000 at 11% p.a. for 3 years (annual compounding):",
+    "options": [
+      "₹39,388",
+      "₹35,011",
+      "₹48,140",
+      "₹43,764"
+    ],
+    "answer": 3,
+    "explain": "FV ≈ P×(1+r)^n (rounded)."
+  },
+  {
+    "cat": "invest",
+    "difficulty": "Easy",
+    "q": "Approx future value of ₹30,000 at 10% p.a. for 5 years (annual compounding):",
+    "options": [
+      "₹38,652",
+      "₹43,484",
+      "₹48,315",
+      "₹53,147"
+    ],
+    "answer": 2,
+    "explain": "FV ≈ P×(1+r)^n (rounded)."
+  },
+  {
+    "cat": "invest",
+    "difficulty": "Easy",
+    "q": "Approx future value of ₹10,000 at 12% p.a. for 5 years (annual compounding):",
+    "options": [
+      "₹19,385",
+      "₹15,861",
+      "₹17,623",
+      "₹14,098"
+    ],
+    "answer": 2,
+    "explain": "FV ≈ P×(1+r)^n (rounded)."
+  },
+  {
+    "cat": "invest",
+    "difficulty": "Easy",
+    "q": "Approx future value of ₹30,000 at 11% p.a. for 5 years (annual compounding):",
+    "options": [
+      "₹55,607",
+      "₹50,552",
+      "₹40,442",
+      "₹45,497"
+    ],
+    "answer": 1,
+    "explain": "FV ≈ P×(1+r)^n (rounded)."
+  },
+  {
+    "cat": "invest",
+    "difficulty": "Easy",
+    "q": "Approx future value of ₹50,000 at 11% p.a. for 4 years (annual compounding):",
+    "options": [
+      "₹75,904",
+      "₹83,494",
+      "₹68,314",
+      "₹60,723"
+    ],
+    "answer": 0,
+    "explain": "FV ≈ P×(1+r)^n (rounded)."
+  },
+  {
+    "cat": "invest",
+    "difficulty": "Easy",
+    "q": "Approx future value of ₹60,000 at 8% p.a. for 4 years (annual compounding):",
+    "options": [
+      "₹89,792",
+      "₹65,303",
+      "₹81,629",
+      "₹73,466"
+    ],
+    "answer": 2,
+    "explain": "FV ≈ P×(1+r)^n (rounded)."
+  },
+  {
+    "cat": "invest",
+    "difficulty": "Easy",
+    "q": "Approx future value of ₹40,000 at 7% p.a. for 5 years (annual compounding):",
+    "options": [
+      "₹61,712",
+      "₹56,102",
+      "₹50,492",
+      "₹44,882"
+    ],
+    "answer": 1,
+    "explain": "FV ≈ P×(1+r)^n (rounded)."
+  },
+  {
+    "cat": "invest",
+    "difficulty": "Easy",
+    "q": "Approx future value of ₹40,000 at 12% p.a. for 4 years (annual compounding):",
+    "options": [
+      "₹69,235",
+      "₹62,941",
+      "₹50,353",
+      "₹56,647"
+    ],
+    "answer": 1,
+    "explain": "FV ≈ P×(1+r)^n (rounded)."
+  },
+  {
+    "cat": "basics",
+    "difficulty": "Medium",
+    "q": "A good choice would be: For tax deduction u/s 80C with equity exposure:",
+    "options": [
+      "Corporate bond fund",
+      "ELSS",
+      "Gold ETF",
+      "Overnight fund"
+    ],
+    "answer": 1,
+    "explain": "Correct: ELSS."
+  },
+  {
+    "cat": "banking",
+    "difficulty": "Easy",
+    "q": "Which method offers instant bank-to-bank transfers round the clock?",
+    "options": [
+      "IMPS",
+      "Cheque",
+      "RTGS",
+      "NEFT"
+    ],
+    "answer": 0,
+    "explain": "IMPS is designed for instant 24×7 transfers."
+  },
+  {
+    "cat": "india",
+    "difficulty": "Easy",
+    "q": "Who regulates banking & monetary policy in India?",
+    "options": [
+      "IRDAI",
+      "PFRDA",
+      "SEBI",
+      "RBI"
+    ],
+    "answer": 3,
+    "explain": "RBI regulates banking & monetary policy in India."
+  },
+  {
+    "cat": "basics",
+    "difficulty": "Medium",
+    "q": "About index ETFs, which is correct?",
+    "options": [
+      "They trade on exchanges intra-day.",
+      "You buy/sell only at day-end NAV.",
+      "They guarantee listing gains.",
+      "They are always debt schemes."
+    ],
+    "answer": 0,
+    "explain": "They trade on exchanges intra-day."
+  },
+  {
+    "cat": "basics",
+    "difficulty": "Easy",
+    "q": "Pick the BEST fit: For emergency money, the better fit is:",
+    "options": [
+      "Small-cap equity fund",
+      "Sectoral equity fund",
+      "Liquid/Overnight fund",
+      "Crypto"
+    ],
+    "answer": 2,
+    "explain": "Correct: Liquid/Overnight fund."
+  },
+  {
+    "cat": "basics",
+    "difficulty": "Easy",
+    "q": "About REITs, which is correct?",
+    "options": [
+      "They invest in income-generating real estate.",
+      "They are bank FDs.",
+      "They invest only in gold.",
+      "They are sovereign bonds."
+    ],
+    "answer": 0,
+    "explain": "They invest in income-generating real estate."
+  },
+  {
+    "cat": "invest",
+    "difficulty": "Easy",
+    "q": "Pick the BEST fit: If capital safety is top priority for a month",
+    "options": [
+      "Sectoral equity fund",
+      "Liquid fund",
+      "Overnight fund",
+      "Equity small-cap fund"
+    ],
+    "answer": 2,
+    "explain": "Overnight/Liquid funds are designed for low volatility and quick access."
+  },
+  {
+    "cat": "invest",
+    "difficulty": "Easy",
+    "q": "Which of the following is MOST suitable: If capital safety is top priority for a month",
+    "options": [
+      "Sectoral equity fund",
+      "Liquid fund",
+      "Equity small-cap fund",
+      "Overnight fund"
+    ],
+    "answer": 3,
+    "explain": "Overnight/Liquid funds are designed for low volatility and quick access."
+  },
+  {
+    "cat": "basics",
+    "difficulty": "Easy",
+    "q": "What does beta roughly indicate for a fund or stock?",
+    "options": [
+      "Expense level",
+      "Tax slab",
+      "Sensitivity to overall market movement",
+      "Fund size"
+    ],
+    "answer": 2,
+    "explain": "Sensitivity to overall market movement"
+  },
+  {
+    "cat": "banking",
+    "difficulty": "Easy",
+    "q": "If you need a 24×7 instant transfer, choose:",
+    "options": [
+      "IMPS",
+      "RTGS",
+      "NEFT",
+      "Cheque"
+    ],
+    "answer": 0,
+    "explain": "IMPS is designed for instant 24×7 transfers."
+  },
+  {
+    "cat": "basics",
+    "difficulty": "Easy",
+    "q": "About liquid funds, which is correct?",
+    "options": [
+      "They are meant for 10+ years equity growth.",
+      "They invest only in gold.",
+      "They target short-term parking with low volatility.",
+      "They guarantee returns."
+    ],
+    "answer": 2,
+    "explain": "They target short-term parking with low volatility."
+  },
+  {
+    "cat": "india",
+    "difficulty": "Easy",
+    "q": "Who regulates securities markets in India?",
+    "options": [
+      "SEBI",
+      "PFRDA",
+      "IRDAI",
+      "RBI"
+    ],
+    "answer": 0,
+    "explain": "SEBI regulates securities markets in India."
+  },
+  {
+    "cat": "invest",
+    "difficulty": "Easy",
+    "q": "Among the options, the right fit is: For minimal short‑term risk",
+    "options": [
+      "Liquid fund",
+      "Overnight fund",
+      "Equity small-cap fund",
+      "Sectoral equity fund"
+    ],
+    "answer": 1,
+    "explain": "Overnight/Liquid funds are designed for low volatility and quick access."
+  },
+  {
+    "cat": "basics",
+    "difficulty": "Easy",
+    "q": "Which of the following is MOST suitable: If you want market-wide equity exposure at low cost:",
+    "options": [
+      "Crypto exchange",
+      "Index fund/ETF",
+      "Real estate",
+      "Single small-cap stock"
+    ],
+    "answer": 1,
+    "explain": "Correct: Index fund/ETF."
+  },
+  {
+    "cat": "basics",
+    "difficulty": "Easy",
+    "q": "Pick the BEST fit: For long-term equity growth, a suitable instrument is:",
+    "options": [
+      "Gold loan",
+      "Equity index fund",
+      "Savings account only",
+      "Overnight fund"
+    ],
+    "answer": 1,
+    "explain": "Correct: Equity index fund."
+  },
+  {
+    "cat": "basics",
+    "difficulty": "Easy",
+    "q": "A good choice would be: For long-term equity growth, a suitable instrument is:",
+    "options": [
+      "Equity index fund",
+      "Overnight fund",
+      "Gold loan",
+      "Savings account only"
+    ],
+    "answer": 0,
+    "explain": "Correct: Equity index fund."
+  },
+  {
+    "cat": "invest",
+    "difficulty": "Easy",
+    "q": "Among the options, the right fit is: If capital safety is top priority for a month",
+    "options": [
+      "Equity small-cap fund",
+      "Overnight fund",
+      "Sectoral equity fund",
+      "Liquid fund"
+    ],
+    "answer": 1,
+    "explain": "Overnight/Liquid funds are designed for low volatility and quick access."
+  },
+  {
+    "cat": "banking",
+    "difficulty": "Easy",
+    "q": "For immediate funds transfer at any time, prefer:",
+    "options": [
+      "RTGS",
+      "IMPS",
+      "Cheque",
+      "NEFT"
+    ],
+    "answer": 1,
+    "explain": "IMPS is designed for instant 24×7 transfers."
+  },
+  {
+    "cat": "invest",
+    "difficulty": "Easy",
+    "q": "A good choice would be: When you need quick access within days",
+    "options": [
+      "Sectoral equity fund",
+      "Overnight fund",
+      "Liquid fund",
+      "Equity small-cap fund"
+    ],
+    "answer": 1,
+    "explain": "Overnight/Liquid funds are designed for low volatility and quick access."
+  },
+  {
+    "cat": "india",
+    "difficulty": "Easy",
+    "q": "Who regulates the pension system (NPS) in India?",
+    "options": [
+      "IRDAI",
+      "SEBI",
+      "RBI",
+      "PFRDA"
+    ],
+    "answer": 3,
+    "explain": "PFRDA regulates the pension system (NPS) in India."
+  },
+  {
+    "cat": "basics",
+    "difficulty": "Easy",
+    "q": "What should you choose here? If you want market-wide equity exposure at low cost:",
+    "options": [
+      "Real estate",
+      "Single small-cap stock",
+      "Index fund/ETF",
+      "Crypto exchange"
+    ],
+    "answer": 2,
+    "explain": "Correct: Index fund/ETF."
+  },
+  {
+    "cat": "basics",
+    "difficulty": "Medium",
+    "q": "What should you choose here? For emergency money, the better fit is:",
+    "options": [
+      "Sectoral equity fund",
+      "Small-cap equity fund",
+      "Crypto",
+      "Liquid/Overnight fund"
+    ],
+    "answer": 3,
+    "explain": "Correct: Liquid/Overnight fund."
+  },
+  {
+    "cat": "india",
+    "difficulty": "Easy",
+    "q": "Who regulates the insurance industry in India?",
+    "options": [
+      "RBI",
+      "PFRDA",
+      "IRDAI",
+      "SEBI"
+    ],
+    "answer": 2,
+    "explain": "IRDAI regulates the insurance industry in India."
+  },
+  {
+    "cat": "basics",
+    "difficulty": "Easy",
+    "q": "What should you choose here? For tax deduction u/s 80C with equity exposure:",
+    "options": [
+      "Corporate bond fund",
+      "Overnight fund",
+      "ELSS",
+      "Gold ETF"
+    ],
+    "answer": 2,
+    "explain": "Correct: ELSS."
+  },
+  {
+    "cat": "invest",
+    "difficulty": "Easy",
+    "q": "A good choice would be: For parking funds for a week",
+    "options": [
+      "Overnight fund",
+      "Sectoral equity fund",
+      "Liquid fund",
+      "Equity small-cap fund"
+    ],
+    "answer": 0,
+    "explain": "Overnight/Liquid funds are designed for low volatility and quick access."
+  },
+  {
+    "cat": "basics",
+    "difficulty": "Medium",
+    "q": "What should you choose here? If you want very quick bank transfer 24×7:",
+    "options": [
+      "RTGS (high value)",
+      "IMPS",
+      "Cheque",
+      "NEFT (batch)"
+    ],
+    "answer": 1,
+    "explain": "Correct: IMPS."
+  },
+  {
+    "cat": "basics",
+    "difficulty": "Medium",
+    "q": "About diversification, which is correct?",
+    "options": [
+      "It guarantees positive returns.",
+      "It removes all market risk.",
+      "It reduces stock-specific risk.",
+      "It eliminates taxes."
+    ],
+    "answer": 2,
+    "explain": "It reduces stock-specific risk."
+  },
+  {
+    "cat": "invest",
+    "difficulty": "Easy",
+    "q": "Pick the BEST fit: For parking funds for a week",
+    "options": [
+      "Sectoral equity fund",
+      "Equity small-cap fund",
+      "Liquid fund",
+      "Overnight fund"
+    ],
+    "answer": 3,
+    "explain": "Overnight/Liquid funds are designed for low volatility and quick access."
+  },
+  {
+    "cat": "basics",
+    "difficulty": "Medium",
+    "q": "A good choice would be: For emergency money, the better fit is:",
+    "options": [
+      "Liquid/Overnight fund",
+      "Crypto",
+      "Small-cap equity fund",
+      "Sectoral equity fund"
+    ],
+    "answer": 0,
+    "explain": "Correct: Liquid/Overnight fund."
+  },
+  {
+    "cat": "basics",
+    "difficulty": "Medium",
+    "q": "NAV of a mutual fund broadly represents:",
+    "options": [
+      "Brokerage rate",
+      "Manager’s bonus",
+      "Per-unit market value of the fund",
+      "IPO listing price"
+    ],
+    "answer": 2,
+    "explain": "Per-unit market value of the fund"
+  },
+  {
+    "cat": "basics",
+    "difficulty": "Medium",
+    "q": "Among the options, the right fit is: For emergency money, the better fit is:",
+    "options": [
+      "Small-cap equity fund",
+      "Liquid/Overnight fund",
+      "Sectoral equity fund",
+      "Crypto"
+    ],
+    "answer": 1,
+    "explain": "Correct: Liquid/Overnight fund."
+  },
+  {
+    "cat": "invest",
+    "difficulty": "Medium",
+    "q": "What should you choose here? If capital safety is top priority for a month",
+    "options": [
+      "Sectoral equity fund",
+      "Equity small-cap fund",
+      "Overnight fund",
+      "Liquid fund"
+    ],
+    "answer": 2,
+    "explain": "Overnight/Liquid funds are designed for low volatility and quick access."
+  },
+  {
+    "cat": "basics",
+    "difficulty": "Medium",
+    "q": "What does the expense ratio of a mutual fund signify?",
+    "options": [
+      "A fixed tax",
+      "Broker’s commission to you",
+      "Annual fund cost as % of AUM",
+      "Guaranteed fee cap"
+    ],
+    "answer": 2,
+    "explain": "Annual fund cost as % of AUM"
+  },
+  {
+    "cat": "basics",
+    "difficulty": "Medium",
+    "q": "Which of the following is MOST suitable: For emergency money, the better fit is:",
+    "options": [
+      "Sectoral equity fund",
+      "Liquid/Overnight fund",
+      "Crypto",
+      "Small-cap equity fund"
+    ],
+    "answer": 1,
+    "explain": "Correct: Liquid/Overnight fund."
+  },
+  {
+    "cat": "basics",
+    "difficulty": "Easy",
+    "q": "Among the options, the right fit is: For tax deduction u/s 80C with equity exposure:",
+    "options": [
+      "Gold ETF",
+      "Corporate bond fund",
+      "ELSS",
+      "Overnight fund"
+    ],
+    "answer": 2,
+    "explain": "Correct: ELSS."
+  },
+  {
+    "cat": "basics",
+    "difficulty": "Easy",
+    "q": "Among the options, the right fit is: If you want very quick bank transfer 24×7:",
+    "options": [
+      "Cheque",
+      "IMPS",
+      "RTGS (high value)",
+      "NEFT (batch)"
+    ],
+    "answer": 1,
+    "explain": "Correct: IMPS."
+  },
+  {
+    "cat": "invest",
+    "difficulty": "Easy",
+    "q": "Which of the following is MOST suitable: For minimal short‑term risk",
+    "options": [
+      "Equity small-cap fund",
+      "Liquid fund",
+      "Overnight fund",
+      "Sectoral equity fund"
+    ],
+    "answer": 2,
+    "explain": "Overnight/Liquid funds are designed for low volatility and quick access."
+  },
+  {
+    "cat": "basics",
+    "difficulty": "Easy",
+    "q": "Among the options, the right fit is: If you want market-wide equity exposure at low cost:",
+    "options": [
+      "Real estate",
+      "Crypto exchange",
+      "Index fund/ETF",
+      "Single small-cap stock"
+    ],
+    "answer": 2,
+    "explain": "Correct: Index fund/ETF."
+  },
+  {
+    "cat": "invest",
+    "difficulty": "Easy",
+    "q": "A good choice would be: If capital safety is top priority for a month",
+    "options": [
+      "Sectoral equity fund",
+      "Overnight fund",
+      "Liquid fund",
+      "Equity small-cap fund"
+    ],
+    "answer": 1,
+    "explain": "Overnight/Liquid funds are designed for low volatility and quick access."
+  },
+  {
+    "cat": "invest",
+    "difficulty": "Easy",
+    "q": "What should you choose here? For parking funds for a week",
+    "options": [
+      "Equity small-cap fund",
+      "Overnight fund",
+      "Liquid fund",
+      "Sectoral equity fund"
+    ],
+    "answer": 1,
+    "explain": "Overnight/Liquid funds are designed for low volatility and quick access."
+  },
+  {
+    "cat": "basics",
+    "difficulty": "Medium",
+    "q": "A good choice would be: If you want market-wide equity exposure at low cost:",
+    "options": [
+      "Real estate",
+      "Single small-cap stock",
+      "Crypto exchange",
+      "Index fund/ETF"
+    ],
+    "answer": 3,
+    "explain": "Correct: Index fund/ETF."
+  },
+  {
+    "cat": "invest",
+    "difficulty": "Medium",
+    "q": "A good choice would be: For minimal short‑term risk",
+    "options": [
+      "Liquid fund",
+      "Sectoral equity fund",
+      "Equity small-cap fund",
+      "Overnight fund"
+    ],
+    "answer": 3,
+    "explain": "Overnight/Liquid funds are designed for low volatility and quick access."
+  },
+  {
+    "cat": "basics",
+    "difficulty": "Medium",
+    "q": "A good choice would be: If you want very quick bank transfer 24×7:",
+    "options": [
+      "Cheque",
+      "NEFT (batch)",
+      "RTGS (high value)",
+      "IMPS"
+    ],
+    "answer": 3,
+    "explain": "Correct: IMPS."
+  },
+  {
+    "cat": "basics",
+    "difficulty": "Medium",
+    "q": "Pick the BEST fit: If you want very quick bank transfer 24×7:",
+    "options": [
+      "Cheque",
+      "RTGS (high value)",
+      "NEFT (batch)",
+      "IMPS"
+    ],
+    "answer": 3,
+    "explain": "Correct: IMPS."
+  },
+  {
+    "cat": "basics",
+    "difficulty": "Easy",
+    "q": "Among the options, the right fit is: For long-term equity growth, a suitable instrument is:",
+    "options": [
+      "Savings account only",
+      "Overnight fund",
+      "Equity index fund",
+      "Gold loan"
+    ],
+    "answer": 2,
+    "explain": "Correct: Equity index fund."
+  },
+  {
+    "cat": "invest",
+    "difficulty": "Medium",
+    "q": "Among the options, the right fit is: When you need quick access within days",
+    "options": [
+      "Liquid fund",
+      "Equity small-cap fund",
+      "Overnight fund",
+      "Sectoral equity fund"
+    ],
+    "answer": 2,
+    "explain": "Overnight/Liquid funds are designed for low volatility and quick access."
+  },
+  {
+    "cat": "basics",
+    "difficulty": "Medium",
+    "q": "What should you choose here? For long-term equity growth, a suitable instrument is:",
+    "options": [
+      "Overnight fund",
+      "Equity index fund",
+      "Savings account only",
+      "Gold loan"
+    ],
+    "answer": 1,
+    "explain": "Correct: Equity index fund."
+  },
+  {
+    "cat": "invest",
+    "difficulty": "Medium",
+    "q": "What should you choose here? When you need quick access within days",
+    "options": [
+      "Sectoral equity fund",
+      "Liquid fund",
+      "Equity small-cap fund",
+      "Overnight fund"
+    ],
+    "answer": 3,
+    "explain": "Overnight/Liquid funds are designed for low volatility and quick access."
+  },
+  {
+    "cat": "basics",
+    "difficulty": "Easy",
+    "q": "Which of the following is MOST suitable: If you want very quick bank transfer 24×7:",
+    "options": [
+      "Cheque",
+      "IMPS",
+      "NEFT (batch)",
+      "RTGS (high value)"
+    ],
+    "answer": 1,
+    "explain": "Correct: IMPS."
+  },
+  {
+    "cat": "invest",
+    "difficulty": "Easy",
+    "q": "Which of the following is MOST suitable: When you need quick access within days",
+    "options": [
+      "Overnight fund",
+      "Equity small-cap fund",
+      "Liquid fund",
+      "Sectoral equity fund"
+    ],
+    "answer": 0,
+    "explain": "Overnight/Liquid funds are designed for low volatility and quick access."
+  },
+  {
+    "cat": "invest",
+    "difficulty": "Medium",
+    "q": "Pick the BEST fit: For minimal short‑term risk",
+    "options": [
+      "Overnight fund",
+      "Equity small-cap fund",
+      "Sectoral equity fund",
+      "Liquid fund"
+    ],
+    "answer": 0,
+    "explain": "Overnight/Liquid funds are designed for low volatility and quick access."
+  },
+  {
+    "cat": "invest",
+    "difficulty": "Easy",
+    "q": "Pick the BEST fit: When you need quick access within days",
+    "options": [
+      "Overnight fund",
+      "Liquid fund",
+      "Sectoral equity fund",
+      "Equity small-cap fund"
+    ],
+    "answer": 0,
+    "explain": "Overnight/Liquid funds are designed for low volatility and quick access."
+  },
+  {
+    "cat": "invest",
+    "difficulty": "Easy",
+    "q": "Which of the following is MOST suitable: For parking funds for a week",
+    "options": [
+      "Equity small-cap fund",
+      "Liquid fund",
+      "Overnight fund",
+      "Sectoral equity fund"
+    ],
+    "answer": 2,
+    "explain": "Overnight/Liquid funds are designed for low volatility and quick access."
+  },
+  {
+    "cat": "invest",
+    "difficulty": "Medium",
+    "q": "Among the options, the right fit is: For parking funds for a week",
+    "options": [
+      "Overnight fund",
+      "Liquid fund",
+      "Sectoral equity fund",
+      "Equity small-cap fund"
+    ],
+    "answer": 0,
+    "explain": "Overnight/Liquid funds are designed for low volatility and quick access."
+  },
+  {
+    "cat": "basics",
+    "difficulty": "Medium",
+    "q": "Which of the following is MOST suitable: For long-term equity growth, a suitable instrument is:",
+    "options": [
+      "Equity index fund",
+      "Savings account only",
+      "Gold loan",
+      "Overnight fund"
+    ],
+    "answer": 0,
+    "explain": "Correct: Equity index fund."
+  },
+  {
+    "cat": "basics",
+    "difficulty": "Medium",
+    "q": "Pick the BEST fit: If you want market-wide equity exposure at low cost:",
+    "options": [
+      "Crypto exchange",
+      "Index fund/ETF",
+      "Single small-cap stock",
+      "Real estate"
+    ],
+    "answer": 1,
+    "explain": "Correct: Index fund/ETF."
+  },
+  {
+    "cat": "basics",
+    "difficulty": "Easy",
+    "q": "Which of the following is MOST suitable: For tax deduction u/s 80C with equity exposure:",
+    "options": [
+      "Overnight fund",
+      "Gold ETF",
+      "ELSS",
+      "Corporate bond fund"
+    ],
+    "answer": 2,
+    "explain": "Correct: ELSS."
+  },
+  {
+    "cat": "basics",
+    "difficulty": "Medium",
+    "q": "Pick the BEST fit: For tax deduction u/s 80C with equity exposure:",
+    "options": [
+      "Corporate bond fund",
+      "Overnight fund",
+      "Gold ETF",
+      "ELSS"
+    ],
+    "answer": 3,
+    "explain": "Correct: ELSS."
+  },
+  {
+    "cat": "invest",
+    "difficulty": "Medium",
+    "q": "What should you choose here? For minimal short‑term risk",
+    "options": [
+      "Sectoral equity fund",
+      "Equity small-cap fund",
+      "Overnight fund",
+      "Liquid fund"
+    ],
+    "answer": 2,
+    "explain": "Overnight/Liquid funds are designed for low volatility and quick access."
+  },
+  {
+    "cat": "basics",
+    "difficulty": "Easy",
+    "q": "Expand the acronym SIP.",
+    "options": [
+      "National Provident Scheme",
+      "National Securities Depository",
+      "Savings & Insurance Plan",
+      "Systematic Investment Plan"
+    ],
+    "answer": 3,
+    "explain": "SIP = Systematic Investment Plan."
+  },
+  {
+    "cat": "basics",
+    "difficulty": "Easy",
+    "q": "The abbreviation SIP stands for:",
+    "options": [
+      "National Securities Deposit Limited",
+      "National Payment System",
+      "Public Account Number",
+      "Systematic Investment Plan"
+    ],
+    "answer": 3,
+    "explain": "SIP = Systematic Investment Plan."
+  },
+  {
+    "cat": "basics",
+    "difficulty": "Easy",
+    "q": "Expand the acronym SWP.",
+    "options": [
+      "Systematic Withdrawal Plan",
+      "Savings Withdrawal Plan",
+      "National Stock Depository Limited",
+      "Annual Investment Statement"
+    ],
+    "answer": 0,
+    "explain": "SWP = Systematic Withdrawal Plan."
+  },
+  {
+    "cat": "basics",
+    "difficulty": "Easy",
+    "q": "The abbreviation SWP stands for:",
+    "options": [
+      "Systematic Withdrawal Plan",
+      "Sovereign Gold Bond Note",
+      "Rural Bank of India",
+      "National Savings Certificate Scheme"
+    ],
+    "answer": 0,
+    "explain": "SWP = Systematic Withdrawal Plan."
+  },
+  {
+    "cat": "basics",
+    "difficulty": "Easy",
+    "q": "Expand the acronym STP.",
+    "options": [
+      "Assessed Information Statement",
+      "KYC Repository Agency",
+      "Systematic Transfer Plan",
+      "Network Electronic Funds Channel"
+    ],
+    "answer": 2,
+    "explain": "STP = Systematic Transfer Plan."
+  },
+  {
+    "cat": "basics",
+    "difficulty": "Easy",
+    "q": "The abbreviation STP stands for:",
+    "options": [
+      "National Securities Deposit Limited",
+      "Goods and Services Tariff",
+      "Systematic Transfer Plan",
+      "Instant Mobile Payment Service"
+    ],
+    "answer": 2,
+    "explain": "STP = Systematic Transfer Plan."
+  },
+  {
+    "cat": "basics",
+    "difficulty": "Easy",
+    "q": "Expand the acronym NAV.",
+    "options": [
+      "Securities and Exchange Bureau of India",
+      "Security Transaction Tax",
+      "Net Asset Value",
+      "Savings Withdrawal Plan"
+    ],
+    "answer": 2,
+    "explain": "NAV = Net Asset Value."
+  },
+  {
+    "cat": "basics",
+    "difficulty": "Easy",
+    "q": "The abbreviation NAV stands for:",
+    "options": [
+      "Net Asset Value",
+      "Pension Fund Regulation and Department Authority",
+      "New Pension Savings",
+      "Insurance and Reinsurance Development Authority"
+    ],
+    "answer": 0,
+    "explain": "NAV = Net Asset Value."
+  },
+  {
+    "cat": "basics",
+    "difficulty": "Easy",
+    "q": "Expand the acronym AUM.",
+    "options": [
+      "Assets Under Management",
+      "Pension Finance Regulatory Development Authority",
+      "Personal Provident Fund",
+      "Insurance Regulation Development Agency"
+    ],
+    "answer": 0,
+    "explain": "AUM = Assets Under Management."
+  },
+  {
+    "cat": "basics",
+    "difficulty": "Easy",
+    "q": "The abbreviation AUM stands for:",
+    "options": [
+      "Assets Under Management",
+      "KYC Reporting Agency",
+      "Reserve Banking of India",
+      "National Securities Deposit Limited"
+    ],
+    "answer": 0,
+    "explain": "AUM = Assets Under Management."
+  },
+  {
+    "cat": "basics",
+    "difficulty": "Easy",
+    "q": "Expand the acronym REIT.",
+    "options": [
+      "Public Pension Fund",
+      "India Finance Sort Code",
+      "Real Estate Investment Trust",
+      "Pension Fund Regulation and Department Authority"
+    ],
+    "answer": 2,
+    "explain": "REIT = Real Estate Investment Trust."
+  },
+  {
+    "cat": "basics",
+    "difficulty": "Easy",
+    "q": "The abbreviation REIT stands for:",
+    "options": [
+      "Real Estate Investment Trust",
+      "Central Depository Service of India",
+      "Universal Payments Index",
+      "KYC Reporting Agency"
+    ],
+    "answer": 0,
+    "explain": "REIT = Real Estate Investment Trust."
+  },
+  {
+    "cat": "basics",
+    "difficulty": "Easy",
+    "q": "Expand the acronym InvIT.",
+    "options": [
+      "Pension Funds Regulation & Development Authority",
+      "Public Protection Fund",
+      "Infrastructure Investment Trust",
+      "National Electronic Funds Transfer System"
+    ],
+    "answer": 2,
+    "explain": "InvIT = Infrastructure Investment Trust."
+  },
+  {
+    "cat": "basics",
+    "difficulty": "Easy",
+    "q": "The abbreviation InvIT stands for:",
+    "options": [
+      "Insurance and Reinsurance Development Authority",
+      "Average Unit Margin",
+      "Infrastructure Investment Trust",
+      "Security Transaction Tax"
+    ],
+    "answer": 2,
+    "explain": "InvIT = Infrastructure Investment Trust."
+  },
+  {
+    "cat": "basics",
+    "difficulty": "Easy",
+    "q": "Expand the acronym KYC.",
+    "options": [
+      "National Stock Depository Limited",
+      "Know Your Customer",
+      "Securities and Exchange Bureau of India",
+      "Real-Time Gross Settlement Network"
+    ],
+    "answer": 1,
+    "explain": "KYC = Know Your Customer."
+  },
+  {
+    "cat": "basics",
+    "difficulty": "Easy",
+    "q": "The abbreviation KYC stands for:",
+    "options": [
+      "Public Pension Fund",
+      "Know Your Customer",
+      "Instant Mobile Payment Service",
+      "National Stock Depository Limited"
+    ],
+    "answer": 1,
+    "explain": "KYC = Know Your Customer."
+  },
+  {
+    "cat": "basics",
+    "difficulty": "Easy",
+    "q": "Expand the acronym PAN.",
+    "options": [
+      "Permanent Account Number",
+      "Unified Pricing Interface",
+      "Pension Fund Regulation and Department Authority",
+      "National Efficient Funds Transfer"
+    ],
+    "answer": 0,
+    "explain": "PAN = Permanent Account Number."
+  },
+  {
+    "cat": "basics",
+    "difficulty": "Easy",
+    "q": "The abbreviation PAN stands for:",
+    "options": [
+      "National Small Certificate",
+      "Permanent Account Number",
+      "Sovereign Gold Bond Scheme",
+      "International Financial System Code"
+    ],
+    "answer": 1,
+    "explain": "PAN = Permanent Account Number."
+  },
+  {
+    "cat": "basics",
+    "difficulty": "Easy",
+    "q": "Expand the acronym IFSC.",
+    "options": [
+      "Know Your Capital",
+      "Real Estate Income Trust",
+      "Institutional Investment Trust",
+      "Indian Financial System Code"
+    ],
+    "answer": 3,
+    "explain": "IFSC = Indian Financial System Code."
+  },
+  {
+    "cat": "basics",
+    "difficulty": "Easy",
+    "q": "The abbreviation IFSC stands for:",
+    "options": [
+      "Computed Annual Growth Rate",
+      "Tax Deduction at Source",
+      "Indian Financial System Code",
+      "Indian Investment Trust"
+    ],
+    "answer": 2,
+    "explain": "IFSC = Indian Financial System Code."
+  },
+  {
+    "cat": "basics",
+    "difficulty": "Easy",
+    "q": "Expand the acronym NEFT.",
+    "options": [
+      "National Electronic Funds Transfer",
+      "Public Protection Fund",
+      "Real Estate Income Trust",
+      "Stock Transaction Tax"
+    ],
+    "answer": 0,
+    "explain": "NEFT = National Electronic Funds Transfer."
+  },
+  {
+    "cat": "basics",
+    "difficulty": "Easy",
+    "q": "The abbreviation NEFT stands for:",
+    "options": [
+      "National Electronic Funds Transfer",
+      "Annual Investment Statement",
+      "Consolidated Annual Growth Rate",
+      "Republic Bank of India"
+    ],
+    "answer": 0,
+    "explain": "NEFT = National Electronic Funds Transfer."
+  },
+  {
+    "cat": "basics",
+    "difficulty": "Easy",
+    "q": "Expand the acronym RTGS.",
+    "options": [
+      "Real-Time Gross Settlement Network",
+      "Real Time Gross Settlement",
+      "National Efficient Funds Transfer",
+      "Keep Your Credit"
+    ],
+    "answer": 1,
+    "explain": "RTGS = Real Time Gross Settlement."
+  },
+  {
+    "cat": "basics",
+    "difficulty": "Easy",
+    "q": "The abbreviation RTGS stands for:",
+    "options": [
+      "Insurance Regulatory and Development Authority",
+      "Real Time Gross Settlement",
+      "Annual Information Summary",
+      "Real-Time Gross Settlement Network"
+    ],
+    "answer": 1,
+    "explain": "RTGS = Real Time Gross Settlement."
+  },
+  {
+    "cat": "basics",
+    "difficulty": "Easy",
+    "q": "Expand the acronym IMPS.",
+    "options": [
+      "Personal Account Number",
+      "New Electronic Funds Transfer",
+      "Reserve Banking of India",
+      "Immediate Payment Service"
+    ],
+    "answer": 3,
+    "explain": "IMPS = Immediate Payment Service."
+  },
+  {
+    "cat": "basics",
+    "difficulty": "Easy",
+    "q": "The abbreviation IMPS stands for:",
+    "options": [
+      "Annual Investment Statement",
+      "Assessed Information Statement",
+      "Immediate Payment Service",
+      "National Securities Depository"
+    ],
+    "answer": 2,
+    "explain": "IMPS = Immediate Payment Service."
+  },
+  {
+    "cat": "basics",
+    "difficulty": "Easy",
+    "q": "Expand the acronym UPI.",
+    "options": [
+      "Republic Bank of India",
+      "Instant Money Push System",
+      "Reserve Bank for India",
+      "Unified Payments Interface"
+    ],
+    "answer": 3,
+    "explain": "UPI = Unified Payments Interface."
+  },
+  {
+    "cat": "basics",
+    "difficulty": "Easy",
+    "q": "The abbreviation UPI stands for:",
+    "options": [
+      "Consolidated Annual Growth Rate",
+      "Institutional Investment Trust",
+      "Central Demat Services Limited",
+      "Unified Payments Interface"
+    ],
+    "answer": 3,
+    "explain": "UPI = Unified Payments Interface."
+  },
+  {
+    "cat": "basics",
+    "difficulty": "Easy",
+    "q": "Expand the acronym PPF.",
+    "options": [
+      "Security Transaction Tax",
+      "National Efficient Funds Transfer",
+      "Pension Funds Regulation & Development Authority",
+      "Public Provident Fund"
+    ],
+    "answer": 3,
+    "explain": "PPF = Public Provident Fund."
+  },
+  {
+    "cat": "basics",
+    "difficulty": "Easy",
+    "q": "The abbreviation PPF stands for:",
+    "options": [
+      "Public Provident Fund",
+      "Tax Deferred Savings",
+      "Institutional Investment Trust",
+      "Government Services Tax"
+    ],
+    "answer": 0,
+    "explain": "PPF = Public Provident Fund."
+  },
+  {
+    "cat": "basics",
+    "difficulty": "Easy",
+    "q": "Expand the acronym NPS.",
+    "options": [
+      "Real-Time Gilt Settlement",
+      "National Pension System",
+      "Systematic Wealth Program",
+      "Indian Risk & Development Authority"
+    ],
+    "answer": 1,
+    "explain": "NPS = National Pension System."
+  },
+  {
+    "cat": "basics",
+    "difficulty": "Easy",
+    "q": "The abbreviation NPS stands for:",
+    "options": [
+      "Application Supported by Banking Amount",
+      "Sovereign Gold Bond Note",
+      "National Pension System",
+      "Short Term Profit"
+    ],
+    "answer": 2,
+    "explain": "NPS = National Pension System."
+  },
+  {
+    "cat": "basics",
+    "difficulty": "Easy",
+    "q": "Expand the acronym NSC.",
+    "options": [
+      "National Savings Certificate",
+      "Stock Transaction Tax",
+      "National Savings Coupon",
+      "Deposit & Insurance Credit Guarantee Company"
+    ],
+    "answer": 0,
+    "explain": "NSC = National Savings Certificate."
+  },
+  {
+    "cat": "basics",
+    "difficulty": "Easy",
+    "q": "The abbreviation NSC stands for:",
+    "options": [
+      "Application Secured by Bank Amount",
+      "Know-your-customer Registry Authority",
+      "Net Average Value",
+      "National Savings Certificate"
+    ],
+    "answer": 3,
+    "explain": "NSC = National Savings Certificate."
+  },
+  {
+    "cat": "basics",
+    "difficulty": "Easy",
+    "q": "Expand the acronym DICGC.",
+    "options": [
+      "Systematic Wealth Program",
+      "Deposit Insurance and Credit Guarantee Corporation",
+      "International Financial System Code",
+      "Systematic Income Plan"
+    ],
+    "answer": 1,
+    "explain": "DICGC = Deposit Insurance and Credit Guarantee Corporation."
+  },
+  {
+    "cat": "basics",
+    "difficulty": "Easy",
+    "q": "The abbreviation DICGC stands for:",
+    "options": [
+      "National Securities Deposit Limited",
+      "Annual Information Summary",
+      "National Securities Depository",
+      "Deposit Insurance and Credit Guarantee Corporation"
+    ],
+    "answer": 3,
+    "explain": "DICGC = Deposit Insurance and Credit Guarantee Corporation."
+  },
+  {
+    "cat": "basics",
+    "difficulty": "Easy",
+    "q": "Expand the acronym ASBA.",
+    "options": [
+      "Application Supported by Blocked Amount",
+      "Cumulative Annual Growth Rate",
+      "National Securities Depository Ltd.",
+      "Central Depository Service of India"
+    ],
+    "answer": 0,
+    "explain": "ASBA = Application Supported by Blocked Amount."
+  },
+  {
+    "cat": "basics",
+    "difficulty": "Easy",
+    "q": "The abbreviation ASBA stands for:",
+    "options": [
+      "Application Supported by Blocked Amount",
+      "Employee Provident Fund",
+      "Deposit Insurance & Central Guarantee Corporation",
+      "International Financial System Code"
+    ],
+    "answer": 0,
+    "explain": "ASBA = Application Supported by Blocked Amount."
+  },
+  {
+    "cat": "basics",
+    "difficulty": "Easy",
+    "q": "Expand the acronym GST.",
+    "options": [
+      "Rural Bank of India",
+      "Application Supported by Block Amount",
+      "Institutional Investment Trust",
+      "Goods and Services Tax"
+    ],
+    "answer": 3,
+    "explain": "GST = Goods and Services Tax."
+  },
+  {
+    "cat": "basics",
+    "difficulty": "Easy",
+    "q": "The abbreviation GST stands for:",
+    "options": [
+      "Personal Account Number",
+      "Savings Withdrawal Plan",
+      "Indian Financial Services Code",
+      "Goods and Services Tax"
+    ],
+    "answer": 3,
+    "explain": "GST = Goods and Services Tax."
+  },
+  {
+    "cat": "basics",
+    "difficulty": "Easy",
+    "q": "Expand the acronym STT.",
+    "options": [
+      "Real Estate Income Trust",
+      "Securities Transaction Tax",
+      "Central Depository Securities Limited",
+      "Immediate Payments System"
+    ],
+    "answer": 1,
+    "explain": "STT = Securities Transaction Tax."
+  },
+  {
+    "cat": "basics",
+    "difficulty": "Easy",
+    "q": "The abbreviation STT stands for:",
+    "options": [
+      "Systematic Income Plan",
+      "Infrastructure Income Trust",
+      "Residential Equity Investment Trust",
+      "Securities Transaction Tax"
+    ],
+    "answer": 3,
+    "explain": "STT = Securities Transaction Tax."
+  },
+  {
+    "cat": "basics",
+    "difficulty": "Easy",
+    "q": "Expand the acronym TDS.",
+    "options": [
+      "Real Estate Indexed Trust",
+      "Tax Deducted at Source",
+      "Know-your-customer Registry Authority",
+      "Network Electronic Funds Channel"
+    ],
+    "answer": 1,
+    "explain": "TDS = Tax Deducted at Source."
+  },
+  {
+    "cat": "basics",
+    "difficulty": "Easy",
+    "q": "The abbreviation TDS stands for:",
+    "options": [
+      "IFSC is a bank branch ID only",
+      "Tax Deducted at Source",
+      "Asset Utility Metric",
+      "Primary Account Number"
+    ],
+    "answer": 1,
+    "explain": "TDS = Tax Deducted at Source."
+  },
+  {
+    "cat": "basics",
+    "difficulty": "Easy",
+    "q": "Expand the acronym CAGR.",
+    "options": [
+      "Integrated Money Payment Service",
+      "Compound Annual Growth Rate",
+      "Indian Investment Trust",
+      "Secure Investment Plan"
+    ],
+    "answer": 1,
+    "explain": "CAGR = Compound Annual Growth Rate."
+  },
+  {
+    "cat": "basics",
+    "difficulty": "Easy",
+    "q": "The abbreviation CAGR stands for:",
+    "options": [
+      "Assets Under Monitoring",
+      "Compound Annual Growth Rate",
+      "Personal Provident Fund",
+      "Infrastructure Investment Trust Fund"
+    ],
+    "answer": 1,
+    "explain": "CAGR = Compound Annual Growth Rate."
+  },
+  {
+    "cat": "basics",
+    "difficulty": "Easy",
+    "q": "Expand the acronym EPF.",
+    "options": [
+      "Employees’ Provident Fund",
+      "Unified Pricing Interface",
+      "State Gold Bond",
+      "Annual Investment Statement"
+    ],
+    "answer": 0,
+    "explain": "EPF = Employees’ Provident Fund."
+  },
+  {
+    "cat": "basics",
+    "difficulty": "Easy",
+    "q": "The abbreviation EPF stands for:",
+    "options": [
+      "Annualized Unit Market",
+      "Reserve Banking of India",
+      "Integrated Money Payment Service",
+      "Employees’ Provident Fund"
+    ],
+    "answer": 3,
+    "explain": "EPF = Employees’ Provident Fund."
+  },
+  {
+    "cat": "basics",
+    "difficulty": "Easy",
+    "q": "Expand the acronym CDSL.",
+    "options": [
+      "National Electronic Funds Transfer System",
+      "Central Depository Services (India) Limited",
+      "Deposit & Insurance Credit Guarantee Company",
+      "Unified Pricing Interface"
+    ],
+    "answer": 1,
+    "explain": "CDSL = Central Depository Services (India) Limited."
+  },
+  {
+    "cat": "basics",
+    "difficulty": "Easy",
+    "q": "The abbreviation CDSL stands for:",
+    "options": [
+      "Residential Equity Investment Trust",
+      "Integrated Money Payment Service",
+      "Central Depository Services (India) Limited",
+      "Unified Payment Interface"
+    ],
+    "answer": 2,
+    "explain": "CDSL = Central Depository Services (India) Limited."
+  },
+  {
+    "cat": "basics",
+    "difficulty": "Easy",
+    "q": "Expand the acronym NSDL.",
+    "options": [
+      "Insurance and Reinsurance Development Authority",
+      "Pension Fund Regulatory Development Authority",
+      "National Securities Depository Limited",
+      "Goods and Supply Tax"
+    ],
+    "answer": 2,
+    "explain": "NSDL = National Securities Depository Limited."
+  },
+  {
+    "cat": "basics",
+    "difficulty": "Easy",
+    "q": "The abbreviation NSDL stands for:",
+    "options": [
+      "National Savings Coupon",
+      "Deposit Insurance & Credit Guarantee Council",
+      "Employee Provident Fund",
+      "National Securities Depository Limited"
+    ],
+    "answer": 3,
+    "explain": "NSDL = National Securities Depository Limited."
+  },
+  {
+    "cat": "india",
+    "difficulty": "Easy",
+    "q": "Expand the acronym PFRDA.",
+    "options": [
+      "Rapid Transfer Gateway System",
+      "General Sales Tax",
+      "Real Estate Income Trust",
+      "Pension Fund Regulatory and Development Authority"
+    ],
+    "answer": 3,
+    "explain": "PFRDA = Pension Fund Regulatory and Development Authority."
+  },
+  {
+    "cat": "india",
+    "difficulty": "Easy",
+    "q": "The abbreviation PFRDA stands for:",
+    "options": [
+      "Securities and Exchange Bureau of India",
+      "Employee Provident Fund",
+      "Annualized Unit Market",
+      "Pension Fund Regulatory and Development Authority"
+    ],
+    "answer": 3,
+    "explain": "PFRDA = Pension Fund Regulatory and Development Authority."
+  },
+  {
+    "cat": "india",
+    "difficulty": "Easy",
+    "q": "Expand the acronym IRDAI.",
+    "options": [
+      "Scheduled Investment Period",
+      "Insurance Regulatory and Development Authority of India",
+      "Taxes Deducted at Source",
+      "Infrastructure Income Trust"
+    ],
+    "answer": 1,
+    "explain": "IRDAI = Insurance Regulatory and Development Authority of India."
+  },
+  {
+    "cat": "india",
+    "difficulty": "Easy",
+    "q": "The abbreviation IRDAI stands for:",
+    "options": [
+      "Insurance Regulatory and Development Authority of India",
+      "Deposit & Insurance Credit Guarantee Company",
+      "Rural Bank of India",
+      "Taxes Deducted at Source"
+    ],
+    "answer": 0,
+    "explain": "IRDAI = Insurance Regulatory and Development Authority of India."
+  },
+  {
+    "cat": "india",
+    "difficulty": "Easy",
+    "q": "Expand the acronym SEBI.",
+    "options": [
+      "Sovereign Gold Backed bond",
+      "Securities and Exchange Board of India",
+      "Central Demat Services Limited",
+      "Security Transaction Tax"
+    ],
+    "answer": 1,
+    "explain": "SEBI = Securities and Exchange Board of India."
+  },
+  {
+    "cat": "india",
+    "difficulty": "Easy",
+    "q": "The abbreviation SEBI stands for:",
+    "options": [
+      "Securities and Exchange Board of India",
+      "Net Average Value",
+      "New Pension Savings",
+      "Real-Time Gilt Settlement"
+    ],
+    "answer": 0,
+    "explain": "SEBI = Securities and Exchange Board of India."
+  },
+  {
+    "cat": "india",
+    "difficulty": "Easy",
+    "q": "Expand the acronym RBI.",
+    "options": [
+      "Reserve Bank of India",
+      "Total Deduction Summary",
+      "KYC Reporting Agency",
+      "Pension Finance Regulatory Development Authority"
+    ],
+    "answer": 0,
+    "explain": "RBI = Reserve Bank of India."
+  },
+  {
+    "cat": "india",
+    "difficulty": "Easy",
+    "q": "The abbreviation RBI stands for:",
+    "options": [
+      "Network Electronic Funds Channel",
+      "National Electronic Funds Transfer System",
+      "Reserve Bank of India",
+      "National Stock Depository Limited"
+    ],
+    "answer": 2,
+    "explain": "RBI = Reserve Bank of India."
+  },
+  {
+    "cat": "basics",
+    "difficulty": "Easy",
+    "q": "Expand the acronym KRA.",
+    "options": [
+      "National Securities Depository",
+      "KYC Registration Agency",
+      "Taxes Deducted at Source",
+      "National Efficient Funds Transfer"
+    ],
+    "answer": 1,
+    "explain": "KRA = KYC Registration Agency."
+  },
+  {
+    "cat": "basics",
+    "difficulty": "Easy",
+    "q": "The abbreviation KRA stands for:",
+    "options": [
+      "National Efficient Funds Transfer",
+      "Instant Mobile Payment Service",
+      "KYC Registration Agency",
+      "Securities and Equity Board of India"
+    ],
+    "answer": 2,
+    "explain": "KRA = KYC Registration Agency."
+  },
+  {
+    "cat": "basics",
+    "difficulty": "Easy",
+    "q": "Expand the acronym AIS.",
+    "options": [
+      "Annual Information Statement",
+      "Pension Funds Regulation & Development Authority",
+      "Annual Information Summary",
+      "Systematic Wealth Program"
+    ],
+    "answer": 0,
+    "explain": "AIS = Annual Information Statement."
+  },
+  {
+    "cat": "basics",
+    "difficulty": "Easy",
+    "q": "The abbreviation AIS stands for:",
+    "options": [
+      "Savings Withdrawal Plan",
+      "Unified Pricing Interface",
+      "Annual Information Statement",
+      "Sovereign Gold Backed bond"
+    ],
+    "answer": 2,
+    "explain": "AIS = Annual Information Statement."
+  },
+  {
+    "cat": "basics",
+    "difficulty": "Easy",
+    "q": "Expand the acronym SGB.",
+    "options": [
+      "Sovereign Gold Bond",
+      "Application Supported by Banking Amount",
+      "New Pension Savings",
+      "Unified Payment Interface"
+    ],
+    "answer": 0,
+    "explain": "SGB = Sovereign Gold Bond."
+  },
+  {
+    "cat": "basics",
+    "difficulty": "Easy",
+    "q": "The abbreviation SGB stands for:",
+    "options": [
+      "Securities and Exchange Bureau of India",
+      "Sovereign Gold Bond",
+      "Securities and Equity Board of India",
+      "Real-Time Gross Settlement Network"
+    ],
+    "answer": 1,
+    "explain": "SGB = Sovereign Gold Bond."
+  },
+  {
+    "cat": "banking",
+    "difficulty": "Easy",
+    "q": "For an instant 24×7 transfer, pick:",
+    "options": [
+      "NEFT",
+      "Cheque",
+      "IMPS",
+      "RTGS"
+    ],
+    "answer": 2,
+    "explain": "IMPS supports instant 24×7 transfers."
+  },
+  {
+    "cat": "banking",
+    "difficulty": "Easy",
+    "q": "If you need immediate bank-to-bank transfer at any time, choose:",
+    "options": [
+      "IMPS",
+      "NEFT",
+      "Cheque",
+      "RTGS"
+    ],
+    "answer": 0,
+    "explain": "IMPS supports instant 24×7 transfers."
+  },
+  {
+    "cat": "banking",
+    "difficulty": "Easy",
+    "q": "Which of these offers instant transfers round the clock?",
+    "options": [
+      "NEFT",
+      "Cheque",
+      "IMPS",
+      "RTGS"
+    ],
+    "answer": 2,
+    "explain": "IMPS supports instant 24×7 transfers."
+  },
+  {
+    "cat": "banking",
+    "difficulty": "Easy",
+    "q": "Which is commonly used for high-value real-time settlement?",
+    "options": [
+      "NEFT",
+      "IMPS",
+      "RTGS",
+      "UPI"
+    ],
+    "answer": 2,
+    "explain": "RTGS."
+  },
+  {
+    "cat": "banking",
+    "difficulty": "Easy",
+    "q": "Which works in timed batches across the day?",
+    "options": [
+      "IMPS",
+      "RTGS",
+      "NEFT",
+      "UPI"
+    ],
+    "answer": 2,
+    "explain": "NEFT."
+  },
+  {
+    "cat": "banking",
+    "difficulty": "Easy",
+    "q": "UPI primarily is a:",
+    "options": [
+      "Unified mobile-first payments interface",
+      "Credit rating",
+      "Insurance plan",
+      "Bank deposit"
+    ],
+    "answer": 0,
+    "explain": "Unified mobile-first payments interface."
+  },
+  {
+    "cat": "india",
+    "difficulty": "Easy",
+    "q": "Typical PPF maturity is:",
+    "options": [
+      "5 years",
+      "15 years",
+      "10 years",
+      "20 years"
+    ],
+    "answer": 1,
+    "explain": "Correct: 15 years."
+  },
+  {
+    "cat": "india",
+    "difficulty": "Easy",
+    "q": "ELSS lock-in lasts for:",
+    "options": [
+      "3 years",
+      "No lock-in",
+      "5 years",
+      "1 year"
+    ],
+    "answer": 0,
+    "explain": "Correct: 3 years."
+  },
+  {
+    "cat": "india",
+    "difficulty": "Easy",
+    "q": "SGB has a normal tenure of:",
+    "options": [
+      "8 years",
+      "3 years",
+      "12 years",
+      "5 years"
+    ],
+    "answer": 0,
+    "explain": "Correct: 8 years."
+  },
+  {
+    "cat": "india",
+    "difficulty": "Easy",
+    "q": "Tax-saver fixed deposit lock-in:",
+    "options": [
+      "5 years",
+      "3 years",
+      "10 years",
+      "1 year"
+    ],
+    "answer": 0,
+    "explain": "Correct: 5 years."
+  },
+  {
+    "cat": "india",
+    "difficulty": "Easy",
+    "q": "NSC generally matures in:",
+    "options": [
+      "7 years",
+      "3 years",
+      "10 years",
+      "5 years"
+    ],
+    "answer": 3,
+    "explain": "Correct: 5 years."
+  },
+  {
+    "cat": "invest",
+    "difficulty": "Medium",
+    "q": "Index ETFs usually:",
+    "options": [
+      "Are always debt schemes",
+      "Trade intra-day on exchanges",
+      "Can be bought only at day-end NAV",
+      "Guarantee outperformance"
+    ],
+    "answer": 1,
+    "explain": "Trade intra-day on exchanges"
+  },
+  {
+    "cat": "invest",
+    "difficulty": "Medium",
+    "q": "Direct mutual fund plans usually have:",
+    "options": [
+      "Exactly the same costs",
+      "Lower expense ratios than regular plans",
+      "No expense ratio at all",
+      "Higher expense ratios"
+    ],
+    "answer": 1,
+    "explain": "Lower expense ratios than regular plans"
+  },
+  {
+    "cat": "invest",
+    "difficulty": "Medium",
+    "q": "Growth option of a fund:",
+    "options": [
+      "Reinvests profits back into NAV",
+      "Pays regular cash dividends",
+      "Cuts taxes automatically",
+      "Guarantees income"
+    ],
+    "answer": 0,
+    "explain": "Reinvests profits back into NAV"
+  },
+  {
+    "cat": "invest",
+    "difficulty": "Medium",
+    "q": "Arbitrage funds attempt to:",
+    "options": [
+      "Capture price gaps between cash and futures",
+      "Speculate on crypto",
+      "Provide fixed returns",
+      "Hold only gold"
+    ],
+    "answer": 0,
+    "explain": "Capture price gaps between cash and futures"
+  },
+  {
+    "cat": "invest",
+    "difficulty": "Medium",
+    "q": "Rebalancing a portfolio helps:",
+    "options": [
+      "Maximize tax outgo",
+      "Maintain your target asset allocation",
+      "Avoid volatility entirely",
+      "Follow social trends"
+    ],
+    "answer": 1,
+    "explain": "Maintain your target asset allocation"
+  },
+  {
+    "cat": "invest",
+    "difficulty": "Medium",
+    "q": "Liquidity is generally highest in:",
+    "options": [
+      "Real estate",
+      "Overnight/Liquid funds",
+      "Long-term bonds",
+      "Small-cap equity funds"
+    ],
+    "answer": 1,
+    "explain": "Overnight/Liquid funds"
+  },
+  {
+    "cat": "invest",
+    "difficulty": "Medium",
+    "q": "Beta above 1 suggests:",
+    "options": [
+      "Lower sensitivity than market",
+      "A fund’s size is large",
+      "Higher sensitivity than the market",
+      "No relation to market movement"
+    ],
+    "answer": 2,
+    "explain": "Higher sensitivity than the market"
+  },
+  {
+    "cat": "invest",
+    "difficulty": "Medium",
+    "q": "Alpha above 0 suggests:",
+    "options": [
+      "No risk involved",
+      "Underperformance vs benchmark",
+      "Outperformance vs benchmark (risk-adjusted)",
+      "Higher expenses necessarily"
+    ],
+    "answer": 2,
+    "explain": "Outperformance vs benchmark (risk-adjusted)"
+  },
+  {
+    "cat": "money",
+    "difficulty": "Easy",
+    "q": "Term insurance is mainly for:",
+    "options": [
+      "Tax evasion",
+      "Speculation",
+      "Guaranteed returns",
+      "Financial protection (risk cover)"
+    ],
+    "answer": 3,
+    "explain": "Financial protection (risk cover)"
+  },
+  {
+    "cat": "money",
+    "difficulty": "Easy",
+    "q": "Health insurance premiums may be deductible under:",
+    "options": [
+      "Section 80G",
+      "Section 80C",
+      "Section 80D",
+      "Section 24(b)"
+    ],
+    "answer": 2,
+    "explain": "Section 80D"
+  },
+  {
+    "cat": "money",
+    "difficulty": "Easy",
+    "q": "Higher CIBIL/credit score generally means:",
+    "options": [
+      "Better loan terms likely",
+      "Higher interest rates",
+      "No EMI required",
+      "Automatic approvals for all loans"
+    ],
+    "answer": 0,
+    "explain": "Better loan terms likely"
+  },
+  {
+    "cat": "money",
+    "difficulty": "Easy",
+    "q": "In a typical home loan EMI early years:",
+    "options": [
+      "Insurance forms most of it",
+      "Only fees are paid",
+      "Principal forms a larger portion",
+      "Interest forms a larger portion"
+    ],
+    "answer": 3,
+    "explain": "Interest forms a larger portion"
+  },
+  {
+    "cat": "basics",
+    "difficulty": "Medium",
+    "q": "Which of the following is correct about Liquid funds?",
+    "options": [
+      "They guarantee fixed returns.",
+      "They are designed for 20-year equity growth.",
+      "They suit short-term parking with relatively low volatility.",
+      "They invest only in gold."
+    ],
+    "answer": 2,
+    "explain": "They suit short-term parking with relatively low volatility."
+  },
+  {
+    "cat": "basics",
+    "difficulty": "Medium",
+    "q": "Which statement is TRUE about Liquid funds?",
+    "options": [
+      "They guarantee fixed returns.",
+      "They invest only in gold.",
+      "They suit short-term parking with relatively low volatility.",
+      "They are designed for 20-year equity growth."
+    ],
+    "answer": 2,
+    "explain": "They suit short-term parking with relatively low volatility."
+  },
+  {
+    "cat": "basics",
+    "difficulty": "Medium",
+    "q": "Identify the TRUE statement about Liquid funds.",
+    "options": [
+      "They suit short-term parking with relatively low volatility.",
+      "They guarantee fixed returns.",
+      "They are designed for 20-year equity growth.",
+      "They invest only in gold."
+    ],
+    "answer": 0,
+    "explain": "They suit short-term parking with relatively low volatility."
+  },
+  {
+    "cat": "basics",
+    "difficulty": "Medium",
+    "q": "Which of the following is correct about Overnight funds?",
+    "options": [
+      "They invest in very short-term overnight instruments.",
+      "They are equity funds.",
+      "They are real estate vehicles.",
+      "They take 10-year bond exposure only."
+    ],
+    "answer": 0,
+    "explain": "They invest in very short-term overnight instruments."
+  },
+  {
+    "cat": "basics",
+    "difficulty": "Medium",
+    "q": "Which statement is TRUE about Overnight funds?",
+    "options": [
+      "They are equity funds.",
+      "They invest in very short-term overnight instruments.",
+      "They take 10-year bond exposure only.",
+      "They are real estate vehicles."
+    ],
+    "answer": 1,
+    "explain": "They invest in very short-term overnight instruments."
+  },
+  {
+    "cat": "basics",
+    "difficulty": "Medium",
+    "q": "Identify the TRUE statement about Overnight funds.",
+    "options": [
+      "They are real estate vehicles.",
+      "They invest in very short-term overnight instruments.",
+      "They are equity funds.",
+      "They take 10-year bond exposure only."
+    ],
+    "answer": 1,
+    "explain": "They invest in very short-term overnight instruments."
+  },
+  {
+    "cat": "basics",
+    "difficulty": "Medium",
+    "q": "Which of the following is correct about Gilt funds?",
+    "options": [
+      "They hold only bank deposits.",
+      "They primarily invest in government securities.",
+      "They invest only in small-cap stocks.",
+      "They are crypto funds."
+    ],
+    "answer": 1,
+    "explain": "They primarily invest in government securities."
+  },
+  {
+    "cat": "basics",
+    "difficulty": "Medium",
+    "q": "Which statement is TRUE about Gilt funds?",
+    "options": [
+      "They primarily invest in government securities.",
+      "They invest only in small-cap stocks.",
+      "They are crypto funds.",
+      "They hold only bank deposits."
+    ],
+    "answer": 0,
+    "explain": "They primarily invest in government securities."
+  },
+  {
+    "cat": "basics",
+    "difficulty": "Medium",
+    "q": "Identify the TRUE statement about Gilt funds.",
+    "options": [
+      "They primarily invest in government securities.",
+      "They are crypto funds.",
+      "They invest only in small-cap stocks.",
+      "They hold only bank deposits."
+    ],
+    "answer": 0,
+    "explain": "They primarily invest in government securities."
+  },
+  {
+    "cat": "basics",
+    "difficulty": "Medium",
+    "q": "Which of the following is correct about Corporate bond funds?",
+    "options": [
+      "They invest only in IPOs.",
+      "They hold only cash.",
+      "They invest only in government securities.",
+      "They invest mainly in high-rated corporate debt."
+    ],
+    "answer": 3,
+    "explain": "They invest mainly in high-rated corporate debt."
+  },
+  {
+    "cat": "basics",
+    "difficulty": "Medium",
+    "q": "Which statement is TRUE about Corporate bond funds?",
+    "options": [
+      "They hold only cash.",
+      "They invest only in IPOs.",
+      "They invest mainly in high-rated corporate debt.",
+      "They invest only in government securities."
+    ],
+    "answer": 2,
+    "explain": "They invest mainly in high-rated corporate debt."
+  },
+  {
+    "cat": "basics",
+    "difficulty": "Medium",
+    "q": "Identify the TRUE statement about Corporate bond funds.",
+    "options": [
+      "They hold only cash.",
+      "They invest only in government securities.",
+      "They invest only in IPOs.",
+      "They invest mainly in high-rated corporate debt."
+    ],
+    "answer": 3,
+    "explain": "They invest mainly in high-rated corporate debt."
+  },
+  {
+    "cat": "basics",
+    "difficulty": "Medium",
+    "q": "Which of the following is correct about Credit risk funds?",
+    "options": [
+      "They are overnight funds.",
+      "They guarantee capital.",
+      "They invest only in AAA sovereign bonds.",
+      "They take exposure to lower-rated debt for higher yield potential."
+    ],
+    "answer": 3,
+    "explain": "They take exposure to lower-rated debt for higher yield potential."
+  },
+  {
+    "cat": "basics",
+    "difficulty": "Medium",
+    "q": "Which statement is TRUE about Credit risk funds?",
+    "options": [
+      "They take exposure to lower-rated debt for higher yield potential.",
+      "They guarantee capital.",
+      "They are overnight funds.",
+      "They invest only in AAA sovereign bonds."
+    ],
+    "answer": 0,
+    "explain": "They take exposure to lower-rated debt for higher yield potential."
+  },
+  {
+    "cat": "basics",
+    "difficulty": "Medium",
+    "q": "Identify the TRUE statement about Credit risk funds.",
+    "options": [
+      "They take exposure to lower-rated debt for higher yield potential.",
+      "They are overnight funds.",
+      "They guarantee capital.",
+      "They invest only in AAA sovereign bonds."
+    ],
+    "answer": 0,
+    "explain": "They take exposure to lower-rated debt for higher yield potential."
+  },
+  {
+    "cat": "basics",
+    "difficulty": "Medium",
+    "q": "Which of the following is correct about Small-cap equity funds?",
+    "options": [
+      "They are identical to FDs.",
+      "They are capital-guaranteed.",
+      "They can be more volatile in the short term.",
+      "They have zero volatility."
+    ],
+    "answer": 2,
+    "explain": "They can be more volatile in the short term."
+  },
+  {
+    "cat": "basics",
+    "difficulty": "Medium",
+    "q": "Which statement is TRUE about Small-cap equity funds?",
+    "options": [
+      "They have zero volatility.",
+      "They can be more volatile in the short term.",
+      "They are capital-guaranteed.",
+      "They are identical to FDs."
+    ],
+    "answer": 1,
+    "explain": "They can be more volatile in the short term."
+  },
+  {
+    "cat": "basics",
+    "difficulty": "Medium",
+    "q": "Identify the TRUE statement about Small-cap equity funds.",
+    "options": [
+      "They have zero volatility.",
+      "They can be more volatile in the short term.",
+      "They are capital-guaranteed.",
+      "They are identical to FDs."
+    ],
+    "answer": 1,
+    "explain": "They can be more volatile in the short term."
+  },
+  {
+    "cat": "basics",
+    "difficulty": "Medium",
+    "q": "Which of the following is correct about Aggressive hybrid funds?",
+    "options": [
+      "They invest only in gold.",
+      "They typically maintain an equity-heavy mix.",
+      "They are purely real estate.",
+      "They are debt-only."
+    ],
+    "answer": 1,
+    "explain": "They typically maintain an equity-heavy mix."
+  },
+  {
+    "cat": "basics",
+    "difficulty": "Medium",
+    "q": "Which statement is TRUE about Aggressive hybrid funds?",
+    "options": [
+      "They invest only in gold.",
+      "They are debt-only.",
+      "They are purely real estate.",
+      "They typically maintain an equity-heavy mix."
+    ],
+    "answer": 3,
+    "explain": "They typically maintain an equity-heavy mix."
+  },
+  {
+    "cat": "basics",
+    "difficulty": "Medium",
+    "q": "Identify the TRUE statement about Aggressive hybrid funds.",
+    "options": [
+      "They invest only in gold.",
+      "They typically maintain an equity-heavy mix.",
+      "They are debt-only.",
+      "They are purely real estate."
+    ],
+    "answer": 1,
+    "explain": "They typically maintain an equity-heavy mix."
+  },
+  {
+    "cat": "basics",
+    "difficulty": "Medium",
+    "q": "Which of the following is correct about ELSS funds?",
+    "options": [
+      "They have a 3-year lock-in and qualify u/s 80C.",
+      "No lock-in at all.",
+      "They have 10-year compulsory lock-in.",
+      "They qualify under 80D only."
+    ],
+    "answer": 0,
+    "explain": "They have a 3-year lock-in and qualify u/s 80C."
+  },
+  {
+    "cat": "basics",
+    "difficulty": "Medium",
+    "q": "Which statement is TRUE about ELSS funds?",
+    "options": [
+      "They have 10-year compulsory lock-in.",
+      "No lock-in at all.",
+      "They qualify under 80D only.",
+      "They have a 3-year lock-in and qualify u/s 80C."
+    ],
+    "answer": 3,
+    "explain": "They have a 3-year lock-in and qualify u/s 80C."
+  },
+  {
+    "cat": "basics",
+    "difficulty": "Medium",
+    "q": "Identify the TRUE statement about ELSS funds.",
+    "options": [
+      "They have 10-year compulsory lock-in.",
+      "They have a 3-year lock-in and qualify u/s 80C.",
+      "No lock-in at all.",
+      "They qualify under 80D only."
+    ],
+    "answer": 1,
+    "explain": "They have a 3-year lock-in and qualify u/s 80C."
+  },
+  {
+    "cat": "basics",
+    "difficulty": "Medium",
+    "q": "Which of the following is correct about PPF?",
+    "options": [
+      "It is a short-term instrument only.",
+      "It has a long tenure and enjoys EEE tax treatment (subject to law).",
+      "It is an equity mutual fund.",
+      "It has no tax benefits ever."
+    ],
+    "answer": 1,
+    "explain": "It has a long tenure and enjoys EEE tax treatment (subject to law)."
+  },
+  {
+    "cat": "basics",
+    "difficulty": "Medium",
+    "q": "Which statement is TRUE about PPF?",
+    "options": [
+      "It is an equity mutual fund.",
+      "It has a long tenure and enjoys EEE tax treatment (subject to law).",
+      "It is a short-term instrument only.",
+      "It has no tax benefits ever."
+    ],
+    "answer": 1,
+    "explain": "It has a long tenure and enjoys EEE tax treatment (subject to law)."
+  },
+  {
+    "cat": "basics",
+    "difficulty": "Medium",
+    "q": "Identify the TRUE statement about PPF.",
+    "options": [
+      "It is a short-term instrument only.",
+      "It is an equity mutual fund.",
+      "It has no tax benefits ever.",
+      "It has a long tenure and enjoys EEE tax treatment (subject to law)."
+    ],
+    "answer": 3,
+    "explain": "It has a long tenure and enjoys EEE tax treatment (subject to law)."
+  },
+  {
+    "cat": "basics",
+    "difficulty": "Medium",
+    "q": "Which of the following is correct about NPS?",
+    "options": [
+      "It is regulated by SEBI.",
+      "It is regulated by IRDAI.",
+      "It is regulated by PFRDA.",
+      "It is regulated by RBI."
+    ],
+    "answer": 2,
+    "explain": "It is regulated by PFRDA."
+  },
+  {
+    "cat": "basics",
+    "difficulty": "Medium",
+    "q": "Which statement is TRUE about NPS?",
+    "options": [
+      "It is regulated by RBI.",
+      "It is regulated by IRDAI.",
+      "It is regulated by PFRDA.",
+      "It is regulated by SEBI."
+    ],
+    "answer": 2,
+    "explain": "It is regulated by PFRDA."
+  },
+  {
+    "cat": "basics",
+    "difficulty": "Medium",
+    "q": "Identify the TRUE statement about NPS.",
+    "options": [
+      "It is regulated by RBI.",
+      "It is regulated by PFRDA.",
+      "It is regulated by IRDAI.",
+      "It is regulated by SEBI."
+    ],
+    "answer": 1,
+    "explain": "It is regulated by PFRDA."
+  },
+  {
+    "cat": "basics",
+    "difficulty": "Medium",
+    "q": "Which of the following is correct about REITs?",
+    "options": [
+      "They are only gold ETFs.",
+      "They are sovereign bonds.",
+      "They invest only in crypto.",
+      "They invest in income-generating real estate and distribute income."
+    ],
+    "answer": 3,
+    "explain": "They invest in income-generating real estate and distribute income."
+  },
+  {
+    "cat": "basics",
+    "difficulty": "Medium",
+    "q": "Which statement is TRUE about REITs?",
+    "options": [
+      "They are only gold ETFs.",
+      "They invest only in crypto.",
+      "They invest in income-generating real estate and distribute income.",
+      "They are sovereign bonds."
+    ],
+    "answer": 2,
+    "explain": "They invest in income-generating real estate and distribute income."
+  },
+  {
+    "cat": "basics",
+    "difficulty": "Medium",
+    "q": "Identify the TRUE statement about REITs.",
+    "options": [
+      "They are only gold ETFs.",
+      "They invest only in crypto.",
+      "They invest in income-generating real estate and distribute income.",
+      "They are sovereign bonds."
+    ],
+    "answer": 2,
+    "explain": "They invest in income-generating real estate and distribute income."
+  },
+  {
+    "cat": "basics",
+    "difficulty": "Medium",
+    "q": "Which of the following is correct about InvITs?",
+    "options": [
+      "They are tax-saving ELSS funds.",
+      "They invest in infrastructure assets like roads/power and distribute cash flows.",
+      "They are EPF accounts.",
+      "They are only bank accounts."
+    ],
+    "answer": 1,
+    "explain": "They invest in infrastructure assets like roads/power and distribute cash flows."
+  },
+  {
+    "cat": "basics",
+    "difficulty": "Medium",
+    "q": "Which statement is TRUE about InvITs?",
+    "options": [
+      "They invest in infrastructure assets like roads/power and distribute cash flows.",
+      "They are tax-saving ELSS funds.",
+      "They are EPF accounts.",
+      "They are only bank accounts."
+    ],
+    "answer": 0,
+    "explain": "They invest in infrastructure assets like roads/power and distribute cash flows."
+  },
+  {
+    "cat": "basics",
+    "difficulty": "Medium",
+    "q": "Identify the TRUE statement about InvITs.",
+    "options": [
+      "They are only bank accounts.",
+      "They invest in infrastructure assets like roads/power and distribute cash flows.",
+      "They are EPF accounts.",
+      "They are tax-saving ELSS funds."
+    ],
+    "answer": 1,
+    "explain": "They invest in infrastructure assets like roads/power and distribute cash flows."
+  },
+  {
+    "cat": "basics",
+    "difficulty": "Medium",
+    "q": "Which of the following is correct about SGB?",
+    "options": [
+      "They are equity index funds.",
+      "They offer fixed annual interest plus gold price exposure.",
+      "They are only physical gold coins.",
+      "They are tax-saving ELSS."
+    ],
+    "answer": 1,
+    "explain": "They offer fixed annual interest plus gold price exposure."
+  },
+  {
+    "cat": "basics",
+    "difficulty": "Medium",
+    "q": "Which statement is TRUE about SGB?",
+    "options": [
+      "They are equity index funds.",
+      "They are only physical gold coins.",
+      "They are tax-saving ELSS.",
+      "They offer fixed annual interest plus gold price exposure."
+    ],
+    "answer": 3,
+    "explain": "They offer fixed annual interest plus gold price exposure."
+  },
+  {
+    "cat": "basics",
+    "difficulty": "Medium",
+    "q": "Identify the TRUE statement about SGB.",
+    "options": [
+      "They are only physical gold coins.",
+      "They are equity index funds.",
+      "They offer fixed annual interest plus gold price exposure.",
+      "They are tax-saving ELSS."
+    ],
+    "answer": 2,
+    "explain": "They offer fixed annual interest plus gold price exposure."
+  },
+  {
+    "cat": "basics",
+    "difficulty": "Medium",
+    "q": "Which of the following is correct about Demat account?",
+    "options": [
+      "It stores only cash.",
+      "It pays life insurance.",
+      "It generates credit score.",
+      "It holds securities in electronic form."
+    ],
+    "answer": 3,
+    "explain": "It holds securities in electronic form."
+  },
+  {
+    "cat": "basics",
+    "difficulty": "Medium",
+    "q": "Which statement is TRUE about Demat account?",
+    "options": [
+      "It stores only cash.",
+      "It generates credit score.",
+      "It holds securities in electronic form.",
+      "It pays life insurance."
+    ],
+    "answer": 2,
+    "explain": "It holds securities in electronic form."
+  },
+  {
+    "cat": "basics",
+    "difficulty": "Medium",
+    "q": "Identify the TRUE statement about Demat account.",
+    "options": [
+      "It pays life insurance.",
+      "It generates credit score.",
+      "It holds securities in electronic form.",
+      "It stores only cash."
+    ],
+    "answer": 2,
+    "explain": "It holds securities in electronic form."
+  },
+  {
+    "cat": "basics",
+    "difficulty": "Medium",
+    "q": "Which of the following is correct about ASBA?",
+    "options": [
+      "It blocks your funds for IPO until allotment.",
+      "It is a credit card.",
+      "It is a home loan.",
+      "It is a type of bank FD."
+    ],
+    "answer": 0,
+    "explain": "It blocks your funds for IPO until allotment."
+  },
+  {
+    "cat": "basics",
+    "difficulty": "Medium",
+    "q": "Which statement is TRUE about ASBA?",
+    "options": [
+      "It blocks your funds for IPO until allotment.",
+      "It is a credit card.",
+      "It is a type of bank FD.",
+      "It is a home loan."
+    ],
+    "answer": 0,
+    "explain": "It blocks your funds for IPO until allotment."
+  },
+  {
+    "cat": "basics",
+    "difficulty": "Medium",
+    "q": "Identify the TRUE statement about ASBA.",
+    "options": [
+      "It is a credit card.",
+      "It is a type of bank FD.",
+      "It is a home loan.",
+      "It blocks your funds for IPO until allotment."
+    ],
+    "answer": 3,
+    "explain": "It blocks your funds for IPO until allotment."
+  },
+  {
+    "cat": "basics",
+    "difficulty": "Medium",
+    "q": "Which of the following is correct about IFSC?",
+    "options": [
+      "It is a stock symbol.",
+      "It is a tax form.",
+      "It identifies bank branches for electronic transfers.",
+      "It is a CIBIL score."
+    ],
+    "answer": 2,
+    "explain": "It identifies bank branches for electronic transfers."
+  },
+  {
+    "cat": "basics",
+    "difficulty": "Medium",
+    "q": "Which statement is TRUE about IFSC?",
+    "options": [
+      "It is a tax form.",
+      "It is a stock symbol.",
+      "It is a CIBIL score.",
+      "It identifies bank branches for electronic transfers."
+    ],
+    "answer": 3,
+    "explain": "It identifies bank branches for electronic transfers."
+  },
+  {
+    "cat": "basics",
+    "difficulty": "Medium",
+    "q": "Identify the TRUE statement about IFSC.",
+    "options": [
+      "It is a tax form.",
+      "It is a stock symbol.",
+      "It is a CIBIL score.",
+      "It identifies bank branches for electronic transfers."
+    ],
+    "answer": 3,
+    "explain": "It identifies bank branches for electronic transfers."
+  },
+  {
+    "cat": "basics",
+    "difficulty": "Medium",
+    "q": "Which of the following is correct about UPI?",
+    "options": [
+      "It is an insurance portal.",
+      "It is a depository.",
+      "It enables real-time bank-to-bank payments via mobile.",
+      "It is a mutual fund."
+    ],
+    "answer": 2,
+    "explain": "It enables real-time bank-to-bank payments via mobile."
+  },
+  {
+    "cat": "basics",
+    "difficulty": "Medium",
+    "q": "Which statement is TRUE about UPI?",
+    "options": [
+      "It is a mutual fund.",
+      "It is a depository.",
+      "It is an insurance portal.",
+      "It enables real-time bank-to-bank payments via mobile."
+    ],
+    "answer": 3,
+    "explain": "It enables real-time bank-to-bank payments via mobile."
+  },
+  {
+    "cat": "basics",
+    "difficulty": "Medium",
+    "q": "Identify the TRUE statement about UPI.",
+    "options": [
+      "It is an insurance portal.",
+      "It enables real-time bank-to-bank payments via mobile.",
+      "It is a mutual fund.",
+      "It is a depository."
+    ],
+    "answer": 1,
+    "explain": "It enables real-time bank-to-bank payments via mobile."
+  },
+  {
+    "cat": "basics",
+    "difficulty": "Medium",
+    "q": "Which of the following is correct about Expense ratio?",
+    "options": [
+      "It is paid to investors.",
+      "It reduces investor net returns as a cost.",
+      "It is a government tax only.",
+      "It increases returns directly."
+    ],
+    "answer": 1,
+    "explain": "It reduces investor net returns as a cost."
+  },
+  {
+    "cat": "basics",
+    "difficulty": "Medium",
+    "q": "Which statement is TRUE about Expense ratio?",
+    "options": [
+      "It reduces investor net returns as a cost.",
+      "It is paid to investors.",
+      "It increases returns directly.",
+      "It is a government tax only."
+    ],
+    "answer": 0,
+    "explain": "It reduces investor net returns as a cost."
+  },
+  {
+    "cat": "basics",
+    "difficulty": "Medium",
+    "q": "Identify the TRUE statement about Expense ratio.",
+    "options": [
+      "It increases returns directly.",
+      "It is a government tax only.",
+      "It reduces investor net returns as a cost.",
+      "It is paid to investors."
+    ],
+    "answer": 2,
+    "explain": "It reduces investor net returns as a cost."
+  },
+  {
+    "cat": "basics",
+    "difficulty": "Medium",
+    "q": "Which of the following is correct about Exit load?",
+    "options": [
+      "It is an income tax refund.",
+      "It is a charge on early redemption as per scheme terms.",
+      "It is a bonus on exit.",
+      "It is only for bank FDs."
+    ],
+    "answer": 1,
+    "explain": "It is a charge on early redemption as per scheme terms."
+  },
+  {
+    "cat": "basics",
+    "difficulty": "Medium",
+    "q": "Which statement is TRUE about Exit load?",
+    "options": [
+      "It is a charge on early redemption as per scheme terms.",
+      "It is an income tax refund.",
+      "It is a bonus on exit.",
+      "It is only for bank FDs."
+    ],
+    "answer": 0,
+    "explain": "It is a charge on early redemption as per scheme terms."
+  },
+  {
+    "cat": "basics",
+    "difficulty": "Medium",
+    "q": "Identify the TRUE statement about Exit load.",
+    "options": [
+      "It is an income tax refund.",
+      "It is a bonus on exit.",
+      "It is only for bank FDs.",
+      "It is a charge on early redemption as per scheme terms."
+    ],
+    "answer": 3,
+    "explain": "It is a charge on early redemption as per scheme terms."
+  },
+  {
+    "cat": "basics",
+    "difficulty": "Medium",
+    "q": "Which of the following is correct about Tracking error?",
+    "options": [
+      "It is GST amount.",
+      "It is the share price only.",
+      "It reflects deviation from the benchmark for index products.",
+      "It is brokerage commission."
+    ],
+    "answer": 2,
+    "explain": "It reflects deviation from the benchmark for index products."
+  },
+  {
+    "cat": "basics",
+    "difficulty": "Medium",
+    "q": "Which statement is TRUE about Tracking error?",
+    "options": [
+      "It is the share price only.",
+      "It is GST amount.",
+      "It reflects deviation from the benchmark for index products.",
+      "It is brokerage commission."
+    ],
+    "answer": 2,
+    "explain": "It reflects deviation from the benchmark for index products."
+  },
+  {
+    "cat": "basics",
+    "difficulty": "Medium",
+    "q": "Identify the TRUE statement about Tracking error.",
+    "options": [
+      "It is GST amount.",
+      "It is the share price only.",
+      "It is brokerage commission.",
+      "It reflects deviation from the benchmark for index products."
+    ],
+    "answer": 3,
+    "explain": "It reflects deviation from the benchmark for index products."
+  },
+  {
+    "cat": "basics",
+    "difficulty": "Medium",
+    "q": "Which of the following is correct about CAGR?",
+    "options": [
+      "It is simple interest only.",
+      "It is a tax bracket.",
+      "It is monthly return.",
+      "It is the smoothed annual growth rate assuming compounding."
+    ],
+    "answer": 3,
+    "explain": "It is the smoothed annual growth rate assuming compounding."
+  },
+  {
+    "cat": "basics",
+    "difficulty": "Medium",
+    "q": "Which statement is TRUE about CAGR?",
+    "options": [
+      "It is the smoothed annual growth rate assuming compounding.",
+      "It is a tax bracket.",
+      "It is monthly return.",
+      "It is simple interest only."
+    ],
+    "answer": 0,
+    "explain": "It is the smoothed annual growth rate assuming compounding."
+  },
+  {
+    "cat": "basics",
+    "difficulty": "Medium",
+    "q": "Identify the TRUE statement about CAGR.",
+    "options": [
+      "It is the smoothed annual growth rate assuming compounding.",
+      "It is a tax bracket.",
+      "It is monthly return.",
+      "It is simple interest only."
+    ],
+    "answer": 0,
+    "explain": "It is the smoothed annual growth rate assuming compounding."
+  },
+  {
+    "cat": "basics",
+    "difficulty": "Medium",
+    "q": "Which of the following is correct about Diversification?",
+    "options": [
+      "It eliminates inflation.",
+      "It mainly reduces stock/sector-specific risk.",
+      "It removes all market risk.",
+      "It guarantees profits."
+    ],
+    "answer": 1,
+    "explain": "It mainly reduces stock/sector-specific risk."
+  },
+  {
+    "cat": "basics",
+    "difficulty": "Medium",
+    "q": "Which statement is TRUE about Diversification?",
+    "options": [
+      "It mainly reduces stock/sector-specific risk.",
+      "It eliminates inflation.",
+      "It guarantees profits.",
+      "It removes all market risk."
+    ],
+    "answer": 0,
+    "explain": "It mainly reduces stock/sector-specific risk."
+  },
+  {
+    "cat": "basics",
+    "difficulty": "Medium",
+    "q": "Identify the TRUE statement about Diversification.",
+    "options": [
+      "It eliminates inflation.",
+      "It mainly reduces stock/sector-specific risk.",
+      "It guarantees profits.",
+      "It removes all market risk."
+    ],
+    "answer": 1,
+    "explain": "It mainly reduces stock/sector-specific risk."
+  },
+  {
+    "cat": "basics",
+    "difficulty": "Medium",
+    "q": "Which of the following is correct about SIP?",
+    "options": [
+      "It redeems units monthly.",
+      "It avoids KYC.",
+      "It invests a fixed amount at regular intervals.",
+      "It guarantees positive returns."
+    ],
+    "answer": 2,
+    "explain": "It invests a fixed amount at regular intervals."
+  },
+  {
+    "cat": "basics",
+    "difficulty": "Medium",
+    "q": "Which statement is TRUE about SIP?",
+    "options": [
+      "It guarantees positive returns.",
+      "It invests a fixed amount at regular intervals.",
+      "It avoids KYC.",
+      "It redeems units monthly."
+    ],
+    "answer": 1,
+    "explain": "It invests a fixed amount at regular intervals."
+  },
+  {
+    "cat": "basics",
+    "difficulty": "Medium",
+    "q": "Identify the TRUE statement about SIP.",
+    "options": [
+      "It invests a fixed amount at regular intervals.",
+      "It redeems units monthly.",
+      "It guarantees positive returns.",
+      "It avoids KYC."
+    ],
+    "answer": 0,
+    "explain": "It invests a fixed amount at regular intervals."
+  },
+  {
+    "cat": "basics",
+    "difficulty": "Medium",
+    "q": "Which of the following is correct about SWP?",
+    "options": [
+      "It withdraws a fixed amount periodically from your investment.",
+      "It pays dividend only.",
+      "It transfers between schemes.",
+      "It is a one-time redemption only."
+    ],
+    "answer": 0,
+    "explain": "It withdraws a fixed amount periodically from your investment."
+  },
+  {
+    "cat": "basics",
+    "difficulty": "Medium",
+    "q": "Which statement is TRUE about SWP?",
+    "options": [
+      "It withdraws a fixed amount periodically from your investment.",
+      "It is a one-time redemption only.",
+      "It pays dividend only.",
+      "It transfers between schemes."
+    ],
+    "answer": 0,
+    "explain": "It withdraws a fixed amount periodically from your investment."
+  },
+  {
+    "cat": "basics",
+    "difficulty": "Medium",
+    "q": "Identify the TRUE statement about SWP.",
+    "options": [
+      "It transfers between schemes.",
+      "It withdraws a fixed amount periodically from your investment.",
+      "It pays dividend only.",
+      "It is a one-time redemption only."
+    ],
+    "answer": 1,
+    "explain": "It withdraws a fixed amount periodically from your investment."
+  },
+  {
+    "cat": "basics",
+    "difficulty": "Medium",
+    "q": "Which of the following is correct about STP?",
+    "options": [
+      "It withdraws to bank only.",
+      "It is an insurance policy.",
+      "It opens a Demat account.",
+      "It transfers a set amount from one scheme to another periodically."
+    ],
+    "answer": 3,
+    "explain": "It transfers a set amount from one scheme to another periodically."
+  },
+  {
+    "cat": "basics",
+    "difficulty": "Medium",
+    "q": "Which statement is TRUE about STP?",
+    "options": [
+      "It withdraws to bank only.",
+      "It opens a Demat account.",
+      "It is an insurance policy.",
+      "It transfers a set amount from one scheme to another periodically."
+    ],
+    "answer": 3,
+    "explain": "It transfers a set amount from one scheme to another periodically."
+  },
+  {
+    "cat": "basics",
+    "difficulty": "Medium",
+    "q": "Identify the TRUE statement about STP.",
+    "options": [
+      "It opens a Demat account.",
+      "It is an insurance policy.",
+      "It withdraws to bank only.",
+      "It transfers a set amount from one scheme to another periodically."
+    ],
+    "answer": 3,
+    "explain": "It transfers a set amount from one scheme to another periodically."
+  },
+  {
+    "cat": "invest",
+    "difficulty": "Easy",
+    "q": "Which product BEST fits this need: broad equity exposure at low cost?",
+    "options": [
+      "Index fund/ETF",
+      "Real estate",
+      "Small-cap stock picking",
+      "Gold loan"
+    ],
+    "answer": 0,
+    "explain": "Correct: Index fund/ETF."
+  },
+  {
+    "cat": "invest",
+    "difficulty": "Easy",
+    "q": "Pick the instrument that matches: broad equity exposure at low cost.",
+    "options": [
+      "Real estate",
+      "Gold loan",
+      "Index fund/ETF",
+      "Small-cap stock picking"
+    ],
+    "answer": 2,
+    "explain": "Correct: Index fund/ETF."
+  },
+  {
+    "cat": "invest",
+    "difficulty": "Easy",
+    "q": "What should you choose for: broad equity exposure at low cost?",
+    "options": [
+      "Small-cap stock picking",
+      "Real estate",
+      "Index fund/ETF",
+      "Gold loan"
+    ],
+    "answer": 2,
+    "explain": "Correct: Index fund/ETF."
+  },
+  {
+    "cat": "invest",
+    "difficulty": "Easy",
+    "q": "The right product for broad equity exposure at low cost is:",
+    "options": [
+      "Index fund/ETF",
+      "Small-cap stock picking",
+      "Gold loan",
+      "Real estate"
+    ],
+    "answer": 0,
+    "explain": "Correct: Index fund/ETF."
+  },
+  {
+    "cat": "invest",
+    "difficulty": "Easy",
+    "q": "Which product BEST fits this need: very short-term parking of money?",
+    "options": [
+      "Corporate bond perpetuals",
+      "Crypto",
+      "Small-cap equity fund",
+      "Overnight/Liquid fund"
+    ],
+    "answer": 3,
+    "explain": "Correct: Overnight/Liquid fund."
+  },
+  {
+    "cat": "invest",
+    "difficulty": "Easy",
+    "q": "Pick the instrument that matches: very short-term parking of money.",
+    "options": [
+      "Crypto",
+      "Corporate bond perpetuals",
+      "Small-cap equity fund",
+      "Overnight/Liquid fund"
+    ],
+    "answer": 3,
+    "explain": "Correct: Overnight/Liquid fund."
+  },
+  {
+    "cat": "invest",
+    "difficulty": "Easy",
+    "q": "What should you choose for: very short-term parking of money?",
+    "options": [
+      "Crypto",
+      "Corporate bond perpetuals",
+      "Small-cap equity fund",
+      "Overnight/Liquid fund"
+    ],
+    "answer": 3,
+    "explain": "Correct: Overnight/Liquid fund."
+  },
+  {
+    "cat": "invest",
+    "difficulty": "Easy",
+    "q": "The right product for very short-term parking of money is:",
+    "options": [
+      "Corporate bond perpetuals",
+      "Overnight/Liquid fund",
+      "Small-cap equity fund",
+      "Crypto"
+    ],
+    "answer": 1,
+    "explain": "Correct: Overnight/Liquid fund."
+  },
+  {
+    "cat": "invest",
+    "difficulty": "Easy",
+    "q": "Which product BEST fits this need: equity tax deduction under 80C?",
+    "options": [
+      "Gold ETF",
+      "Corporate bond fund",
+      "Liquid fund",
+      "ELSS"
+    ],
+    "answer": 3,
+    "explain": "Correct: ELSS."
+  },
+  {
+    "cat": "invest",
+    "difficulty": "Easy",
+    "q": "Pick the instrument that matches: equity tax deduction under 80C.",
+    "options": [
+      "Gold ETF",
+      "Liquid fund",
+      "ELSS",
+      "Corporate bond fund"
+    ],
+    "answer": 2,
+    "explain": "Correct: ELSS."
+  },
+  {
+    "cat": "invest",
+    "difficulty": "Easy",
+    "q": "What should you choose for: equity tax deduction under 80C?",
+    "options": [
+      "Gold ETF",
+      "Liquid fund",
+      "Corporate bond fund",
+      "ELSS"
+    ],
+    "answer": 3,
+    "explain": "Correct: ELSS."
+  },
+  {
+    "cat": "invest",
+    "difficulty": "Easy",
+    "q": "The right product for equity tax deduction under 80C is:",
+    "options": [
+      "ELSS",
+      "Gold ETF",
+      "Liquid fund",
+      "Corporate bond fund"
+    ],
+    "answer": 0,
+    "explain": "Correct: ELSS."
+  },
+  {
+    "cat": "invest",
+    "difficulty": "Easy",
+    "q": "Which product BEST fits this need: exposure to real estate without buying property?",
+    "options": [
+      "SGB",
+      "Tax-saver FD",
+      "REIT",
+      "NSC"
+    ],
+    "answer": 2,
+    "explain": "Correct: REIT."
+  },
+  {
+    "cat": "invest",
+    "difficulty": "Easy",
+    "q": "Pick the instrument that matches: exposure to real estate without buying property.",
+    "options": [
+      "Tax-saver FD",
+      "SGB",
+      "NSC",
+      "REIT"
+    ],
+    "answer": 3,
+    "explain": "Correct: REIT."
+  },
+  {
+    "cat": "invest",
+    "difficulty": "Easy",
+    "q": "What should you choose for: exposure to real estate without buying property?",
+    "options": [
+      "NSC",
+      "SGB",
+      "REIT",
+      "Tax-saver FD"
+    ],
+    "answer": 2,
+    "explain": "Correct: REIT."
+  },
+  {
+    "cat": "invest",
+    "difficulty": "Easy",
+    "q": "The right product for exposure to real estate without buying property is:",
+    "options": [
+      "Tax-saver FD",
+      "NSC",
+      "REIT",
+      "SGB"
+    ],
+    "answer": 2,
+    "explain": "Correct: REIT."
+  },
+  {
+    "cat": "invest",
+    "difficulty": "Easy",
+    "q": "Which product BEST fits this need: exposure to infrastructure cash flows?",
+    "options": [
+      "InvIT",
+      "Savings account",
+      "PPF",
+      "Gold ETF"
+    ],
+    "answer": 0,
+    "explain": "Correct: InvIT."
+  },
+  {
+    "cat": "invest",
+    "difficulty": "Easy",
+    "q": "Pick the instrument that matches: exposure to infrastructure cash flows.",
+    "options": [
+      "PPF",
+      "Savings account",
+      "InvIT",
+      "Gold ETF"
+    ],
+    "answer": 2,
+    "explain": "Correct: InvIT."
+  },
+  {
+    "cat": "invest",
+    "difficulty": "Easy",
+    "q": "What should you choose for: exposure to infrastructure cash flows?",
+    "options": [
+      "PPF",
+      "Gold ETF",
+      "Savings account",
+      "InvIT"
+    ],
+    "answer": 3,
+    "explain": "Correct: InvIT."
+  },
+  {
+    "cat": "invest",
+    "difficulty": "Easy",
+    "q": "The right product for exposure to infrastructure cash flows is:",
+    "options": [
+      "InvIT",
+      "PPF",
+      "Gold ETF",
+      "Savings account"
+    ],
+    "answer": 0,
+    "explain": "Correct: InvIT."
+  },
+  {
+    "cat": "invest",
+    "difficulty": "Easy",
+    "q": "Which product BEST fits this need: paperless instant bank transfers on mobile?",
+    "options": [
+      "RTGS only",
+      "Cheque",
+      "UPI",
+      "Demand draft"
+    ],
+    "answer": 2,
+    "explain": "Correct: UPI."
+  },
+  {
+    "cat": "invest",
+    "difficulty": "Easy",
+    "q": "Pick the instrument that matches: paperless instant bank transfers on mobile.",
+    "options": [
+      "Demand draft",
+      "Cheque",
+      "RTGS only",
+      "UPI"
+    ],
+    "answer": 3,
+    "explain": "Correct: UPI."
+  },
+  {
+    "cat": "invest",
+    "difficulty": "Easy",
+    "q": "What should you choose for: paperless instant bank transfers on mobile?",
+    "options": [
+      "RTGS only",
+      "Demand draft",
+      "UPI",
+      "Cheque"
+    ],
+    "answer": 2,
+    "explain": "Correct: UPI."
+  },
+  {
+    "cat": "invest",
+    "difficulty": "Easy",
+    "q": "The right product for paperless instant bank transfers on mobile is:",
+    "options": [
+      "Cheque",
+      "Demand draft",
+      "RTGS only",
+      "UPI"
+    ],
+    "answer": 3,
+    "explain": "Correct: UPI."
+  },
+  {
+    "cat": "invest",
+    "difficulty": "Easy",
+    "q": "Which product BEST fits this need: holding shares and MF units electronically?",
+    "options": [
+      "Demat account",
+      "Savings account",
+      "Credit card",
+      "Aadhaar"
+    ],
+    "answer": 0,
+    "explain": "Correct: Demat account."
+  },
+  {
+    "cat": "invest",
+    "difficulty": "Easy",
+    "q": "Pick the instrument that matches: holding shares and MF units electronically.",
+    "options": [
+      "Aadhaar",
+      "Demat account",
+      "Credit card",
+      "Savings account"
+    ],
+    "answer": 1,
+    "explain": "Correct: Demat account."
+  },
+  {
+    "cat": "invest",
+    "difficulty": "Easy",
+    "q": "What should you choose for: holding shares and MF units electronically?",
+    "options": [
+      "Aadhaar",
+      "Demat account",
+      "Savings account",
+      "Credit card"
+    ],
+    "answer": 1,
+    "explain": "Correct: Demat account."
+  },
+  {
+    "cat": "invest",
+    "difficulty": "Easy",
+    "q": "The right product for holding shares and MF units electronically is:",
+    "options": [
+      "Demat account",
+      "Aadhaar",
+      "Savings account",
+      "Credit card"
+    ],
+    "answer": 0,
+    "explain": "Correct: Demat account."
+  },
+  {
+    "cat": "invest",
+    "difficulty": "Easy",
+    "q": "Which product BEST fits this need: fixed annual interest + gold price exposure?",
+    "options": [
+      "SGB",
+      "Gold jewellery",
+      "Gold loan",
+      "Physical gold coin"
+    ],
+    "answer": 0,
+    "explain": "Correct: SGB."
+  },
+  {
+    "cat": "invest",
+    "difficulty": "Easy",
+    "q": "Pick the instrument that matches: fixed annual interest + gold price exposure.",
+    "options": [
+      "SGB",
+      "Gold jewellery",
+      "Gold loan",
+      "Physical gold coin"
+    ],
+    "answer": 0,
+    "explain": "Correct: SGB."
+  },
+  {
+    "cat": "invest",
+    "difficulty": "Easy",
+    "q": "What should you choose for: fixed annual interest + gold price exposure?",
+    "options": [
+      "Gold jewellery",
+      "Physical gold coin",
+      "SGB",
+      "Gold loan"
+    ],
+    "answer": 2,
+    "explain": "Correct: SGB."
+  },
+  {
+    "cat": "invest",
+    "difficulty": "Easy",
+    "q": "The right product for fixed annual interest + gold price exposure is:",
+    "options": [
+      "SGB",
+      "Gold loan",
+      "Physical gold coin",
+      "Gold jewellery"
+    ],
+    "answer": 0,
+    "explain": "Correct: SGB."
+  },
+  {
+    "cat": "invest",
+    "difficulty": "Easy",
+    "q": "Which product BEST fits this need: government securities exposure via MF?",
+    "options": [
+      "REIT",
+      "Credit risk fund",
+      "Gilt fund",
+      "Equity mid-cap fund"
+    ],
+    "answer": 2,
+    "explain": "Correct: Gilt fund."
+  },
+  {
+    "cat": "invest",
+    "difficulty": "Easy",
+    "q": "Pick the instrument that matches: government securities exposure via MF.",
+    "options": [
+      "Gilt fund",
+      "Equity mid-cap fund",
+      "Credit risk fund",
+      "REIT"
+    ],
+    "answer": 0,
+    "explain": "Correct: Gilt fund."
+  },
+  {
+    "cat": "invest",
+    "difficulty": "Easy",
+    "q": "What should you choose for: government securities exposure via MF?",
+    "options": [
+      "REIT",
+      "Credit risk fund",
+      "Equity mid-cap fund",
+      "Gilt fund"
+    ],
+    "answer": 3,
+    "explain": "Correct: Gilt fund."
+  },
+  {
+    "cat": "invest",
+    "difficulty": "Easy",
+    "q": "The right product for government securities exposure via MF is:",
+    "options": [
+      "Gilt fund",
+      "Equity mid-cap fund",
+      "REIT",
+      "Credit risk fund"
+    ],
+    "answer": 0,
+    "explain": "Correct: Gilt fund."
+  },
+  {
+    "cat": "invest",
+    "difficulty": "Easy",
+    "q": "Which product BEST fits this need: temporarily moving money between schemes?",
+    "options": [
+      "SIP",
+      "STP",
+      "SWP",
+      "FD auto-renewal"
+    ],
+    "answer": 1,
+    "explain": "Correct: STP."
+  },
+  {
+    "cat": "invest",
+    "difficulty": "Easy",
+    "q": "Pick the instrument that matches: temporarily moving money between schemes.",
+    "options": [
+      "SIP",
+      "FD auto-renewal",
+      "SWP",
+      "STP"
+    ],
+    "answer": 3,
+    "explain": "Correct: STP."
+  },
+  {
+    "cat": "invest",
+    "difficulty": "Easy",
+    "q": "What should you choose for: temporarily moving money between schemes?",
+    "options": [
+      "SWP",
+      "STP",
+      "FD auto-renewal",
+      "SIP"
+    ],
+    "answer": 1,
+    "explain": "Correct: STP."
+  },
+  {
+    "cat": "invest",
+    "difficulty": "Easy",
+    "q": "The right product for temporarily moving money between schemes is:",
+    "options": [
+      "SIP",
+      "FD auto-renewal",
+      "STP",
+      "SWP"
+    ],
+    "answer": 2,
+    "explain": "Correct: STP."
+  },
+  {
+    "cat": "india",
+    "difficulty": "Easy",
+    "q": "Which exchange owns/maintains Sensex?",
+    "options": [
+      "NSE",
+      "NCDEX",
+      "MCX",
+      "BSE"
+    ],
+    "answer": 3,
+    "explain": "Sensex is with BSE."
+  },
+  {
+    "cat": "india",
+    "difficulty": "Easy",
+    "q": "Sensex is the benchmark index of:",
+    "options": [
+      "MCX",
+      "NCDEX",
+      "NSE",
+      "BSE"
+    ],
+    "answer": 3,
+    "explain": "Sensex is with BSE."
+  },
+  {
+    "cat": "india",
+    "difficulty": "Easy",
+    "q": "Which exchange owns/maintains Nifty 50?",
+    "options": [
+      "MCX",
+      "BSE",
+      "NSE",
+      "BSE 500"
+    ],
+    "answer": 2,
+    "explain": "Nifty 50 is with NSE."
+  },
+  {
+    "cat": "india",
+    "difficulty": "Easy",
+    "q": "Nifty 50 is the benchmark index of:",
+    "options": [
+      "NSE",
+      "BSE",
+      "BSE 500",
+      "MCX"
+    ],
+    "answer": 0,
+    "explain": "Nifty 50 is with NSE."
+  },
+  {
+    "cat": "india",
+    "difficulty": "Medium",
+    "q": "Form 16 primarily is:",
+    "options": [
+      "GST invoice",
+      "Demat statement",
+      "Employer’s TDS certificate for salary",
+      "Passport record"
+    ],
+    "answer": 2,
+    "explain": "Employer’s TDS certificate for salary."
+  },
+  {
+    "cat": "india",
+    "difficulty": "Medium",
+    "q": "Form 15G/15H is generally used to:",
+    "options": [
+      "Apply for IPO",
+      "Request no TDS on eligible interest (subject to rules)",
+      "Open Demat",
+      "Change PAN"
+    ],
+    "answer": 1,
+    "explain": "Request no TDS on eligible interest (subject to rules)."
+  },
+  {
+    "cat": "india",
+    "difficulty": "Medium",
+    "q": "Section 24(b) relates to:",
+    "options": [
+      "Home loan interest deduction (subject to limits)",
+      "Donations to charity",
+      "Health insurance",
+      "ELSS investments"
+    ],
+    "answer": 0,
+    "explain": "Home loan interest deduction (subject to limits)."
+  },
+  {
+    "cat": "india",
+    "difficulty": "Medium",
+    "q": "Savings account interest deduction for non-seniors is under:",
+    "options": [
+      "Section 80CCD(1B)",
+      "Section 80TTA",
+      "Section 80E",
+      "Section 80TTB"
+    ],
+    "answer": 1,
+    "explain": "Section 80TTA."
+  },
+  {
+    "cat": "india",
+    "difficulty": "Medium",
+    "q": "Who regulates mutual funds in India?",
+    "options": [
+      "RBI",
+      "PFRDA",
+      "IRDAI",
+      "SEBI"
+    ],
+    "answer": 3,
+    "explain": "SEBI."
+  },
+  {
+    "cat": "india",
+    "difficulty": "Medium",
+    "q": "Who supervises insurance companies in India?",
+    "options": [
+      "SEBI",
+      "RBI",
+      "IRDAI",
+      "PFRDA"
+    ],
+    "answer": 2,
+    "explain": "IRDAI."
+  },
+  {
+    "cat": "india",
+    "difficulty": "Medium",
+    "q": "Who regulates the pension system like NPS?",
+    "options": [
+      "AMFI",
+      "SEBI",
+      "PFRDA",
+      "IRDAI"
+    ],
+    "answer": 2,
+    "explain": "PFRDA."
+  },
+  {
+    "cat": "india",
+    "difficulty": "Medium",
+    "q": "Who is India’s central bank?",
+    "options": [
+      "SEBI",
+      "PFRDA",
+      "RBI",
+      "IRDAI"
+    ],
+    "answer": 2,
+    "explain": "RBI."
+  },
+  {
+    "cat": "basics",
+    "difficulty": "Easy",
+    "q": "Which is an ASSET on your personal balance sheet?",
+    "options": [
+      "Unpaid bills",
+      "Car loan",
+      "Mutual fund units",
+      "Outstanding credit card dues"
+    ],
+    "answer": 2,
+    "explain": "Mutual fund units"
+  },
+  {
+    "cat": "basics",
+    "difficulty": "Easy",
+    "q": "Which is a LIABILITY in personal finance?",
+    "options": [
+      "Gold ETF units",
+      "Savings account balance",
+      "PPF balance",
+      "Home loan outstanding"
+    ],
+    "answer": 3,
+    "explain": "Home loan outstanding"
+  },
+  {
+    "cat": "basics",
+    "difficulty": "Easy",
+    "q": "Goal-based investing mainly means:",
+    "options": [
+      "Timing markets every week",
+      "Copying friends’ portfolios",
+      "Aligning investments to specific life goals",
+      "Chasing highest returns always"
+    ],
+    "answer": 2,
+    "explain": "Aligning investments to specific life goals"
+  },
+  {
+    "cat": "basics",
+    "difficulty": "Easy",
+    "q": "Asset allocation refers to:",
+    "options": [
+      "Picking IPOs monthly",
+      "Only holding cash",
+      "Choosing one best stock",
+      "Mixing assets like equity, debt, gold as per plan"
+    ],
+    "answer": 3,
+    "explain": "Mixing assets like equity, debt, gold as per plan"
+  },
+  {
+    "cat": "basics",
+    "difficulty": "Easy",
+    "q": "Pick the correct option: Which is an ASSET on your personal balance sheet?",
+    "options": [
+      "Unpaid bills",
+      "Car loan",
+      "Outstanding credit card dues",
+      "Mutual fund units"
+    ],
+    "answer": 3,
+    "explain": "Mutual fund units"
+  },
+  {
+    "cat": "basics",
+    "difficulty": "Easy",
+    "q": "What’s the best description? Which is an ASSET on your personal balance sheet?",
+    "options": [
+      "Car loan",
+      "Outstanding credit card dues",
+      "Mutual fund units",
+      "Unpaid bills"
+    ],
+    "answer": 2,
+    "explain": "Mutual fund units"
+  },
+  {
+    "cat": "basics",
+    "difficulty": "Easy",
+    "q": "Pick the correct option: Which is a LIABILITY in personal finance?",
+    "options": [
+      "Home loan outstanding",
+      "Savings account balance",
+      "PPF balance",
+      "Gold ETF units"
+    ],
+    "answer": 0,
+    "explain": "Home loan outstanding"
+  },
+  {
+    "cat": "basics",
+    "difficulty": "Easy",
+    "q": "What’s the best description? Which is a LIABILITY in personal finance?",
+    "options": [
+      "Home loan outstanding",
+      "Gold ETF units",
+      "Savings account balance",
+      "PPF balance"
+    ],
+    "answer": 0,
+    "explain": "Home loan outstanding"
+  },
+  {
+    "cat": "basics",
+    "difficulty": "Easy",
+    "q": "Pick the correct option: Goal-based investing mainly means:",
+    "options": [
+      "Chasing highest returns always",
+      "Aligning investments to specific life goals",
+      "Copying friends’ portfolios",
+      "Timing markets every week"
+    ],
+    "answer": 1,
+    "explain": "Aligning investments to specific life goals"
+  },
+  {
+    "cat": "basics",
+    "difficulty": "Easy",
+    "q": "What’s the best description? Goal-based investing mainly means:",
+    "options": [
+      "Copying friends’ portfolios",
+      "Chasing highest returns always",
+      "Aligning investments to specific life goals",
+      "Timing markets every week"
+    ],
+    "answer": 2,
+    "explain": "Aligning investments to specific life goals"
+  },
+  {
+    "cat": "basics",
+    "difficulty": "Easy",
+    "q": "Pick the correct option: Asset allocation refers to:",
+    "options": [
+      "Picking IPOs monthly",
+      "Mixing assets like equity, debt, gold as per plan",
+      "Choosing one best stock",
+      "Only holding cash"
+    ],
+    "answer": 1,
+    "explain": "Mixing assets like equity, debt, gold as per plan"
+  },
+  {
+    "cat": "basics",
+    "difficulty": "Easy",
+    "q": "What’s the best description? Asset allocation refers to:",
+    "options": [
+      "Mixing assets like equity, debt, gold as per plan",
+      "Choosing one best stock",
+      "Picking IPOs monthly",
+      "Only holding cash"
+    ],
+    "answer": 0,
+    "explain": "Mixing assets like equity, debt, gold as per plan"
+  },
+  {
+    "cat": "india",
+    "difficulty": "Easy",
+    "q": "Identify the depository: Which of these is a securities depository in India?",
+    "options": [
+      "NSE",
+      "NSDL",
+      "RBI",
+      "AMFI"
+    ],
+    "answer": 1,
+    "explain": "NSDL is a depository."
+  },
+  {
+    "cat": "india",
+    "difficulty": "Easy",
+    "q": "Pick the depository among these: Which of these is a securities depository in India?",
+    "options": [
+      "NSDL",
+      "NSE",
+      "RBI",
+      "AMFI"
+    ],
+    "answer": 0,
+    "explain": "NSDL is a depository."
+  },
+  {
+    "cat": "india",
+    "difficulty": "Easy",
+    "q": "Identify the depository: Which of these is ALSO a securities depository in India?",
+    "options": [
+      "IRDAI",
+      "SEBI",
+      "CDSL",
+      "BSE"
+    ],
+    "answer": 2,
+    "explain": "CDSL is a depository."
+  },
+  {
+    "cat": "india",
+    "difficulty": "Easy",
+    "q": "Pick the depository among these: Which of these is ALSO a securities depository in India?",
+    "options": [
+      "IRDAI",
+      "BSE",
+      "SEBI",
+      "CDSL"
+    ],
+    "answer": 3,
+    "explain": "CDSL is a depository."
+  },
+  {
+    "cat": "basics",
+    "difficulty": "Medium",
+    "q": "The primary purpose of nomination in financial accounts is:",
+    "options": [
+      "Increase returns",
+      "Easier claim/transfer to beneficiary",
+      "Reduce taxes",
+      "Avoid KYC"
+    ],
+    "answer": 1,
+    "explain": "Easier claim/transfer to beneficiary"
+  },
+  {
+    "cat": "india",
+    "difficulty": "Easy",
+    "q": "Who oversees securities markets in India?",
+    "options": [
+      "SEBI",
+      "RBI",
+      "IRDAI",
+      "PFRDA"
+    ],
+    "answer": 0,
+    "explain": "SEBI regulates securities markets in India."
+  },
+  {
+    "cat": "india",
+    "difficulty": "Easy",
+    "q": "Regulator for securities markets in India is:",
+    "options": [
+      "SEBI",
+      "RBI",
+      "IRDAI",
+      "PFRDA"
+    ],
+    "answer": 0,
+    "explain": "SEBI regulates securities markets in India."
+  },
+  {
+    "cat": "india",
+    "difficulty": "Easy",
+    "q": "Which body regulates securities markets in India?",
+    "options": [
+      "IRDAI",
+      "RBI",
+      "PFRDA",
+      "SEBI"
+    ],
+    "answer": 3,
+    "explain": "SEBI regulates securities markets in India."
+  },
+  {
+    "cat": "india",
+    "difficulty": "Easy",
+    "q": "Who oversees the insurance industry in India?",
+    "options": [
+      "RBI",
+      "PFRDA",
+      "SEBI",
+      "IRDAI"
+    ],
+    "answer": 3,
+    "explain": "IRDAI regulates the insurance industry in India."
+  },
+  {
+    "cat": "india",
+    "difficulty": "Easy",
+    "q": "Regulator for the insurance industry in India is:",
+    "options": [
+      "RBI",
+      "SEBI",
+      "PFRDA",
+      "IRDAI"
+    ],
+    "answer": 3,
+    "explain": "IRDAI regulates the insurance industry in India."
+  },
+  {
+    "cat": "india",
+    "difficulty": "Easy",
+    "q": "Which body regulates the insurance industry in India?",
+    "options": [
+      "PFRDA",
+      "IRDAI",
+      "RBI",
+      "SEBI"
+    ],
+    "answer": 1,
+    "explain": "IRDAI regulates the insurance industry in India."
+  },
+  {
+    "cat": "india",
+    "difficulty": "Easy",
+    "q": "Who oversees the pension system (NPS) in India?",
+    "options": [
+      "SEBI",
+      "IRDAI",
+      "PFRDA",
+      "RBI"
+    ],
+    "answer": 2,
+    "explain": "PFRDA regulates the pension system (NPS) in India."
+  },
+  {
+    "cat": "india",
+    "difficulty": "Easy",
+    "q": "Regulator for the pension system (NPS) in India is:",
+    "options": [
+      "SEBI",
+      "RBI",
+      "PFRDA",
+      "IRDAI"
+    ],
+    "answer": 2,
+    "explain": "PFRDA regulates the pension system (NPS) in India."
+  },
+  {
+    "cat": "india",
+    "difficulty": "Easy",
+    "q": "Which body regulates the pension system (NPS) in India?",
+    "options": [
+      "SEBI",
+      "RBI",
+      "IRDAI",
+      "PFRDA"
+    ],
+    "answer": 3,
+    "explain": "PFRDA regulates the pension system (NPS) in India."
+  },
+  {
+    "cat": "india",
+    "difficulty": "Easy",
+    "q": "Who oversees banking & monetary policy in India?",
+    "options": [
+      "RBI",
+      "PFRDA",
+      "IRDAI",
+      "SEBI"
+    ],
+    "answer": 0,
+    "explain": "RBI regulates banking & monetary policy in India."
+  },
+  {
+    "cat": "india",
+    "difficulty": "Easy",
+    "q": "Regulator for banking & monetary policy in India is:",
+    "options": [
+      "IRDAI",
+      "SEBI",
+      "RBI",
+      "PFRDA"
+    ],
+    "answer": 2,
+    "explain": "RBI regulates banking & monetary policy in India."
+  },
+  {
+    "cat": "india",
+    "difficulty": "Easy",
+    "q": "Which body regulates banking & monetary policy in India?",
+    "options": [
+      "RBI",
+      "SEBI",
+      "PFRDA",
+      "IRDAI"
+    ],
+    "answer": 0,
+    "explain": "RBI regulates banking & monetary policy in India."
+  },
+  {
+    "cat": "india",
+    "difficulty": "Easy",
+    "q": "What is the typical PPF tenure/lock-in?",
+    "options": [
+      "20 years",
+      "5 years",
+      "10 years",
+      "15 years"
+    ],
+    "answer": 3,
+    "explain": "Correct: 15 years."
+  },
+  {
+    "cat": "india",
+    "difficulty": "Easy",
+    "q": "How long is the PPF maturity/lock-in usually?",
+    "options": [
+      "20 years",
+      "10 years",
+      "5 years",
+      "15 years"
+    ],
+    "answer": 3,
+    "explain": "Correct: 15 years."
+  },
+  {
+    "cat": "india",
+    "difficulty": "Easy",
+    "q": "What is the typical ELSS tenure/lock-in?",
+    "options": [
+      "No lock-in",
+      "5 years",
+      "1 year",
+      "3 years"
+    ],
+    "answer": 3,
+    "explain": "Correct: 3 years."
+  },
+  {
+    "cat": "india",
+    "difficulty": "Easy",
+    "q": "How long is the ELSS maturity/lock-in usually?",
+    "options": [
+      "1 year",
+      "5 years",
+      "3 years",
+      "No lock-in"
+    ],
+    "answer": 2,
+    "explain": "Correct: 3 years."
+  },
+  {
+    "cat": "india",
+    "difficulty": "Easy",
+    "q": "What is the typical Tax-saver FD tenure/lock-in?",
+    "options": [
+      "10 years",
+      "3 years",
+      "1 year",
+      "5 years"
+    ],
+    "answer": 3,
+    "explain": "Correct: 5 years."
+  },
+  {
+    "cat": "india",
+    "difficulty": "Easy",
+    "q": "How long is the Tax-saver FD maturity/lock-in usually?",
+    "options": [
+      "3 years",
+      "5 years",
+      "1 year",
+      "10 years"
+    ],
+    "answer": 1,
+    "explain": "Correct: 5 years."
+  },
+  {
+    "cat": "india",
+    "difficulty": "Easy",
+    "q": "What is the typical SGB tenure/lock-in?",
+    "options": [
+      "12 years",
+      "5 years",
+      "8 years",
+      "3 years"
+    ],
+    "answer": 2,
+    "explain": "Correct: 8 years."
+  },
+  {
+    "cat": "india",
+    "difficulty": "Easy",
+    "q": "How long is the SGB maturity/lock-in usually?",
+    "options": [
+      "12 years",
+      "5 years",
+      "8 years",
+      "3 years"
+    ],
+    "answer": 2,
+    "explain": "Correct: 8 years."
+  },
+  {
+    "cat": "india",
+    "difficulty": "Easy",
+    "q": "What is the typical NSC tenure/lock-in?",
+    "options": [
+      "5 years",
+      "7 years",
+      "10 years",
+      "3 years"
+    ],
+    "answer": 0,
+    "explain": "Correct: 5 years."
+  },
+  {
+    "cat": "india",
+    "difficulty": "Easy",
+    "q": "How long is the NSC maturity/lock-in usually?",
+    "options": [
+      "10 years",
+      "5 years",
+      "3 years",
+      "7 years"
+    ],
+    "answer": 1,
+    "explain": "Correct: 5 years."
+  },
+  {
+    "cat": "tax",
+    "difficulty": "Medium",
+    "q": "Pick the correct description — Form 26AS mainly provides a view of:",
+    "options": [
+      "Taxes deducted/paid and reported",
+      "Passport details",
+      "Only bank balances",
+      "Only mutual fund holdings"
+    ],
+    "answer": 0,
+    "explain": "Taxes deducted/paid and reported"
+  },
+  {
+    "cat": "tax",
+    "difficulty": "Medium",
+    "q": "Which is correct — Form 26AS mainly provides a view of:",
+    "options": [
+      "Only mutual fund holdings",
+      "Passport details",
+      "Only bank balances",
+      "Taxes deducted/paid and reported"
+    ],
+    "answer": 3,
+    "explain": "Taxes deducted/paid and reported"
+  },
+  {
+    "cat": "tax",
+    "difficulty": "Medium",
+    "q": "Pick the correct description — AIS refers to:",
+    "options": [
+      "Aggregated Information Summary",
+      "Annual Investment Summary",
+      "Annual Information Statement",
+      "Assessed Income Summary"
+    ],
+    "answer": 2,
+    "explain": "Annual Information Statement"
+  },
+  {
+    "cat": "tax",
+    "difficulty": "Medium",
+    "q": "Which is correct — AIS refers to:",
+    "options": [
+      "Aggregated Information Summary",
+      "Assessed Income Summary",
+      "Annual Information Statement",
+      "Annual Investment Summary"
+    ],
+    "answer": 2,
+    "explain": "Annual Information Statement"
+  },
+  {
+    "cat": "basics",
+    "difficulty": "Easy",
+    "q": "A balanced/hybrid fund typically:",
+    "options": [
+      "Holds only debt",
+      "Holds only gold",
+      "Holds only equities",
+      "Mixes equity and debt"
+    ],
+    "answer": 3,
+    "explain": "Mixes equity and debt"
+  },
+  {
+    "cat": "basics",
+    "difficulty": "Easy",
+    "q": "Aggressive hybrid funds usually:",
+    "options": [
+      "Invest only in gold",
+      "Hold only debt",
+      "Hold only cash",
+      "Maintain an equity-heavy allocation"
+    ],
+    "answer": 3,
+    "explain": "Maintain an equity-heavy allocation"
+  },
+  {
+    "cat": "basics",
+    "difficulty": "Easy",
+    "q": "IMPS is generally:",
+    "options": [
+      "High-value only",
+      "Paper-based only",
+      "Batch-based only",
+      "Instant and available 24×7"
+    ],
+    "answer": 3,
+    "explain": "Instant and available 24×7"
+  },
+  {
+    "cat": "basics",
+    "difficulty": "Easy",
+    "q": "NEFT is generally:",
+    "options": [
+      "Only via cheque",
+      "Instant 24×7 always",
+      "Processed in batches through the day",
+      "Only for high-value real-time"
+    ],
+    "answer": 2,
+    "explain": "Processed in batches through the day"
+  },
+  {
+    "cat": "basics",
+    "difficulty": "Easy",
+    "q": "RTGS is typically:",
+    "options": [
+      "A credit score",
+      "A tax form",
+      "Real-time settlement for large-value transfers",
+      "A depository"
+    ],
+    "answer": 2,
+    "explain": "Real-time settlement for large-value transfers"
+  },
+  {
+    "cat": "basics",
+    "difficulty": "Easy",
+    "q": "To get gold exposure without holding physical gold, you could use:",
+    "options": [
+      "PPF",
+      "SGB or Gold ETF",
+      "Tax-saver FD",
+      "Credit card"
+    ],
+    "answer": 1,
+    "explain": "SGB or Gold ETF"
+  },
+  {
+    "cat": "basics",
+    "difficulty": "Easy",
+    "q": "SGBs provide:",
+    "options": [
+      "Only fixed interest",
+      "Only gold price return",
+      "No returns at all",
+      "Fixed interest plus gold price exposure"
+    ],
+    "answer": 3,
+    "explain": "Fixed interest plus gold price exposure"
+  },
+  {
+    "cat": "basics",
+    "difficulty": "Easy",
+    "q": "For a 5+ year wealth-creation goal, a common instrument is:",
+    "options": [
+      "Overnight fund",
+      "Savings account only",
+      "Gold loan",
+      "Equity index fund"
+    ],
+    "answer": 3,
+    "explain": "Equity index fund"
+  },
+  {
+    "cat": "basics",
+    "difficulty": "Easy",
+    "q": "For an expense due next week, a suitable place is:",
+    "options": [
+      "Real estate",
+      "Gilt with duration risk",
+      "Overnight/Liquid fund",
+      "Small-cap fund"
+    ],
+    "answer": 2,
+    "explain": "Overnight/Liquid fund"
+  },
+  {
+    "cat": "basics",
+    "difficulty": "Easy",
+    "q": "Which is NOT a fixed-income instrument?",
+    "options": [
+      "Government bond",
+      "Treasury bill",
+      "Bank fixed deposit",
+      "Equity shares"
+    ],
+    "answer": 3,
+    "explain": "Equity shares"
+  },
+  {
+    "cat": "basics",
+    "difficulty": "Easy",
+    "q": "Which is generally a fixed-income product?",
+    "options": [
+      "Government bond",
+      "Gold jewellery",
+      "REIT unit",
+      "Equity share"
+    ],
+    "answer": 0,
+    "explain": "Government bond"
+  },
+  {
+    "cat": "basics",
+    "difficulty": "Easy",
+    "q": "Which of the following is a liability?",
+    "options": [
+      "Savings balance",
+      "PPF corpus",
+      "Outstanding personal loan",
+      "Mutual fund units"
+    ],
+    "answer": 2,
+    "explain": "Outstanding personal loan"
+  },
+  {
+    "cat": "basics",
+    "difficulty": "Easy",
+    "q": "Which of the following is an asset?",
+    "options": [
+      "Credit card outstanding",
+      "Unpaid electricity bill",
+      "Bank fixed deposit",
+      "Loan EMI due"
+    ],
+    "answer": 2,
+    "explain": "Bank fixed deposit"
+  },
+  {
+    "cat": "basics",
+    "difficulty": "Easy",
+    "q": "Donations to eligible charities are claimed under:",
+    "options": [
+      "Section 24(b)",
+      "Section 80E",
+      "Section 80D",
+      "Section 80G"
+    ],
+    "answer": 3,
+    "explain": "Section 80G"
+  },
+  {
+    "cat": "basics",
+    "difficulty": "Easy",
+    "q": "Dividends from mutual funds (current framework) are:",
+    "options": [
+      "Taxed at a fixed 5% always",
+      "Tax-free for all investors",
+      "Not taxable in India",
+      "Taxed in the hands of the investor as per slab"
+    ],
+    "answer": 3,
+    "explain": "Taxed in the hands of the investor as per slab"
+  },
+  {
+    "cat": "basics",
+    "difficulty": "Easy",
+    "q": "ASBA in IPO ensures:",
+    "options": [
+      "No KYC needed",
+      "Funds stay blocked until allotment",
+      "Immediate debit regardless of allotment",
+      "Guaranteed allotment"
+    ],
+    "answer": 1,
+    "explain": "Funds stay blocked until allotment"
+  },
+  {
+    "cat": "basics",
+    "difficulty": "Easy",
+    "q": "Nomination helps primarily with:",
+    "options": [
+      "Smoother transfer/claim to nominee",
+      "Lower expense ratio",
+      "Switching funds automatically",
+      "Higher returns"
+    ],
+    "answer": 0,
+    "explain": "Smoother transfer/claim to nominee"
+  },
+  {
+    "cat": "basics",
+    "difficulty": "Easy",
+    "q": "Beta close to 1 suggests:",
+    "options": [
+      "Opposite to market always",
+      "Expense ratio is high",
+      "Movement roughly in line with the market",
+      "No movement at all"
+    ],
+    "answer": 2,
+    "explain": "Movement roughly in line with the market"
+  },
+  {
+    "cat": "basics",
+    "difficulty": "Easy",
+    "q": "Alpha near zero suggests:",
+    "options": [
+      "No risk involved",
+      "Guaranteed outperformance",
+      "Performance roughly matches the benchmark (risk-adjusted)",
+      "Always underperforms"
+    ],
+    "answer": 2,
+    "explain": "Performance roughly matches the benchmark (risk-adjusted)"
+  },
+  {
+    "cat": "banking",
+    "difficulty": "Easy",
+    "q": "For a quick 24×7 bank transfer, use:",
+    "options": [
+      "RTGS",
+      "Cheque",
+      "NEFT",
+      "IMPS"
+    ],
+    "answer": 3,
+    "explain": "IMPS supports instant 24×7 transfers."
+  },
+  {
+    "cat": "banking",
+    "difficulty": "Easy",
+    "q": "Need instant bank transfer anytime? Choose:",
+    "options": [
+      "NEFT",
+      "Cheque",
+      "RTGS",
+      "IMPS"
+    ],
+    "answer": 3,
+    "explain": "IMPS supports instant 24×7 transfers."
+  },
+  {
+    "cat": "banking",
+    "difficulty": "Easy",
+    "q": "Which one supports instant transfers around the clock?",
+    "options": [
+      "Cheque",
+      "RTGS",
+      "NEFT",
+      "IMPS"
+    ],
+    "answer": 3,
+    "explain": "IMPS supports instant 24×7 transfers."
+  },
+  {
+    "cat": "invest",
+    "difficulty": "Easy",
+    "q": "Which category blends equity and debt in one fund?",
+    "options": [
+      "Hybrid/Balanced fund",
+      "Gilt fund",
+      "Equity small-cap fund",
+      "Gold ETF"
+    ],
+    "answer": 0,
+    "explain": "Hybrid funds mix equity and debt."
+  },
+  {
+    "cat": "invest",
+    "difficulty": "Easy",
+    "q": "Pick a fund type with a mix of equity and debt:",
+    "options": [
+      "Hybrid/Balanced fund",
+      "Gold ETF",
+      "Equity small-cap fund",
+      "Gilt fund"
+    ],
+    "answer": 0,
+    "explain": "Hybrid funds mix equity and debt."
+  },
+  {
+    "cat": "tax",
+    "difficulty": "Easy",
+    "q": "Form 26AS gives a consolidated view of:",
+    "options": [
+      "Taxes deducted/paid and reported",
+      "Only passport data",
+      "Only savings account balance",
+      "Only loan EMIs"
+    ],
+    "answer": 0,
+    "explain": "Taxes deducted/paid and reported"
+  },
+  {
+    "cat": "tax",
+    "difficulty": "Easy",
+    "q": "AIS is short for:",
+    "options": [
+      "Assessed Income Summary",
+      "Annual Information Statement",
+      "Annual Investment Summary",
+      "Aggregated Information Summary"
+    ],
+    "answer": 1,
+    "explain": "Annual Information Statement"
+  },
+  {
+    "cat": "basics",
+    "difficulty": "Easy",
+    "q": "KYC is primarily about:",
+    "options": [
+      "Earning higher returns",
+      "Verifying identity before financial transactions",
+      "Calculating taxes",
+      "Fixing credit score"
+    ],
+    "answer": 1,
+    "explain": "Verifying identity before financial transactions"
+  },
+  {
+    "cat": "invest",
+    "difficulty": "Easy",
+    "q": "REIT vehicles mainly invest in:",
+    "options": [
+      "Bank deposits",
+      "Income-generating real estate",
+      "Crypto",
+      "Gold coins"
+    ],
+    "answer": 1,
+    "explain": "Income-generating real estate"
+  },
+  {
+    "cat": "invest",
+    "difficulty": "Easy",
+    "q": "Hybrid funds are best described as:",
+    "options": [
+      "A mix of equity and debt in one scheme",
+      "Pure equity only",
+      "Only gold",
+      "Pure debt only"
+    ],
+    "answer": 0,
+    "explain": "A mix of equity and debt in one scheme"
+  },
+  {
+    "cat": "invest",
+    "difficulty": "Easy",
+    "q": "Overnight funds chiefly hold:",
+    "options": [
+      "Corporate equity",
+      "Very short-term overnight instruments",
+      "10-year G-Secs",
+      "Small-cap stocks"
+    ],
+    "answer": 1,
+    "explain": "Very short-term overnight instruments"
+  },
+  {
+    "cat": "banking",
+    "difficulty": "Easy",
+    "q": "NEFT transfers are:",
+    "options": [
+      "Paper cheques",
+      "Processed in batches via banking hours",
+      "Always instant 24×7",
+      "Only high-value"
+    ],
+    "answer": 1,
+    "explain": "Processed in batches via banking hours"
+  },
+  {
+    "cat": "banking",
+    "difficulty": "Easy",
+    "q": "RTGS is used for:",
+    "options": [
+      "Real-time settlement, typically for large-value transfers",
+      "Tax filing",
+      "Mobile wallets",
+      "IPO applications"
+    ],
+    "answer": 0,
+    "explain": "Real-time settlement, typically for large-value transfers"
+  },
+  {
+    "cat": "banking",
+    "difficulty": "Easy",
+    "q": "IMPS provides:",
+    "options": [
+      "Instant 24×7 bank transfers",
+      "Paper-based transfers",
+      "Only cross-border",
+      "Batch transfers only"
+    ],
+    "answer": 0,
+    "explain": "Instant 24×7 bank transfers"
+  },
+  {
+    "cat": "basics",
+    "difficulty": "Easy",
+    "q": "CAGR indicates:",
+    "options": [
+      "Smoothed annual growth rate with compounding",
+      "Dividend payout ratio",
+      "Simple interest per month",
+      "Tax bracket for income"
+    ],
+    "answer": 0,
+    "explain": "Smoothed annual growth rate with compounding"
+  },
+  {
+    "cat": "invest",
+    "difficulty": "Easy",
+    "q": "Expense ratio effect is to:",
+    "options": [
+      "Pay dividends automatically",
+      "Reduce investor net returns as a cost",
+      "Set your tax slab",
+      "Increase returns directly"
+    ],
+    "answer": 1,
+    "explain": "Reduce investor net returns as a cost"
+  },
+  {
+    "cat": "invest",
+    "difficulty": "Easy",
+    "q": "Exit load refers to:",
+    "options": [
+      "Government tax",
+      "Bonus for holding long",
+      "Charge on redemption within specified period",
+      "Brokerage fee rebate"
+    ],
+    "answer": 2,
+    "explain": "Charge on redemption within specified period"
+  },
+  {
+    "cat": "india",
+    "difficulty": "Easy",
+    "q": "Select the correct option — Who regulates mutual funds in India?",
+    "options": [
+      "PFRDA",
+      "RBI",
+      "SEBI",
+      "IRDAI"
+    ],
+    "answer": 2,
+    "explain": "SEBI."
+  },
+  {
+    "cat": "india",
+    "difficulty": "Easy",
+    "q": "Choose the right answer: Who regulates mutual funds in India?",
+    "options": [
+      "IRDAI",
+      "PFRDA",
+      "SEBI",
+      "RBI"
+    ],
+    "answer": 2,
+    "explain": "SEBI."
+  },
+  {
+    "cat": "india",
+    "difficulty": "Easy",
+    "q": "Select the correct option — Which exchange hosts Nifty 50?",
+    "options": [
+      "MCX",
+      "NCDEX",
+      "NSE",
+      "BSE"
+    ],
+    "answer": 2,
+    "explain": "NSE."
+  },
+  {
+    "cat": "india",
+    "difficulty": "Easy",
+    "q": "Choose the right answer: Which exchange hosts Nifty 50?",
+    "options": [
+      "NSE",
+      "NCDEX",
+      "MCX",
+      "BSE"
+    ],
+    "answer": 0,
+    "explain": "NSE."
+  },
+  {
+    "cat": "india",
+    "difficulty": "Easy",
+    "q": "Select the correct option — Which exchange hosts Sensex?",
+    "options": [
+      "NCDEX",
+      "NSE",
+      "BSE",
+      "MCX"
+    ],
+    "answer": 2,
+    "explain": "BSE."
+  },
+  {
+    "cat": "india",
+    "difficulty": "Easy",
+    "q": "Choose the right answer: Which exchange hosts Sensex?",
+    "options": [
+      "BSE",
+      "NSE",
+      "MCX",
+      "NCDEX"
+    ],
+    "answer": 0,
+    "explain": "BSE."
+  },
+  {
+    "cat": "basics",
+    "difficulty": "Easy",
+    "q": "Select the correct option — What does SIP stand for?",
+    "options": [
+      "Systematic Investment Plan",
+      "Savings & Insurance Plan",
+      "Systematic Income Plan",
+      "Scheduled Investment Period"
+    ],
+    "answer": 0,
+    "explain": "Systematic Investment Plan."
+  },
+  {
+    "cat": "basics",
+    "difficulty": "Easy",
+    "q": "Choose the right answer: What does SIP stand for?",
+    "options": [
+      "Systematic Income Plan",
+      "Systematic Investment Plan",
+      "Scheduled Investment Period",
+      "Savings & Insurance Plan"
+    ],
+    "answer": 1,
+    "explain": "Systematic Investment Plan."
+  },
+  {
+    "cat": "basics",
+    "difficulty": "Easy",
+    "q": "Select the correct option — What does SWP stand for?",
+    "options": [
+      "Secure Wealth Policy",
+      "Savings Withdrawal Plan",
+      "Systematic Withdrawal Plan",
+      "Smart Wealth Program"
+    ],
+    "answer": 2,
+    "explain": "Systematic Withdrawal Plan."
+  },
+  {
+    "cat": "basics",
+    "difficulty": "Easy",
+    "q": "Choose the right answer: What does SWP stand for?",
+    "options": [
+      "Savings Withdrawal Plan",
+      "Smart Wealth Program",
+      "Systematic Withdrawal Plan",
+      "Secure Wealth Policy"
+    ],
+    "answer": 2,
+    "explain": "Systematic Withdrawal Plan."
+  },
+  {
+    "cat": "basics",
+    "difficulty": "Easy",
+    "q": "Asset allocation mainly helps you:",
+    "options": [
+      "Match your risk/return profile",
+      "Avoid paying any taxes",
+      "Always beat the market",
+      "Time entries perfectly"
+    ],
+    "answer": 0,
+    "explain": "The right mix aligns portfolio risk to goals."
+  },
+  {
+    "cat": "invest",
+    "difficulty": "Easy",
+    "q": "An index fund typically aims to:",
+    "options": [
+      "Replicate a benchmark’s performance",
+      "Outperform every year",
+      "Hold only corporate bonds",
+      "Trade only in IPOs"
+    ],
+    "answer": 0,
+    "explain": "Index funds are passive and track a benchmark."
+  }
+]
