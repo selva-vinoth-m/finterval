@@ -151,306 +151,189 @@ footer{margin:22px auto 10px; text-align:center; color:var(--muted); font-size:1
   <noscript><div style="max-width:1040px;margin:8px auto;color:#ef4444;padding:8px 12px;border:1px solid rgba(239,68,68,.45);border-radius:10px;background:rgba(239,68,68,.08)">JavaScript is required to run Finterval. Please enable it in your browser.</div></noscript>
 
 <script>
-/* =========================================================
-   FUNCTIONALITIES (v2.1)
-   ---------------------------------------------------------
-   CONFIG: tweak session size & timer
-   BANK:   edit/add Qs here (or in /questions.json)
-   FLOW:   non-repeating, 10 pts per correct, RAF timer
-   ========================================================= */
 (function(){
-  // ---------- CONFIG ----------
-  const CONFIG = {
-    SESSION_TOTAL: 100,       // Shows "Q n of 100"
-    TIME_PER_Q: 20,           // seconds
-    EXTERNAL_BANK_URL: 'questions.json', // optional; same folder
-    COMPUTED_CAP_RATIO: 0.10  // numeric/compute items ≤ 10% of session
-  };
-
-  // ---------- DOM ----------
-  const qCounter = document.getElementById('qCounter');
-  const qEl      = document.getElementById('question');
-  const cEl      = document.getElementById('choices');
-  const eEl      = document.getElementById('explain');
-  const nextBtn  = document.getElementById('nextBtn');
-  const restartBtn = document.getElementById('restartBtn');
-
-  const tsec = document.getElementById('tsec');
-  const tbar = document.getElementById('tbar');
-
-  const scoreNow   = document.getElementById('scoreNow');
-  const correctNow = document.getElementById('correctNow');
-  const streakNow  = document.getElementById('streakNow');
-
-  const BEST_KEY = 'finterval_best';
-  document.getElementById('year').textContent = new Date().getFullYear();
-  document.getElementById('bestBadge').textContent =
-    `Best FinScore: ${localStorage.getItem(BEST_KEY) || '—'}`;
-
-  // ---------- UTILS ----------
-  const clamp=(n,min,max)=>Math.max(min,Math.min(max,n));
-  const rnd=(min,max)=> Math.floor(Math.random()*(max-min+1))+min;
-  function shuffle(a){ for(let i=a.length-1;i>0;i--){ const j=(Math.random()* (i+1))|0; [a[i],a[j]]=[a[j],a[i]]; } return a; }
-
-  // ---------- LOCAL BANK ----------
-  // Add as many as you like. Schema:
-  // {cat:'basics|invest|tax|india|banking|money', difficulty:'Easy|Medium', q:'Question?', options:['A','B','C','D'], answer:0-3, explain:'1–2 lines'}
-  const LOCAL_BANK = [
-    // --- Personal Finance Basics ---
-    {cat:'basics',difficulty:'Easy',q:'What does SIP stand for in mutual funds?',options:['Systematic Investment Plan','Savings & Insurance Plan','Secure Income Portfolio','Scheduled Investment Period'],answer:0,explain:'Invest a fixed amount at regular intervals.'},
-    {cat:'basics',difficulty:'Easy',q:'CAGR stands for:',options:['Cumulative Annual Gross Return','Compound Annual Growth Rate','Computed Average Growth Rate','Consolidated Annual Gain Rate'],answer:1,explain:'Smoothed annual growth rate with compounding.'},
-    {cat:'basics',difficulty:'Medium',q:'Diversification mainly reduces:',options:['Systematic (market) risk','Unsystematic (stock-specific) risk','Taxes','Inflation'],answer:1,explain:'Company/sector-specific risk gets diversified.'},
-    {cat:'basics',difficulty:'Easy',q:'A good emergency corpus thumb rule is:',options:['1 month income','3–6 months expenses','2 years income','No rule'],answer:1,explain:'Safety + liquidity for unexpected events.'},
-    {cat:'money',difficulty:'Easy',q:'Liquidity of an investment means:',options:['Guaranteed return','Ease of converting to cash','Tax treatment','Risk rating'],answer:1,explain:'More liquid = easier access to money.'},
-    {cat:'money',difficulty:'Easy',q:'Which is NOT a fixed-income product?',options:['Equity shares','Government bond','Bank FD','Treasury bill'],answer:0,explain:'Equity is ownership, not lending.'},
-
-    // --- Investing / Mutual Funds ---
-    {cat:'invest',difficulty:'Easy',q:'ELSS lock-in period is:',options:['1 year','3 years','5 years','No lock-in'],answer:1,explain:'ELSS has a 3-year lock-in (80C).'},
-    {cat:'invest',difficulty:'Easy',q:'Index funds primarily aim to:',options:['Beat the market','Replicate a benchmark','Hold only bonds','Time the market'],answer:1,explain:'They track indices like Nifty 50.'},
-    {cat:'invest',difficulty:'Medium',q:'Expense ratio of a fund:',options:['Increases net returns','Reduces net returns','No impact','Paid by govt'],answer:1,explain:'Fees are deducted from assets.'},
-    {cat:'invest',difficulty:'Easy',q:'STP stands for:',options:['Systematic Transfer Plan','Short Term Profit','Stock Trading Plan','Systematic Tax Plan'],answer:0,explain:'Transfers a fixed amount between schemes.'},
-    {cat:'invest',difficulty:'Easy',q:'SWP stands for:',options:['Smart Wealth Program','Systematic Withdrawal Plan','Secure Wealth Policy','Savings With Profit'],answer:1,explain:'Withdraw a fixed amount periodically.'},
-    {cat:'invest',difficulty:'Medium',q:'Tracking error measures:',options:['How closely an index fund follows its benchmark','Brokerage fee','IPO gains','Exit load percent'],answer:0,explain:'Lower tracking error is better.'},
-
-    // --- Tax & Jargon ---
-    {cat:'tax',difficulty:'Easy',q:'KYC stands for:',options:['Know Your Customer','Keep Your Credit','Key Yield Certificate','Know Your Capital'],answer:0,explain:'Customer verification before investing.'},
-    {cat:'tax',difficulty:'Easy',q:'ELSS qualifies for deduction under:',options:['Section 24(b)','Section 80C','Section 80D','Section 80G'],answer:1,explain:'Investments can be claimed u/s 80C.'},
-    {cat:'tax',difficulty:'Medium',q:'PPF enjoys which tax treatment (current framework)?',options:['EEE (exempt at all stages)','EET','TTE','TET'],answer:0,explain:'Contribution, interest, and maturity exempt.'},
-
-    // --- India / Banking ---
-    {cat:'india',difficulty:'Easy',q:'India’s securities market regulator is:',options:['RBI','SEBI','IRDAI','PFRDA'],answer:1,explain:'Securities and Exchange Board of India.'},
-    {cat:'india',difficulty:'Easy',q:'PPF maturity period is typically:',options:['5 years','10 years','15 years','20 years'],answer:2,explain:'15-year maturity with extension option.'},
-    {cat:'banking',difficulty:'Easy',q:'UPI stands for:',options:['Unified Payments Interface','Universal Payment Instruction','User Payment Index','Unified Pricing Info'],answer:0,explain:'Real-time mobile payments.'},
-    {cat:'banking',difficulty:'Medium',q:'DICGC insures bank deposits up to:',options:['₹1 lakh','₹2 lakh','₹5 lakh','Unlimited'],answer:2,explain:'Per depositor per bank (current framework).'},
-    {cat:'india',difficulty:'Medium',q:'SGB normal maturity is:',options:['3 years','5 years','8 years','12 years'],answer:2,explain:'8-year tenure with early exit windows.'},
-
-    /* — Add more Qs above this line —
-       Tip: keep options exactly 4, and answer = 0..3 (index of correct option). */
-  ];
-
-  // ---------- OPTIONAL: load /questions.json & merge ----------
-  async function loadExternalBank(){
+  async function boot(){
     try{
-      const r = await fetch(CONFIG.EXTERNAL_BANK_URL, {cache:'no-store'});
-      if(!r.ok) return [];
-      const j = await r.json();
-      return Array.isArray(j) ? j.filter(x => x && x.q && Array.isArray(x.options) && x.options.length===4) : [];
-    }catch{ return []; }
-  }
+      // === CONFIG (local-only) =====================================
+      const CONFIG = {
+        TOTAL_QUESTIONS: 25,     // how many per run (shows 1/25, 2/25…)
+        QUESTION_TIME: 30,       // seconds per question
+        playLink: "https://selva-vinoth-m.github.io/finterval/",
+        calendly: "https://calendly.com/calendar-labham/finterval"
+      };
 
-  // ---------- Computed questions (kept ≤ 10% of session) ----------
-  function makeComputed(n){
-    const out=[];
-    for(let i=0;i<n;i++){
-      const kind = i%2;
-      if(kind===0){
-        // Simple compounding MCQ (FV) — rounded
-        const p = (rnd(5,50)*1000);
-        const r = rnd(6,12);
-        const y = rnd(2,6);
-        const fv = Math.round(p*Math.pow(1+r/100,y)/100)*100;
-        const opts = shuffle([fv, Math.round(fv*0.9/100)*100, Math.round(fv*1.1/100)*100, Math.round(fv*0.8/100)*100]);
-        out.push({
-          cat:'invest', difficulty:'Easy',
-          q:`Approx future value of ₹${p.toLocaleString()} at ${r}% p.a. for ${y} years (annual compounding):`,
-          options: opts.map(v=>'₹'+v.toLocaleString()),
-          answer: opts.indexOf(fv),
-          explain:'FV ≈ P×(1+r)^n (rounded).'
+      // Wire footer CTA safely
+      const bc = document.getElementById('bookCallBottom');
+      if (bc) bc.href = CONFIG.calendly;
+
+      // === LOAD BANK FROM questions.json ===========================
+      let BANK = [];
+      async function loadBank(){
+        const res = await fetch('questions.json?v=1', { cache: 'no-store' });
+        if(!res.ok) throw new Error('Failed to load questions.json');
+        BANK = await res.json();
+        if(!Array.isArray(BANK) || BANK.length === 0) throw new Error('questions.json is empty or malformed');
+      }
+      await loadBank();
+
+      // === HELPERS =================================================
+      const shuffle = arr => arr.map(v=>[Math.random(),v]).sort((a,b)=>a[0]-b[0]).map(v=>v[1]);
+      function sampleWithoutReplacement(arr, n){
+        const s = shuffle(arr.slice());
+        return s.slice(0, Math.min(n, s.length));
+      }
+      function stopTimer(){ if(state.timerId){ clearInterval(state.timerId); state.timerId=null; } }
+      function startTimer(){
+        stopTimer();
+        let left = CONFIG.QUESTION_TIME;
+        tsec.textContent = left;
+        tbar.style.width = '100%';
+        state.timerId = setInterval(()=>{
+          left -= 0.1;
+          if(left<=0){ left=0; tsec.textContent=0; tbar.style.width='0%'; stopTimer(); timeUp(); return; }
+          tsec.textContent = Math.ceil(left);
+          tbar.style.width = `${(left/CONFIG.QUESTION_TIME)*100}%`;
+        }, 100);
+      }
+
+      // === STATE + DOM ============================================
+      const state = { list: [], idx: 0, score: 0, correct: 0, streak: 0, answered: false, timerId: null };
+      const qEl = document.getElementById('question');
+      const cEl = document.getElementById('choices');
+      const eEl = document.getElementById('explain');
+      const nextBtn = document.getElementById('nextBtn');
+      const retryBtn = document.getElementById('retryBtn');
+      const qCategory = document.getElementById('qCategory');
+      const qDifficulty = document.getElementById('qDifficulty');
+      const tsec = document.getElementById('tsec');
+      const tbar = document.getElementById('tbar');
+
+      const scoreNow = document.getElementById('scoreNow');
+      const correctNow = document.getElementById('correctNow');
+      const streakNow = document.getElementById('streakNow');
+      const BEST_KEY = 'finterval_best';
+      document.getElementById('year').textContent = new Date().getFullYear();
+      document.getElementById('bestBadge').textContent = `Best FinScore: ${localStorage.getItem(BEST_KEY) || '—'}`;
+
+      // === GAME FLOW ==============================================
+      function start(){
+        stopTimer();
+        state.list = sampleWithoutReplacement(BANK, CONFIG.TOTAL_QUESTIONS);
+        state.idx = 0; state.score = 0; state.correct = 0; state.streak = 0; state.answered = false;
+        scoreNow.textContent = 0; correctNow.textContent = 0; streakNow.textContent = 0;
+        eEl.classList.add('hidden'); eEl.textContent = '';
+        render();
+      }
+
+      function render(){
+        const q = state.list[state.idx];
+        if(!q){ qEl.textContent = 'No questions loaded.'; nextBtn.disabled = true; return; }
+        // Show 1/25, 2/25, …
+        qEl.textContent = `(${state.idx+1}/${state.list.length}) ${q.q}`;
+        if(qCategory) qCategory.textContent = `Category: ${q.cat || '—'}`;
+        if(qDifficulty) qDifficulty.textContent = `Level: ${q.difficulty || '—'}`;
+
+        cEl.innerHTML = '';
+        eEl.classList.add('hidden');
+        eEl.textContent = '';
+        nextBtn.disabled = true;
+        state.answered = false;
+
+        (q.options || []).slice(0,4).forEach((opt,i)=>{
+          const btn = document.createElement('button');
+          btn.className = 'choice';
+          btn.innerHTML = `<span class="key">${String.fromCharCode(65+i)}</span><span>${opt}</span>`;
+          btn.addEventListener('click', ()=>handleAnswer(i));
+          cEl.appendChild(btn);
         });
-      } else {
-        // Quick risk/fit questions
-        const sets = [
-          {q:'A suitable place for emergency funds is usually:', opts:['Equity small-cap fund','Liquid/Overnight fund','Crypto','Sectoral equity'], ans:1},
-          {q:'Lower short-term risk among these is typically:', opts:['Overnight fund','Small-cap equity','Crypto','Theme fund'], ans:0}
-        ];
-        const pick = sets[rnd(0,sets.length-1)];
-        const order = shuffle([0,1,2,3]);
-        out.push({
-          cat:'basics', difficulty:'Easy',
-          q:pick.q, options:order.map(i=>pick.opts[i]),
-          answer: order.indexOf(pick.ans),
-          explain:'Based on typical risk/liquidity characteristics.'
+
+        startTimer();
+      }
+
+      function handleAnswer(i){
+        if(state.answered) return;
+        state.answered = true;
+        stopTimer();
+
+        const q = state.list[state.idx];
+        Array.from(cEl.children).forEach((btn,idx)=>{
+          btn.disabled = true;
+          if(idx === q.answer) btn.classList.add('correct');
+          if(idx === i && i !== q.answer) btn.classList.add('incorrect');
+        });
+
+        const ok = i === q.answer;
+        if(ok){ state.correct++; state.streak++; state.score += 10; eEl.className='explain ok'; }
+        else { state.streak=0; eEl.className='explain err'; }
+        eEl.innerHTML = `<strong>${ok ? 'Correct!' : 'Not quite.'}</strong> ${q.explain || ''}`;
+        eEl.classList.remove('hidden');
+
+        correctNow.textContent = state.correct;
+        streakNow.textContent = state.streak;
+        scoreNow.textContent = state.score;
+
+        // update Best badge
+        const best = parseInt(localStorage.getItem(BEST_KEY)||'0',10);
+        if(state.score > best){
+          localStorage.setItem(BEST_KEY, String(state.score));
+          document.getElementById('bestBadge').textContent = `Best FinScore: ${state.score}`;
+        }
+
+        nextBtn.disabled = false;
+      }
+
+      function timeUp(){
+        if(state.answered) return;
+        state.answered = true;
+        const q = state.list[state.idx];
+        Array.from(cEl.children).forEach((btn,idx)=>{ btn.disabled = true; if(idx===q.answer) btn.classList.add('correct'); });
+        state.streak = 0;
+        eEl.className='explain err';
+        eEl.innerHTML = `<strong>Time’s up!</strong> ${q.explain || ''}`;
+        eEl.classList.remove('hidden');
+        nextBtn.disabled = false;
+      }
+
+      document.getElementById('nextBtn').addEventListener('click', ()=>{
+        if(state.idx < state.list.length - 1){ state.idx++; render(); }
+        else { finish(); }
+      });
+      document.getElementById('retryBtn').addEventListener('click', start);
+
+      function finish(){
+        stopTimer();
+        nextBtn.disabled = true;
+        retryBtn.classList.remove('hidden');
+        const pct = Math.round((state.correct / state.list.length) * 100);
+        // Simple finish state; you can enhance result card later
+        alert(`Your FinScore: ${state.score} — ${pct}% correct`);
+      }
+
+      // Optional: Share button if present (right panel)
+      const shareBtn = document.getElementById('shareBtn');
+      if(shareBtn){
+        shareBtn.addEventListener('click', async ()=>{
+          const pct = state.list.length ? Math.round((state.correct/state.list.length)*100) : 0;
+          const text = `My Finterval Score: ${state.score} (${pct}% correct). Play here: ${CONFIG.playLink}`;
+          try{
+            if(navigator.share){ await navigator.share({title:'Finterval – Labham', text}); }
+            else { await navigator.clipboard.writeText(text); alert('Copied result to clipboard!'); }
+          }catch{}
         });
       }
+
+      // GO!
+      start();
+
+    } catch(err){
+      console.error('Finterval error:', err);
+      const qEl = document.getElementById('question');
+      if(qEl){ qEl.textContent = 'Error loading questions. Please refresh.'; }
     }
-    return out;
   }
 
-  // ---------- STATE ----------
-  const state = {
-    sessionTotal: CONFIG.SESSION_TOTAL,
-    list: [],
-    idx: 0,
-    score: 0,
-    correct: 0,
-    streak: 0,
-    answered: false,
-    rafId: null,
-    endTime: 0
-  };
-
-  // ---------- TIMER (RAF) ----------
-  function stopTimer(){ if(state.rafId){ cancelAnimationFrame(state.rafId); state.rafId=null; } }
-  function startTimer(){
-    stopTimer();
-    const dur = CONFIG.TIME_PER_Q*1000;
-    const start = performance.now();
-    state.endTime = start + dur;
-    function tick(now){
-      const left = Math.max(0, state.endTime - now);
-      tsec.textContent = Math.ceil(left/1000);
-      const pct = left/dur;
-      tbar.style.transform = `scaleX(${pct})`;
-      if(left<=0){ stopTimer(); timeUp(); return; }
-      state.rafId = requestAnimationFrame(tick);
-    }
-    tbar.style.transform = 'scaleX(1)';
-    state.rafId = requestAnimationFrame(tick);
-  }
-
-  // ---------- BUILD SESSION (no repeats; ≤10% computed) ----------
-  async function buildSession(){
-    const external = await loadExternalBank();          // 0..N from questions.json
-    const pool = external.concat(LOCAL_BANK);
-
-    // de-dup by normalized text
-    const uniq = [];
-    const seen = new Set();
-    for(const q of pool){
-      if(!q || !q.q) continue;
-      const key = q.q.trim().toLowerCase();
-      if(seen.has(key)) continue;
-      seen.add(key);
-      uniq.push(q);
-    }
-
-    // limit computed questions to ≤10% of session
-    const maxComputed = Math.floor(CONFIG.SESSION_TOTAL * CONFIG.COMPUTED_CAP_RATIO);
-    const computed = makeComputed(maxComputed);
-
-    // pick rest from bank randomly
-    shuffle(uniq);
-    const needFromBank = CONFIG.SESSION_TOTAL - computed.length;
-    const picked = uniq.slice(0, Math.max(0, needFromBank));
-
-    // combine & shuffle; also shuffle options per question
-    const session = shuffle(picked.concat(computed)).slice(0, CONFIG.SESSION_TOTAL).map(q=>{
-      const order = [0,1,2,3]; shuffle(order);
-      const opts = order.map(i=>q.options[i]);
-      const ans  = order.indexOf(q.answer);
-      return {cat:q.cat||'basics', difficulty:q.difficulty||'Easy', q:q.q, options:opts, answer:ans, explain:q.explain||''};
-    });
-
-    return session;
-  }
-
-  // ---------- RENDER ----------
-  function render(){
-    const q = state.list[state.idx];
-    if(!q){ qEl.textContent='Loading…'; nextBtn.disabled=true; return; }
-    qCounter.textContent = `Q ${state.idx+1} of ${state.sessionTotal}`;
-    qEl.textContent = q.q;
-    cEl.innerHTML = '';
-    eEl.classList.add('hidden'); eEl.textContent='';
-    nextBtn.disabled = true;
-    state.answered = false;
-
-    q.options.forEach((opt,i)=>{
-      const btn = document.createElement('button');
-      btn.className='choice';
-      btn.innerHTML = `<span class="key">${String.fromCharCode(65+i)}</span><span>${opt}</span>`;
-      btn.addEventListener('click',()=>handleAnswer(i));
-      cEl.appendChild(btn);
-    });
-
-    startTimer();
-  }
-
-  function handleAnswer(i){
-    if(state.answered) return;
-    state.answered = true;
-    stopTimer();
-
-    const q = state.list[state.idx];
-    Array.from(cEl.children).forEach((btn,idx)=>{
-      btn.disabled = true;
-      if(idx===q.answer) btn.classList.add('correct');
-      if(idx===i && i!==q.answer) btn.classList.add('incorrect');
-    });
-
-    const ok = i===q.answer;
-    if(ok){ state.correct++; state.streak++; state.score += 10; eEl.className='explain ok'; }
-    else  { state.streak=0; eEl.className='explain err'; }
-    eEl.innerHTML = `<strong>${ok ? 'Correct!' : 'Not quite.'}</strong> ${q.explain}`;
-    eEl.classList.remove('hidden');
-
-    correctNow.textContent = state.correct;
-    streakNow.textContent  = state.streak;
-    scoreNow.textContent   = state.score;
-
-    const best = parseInt(localStorage.getItem(BEST_KEY)||'0',10);
-    if(state.score>best){
-      localStorage.setItem(BEST_KEY, String(state.score));
-      document.getElementById('bestBadge').textContent = `Best FinScore: ${state.score}`;
-    }
-
-    nextBtn.disabled=false;
-  }
-
-  function timeUp(){
-    if(state.answered) return;
-    state.answered = true;
-    const q = state.list[state.idx];
-    Array.from(cEl.children).forEach((btn,idx)=>{ btn.disabled=true; if(idx===q.answer) btn.classList.add('correct'); });
-    state.streak=0; eEl.className='explain err';
-    eEl.innerHTML = `<strong>Time’s up!</strong> ${q.explain}`;
-    eEl.classList.remove('hidden');
-    nextBtn.disabled = false;
-  }
-
-  // ---------- FLOW ----------
-  nextBtn.addEventListener('click',()=>{
-    if(state.idx < state.sessionTotal-1){
-      state.idx++;
-      render();
-    }else{
-      finish();
-    }
-  });
-
-  restartBtn.addEventListener('click', start);
-
-  document.getElementById('shareBtn').addEventListener('click', async ()=>{
-    const asked = state.idx + (state.answered?1:0);
-    const pct = asked ? Math.round((state.correct/asked)*100) : 0;
-    const text = `My Finterval Score — ${state.score} (${pct}% correct). Play: https://selva-vinoth-m.github.io/finterval/`;
-    try{
-      if(navigator.share){ await navigator.share({title:'Finterval – Labham', text}); }
-      else { await navigator.clipboard.writeText(text); alert('Copied result to clipboard!'); }
-    }catch{}
-  });
-
-  function finish(){
-    stopTimer();
-    nextBtn.disabled=true;
-    eEl.className='explain ok';
-    const pct = Math.round((state.correct/state.sessionTotal)*100);
-    eEl.innerHTML = `<strong>Session complete!</strong> You scored ${state.score} with ${state.correct}/${state.sessionTotal} correct (${pct}%).`;
-    eEl.classList.remove('hidden');
-  }
-
-  async function start(){
-    stopTimer();
-    state.idx=0; state.score=0; state.correct=0; state.streak=0; state.answered=false;
-    scoreNow.textContent=0; correctNow.textContent=0; streakNow.textContent=0;
-    eEl.classList.add('hidden'); eEl.textContent='';
-    qEl.textContent='Loading…';
-    state.list = await buildSession();   // build from local + optional json
-    render();
-  }
-
-  // boot
-  start();
+  if(document.readyState === 'loading'){ document.addEventListener('DOMContentLoaded', boot); }
+  else { boot(); }
 })();
 </script>
 </body>
