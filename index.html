@@ -149,94 +149,143 @@ footer{margin:22px auto 10px; text-align:center; color:var(--muted); font-size:1
   </div>
 
   <noscript><div style="max-width:1040px;margin:8px auto;color:#ef4444;padding:8px 12px;border:1px solid rgba(239,68,68,.45);border-radius:10px;background:rgba(239,68,68,.08)">JavaScript is required to run Finterval. Please enable it in your browser.</div></noscript>
-
 <script>
 (function(){
   async function boot(){
     try{
-      // === CONFIG (local-only) =====================================
+      // =========================
+      // === FUNCTIONALITIES: CONFIG (LOCAL ONLY)
+      // =========================
       const CONFIG = {
-        TOTAL_QUESTIONS: 25,     // how many per run (shows 1/25, 2/25…)
-        QUESTION_TIME: 30,       // seconds per question
+        TOTAL_QUESTIONS: 25,                 // how many per run
+        QUESTION_TIME: 30,                   // seconds per question
         playLink: "https://selva-vinoth-m.github.io/finterval/",
-        calendly: "https://calendly.com/calendar-labham/finterval"
+        calendly: "https://calendly.com/calendar-labham/finterval",
+        bankUrl: "questions.json?v=2"        // cache-buster
       };
 
-      // Wire footer CTA safely
-      const bc = document.getElementById('bookCallBottom');
-      if (bc) bc.href = CONFIG.calendly;
+      // Wire footer CTA (safe)
+      const bookBottom = document.getElementById('bookCallBottom');
+      if (bookBottom) bookBottom.href = CONFIG.calendly;
 
-      // === LOAD BANK FROM questions.json ===========================
+      // Header/Badges
+      const BEST_KEY = 'finterval_best';
+      const bestBadge = document.getElementById('bestBadge');
+      if (bestBadge) bestBadge.textContent = `Best FinScore: ${localStorage.getItem(BEST_KEY) || '—'}`;
+
+      const aiStatus = document.getElementById('aiStatus'); // still present in your HTML
+      if (aiStatus) aiStatus.textContent = 'AI: Local';
+
+      // =========================
+      // === FUNCTIONALITIES: LOAD BANK FROM questions.json
+      // =========================
       let BANK = [];
       async function loadBank(){
-        const res = await fetch('questions.json?v=1', { cache: 'no-store' });
-        if(!res.ok) throw new Error('Failed to load questions.json');
-        BANK = await res.json();
-        if(!Array.isArray(BANK) || BANK.length === 0) throw new Error('questions.json is empty or malformed');
+        const res = await fetch(CONFIG.bankUrl, { cache: 'no-store' });
+        if(!res.ok) throw new Error('HTTP '+res.status+' fetching questions.json');
+        const raw = await res.json();
+        if(!Array.isArray(raw)) throw new Error('questions.json is not an array');
+
+        // Basic validation to avoid crashes
+        BANK = raw.filter(q =>
+          q && typeof q.q === 'string' &&
+          Array.isArray(q.options) && q.options.length === 4 &&
+          Number.isInteger(q.answer) && q.answer >= 0 && q.answer < 4
+        );
+        if (BANK.length === 0) throw new Error('Validated questions bank is empty');
       }
       await loadBank();
 
-      // === HELPERS =================================================
+      // =========================
+      // === FUNCTIONALITIES: HELPERS
+      // =========================
       const shuffle = arr => arr.map(v=>[Math.random(),v]).sort((a,b)=>a[0]-b[0]).map(v=>v[1]);
       function sampleWithoutReplacement(arr, n){
         const s = shuffle(arr.slice());
         return s.slice(0, Math.min(n, s.length));
       }
-      function stopTimer(){ if(state.timerId){ clearInterval(state.timerId); state.timerId=null; } }
-      function startTimer(){
-        stopTimer();
-        let left = CONFIG.QUESTION_TIME;
-        tsec.textContent = left;
-        tbar.style.width = '100%';
-        state.timerId = setInterval(()=>{
-          left -= 0.1;
-          if(left<=0){ left=0; tsec.textContent=0; tbar.style.width='0%'; stopTimer(); timeUp(); return; }
-          tsec.textContent = Math.ceil(left);
-          tbar.style.width = `${(left/CONFIG.QUESTION_TIME)*100}%`;
-        }, 100);
-      }
+      function clamp(n,min,max){ return Math.max(min, Math.min(max, n)); }
 
-      // === STATE + DOM ============================================
+      // =========================
+      // === FUNCTIONALITIES: STATE + DOM
+      // =========================
       const state = { list: [], idx: 0, score: 0, correct: 0, streak: 0, answered: false, timerId: null };
+
       const qEl = document.getElementById('question');
       const cEl = document.getElementById('choices');
       const eEl = document.getElementById('explain');
       const nextBtn = document.getElementById('nextBtn');
       const retryBtn = document.getElementById('retryBtn');
+
       const qCategory = document.getElementById('qCategory');
       const qDifficulty = document.getElementById('qDifficulty');
+
       const tsec = document.getElementById('tsec');
       const tbar = document.getElementById('tbar');
 
       const scoreNow = document.getElementById('scoreNow');
       const correctNow = document.getElementById('correctNow');
       const streakNow = document.getElementById('streakNow');
-      const BEST_KEY = 'finterval_best';
-      document.getElementById('year').textContent = new Date().getFullYear();
-      document.getElementById('bestBadge').textContent = `Best FinScore: ${localStorage.getItem(BEST_KEY) || '—'}`;
 
-      // === GAME FLOW ==============================================
+      const startBtn = document.getElementById('startBtn');
+      const shareBtn = document.getElementById('shareBtn');
+
+      document.getElementById('year').textContent = new Date().getFullYear();
+
+      // =========================
+      // === FUNCTIONALITIES: TIMER
+      // =========================
+      function stopTimer(){ if(state.timerId){ clearInterval(state.timerId); state.timerId=null; } }
+      function startTimer(){
+        stopTimer();
+        let left = CONFIG.QUESTION_TIME;
+        if (tsec) tsec.textContent = left;
+        if (tbar) tbar.style.width = '100%';
+
+        state.timerId = setInterval(()=>{
+          left -= 0.1;
+          if(left<=0){
+            left=0;
+            if (tsec) tsec.textContent = 0;
+            if (tbar) tbar.style.width = '0%';
+            stopTimer();
+            timeUp();
+            return;
+          }
+          if (tsec) tsec.textContent = Math.ceil(left);
+          if (tbar) tbar.style.width = `${(left/CONFIG.QUESTION_TIME)*100}%`;
+        }, 100);
+      }
+
+      // =========================
+      // === FUNCTIONALITIES: GAME FLOW
+      // =========================
       function start(){
         stopTimer();
         state.list = sampleWithoutReplacement(BANK, CONFIG.TOTAL_QUESTIONS);
         state.idx = 0; state.score = 0; state.correct = 0; state.streak = 0; state.answered = false;
-        scoreNow.textContent = 0; correctNow.textContent = 0; streakNow.textContent = 0;
-        eEl.classList.add('hidden'); eEl.textContent = '';
+        if (scoreNow) scoreNow.textContent = 0;
+        if (correctNow) correctNow.textContent = 0;
+        if (streakNow) streakNow.textContent = 0;
+        if (eEl){ eEl.classList.add('hidden'); eEl.textContent = ''; }
         render();
       }
 
       function render(){
         const q = state.list[state.idx];
-        if(!q){ qEl.textContent = 'No questions loaded.'; nextBtn.disabled = true; return; }
+        if(!q){
+          if(qEl) qEl.textContent = 'No questions loaded.';
+          if(nextBtn) nextBtn.disabled = true;
+          return;
+        }
         // Show 1/25, 2/25, …
-        qEl.textContent = `(${state.idx+1}/${state.list.length}) ${q.q}`;
+        if(qEl) qEl.textContent = `(${state.idx+1}/${state.list.length}) ${q.q}`;
         if(qCategory) qCategory.textContent = `Category: ${q.cat || '—'}`;
         if(qDifficulty) qDifficulty.textContent = `Level: ${q.difficulty || '—'}`;
 
-        cEl.innerHTML = '';
-        eEl.classList.add('hidden');
-        eEl.textContent = '';
-        nextBtn.disabled = true;
+        if(cEl) cEl.innerHTML = '';
+        if(eEl){ eEl.classList.add('hidden'); eEl.textContent=''; }
+        if(nextBtn) nextBtn.disabled = true;
         state.answered = false;
 
         (q.options || []).slice(0,4).forEach((opt,i)=>{
@@ -263,23 +312,25 @@ footer{margin:22px auto 10px; text-align:center; color:var(--muted); font-size:1
         });
 
         const ok = i === q.answer;
-        if(ok){ state.correct++; state.streak++; state.score += 10; eEl.className='explain ok'; }
-        else { state.streak=0; eEl.className='explain err'; }
-        eEl.innerHTML = `<strong>${ok ? 'Correct!' : 'Not quite.'}</strong> ${q.explain || ''}`;
-        eEl.classList.remove('hidden');
+        if(ok){ state.correct++; state.streak++; state.score += 10; if(eEl) eEl.className='explain ok'; }
+        else { state.streak=0; if(eEl) eEl.className='explain err'; }
+        if(eEl){
+          eEl.innerHTML = `<strong>${ok ? 'Correct!' : 'Not quite.'}</strong> ${q.explain || ''}`;
+          eEl.classList.remove('hidden');
+        }
 
-        correctNow.textContent = state.correct;
-        streakNow.textContent = state.streak;
-        scoreNow.textContent = state.score;
+        if(correctNow) correctNow.textContent = state.correct;
+        if(streakNow)  streakNow.textContent = state.streak;
+        if(scoreNow)   scoreNow.textContent = state.score;
 
         // update Best badge
         const best = parseInt(localStorage.getItem(BEST_KEY)||'0',10);
         if(state.score > best){
           localStorage.setItem(BEST_KEY, String(state.score));
-          document.getElementById('bestBadge').textContent = `Best FinScore: ${state.score}`;
+          if (bestBadge) bestBadge.textContent = `Best FinScore: ${state.score}`;
         }
 
-        nextBtn.disabled = false;
+        if(nextBtn) nextBtn.disabled = false;
       }
 
       function timeUp(){
@@ -288,29 +339,24 @@ footer{margin:22px auto 10px; text-align:center; color:var(--muted); font-size:1
         const q = state.list[state.idx];
         Array.from(cEl.children).forEach((btn,idx)=>{ btn.disabled = true; if(idx===q.answer) btn.classList.add('correct'); });
         state.streak = 0;
-        eEl.className='explain err';
-        eEl.innerHTML = `<strong>Time’s up!</strong> ${q.explain || ''}`;
-        eEl.classList.remove('hidden');
-        nextBtn.disabled = false;
+        if(eEl){
+          eEl.className='explain err';
+          eEl.innerHTML = `<strong>Time’s up!</strong> ${q.explain || ''}`;
+          eEl.classList.remove('hidden');
+        }
+        if(nextBtn) nextBtn.disabled = false;
       }
 
-      document.getElementById('nextBtn').addEventListener('click', ()=>{
-        if(state.idx < state.list.length - 1){ state.idx++; render(); }
-        else { finish(); }
-      });
-      document.getElementById('retryBtn').addEventListener('click', start);
-
-      function finish(){
-        stopTimer();
-        nextBtn.disabled = true;
-        retryBtn.classList.remove('hidden');
-        const pct = Math.round((state.correct / state.list.length) * 100);
-        // Simple finish state; you can enhance result card later
-        alert(`Your FinScore: ${state.score} — ${pct}% correct`);
+      // Buttons
+      if(nextBtn){
+        nextBtn.addEventListener('click', ()=>{
+          if(state.idx < state.list.length - 1){ state.idx++; render(); }
+          else { finish(); }
+        });
       }
+      if(retryBtn){ retryBtn.addEventListener('click', start); }
+      if(startBtn){ startBtn.addEventListener('click', start); }
 
-      // Optional: Share button if present (right panel)
-      const shareBtn = document.getElementById('shareBtn');
       if(shareBtn){
         shareBtn.addEventListener('click', async ()=>{
           const pct = state.list.length ? Math.round((state.correct/state.list.length)*100) : 0;
@@ -322,11 +368,19 @@ footer{margin:22px auto 10px; text-align:center; color:var(--muted); font-size:1
         });
       }
 
-      // GO!
+      function finish(){
+        stopTimer();
+        if(nextBtn) nextBtn.disabled = true;
+        if(retryBtn) retryBtn.classList.remove('hidden');
+        const pct = Math.round((state.correct / state.list.length) * 100);
+        alert(`Your FinScore: ${state.score} — ${pct}% correct`);
+      }
+
+      // GO
       start();
 
     } catch(err){
-      console.error('Finterval error:', err);
+      console.error('Finterval loader error:', err);
       const qEl = document.getElementById('question');
       if(qEl){ qEl.textContent = 'Error loading questions. Please refresh.'; }
     }
@@ -336,5 +390,6 @@ footer{margin:22px auto 10px; text-align:center; color:var(--muted); font-size:1
   else { boot(); }
 })();
 </script>
+
 </body>
 </html>
