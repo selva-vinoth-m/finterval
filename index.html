@@ -9,12 +9,16 @@
 
 <style>
 /* =========================================================
-   Finterval v2.1  (Sep 2025)
-   - No AI; local bank + optional questions.json
-   - Colorful background (like v1), flat cards
-   - Larger options & clean spacing
-   - Q n of 100; 10 pts each; no repeats within session
-   - RAF timer; numeric questions ≤ ~10% of session
+   Finterval v2.4  (Sep 2025)
+   - Local bank only (questions.json)
+   - Splash (5s) then big 3-2-1 GO countdown (also on Restart)
+   - Buttons: Next | Restart | Marathon
+   - Normal mode: "Q n of 25" counter
+   - Marathon mode: "Q n" only (no total)
+   - RAF timer (smooth, no jitter)
+   - +10 points per correct; best score saved
+   - Non-repeating within a run; ≤10% numeric ("calc") if present
+   - Larger choices, cleaner spacing, blue Share button
    ========================================================= */
 :root{
   --brand:#2563eb; --brand-600:#1d4ed8; --brand-700:#1e40af;
@@ -54,6 +58,7 @@ button,.btn{appearance:none; border:1px solid rgba(255,255,255,.12); background:
 button:hover,.btn:hover{border-color:rgba(255,255,255,.22)}
 .btn-primary{background:linear-gradient(180deg,var(--brand),var(--brand-700)); border-color:transparent; color:#fff}
 .btn-primary:hover{filter:brightness(1.05)}
+.btn-blue{background:linear-gradient(180deg,var(--brand-600),var(--brand-700)); border-color:transparent; color:#fff}
 
 .counter{color:var(--muted); font-size:13px; margin-bottom:8px}
 .question{font-size: clamp(20px, 2.4vw, 26px); margin:6px 0 10px; line-height:1.35}
@@ -72,11 +77,13 @@ button:hover,.btn:hover{border-color:rgba(255,255,255,.22)}
 .explain.ok{border-left-color:var(--ok)}
 .explain.err{border-left-color:var(--err)}
 
-.controls{display:flex; gap:12px; flex-wrap:wrap; align-items:center; margin-top:14px}
+.controls{display:flex; gap:12px; flex-wrap:wrap; align-items:center; margin-top:16px}
+.controls .spacer{flex:1 1 auto}
 
 .side{display:grid; gap:18px}
 .stat{display:flex; align-items:center; justify-content:space-between; gap:12px; padding:16px; border-radius:16px; border:1px solid rgba(255,255,255,.10); background:rgba(255,255,255,.04)}
 .stat strong{font-size:20px}
+.side .controls{margin-top:12px}
 
 footer{margin:22px auto 10px; text-align:center; color:var(--muted); font-size:12px}
 .small{font-size:12px; color:var(--muted)}
@@ -85,44 +92,53 @@ footer{margin:22px auto 10px; text-align:center; color:var(--muted); font-size:1
 /* Timer */
 .timerWrap{margin:12px 0 8px}
 .tline{height:10px; background:rgba(255,255,255,.10); border-radius:999px; overflow:hidden}
-#tbar{height:100%; width:100%; background:linear-gradient(90deg, var(--warn), var(--err)); transform-origin:left center}
+#tbar{height:100%; width:100%; background:linear-gradient(90deg, var(--warn), var(--err)); transform-origin:left center; transform:scaleX(1)}
 .ttext{margin-top:6px; font-size:13px; color:var(--muted)}
-     /* 1) Score tiles shouldn't react to touches at all */
-.stat { 
-  pointer-events: none;            /* prevents the press highlight band */
-}
 
-/* 2) Make sure no press/selection shade appears anywhere interactive */
-* { -webkit-tap-highlight-color: transparent; }
-.choice, .btn, .pill {
-  -webkit-user-select: none; user-select: none;
-  -webkit-touch-callout: none;
+/* Overlays: splash + countdown */
+.overlay{
+  position:fixed; inset:0; display:grid; place-items:center;
+  background:radial-gradient(1200px 800px at 10% -10%, rgba(37,99,235,.25), transparent 50%),
+             radial-gradient(900px 700px at 110% 10%, rgba(16,185,129,.18), transparent 50%),
+             rgba(11,18,32,.96);
+  z-index:9999; color:#fff;
 }
+.splash{
+  text-align:center; padding:20px;
+}
+.splash h1{margin:0; font-size: clamp(40px,6vw,72px); font-weight:900;
+  background:linear-gradient(90deg,#60a5fa,#34d399); -webkit-background-clip:text; -webkit-text-fill-color:transparent}
+.splash .tag{margin-top:8px; font-size:clamp(16px,2vw,22px)}
+.splash .labham{margin-top:4px; font-size:13px; color:#cbd5e1}
+.spinner{
+  margin:22px auto 0; width:44px; height:44px; border:4px solid rgba(255,255,255,.2); border-top-color:#fff; border-radius:50%;
+  animation:spin 1s linear infinite;
+}
+@keyframes spin {to{transform:rotate(360deg)}}
 
-/* 3) Compositing fix for mobile (prevents odd banding while scrolling) */
-.card, .stat { 
-  transform: translateZ(0);
-  backface-visibility: hidden;
-}
-
-/* 4) (Optional) Move the page gradients to a fixed layer to avoid any viewport shading */
-body { background: var(--bg); }
-body::before{
-  content:"";
-  position: fixed;
-  inset: 0;
-  z-index: -1;
-  pointer-events: none;
-  background:
-    radial-gradient(1200px 800px at 10% -10%, rgba(37,99,235,.25), transparent 50%),
-    radial-gradient(900px 700px at 110% 10%, rgba(16,185,129,.18), transparent 50%),
-    var(--bg);
-}
+.countdown{font-size: clamp(64px,12vw,140px); font-weight:900}
+.countdown .go{font-size: clamp(48px,10vw,120px); color:#22c55e}
+.fade{animation:fade .45s ease both}
+@keyframes fade {from{opacity:0; transform:scale(.9)} to{opacity:1; transform:scale(1)}}
 </style>
- 
 </head>
 
 <body>
+  <!-- Splash (5s) -->
+  <div id="splash" class="overlay">
+    <div class="splash">
+      <h1>Finterval</h1>
+      <div class="tag">Your Fun Finance Break</div>
+      <div class="labham">Powered by Labham</div>
+      <div class="spinner" aria-hidden="true"></div>
+    </div>
+  </div>
+
+  <!-- Countdown overlay -->
+  <div id="countdown" class="overlay hidden" aria-hidden="true">
+    <div id="countNum" class="countdown">3</div>
+  </div>
+
   <div class="container">
     <header>
       <div class="title">
@@ -136,13 +152,13 @@ body::before{
     <div class="grid" role="main">
       <!-- LEFT: QUIZ -->
       <section class="card" aria-live="polite">
-        <div id="qCounter" class="counter">Q 1 of 100</div>
+        <div id="qCounter" class="counter">Q 1 of 25</div>
         <h2 id="question" class="question">Loading…</h2>
 
         <!-- Timer -->
         <div class="timerWrap">
           <div class="tline"><div id="tbar"></div></div>
-          <div class="ttext">Time: <span id="tsec">20</span>s</div>
+          <div class="ttext">Time: <span id="tsec">30</span>s</div>
         </div>
 
         <div id="choices" class="choices" role="group" aria-label="Answer choices"></div>
@@ -151,6 +167,8 @@ body::before{
         <div class="controls">
           <button id="nextBtn" class="btn-primary" disabled>Next</button>
           <button id="restartBtn" class="btn">Restart</button>
+          <button id="marathonBtn" class="btn">Marathon</button>
+          <span class="spacer"></span>
         </div>
       </section>
 
@@ -161,8 +179,8 @@ body::before{
           <div class="stat"><span>Score</span><strong id="scoreNow">0</strong></div>
           <div class="stat"><span>Correct</span><strong id="correctNow">0</strong></div>
           <div class="stat"><span>Streak</span><strong id="streakNow">0</strong></div>
-          <div class="controls" style="margin-top:12px">
-            <button id="shareBtn" class="btn-primary" title="Share your FinScore">Share</button>
+          <div class="controls">
+            <button id="shareBtn" class="btn-blue" title="Share your FinScore">Share</button>
           </div>
         </section>
 
@@ -181,146 +199,190 @@ body::before{
   </div>
 
   <noscript><div style="max-width:1040px;margin:8px auto;color:#ef4444;padding:8px 12px;border:1px solid rgba(239,68,68,.45);border-radius:10px;background:rgba(239,68,68,.08)">JavaScript is required to run Finterval. Please enable it in your browser.</div></noscript>
+
 <script>
+/* =========================================================
+   Finterval v2.4 Script
+   Sections:
+   1) Config & Load questions.json
+   2) Helper utils
+   3) State, DOM refs
+   4) Splash + Countdown
+   5) Timer (requestAnimationFrame)
+   6) Game flow (Normal & Marathon)
+   7) Share
+   ========================================================= */
 (function(){
   async function boot(){
     try{
-      // =========================
-      // === FUNCTIONALITIES: CONFIG (LOCAL ONLY)
-      // =========================
+      /* 1) CONFIG + LOAD BANK ----------------------------------- */
       const CONFIG = {
-        TOTAL_QUESTIONS: 25,                 // how many per run
+        TOTAL_QUESTIONS: 25,                 // normal run length
         QUESTION_TIME: 30,                   // seconds per question
+        bankUrl: "questions.json?v=3",       // cache-buster
         playLink: "https://selva-vinoth-m.github.io/finterval/",
-        calendly: "https://calendly.com/calendar-labham/finterval",
-        bankUrl: "questions.json?v=2"        // cache-buster
+        maxCalcRatio: 0.10                   // ≤10% numeric if 'type:"calc"' present
       };
 
-      // Wire footer CTA (safe)
-      const bookBottom = document.getElementById('bookCallBottom');
-      if (bookBottom) bookBottom.href = CONFIG.calendly;
-
-      // Header/Badges
       const BEST_KEY = 'finterval_best';
+      document.getElementById('year').textContent = new Date().getFullYear();
       const bestBadge = document.getElementById('bestBadge');
-      if (bestBadge) bestBadge.textContent = `Best FinScore: ${localStorage.getItem(BEST_KEY) || '—'}`;
+      bestBadge.textContent = `Best FinScore: ${localStorage.getItem(BEST_KEY) || '—'}`;
 
-      const aiStatus = document.getElementById('aiStatus'); // still present in your HTML
-      if (aiStatus) aiStatus.textContent = 'AI: Local';
-
-      // =========================
-      // === FUNCTIONALITIES: LOAD BANK FROM questions.json
-      // =========================
+      // Load questions.json
       let BANK = [];
       async function loadBank(){
         const res = await fetch(CONFIG.bankUrl, { cache: 'no-store' });
         if(!res.ok) throw new Error('HTTP '+res.status+' fetching questions.json');
         const raw = await res.json();
-        if(!Array.isArray(raw)) throw new Error('questions.json is not an array');
-
-        // Basic validation to avoid crashes
+        if(!Array.isArray(raw)) throw new Error('questions.json must be an array');
+        // validate
         BANK = raw.filter(q =>
           q && typeof q.q === 'string' &&
           Array.isArray(q.options) && q.options.length === 4 &&
           Number.isInteger(q.answer) && q.answer >= 0 && q.answer < 4
         );
-        if (BANK.length === 0) throw new Error('Validated questions bank is empty');
+        if (BANK.length === 0) throw new Error('Validated bank is empty');
       }
       await loadBank();
 
-      // =========================
-      // === FUNCTIONALITIES: HELPERS
-      // =========================
+      /* 2) HELPERS ---------------------------------------------- */
       const shuffle = arr => arr.map(v=>[Math.random(),v]).sort((a,b)=>a[0]-b[0]).map(v=>v[1]);
-      function sampleWithoutReplacement(arr, n){
-        const s = shuffle(arr.slice());
-        return s.slice(0, Math.min(n, s.length));
+      const sampleWithoutReplacement = (arr, n) => shuffle(arr.slice()).slice(0, Math.min(n, arr.length));
+
+      function sampleWithCalcLimit(arr, n, maxRatio){
+        const calc = arr.filter(q => q.type === 'calc');
+        const rest = arr.filter(q => q.type !== 'calc');
+        const wantCalc = Math.min(Math.round(n * maxRatio), calc.length);
+        const takeCalc = sampleWithoutReplacement(calc, wantCalc);
+        const takeRest = sampleWithoutReplacement(rest, n - takeCalc.length);
+        return shuffle(takeCalc.concat(takeRest));
       }
-      function clamp(n,min,max){ return Math.max(min, Math.min(max, n)); }
 
-      // =========================
-      // === FUNCTIONALITIES: STATE + DOM
-      // =========================
-      const state = { list: [], idx: 0, score: 0, correct: 0, streak: 0, answered: false, timerId: null };
+      /* 3) STATE + DOM ------------------------------------------ */
+      const state = {
+        mode: 'normal',            // 'normal' | 'marathon'
+        list: [],                  // current run list
+        mPool: [],                 // marathon pool (all, shuffled)
+        idx: 0,
+        score: 0,
+        correct: 0,
+        streak: 0,
+        answered: false,
+        asked: 0,
+        rafId: null
+      };
 
+      const qCounter = document.getElementById('qCounter');
       const qEl = document.getElementById('question');
       const cEl = document.getElementById('choices');
       const eEl = document.getElementById('explain');
+
       const nextBtn = document.getElementById('nextBtn');
-      const retryBtn = document.getElementById('retryBtn');
-
-      const qCategory = document.getElementById('qCategory');
-      const qDifficulty = document.getElementById('qDifficulty');
-
-      const tsec = document.getElementById('tsec');
-      const tbar = document.getElementById('tbar');
+      const restartBtn = document.getElementById('restartBtn');
+      const marathonBtn = document.getElementById('marathonBtn');
+      const shareBtn = document.getElementById('shareBtn');
 
       const scoreNow = document.getElementById('scoreNow');
       const correctNow = document.getElementById('correctNow');
       const streakNow = document.getElementById('streakNow');
 
-      const startBtn = document.getElementById('startBtn');
-      const shareBtn = document.getElementById('shareBtn');
+      const tsec = document.getElementById('tsec');
+      const tbar = document.getElementById('tbar');
 
-      document.getElementById('year').textContent = new Date().getFullYear();
+      /* 4) SPLASH + COUNTDOWN ----------------------------------- */
+      const splash = document.getElementById('splash');
+      const countdown = document.getElementById('countdown');
+      const countNum = document.getElementById('countNum');
 
-      // =========================
-      // === FUNCTIONALITIES: TIMER
-      // =========================
-      function stopTimer(){ if(state.timerId){ clearInterval(state.timerId); state.timerId=null; } }
-      function startTimer(){
-        stopTimer();
-        let left = CONFIG.QUESTION_TIME;
-        if (tsec) tsec.textContent = left;
-        if (tbar) tbar.style.width = '100%';
+      function hide(el){ el.classList.add('hidden'); el.setAttribute('aria-hidden','true'); }
+      function show(el){ el.classList.remove('hidden'); el.removeAttribute('aria-hidden'); }
 
-        state.timerId = setInterval(()=>{
-          left -= 0.1;
-          if(left<=0){
-            left=0;
-            if (tsec) tsec.textContent = 0;
-            if (tbar) tbar.style.width = '0%';
-            stopTimer();
-            timeUp();
+      // Splash for 5s then 3-2-1-GO
+      setTimeout(()=> startCountdown(startNormal), 5000);
+
+      function startCountdown(startFn){
+        show(countdown);
+        let steps = ['3','2','1','GO!'];
+        function step(){
+          if(!steps.length){
+            hide(countdown);
+            startFn();
             return;
           }
-          if (tsec) tsec.textContent = Math.ceil(left);
-          if (tbar) tbar.style.width = `${(left/CONFIG.QUESTION_TIME)*100}%`;
-        }, 100);
+          const val = steps.shift();
+          countNum.textContent = val;
+          countNum.classList.remove('go');
+          if(val === 'GO!'){ countNum.classList.add('go'); }
+          countNum.classList.add('fade');
+          setTimeout(()=>{ countNum.classList.remove('fade'); step(); }, val==='GO!' ? 700 : 700);
+        }
+        step();
       }
 
-      // =========================
-      // === FUNCTIONALITIES: GAME FLOW
-      // =========================
-      function start(){
+      function startNormal(){
+        hide(splash);
+        state.mode = 'normal';
+        startRun();
+      }
+
+      /* 5) TIMER (RAF) ------------------------------------------ */
+      function stopTimer(){ if(state.rafId){ cancelAnimationFrame(state.rafId); state.rafId=null; } }
+      function startTimer(){
         stopTimer();
-        state.list = sampleWithoutReplacement(BANK, CONFIG.TOTAL_QUESTIONS);
-        state.idx = 0; state.score = 0; state.correct = 0; state.streak = 0; state.answered = false;
-        if (scoreNow) scoreNow.textContent = 0;
-        if (correctNow) correctNow.textContent = 0;
-        if (streakNow) streakNow.textContent = 0;
-        if (eEl){ eEl.classList.add('hidden'); eEl.textContent = ''; }
+        const duration = (state.mode==='normal' ? CONFIG.QUESTION_TIME : CONFIG.QUESTION_TIME) * 1000;
+        let startAt = null;
+        function frame(ts){
+          if(startAt==null) startAt = ts;
+          const elapsed = ts - startAt;
+          const leftMs = Math.max(0, duration - elapsed);
+          const frac = leftMs / duration;
+          if(tbar) tbar.style.transform = `scaleX(${frac})`;
+          if(tsec) tsec.textContent = Math.ceil(leftMs/1000);
+          if(leftMs <= 0){ timeUp(); return; }
+          state.rafId = requestAnimationFrame(frame);
+        }
+        state.rafId = requestAnimationFrame(frame);
+      }
+
+      /* 6) GAME FLOW -------------------------------------------- */
+      function resetScoreUI(){
+        scoreNow.textContent = 0; correctNow.textContent = 0; streakNow.textContent = 0;
+      }
+      function updateCounter(){
+        if(state.mode==='marathon'){
+          qCounter.textContent = `Q ${state.idx+1}`;
+        } else {
+          qCounter.textContent = `Q ${state.idx+1} of ${state.list.length}`;
+        }
+      }
+
+      function startRun(){
+        // Build session list
+        if(state.mode==='normal'){
+          state.list = sampleWithCalcLimit(BANK, CONFIG.TOTAL_QUESTIONS, CONFIG.maxCalcRatio);
+        } else {
+          state.mPool = state.mPool.length ? state.mPool : shuffle(BANK.slice());
+          state.list = state.mPool; // iterate through the full bank
+        }
+        state.idx=0; state.score=0; state.correct=0; state.streak=0; state.answered=false; state.asked=0;
+        resetScoreUI();
         render();
       }
 
       function render(){
         const q = state.list[state.idx];
-        if(!q){
-          if(qEl) qEl.textContent = 'No questions loaded.';
-          if(nextBtn) nextBtn.disabled = true;
-          return;
-        }
-        // Show 1/25, 2/25, …
-        if(qEl) qEl.textContent = `(${state.idx+1}/${state.list.length}) ${q.q}`;
-        if(qCategory) qCategory.textContent = `Category: ${q.cat || '—'}`;
-        if(qDifficulty) qDifficulty.textContent = `Level: ${q.difficulty || '—'}`;
+        if(!q){ qEl.textContent = 'No questions loaded.'; nextBtn.disabled = true; return; }
+        // Text only (no 1/25 prefix in the question line)
+        qEl.textContent = q.q;
+        updateCounter();
 
-        if(cEl) cEl.innerHTML = '';
-        if(eEl){ eEl.classList.add('hidden'); eEl.textContent=''; }
-        if(nextBtn) nextBtn.disabled = true;
+        cEl.innerHTML = '';
+        eEl.classList.add('hidden'); eEl.textContent='';
+        nextBtn.disabled = true;
         state.answered = false;
 
-        (q.options || []).slice(0,4).forEach((opt,i)=>{
+        q.options.forEach((opt,i)=>{
           const btn = document.createElement('button');
           btn.className = 'choice';
           btn.innerHTML = `<span class="key">${String.fromCharCode(65+i)}</span><span>${opt}</span>`;
@@ -333,8 +395,7 @@ body::before{
 
       function handleAnswer(i){
         if(state.answered) return;
-        state.answered = true;
-        stopTimer();
+        state.answered = true; stopTimer();
 
         const q = state.list[state.idx];
         Array.from(cEl.children).forEach((btn,idx)=>{
@@ -343,26 +404,25 @@ body::before{
           if(idx === i && i !== q.answer) btn.classList.add('incorrect');
         });
 
-        const ok = i === q.answer;
-        if(ok){ state.correct++; state.streak++; state.score += 10; if(eEl) eEl.className='explain ok'; }
-        else { state.streak=0; if(eEl) eEl.className='explain err'; }
-        if(eEl){
-          eEl.innerHTML = `<strong>${ok ? 'Correct!' : 'Not quite.'}</strong> ${q.explain || ''}`;
-          eEl.classList.remove('hidden');
-        }
+        const ok = i===q.answer;
+        if(ok){ state.correct++; state.streak++; state.score += 10; eEl.className='explain ok'; }
+        else { state.streak=0; eEl.className='explain err'; }
+        eEl.innerHTML = `<strong>${ok ? 'Correct!' : 'Not quite.'}</strong> ${q.explain || ''}`;
+        eEl.classList.remove('hidden');
 
-        if(correctNow) correctNow.textContent = state.correct;
-        if(streakNow)  streakNow.textContent = state.streak;
-        if(scoreNow)   scoreNow.textContent = state.score;
+        correctNow.textContent = state.correct;
+        streakNow.textContent  = state.streak;
+        scoreNow.textContent   = state.score;
 
-        // update Best badge
+        // update best
         const best = parseInt(localStorage.getItem(BEST_KEY)||'0',10);
         if(state.score > best){
           localStorage.setItem(BEST_KEY, String(state.score));
-          if (bestBadge) bestBadge.textContent = `Best FinScore: ${state.score}`;
+          bestBadge.textContent = `Best FinScore: ${state.score}`;
         }
 
-        if(nextBtn) nextBtn.disabled = false;
+        nextBtn.disabled = false;
+        state.asked++;
       }
 
       function timeUp(){
@@ -371,45 +431,58 @@ body::before{
         const q = state.list[state.idx];
         Array.from(cEl.children).forEach((btn,idx)=>{ btn.disabled = true; if(idx===q.answer) btn.classList.add('correct'); });
         state.streak = 0;
-        if(eEl){
-          eEl.className='explain err';
-          eEl.innerHTML = `<strong>Time’s up!</strong> ${q.explain || ''}`;
-          eEl.classList.remove('hidden');
+        eEl.className='explain err';
+        eEl.innerHTML = `<strong>Time’s up!</strong> ${q.explain || ''}`;
+        eEl.classList.remove('hidden');
+        nextBtn.disabled = false;
+        state.asked++;
+      }
+
+      function next(){
+        if(state.mode==='normal'){
+          if(state.idx < state.list.length - 1){ state.idx++; render(); }
+          else { finishNormal(); }
+        } else {
+          // Marathon: move forward; when you hit end, reshuffle for a fresh loop
+          state.idx++;
+          if(state.idx >= state.list.length){
+            state.mPool = shuffle(BANK.slice());
+            state.list = state.mPool;
+            state.idx = 0;
+          }
+          render();
         }
-        if(nextBtn) nextBtn.disabled = false;
+      }
+
+      function finishNormal(){
+        stopTimer();
+        nextBtn.disabled = true;
+        alert(`Your FinScore: ${state.score} — ${Math.round((state.correct/state.list.length)*100)}% correct`);
       }
 
       // Buttons
-      if(nextBtn){
-        nextBtn.addEventListener('click', ()=>{
-          if(state.idx < state.list.length - 1){ state.idx++; render(); }
-          else { finish(); }
-        });
-      }
-      if(retryBtn){ retryBtn.addEventListener('click', start); }
-      if(startBtn){ startBtn.addEventListener('click', start); }
+      nextBtn.addEventListener('click', next);
 
-      if(shareBtn){
-        shareBtn.addEventListener('click', async ()=>{
-          const pct = state.list.length ? Math.round((state.correct/state.list.length)*100) : 0;
-          const text = `My Finterval Score: ${state.score} (${pct}% correct). Play here: ${CONFIG.playLink}`;
-          try{
-            if(navigator.share){ await navigator.share({title:'Finterval – Labham', text}); }
-            else { await navigator.clipboard.writeText(text); alert('Copied result to clipboard!'); }
-          }catch{}
-        });
-      }
+      restartBtn.addEventListener('click', ()=>{
+        state.mode='normal';
+        startCountdown(startRun);
+      });
 
-      function finish(){
-        stopTimer();
-        if(nextBtn) nextBtn.disabled = true;
-        if(retryBtn) retryBtn.classList.remove('hidden');
-        const pct = Math.round((state.correct / state.list.length) * 100);
-        alert(`Your FinScore: ${state.score} — ${pct}% correct`);
-      }
+      marathonBtn.addEventListener('click', ()=>{
+        state.mode='marathon';
+        startCountdown(startRun);
+      });
 
-      // GO
-      start();
+      /* 7) SHARE ------------------------------------------------- */
+      shareBtn.addEventListener('click', async ()=>{
+        const denom = (state.mode==='marathon') ? Math.max(1,state.asked) : state.list.length;
+        const pct = Math.round((state.correct/denom)*100);
+        const text = `My Finterval Score: ${state.score} (${pct}% correct). Play here: ${CONFIG.playLink}`;
+        try{
+          if(navigator.share){ await navigator.share({title:'Finterval – Labham', text}); }
+          else { await navigator.clipboard.writeText(text); alert('Copied result to clipboard!'); }
+        }catch{}
+      });
 
     } catch(err){
       console.error('Finterval loader error:', err);
@@ -422,6 +495,5 @@ body::before{
   else { boot(); }
 })();
 </script>
-
 </body>
 </html>
