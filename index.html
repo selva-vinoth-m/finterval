@@ -110,20 +110,31 @@ footer{margin:22px auto 10px; text-align:center; color:var(--muted); font-size:1
   background:linear-gradient(90deg,#60a5fa,#34d399); -webkit-background-clip:text; -webkit-text-fill-color:transparent}
 .splash .tag{margin-top:8px; font-size:clamp(16px,2vw,22px)}
 .splash .labham{margin-top:4px; font-size:13px; color:#cbd5e1}
-.spinner{
-  margin:22px auto 0; width:44px; height:44px; border:4px solid rgba(255,255,255,.2); border-top-color:#fff; border-radius:50%;
-  animation:spin 1s linear infinite;
+/* REPLACE the old spinner with this video-game style loading bar */
+.loading-wrap{margin:22px auto 0; width:min(440px,82vw)}
+.loading-bar{
+  height:14px; border-radius:999px; background:rgba(255,255,255,.15);
+  overflow:hidden; box-shadow:inset 0 0 0 1px rgba(255,255,255,.25)
 }
-@keyframes spin {to{transform:rotate(360deg)}}
+.loading-bar #loadFill{
+  height:100%; width:0%;
+  background:
+    repeating-linear-gradient(45deg, rgba(255,255,255,.25) 0 10px, transparent 10px 20px),
+    linear-gradient(90deg, var(--brand), #22c55e);
+  background-size:auto, 100% 100%;
+  animation:loadStripe 1s linear infinite;
+}
+.loading-pct{margin-top:10px; text-align:center; font-variant-numeric:tabular-nums; color:#e5e7eb}
+@keyframes loadStripe { from{background-position:0 0,0 0} to{background-position:20px 0,0 0} }
 
+/* keep these (unchanged) */
 .countdown{font-size: clamp(64px,12vw,140px); font-weight:900}
 .countdown .go{font-size: clamp(48px,10vw,120px); color:#22c55e}
 .fade{animation:fade .45s ease both}
 @keyframes fade {from{opacity:0; transform:scale(.9)} to{opacity:1; transform:scale(1)}}
-/* 1) Score tiles shouldn't react to touches at all */
-.stat { 
-  pointer-events: none;            /* prevents the press highlight band */
-}
+
+/* score tiles shouldn’t react to touches */
+.stat{pointer-events:none}
 
 /* 2) Make sure no press/selection shade appears anywhere interactive */
 * { -webkit-tap-highlight-color: transparent; }
@@ -161,7 +172,10 @@ body::before{
       <h1>Finterval</h1>
       <div class="tag">Your Fun Finance Break</div>
       <div class="labham">Powered by Labham</div>
-      <div class="spinner" aria-hidden="true"></div>
+      <div class="loading-wrap">
+  <div class="loading-bar"><div id="loadFill"></div></div>
+  <div id="loadPct" class="loading-pct">0%</div>
+</div>
     </div>
   </div>
 
@@ -330,7 +344,24 @@ body::before{
       function show(el){ el.classList.remove('hidden'); el.removeAttribute('aria-hidden'); }
 
       // Splash for 5s then 3-2-1-GO
-      setTimeout(()=> startCountdown(startNormal), 5000);
+runFakeLoader(); // replaces the setTimeout
+
+function runFakeLoader(){
+  const fill = document.getElementById('loadFill');
+  const pctEl = document.getElementById('loadPct');
+  let pct = 0;
+  const stepMs = 500;        // 0→100 in ~5s (10% every 0.5s)
+  const tick = setInterval(()=>{
+    pct = Math.min(100, pct + 10);
+    if (fill) fill.style.width = pct + '%';
+    if (pctEl) pctEl.textContent = pct + '%';
+    if (pct >= 100){
+      clearInterval(tick);
+      setTimeout(()=> startCountdown(startNormal), 300); // brief pause at 100%
+    }
+  }, stepMs);
+}
+
 
       function startCountdown(startFn){
         show(countdown);
