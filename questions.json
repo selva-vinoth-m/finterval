@@ -1,108 +1,340 @@
 [
-  {"cat":"basics","difficulty":"Easy","q":"What is the main purpose of an emergency fund?","options":["Speculation","Big-ticket shopping","Cover unexpected expenses","Tax planning"],"answer":2,"explain":"Emergency funds cushion surprise costs like medical or repair bills."},
-  {"cat":"basics","difficulty":"Easy","q":"Which statement best describes compounding?","options":["Interest only on principal","Interest earned on interest too","No interest at all","Flat interest every year"],"answer":1,"explain":"Compounding lets earnings themselves earn returns over time."},
-  {"cat":"basics","difficulty":"Easy","q":"Asset allocation primarily helps with:","options":["Eliminating all risk","Matching risk to goals","Timing the market","Beating inflation guaranteed"],"answer":1,"explain":"Allocation balances risk/return to fit your goals and horizon."},
-  {"cat":"basics","difficulty":"Easy","q":"Net worth equals:","options":["Income − expenses","Assets − liabilities","Savings × return","Tax refund + salary"],"answer":1,"explain":"Net worth is what you own minus what you owe."},
-  {"cat":"basics","difficulty":"Easy","q":"Liquidity refers to:","options":["Guaranteed returns","Ease of converting to cash","Tax efficiency","High credit score"],"answer":1,"explain":"More liquid assets can be turned into cash quickly."},
-
-  {"cat":"basics","difficulty":"Medium","q":"A common starting rule for emergency fund size is:","options":["1 month of expenses","3–6 months of expenses","12 months of income","No guideline exists"],"answer":1,"explain":"3–6 months of essential expenses is a popular starting rule."},
-  {"cat":"basics","difficulty":"Medium","q":"Rebalancing a portfolio mainly aims to:","options":["Cut taxes to zero","Restore target asset mix","Chase hot sectors","Increase trading frequency"],"answer":1,"explain":"Rebalancing realigns to your planned risk level."},
-  {"cat":"basics","difficulty":"Easy","q":"A term insurance plan primarily provides:","options":["Investment returns","Pure life cover","Guaranteed maturity value","Loan facility"],"answer":1,"explain":"Term policies offer high life cover at low cost."},
-  {"cat":"basics","difficulty":"Easy","q":"Rupee-cost averaging happens when you:","options":["Invest randomly","Invest a fixed amount regularly","Time every dip perfectly","Trade daily"],"answer":1,"explain":"Fixed-amount investing averages your purchase price."},
-  {"cat":"basics","difficulty":"Easy","q":"Which is typically NOT a fixed-income instrument?","options":["Government bond","Bank fixed deposit","Equity share","Treasury bill"],"answer":2,"explain":"Equity represents ownership; others are debt instruments."},
-
-  {"cat":"invest","difficulty":"Easy","q":"An index fund mainly aims to:","options":["Beat the market consistently","Replicate a market index","Hold only bonds","Trade intraday"],"answer":1,"explain":"Index funds passively track benchmarks like Nifty 50."},
-  {"cat":"invest","difficulty":"Easy","q":"ELSS funds generally have a lock-in of:","options":["1 year","3 years","5 years","No lock-in"],"answer":1,"explain":"ELSS typically has a 3-year lock-in and Section 80C benefits."},
-  {"cat":"invest","difficulty":"Easy","q":"Direct mutual fund plans usually have:","options":["Higher expense ratio","Lower expense ratio","Same as regular","No expenses"],"answer":1,"explain":"Direct plans exclude distributor commissions."},
-  {"cat":"invest","difficulty":"Medium","q":"Expense ratio is:","options":["Broker’s fee to you","Annual fund cost as % of AUM","Tax on dividends","Exit load"],"answer":1,"explain":"It’s the annual operating cost charged by the fund."},
-  {"cat":"invest","difficulty":"Medium","q":"Tracking error in index funds measures:","options":["How closely it follows the benchmark","Fund manager’s salary","IPO gains","Broker margin"],"answer":0,"explain":"Lower tracking error = closer index replication."},
-
-  {"cat":"invest","difficulty":"Easy","q":"Overnight funds typically invest in:","options":["1-day maturity instruments","Small-cap stocks","Real estate","International bonds"],"answer":0,"explain":"They park money in very short-maturity debt."},
-  {"cat":"invest","difficulty":"Easy","q":"REITs primarily invest in:","options":["Crypto","Gold bars","Income-generating real estate","Startups"],"answer":2,"explain":"REITs own/operate income-producing properties."},
-  {"cat":"invest","difficulty":"Medium","q":"A ‘thematic’ fund usually:","options":["Tracks broad market","Focuses on a specific theme/sector","Holds only debt","Guarantees returns"],"answer":1,"explain":"Theme focus increases concentration risk."},
-  {"cat":"invest","difficulty":"Medium","q":"Arbitrage funds aim to:","options":["Exploit cash–futures price gaps","Pick multibaggers","Lend to governments","Hold cash only"],"answer":0,"explain":"They capture spread between cash and derivatives markets."},
-  {"cat":"invest","difficulty":"Medium","q":"‘Alpha’ of a fund indicates:","options":["Fund size","Excess return over benchmark","Volatility only","Dividend yield"],"answer":1,"explain":"Alpha > 0 suggests outperformance after risk."},
-
-  {"cat":"mf","difficulty":"Easy","q":"NAV stands for:","options":["Net Asset Value","Net Annual Variation","Nominal Asset Value","Newly Added Value"],"answer":0,"explain":"NAV is per-unit value of a fund."},
-  {"cat":"mf","difficulty":"Medium","q":"Exit load is generally:","options":["A fee on early redemption","A GST rebate","A switching bonus","A fixed tax"],"answer":0,"explain":"Funds may levy a fee if redeemed within a period."},
-  {"cat":"mf","difficulty":"Easy","q":"Growth option in a fund means:","options":["Regular payouts","Profits stay invested, reflected in NAV","Tax-free income","Capital guarantee"],"answer":1,"explain":"No cash dividends; value compounds in NAV."},
-  {"cat":"mf","difficulty":"Easy","q":"STP stands for:","options":["Short Term Profit","Systematic Transfer Plan","Stock Trading Plan","Systematic Tax Plan"],"answer":1,"explain":"Moves a fixed amount periodically between schemes."},
-  {"cat":"mf","difficulty":"Easy","q":"SWP stands for:","options":["Systematic Withdrawal Plan","Smart Wealth Program","Secure Wealth Policy","Savings With Profit"],"answer":0,"explain":"Withdraw a fixed amount regularly from your investment."},
-
-  {"cat":"mf","difficulty":"Medium","q":"Tracking difference is:","options":["Index change – fund change","Brokerage – expense ratio","AUM – turnover","NAV – face value"],"answer":0,"explain":"Difference between fund and index performance."},
-  {"cat":"mf","difficulty":"Medium","q":"Hybrid funds typically:","options":["Hold only equity","Hold only debt","Mix equity and debt","Hold only gold"],"answer":2,"explain":"They balance risk and return via asset mix."},
-  {"cat":"mf","difficulty":"Easy","q":"SIP’s biggest benefit is:","options":["Guaranteed profit","Rupee-cost averaging and discipline","Zero risk","No exit load ever"],"answer":1,"explain":"Fixed, regular investing smooths entry price."},
-  {"cat":"mf","difficulty":"Medium","q":"Which factor is NOT in a fund’s expense ratio?","options":["Management fees","Registrar/custody costs","Marketing/distribution","Your personal income tax"],"answer":3,"explain":"Your taxes aren’t part of fund expenses."},
-  {"cat":"mf","difficulty":"Easy","q":"ETF differs from index fund mainly because:","options":["ETFs trade on exchanges intraday","ETFs have no costs","ETFs are only debt","Index funds can’t track Nifty"],"answer":0,"explain":"ETFs are bought/sold like stocks through the day."},
-
-  {"cat":"tax","difficulty":"Easy","q":"Section 80C overall deduction limit (current framework) is roughly:","options":["₹50,000","₹1,00,000","₹1,50,000","₹5,00,000"],"answer":2,"explain":"Overall 80C limit is ₹1.5 lakh (subject to law changes)."},
-  {"cat":"tax","difficulty":"Easy","q":"ELSS investments are eligible under:","options":["80D","80G","80C","24(b)"],"answer":2,"explain":"ELSS qualifies for 80C."},
-  {"cat":"tax","difficulty":"Easy","q":"Additional deduction for NPS (over 80C) is under:","options":["80TTB","80CCD(1B)","80E","80G"],"answer":1,"explain":"80CCD(1B) up to the notified limit."},
-  {"cat":"tax","difficulty":"Medium","q":"PPF typically enjoys which tax treatment?","options":["EEE (exempt-exempt-exempt)","TDS on maturity","Fully taxable","Only dividends taxed"],"answer":0,"explain":"Contributions, interest and maturity are exempt."},
-  {"cat":"tax","difficulty":"Medium","q":"Dividend income from mutual funds (India) is:","options":["Always tax-free","Added to investor’s income slab","Flat 10%","Not allowed"],"answer":1,"explain":"Post-2020, dividends are taxed in the hands of investor."},
-
-  {"cat":"tax","difficulty":"Medium","q":"Form 26AS mainly shows:","options":["Mutual fund portfolio","Tax deducted/paid & reported","Bank balance","Credit score"],"answer":1,"explain":"It’s your tax credit statement."},
-  {"cat":"tax","difficulty":"Easy","q":"PAN is generally needed for:","options":["Most investments","Buying vegetables","Metro card","School fee"],"answer":0,"explain":"PAN is the key tax identifier."},
-  {"cat":"tax","difficulty":"Easy","q":"HRA is usually a benefit for:","options":["All property owners","Salaried paying house rent","Only self-employed","Only NRIs"],"answer":1,"explain":"Subject to eligibility rules."},
-  {"cat":"tax","difficulty":"Easy","q":"TDS stands for:","options":["Tax Deferred Savings","Tax Deducted at Source","Total Deduction Summary","Tax Division System"],"answer":1,"explain":"TDS is withheld by the payer at source."},
-  {"cat":"tax","difficulty":"Medium","q":"Long-term in equity mutual funds is holding for:","options":["> 3 months","> 6 months","> 12 months","> 36 months"],"answer":2,"explain":"Equity MF units held >12 months are long-term."},
-
-  {"cat":"india","difficulty":"Easy","q":"India’s central bank is:","options":["SEBI","RBI","IRDAI","PFRDA"],"answer":1,"explain":"Reserve Bank of India."},
-  {"cat":"india","difficulty":"Easy","q":"SEBI regulates:","options":["Insurance","Securities markets","Pension","Bank deposits"],"answer":1,"explain":"Securities and Exchange Board of India."},
-  {"cat":"india","difficulty":"Easy","q":"AMFI stands for:","options":["Association of Mutual Funds in India","Automated MF Interface","Asset Monitoring Fund India","Allied Mutual Finance Institution"],"answer":0,"explain":"Industry body for mutual funds."},
-  {"cat":"india","difficulty":"Easy","q":"IRDAI regulates:","options":["Banks","Insurance sector","Stock exchanges","Mutual funds"],"answer":1,"explain":"Insurance Regulatory and Development Authority of India."},
-  {"cat":"india","difficulty":"Medium","q":"DICGC provides bank deposit insurance up to (per depositor per bank):","options":["₹1 lakh","₹2 lakh","₹5 lakh","Unlimited"],"answer":2,"explain":"As per current framework."},
-
-  {"cat":"india","difficulty":"Easy","q":"UPI stands for:","options":["Unified Payments Interface","Universal Price Index","User Payment ID","Unified PAN Integration"],"answer":0,"explain":"Real-time mobile payments."},
-  {"cat":"india","difficulty":"Medium","q":"When RBI raises the repo rate, borrowing usually becomes:","options":["Cheaper","Costlier","Unaffected","Tax-free"],"answer":1,"explain":"Higher policy rate → higher lending rates."},
-  {"cat":"india","difficulty":"Medium","q":"SGBs (Sovereign Gold Bonds) have a maturity of:","options":["5 years","7 years","8 years","12 years"],"answer":2,"explain":"8-year tenure with early exit windows."},
-  {"cat":"india","difficulty":"Easy","q":"NPS is regulated by:","options":["SEBI","PFRDA","RBI","IRDAI"],"answer":1,"explain":"Pension Fund Regulatory and Development Authority."},
-  {"cat":"india","difficulty":"Medium","q":"ASBA in IPOs stands for:","options":["Application Supported by Blocked Amount","Annual Savings Bank Amount","Added Secondary Bid Amount","Automated Stock Buy Allocation"],"answer":0,"explain":"Funds remain blocked till allotment."},
-
-  {"cat":"banking","difficulty":"Easy","q":"A Demat account is used to:","options":["Store cash","Hold securities electronically","Pay taxes","Get credit score"],"answer":1,"explain":"Shares/ETFs/MFs held in electronic form."},
-  {"cat":"banking","difficulty":"Medium","q":"IFSC code identifies:","options":["Tax circle","Bank branch for transfers","PAN ward","Credit bureau"],"answer":1,"explain":"Needed for NEFT/RTGS/IMPS transfers."},
-  {"cat":"banking","difficulty":"Medium","q":"IMPS is typically:","options":["Instant 24×7 transfer","Batch transfer","Cheque-based","Card-only"],"answer":0,"explain":"IMPS enables instant transfers round the clock."},
-  {"cat":"banking","difficulty":"Medium","q":"NACH e-mandate is commonly used for:","options":["UPI PIN reset","SIP/EMI auto-debits","PAN application","Passport renewal"],"answer":1,"explain":"Automates recurring debits like SIP/EMI."},
-  {"cat":"banking","difficulty":"Medium","q":"Credit score mainly indicates:","options":["Wealth level","Repayment likelihood","Investment capacity","Tax bracket"],"answer":1,"explain":"Higher score → better perceived repayment behavior."},
-
-  {"cat":"money","difficulty":"Easy","q":"A budget helps you primarily to:","options":["Avoid all taxes","Track income/spends and plan savings","Get higher salary","Beat inflation always"],"answer":1,"explain":"Budgeting increases control over cash flows."},
-  {"cat":"money","difficulty":"Easy","q":"50/30/20 rule allocates 20% to:","options":["Wants","Needs","Savings/Investing","Debt only"],"answer":2,"explain":"A guideline: 50% needs, 30% wants, 20% savings/investing."},
-  {"cat":"money","difficulty":"Medium","q":"DTI (Debt-to-Income) ratio tracks:","options":["Interest rate level","Share of income going to EMIs","Credit card offers","Tax refunds"],"answer":1,"explain":"Lower DTI → healthier borrowing."},
-  {"cat":"money","difficulty":"Medium","q":"Inflation generally:","options":["Increases purchasing power","Reduces purchasing power","Has no effect","Only affects exporters"],"answer":1,"explain":"Higher prices reduce money’s buying power."},
-  {"cat":"money","difficulty":"Easy","q":"Goal-based investing means:","options":["Chasing returns","Linking investments to specific life goals","Copying portfolios","Frequent switching"],"answer":1,"explain":"Each goal gets a suitable plan and risk level."},
-
-  {"cat":"insurance","difficulty":"Easy","q":"Health insurance primarily covers:","options":["Market losses","Hospitalization/medical costs","Loan defaults","Income tax"],"answer":1,"explain":"It pays eligible medical expenses as per policy terms."},
-  {"cat":"insurance","difficulty":"Medium","q":"Sum assured in life insurance is:","options":["Annual premium","Guaranteed payout on death as per policy","Fund value only","Broker incentive"],"answer":1,"explain":"Sum assured is the base life cover amount."},
-  {"cat":"insurance","difficulty":"Medium","q":"Nomination in policies/accounts mainly helps:","options":["Double returns","Faster claim to beneficiary","Lower GST","Higher bonus"],"answer":1,"explain":"Nomination eases transfer/claims to nominees."},
-  {"cat":"insurance","difficulty":"Medium","q":"Waiting period in health insurance refers to:","options":["Time before policy starts covering certain illnesses","Claim processing time","Policy term","Grace period for premium"],"answer":0,"explain":"Certain conditions are covered only after a waiting period."},
-  {"cat":"insurance","difficulty":"Easy","q":"Which product is pure protection (not investment)?","options":["ULIP","Endowment plan","Term plan","ELSS"],"answer":2,"explain":"Term is protection-only; others have savings/investment elements."},
-
-  {"cat":"retirement","difficulty":"Easy","q":"NPS Tier I is primarily for:","options":["Short-term trading","Long-term retirement saving","Only NRIs","Only govt staff"],"answer":1,"explain":"Tier I is retirement-focused with restrictions on withdrawal."},
-  {"cat":"retirement","difficulty":"Medium","q":"A key risk of under-investing for retirement is:","options":["Higher taxes","Longevity risk (money may not last)","Lower EMI","Overinsurance"],"answer":1,"explain":"You may outlive your corpus if contributions are too small."},
-  {"cat":"retirement","difficulty":"Medium","q":"Equity allocation for long-horizon goals is often used because:","options":["Zero risk","Potentially higher long-term growth","Daily income","Guaranteed returns"],"answer":1,"explain":"Equity can compound better over long periods (with volatility)."},
-  {"cat":"retirement","difficulty":"Medium","q":"A pension annuity typically provides:","options":["Lump-sum only","Periodic income","Tax refund","Loan waiver"],"answer":1,"explain":"Annuities convert corpus into periodic payouts."},
-  {"cat":"retirement","difficulty":"Easy","q":"Vesting age in a pension context is:","options":["Loan age","Age from which benefits begin","KYC age","Policy issue date"],"answer":1,"explain":"Vesting marks the start of payouts/benefits."},
-
-  {"cat":"calc","type":"calc","difficulty":"Easy","q":"Approx. how long to double at ~8% p.a. (Rule of 72)?","options":["~5 years","~9 years","~12 years","~18 years"],"answer":2,"explain":"72÷8 ≈ 9; but compounding + practical approximations → expect ~9 years; many use 72/8≈9 (close to 9)."},
-  {"cat":"calc","type":"calc","difficulty":"Easy","q":"If you invest ₹10,000 at ~10% p.a., the first year’s interest is about:","options":["₹100","₹500","₹1,000","₹2,000"],"answer":2,"explain":"10% of ₹10,000 is ₹1,000."},
-  {"cat":"calc","type":"calc","difficulty":"Medium","q":"Which SIP amount totals ~₹1.2 lakh in 1 year?","options":["₹5,000 monthly","₹10,000 monthly","₹7,500 monthly","₹2,500 monthly"],"answer":1,"explain":"₹10,000×12 = ₹1,20,000 (ignoring returns)."},
-  {"cat":"calc","type":"calc","difficulty":"Medium","q":"Approx EMI impact: Higher interest rate with same tenure does what to EMI?","options":["Decreases EMI","Increases EMI","No change","Delays first EMI only"],"answer":1,"explain":"Higher rate raises EMI for same principal/tenure."},
-  {"cat":"calc","type":"calc","difficulty":"Medium","q":"If a fund returns ~12% p.a., rough monthly return is about:","options":["~1%","~12%","~6%","~0.1%"],"answer":0,"explain":"12%/12 ≈ 1% per month (simple approximation)."},
-  {"cat":"calc","type":"calc","difficulty":"Easy","q":"A ₹50,000 deposit at 6% simple interest for 1 year earns about:","options":["₹300","₹600","₹3,000","₹6,000"],"answer":2,"explain":"6% of 50,000 = ₹3,000 (simple interest)."},
-  {"cat":"calc","type":"calc","difficulty":"Medium","q":"If inflation is ~6% and your FD yields ~6%, your real return is about:","options":["+6%","0%","–6%","+12%"],"answer":1,"explain":"Return minus inflation ≈ 0% (before tax)."},
-  {"cat":"calc","type":"calc","difficulty":"Medium","q":"A ₹2 lakh loan at higher rate but longer tenure can make total interest:","options":["Lower","Higher","Exactly same","Zero"],"answer":1,"explain":"Longer tenure + higher rate increases total interest paid."},
-  {"cat":"calc","type":"calc","difficulty":"Medium","q":"A SIP of ₹5,000/month totals how much principal in 3 years (ignore returns)?","options":["₹60,000","₹1,20,000","₹1,80,000","₹3,00,000"],"answer":2,"explain":"₹5,000×36 = ₹1,80,000."},
-  {"cat":"calc","type":"calc","difficulty":"Medium","q":"Roughly, at ~9% p.a., ₹32,000 grows closest to which in 5 years (annual comp.)?","options":["₹41k","₹49k","₹55k","₹70k"],"answer":2,"explain":"32k×(1.09)^5 ≈ 32k×1.538 ≈ ₹49k; but with rounding many accept ₹49–55k. Closest higher rounded choice here is ₹55k."},
-
-  {"cat":"behavior","difficulty":"Medium","q":"‘Loss aversion’ means investors tend to:","options":["Prefer small losses","Hate losses more than equivalent gains","Ignore losses fully","Enjoy risk always"],"answer":1,"explain":"Losses hurt more psychologically than equal gains please."},
-  {"cat":"behavior","difficulty":"Medium","q":"A diversified portfolio helps mainly by:","options":["Eliminating market risk","Reducing unsystematic risk","Boosting taxes","Timing cycles"],"answer":1,"explain":"Company/sector-specific risk is reduced by diversification."},
-  {"cat":"behavior","difficulty":"Easy","q":"A simple way to avoid lifestyle creep is to:","options":["Increase spending with income","Save raises before upgrading spending","Use high-cost credit","Stop budgeting"],"answer":1,"explain":"Channel part of pay hikes into savings first."},
-  {"cat":"behavior","difficulty":"Medium","q":"Chasing recent hot performers is risky due to:","options":["Mean reversion/volatility","Guaranteed reversal","No liquidity","Tax audit"],"answer":0,"explain":"Recent winners can cool; avoid performance chasing."},
-  {"cat":"behavior","difficulty":"Easy","q":"Setting automatic transfers to investments primarily increases:","options":["Fees","Discipline","Volatility","Credit score instantly"],"answer":1,"explain":"Automation improves saving discipline."},
-
-  {"cat":"goals","difficulty":"Easy","q":"Short-term goals (≤3 years) often suit:","options":["Equity heavy","Cash/short-duration debt","Only gold","Crypto"],"answer":1,"explain":"Limited horizon → prefer safer, more liquid options."},
-  {"cat":"goals","difficulty":"Medium","q":"For kids’ education in 12 years, a typical approach is:","options":["All in overnight funds","All in small-caps","Blend equity now, shift to debt near goal","No investing"],"answer":2,"explain":"De-risk gradually as the goal nears."},
-  {"cat":"goals","difficulty":"Medium","q":"A house down payment in 2 years is best parked in:","options":["Mid/small-cap equity","Liquid/short-term debt","Long-duration gilt only","Crypto"],"answer":1,"explain":"Capital preservation + liquidity matters."},
-  {"cat":"goals","difficulty":"Medium","q":"Emergency corpus should usually be kept in:","options":["Illiquid property","High-liquidity options","Thematic funds","Locked-in products"],"answer":1,"explain":"Safety + accessibility first."},
-  {"cat":"goals","difficulty":"Medium","q":"A travel goal in 18 months likely suits:","options":["Equity heavy","Hybrid aggressive","Liquid/ultra-short funds","Commodity futures"],"answer":2,"explain":"Short horizon → lower volatility debt options."}
+  {
+    "cat": "Tax in India",
+    "difficulty": "Easy",
+    "q": "What are the two broad types of taxes in India?",
+    "options": ["Direct & Indirect Taxes", "Federal & Provincial Taxes", "Import & Export Taxes", "Consumer & Producer Taxes"],
+    "answer": 0,
+    "explain": "India classifies its taxes into Direct (levied on income/profit) and Indirect (on goods/services like GST). :contentReference[oaicite:0]{index=0}",
+    "sources": [
+      {
+        "title": "Types Of Taxes In India: Direct Tax And Indirect Tax",
+        "publisher": "ClearTax",
+        "url": "https://cleartax.in/s/types-of-taxes-in-india-direct-and-indirect-tax",
+        "date_accessed": "2025-09-23"
+      },
+      {
+        "title": "Taxation in India (Wikipedia)",
+        "publisher": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Taxation_in_India",
+        "date_accessed": "2025-09-23"
+      }
+    ],
+    "answer_validation": {
+      "correct_option_text_matches_index": true,
+      "notes": "The correct answer is \"Direct & Indirect Taxes\", which is option A (index 0)."
+    }
+  },
+  {
+    "cat": "Tax in India",
+    "difficulty": "Easy",
+    "q": "From FY 2025-26, what is the basic exemption limit under the new tax regime in India?",
+    "options": ["₹4,00,000", "₹3,00,000", "₹5,00,000", "₹2,50,000"],
+    "answer": 0,
+    "explain": "Budget 2025 raised the basic exemption limit under the new regime to ₹4,00,000. :contentReference[oaicite:1]{index=1}",
+    "sources": [
+      {
+        "title": "Income Tax Slabs and Rates for FY 2025-26 Under the New Regime",
+        "publisher": "Bajaj Finserv",
+        "url": "https://www.bajajfinserv.in/investments/income-tax-slabs",
+        "date_accessed": "2025-09-23"
+      },
+      {
+        "title": "New Income Tax Slab and Rates - FY 2025-26 (AY 2026-27)",
+        "publisher": "Economic Times",
+        "url": "https://m.economictimes.com/wealth/income-tax-slabs",
+        "date_accessed": "2025-09-23"
+      }
+    ],
+    "answer_validation": {
+      "correct_option_text_matches_index": true,
+      "notes": "The correct answer is “₹4,00,000”, which is option A (index 0)."
+    }
+  },
+  {
+    "cat": "Tax in India",
+    "difficulty": "Easy",
+    "q": "Under the new tax regime FY 2025-26, what tax rate applies to income between ₹8,00,001 and ₹12,00,000?",
+    "options": ["10%", "15%", "5%", "20%"],
+    "answer": 0,
+    "explain": "In FY 2025-26 new regime, income between ₹8-12 lakh is taxed at 10%. :contentReference[oaicite:2]{index=2}",
+    "sources": [
+      {
+        "title": "Income Tax Slabs and Rates for FY 2025-26 Under the New Regime",
+        "publisher": "IndiaFirst Life",
+        "url": "https://www.indiafirstlife.com/knowledge-center/tax-savings/income-tax-slabs-2025-26",
+        "date_accessed": "2025-09-23"
+      },
+      {
+        "title": "New Income Tax Slab and Rates - FY 2025-26 (AY 2026-27)",
+        "publisher": "Economic Times",
+        "url": "https://m.economictimes.com/wealth/income-tax-slabs",
+        "date_accessed": "2025-09-23"
+      }
+    ],
+    "answer_validation": {
+      "correct_option_text_matches_index": true,
+      "notes": "“10%” is option A (index 0), matches source."
+    }
+  },
+  {
+    "cat": "Tax in India",
+    "difficulty": "Medium",
+    "q": "What is Section 87A rebate under the new tax regime for FY 2025-26?",
+    "options": ["Rebate such that income up to ₹12 lakh yields zero tax", "Rebate only for incomes above ₹24 lakh", "No rebate under new tax regime", "Rebate fixed at ₹25,000"],
+    "answer": 0,
+    "explain": "Under new regime FY 2025-26, Section 87A rebate enables zero tax for incomes up to approx ₹12 lakh. :contentReference[oaicite:3]{index=3}",
+    "sources": [
+      {
+        "title": "Income Tax Slabs and Rates for FY 2025-26 Under the New Regime",
+        "publisher": "Bajaj Finserv",
+        "url": "https://www.bajajfinserv.in/investments/income-tax-slabs",
+        "date_accessed": "2025-09-23"
+      },
+      {
+        "title": "New Income Tax Slab and Rates - FY 2025-26 (AY 2026-27)",
+        "publisher": "Economic Times",
+        "url": "https://m.economictimes.com/wealth/income-tax-slabs",
+        "date_accessed": "2025-09-23"
+      }
+    ],
+    "answer_validation": {
+      "correct_option_text_matches_index": true,
+      "notes": "“Rebate such that income up to ₹12 lakh yields zero tax” is option A (index 0)."
+    }
+  },
+  {
+    "cat": "Tax in India",
+    "difficulty": "Medium",
+    "q": "What profit threshold turnover qualifies a domestic company for the 25% corporate tax rate in India (AY 2025-26)?",
+    "options": ["Turnover ≤ ₹400 crore in FY 2022-23", "Turnover ≤ ₹100 crore", "Turnover ≤ ₹250 crore", "Turnover ≤ ₹500 crore"],
+    "answer": 0,
+    "explain": "Domestic companies with turnover/gross receipts up to ₹400 crore in FY 2022-23 get 25% rate. :contentReference[oaicite:4]{index=4}",
+    "sources": [
+      {
+        "title": "Tax Rates – IncomeTax India",
+        "publisher": "Income Tax Department",
+        "url": "https://incometaxindia.gov.in/charts%20%20tables/tax%20rates.htm",
+        "date_accessed": "2025-09-23"
+      },
+      {
+        "title": "India - Overview – Capital gains & corporate",
+        "publisher": "PwC Tax Summaries",
+        "url": "https://taxsummaries.pwc.com/india",
+        "date_accessed": "2025-09-23"
+      }
+    ],
+    "answer_validation": {
+      "correct_option_text_matches_index": true,
+      "notes": "“Turnover ≤ ₹400 crore in FY 2022-23” is option A (index 0)."
+    }
+  },
+  {
+    "cat": "Tax in India",
+    "difficulty": "Medium",
+    "q": "Which age group in the old tax regime has a basic exemption limit of ₹3,00,000 in FY 2025-26?",
+    "options": ["Senior citizens (60-79 yrs)", "Individuals under 60 yrs", "Super senior citizens (80+ yrs)", "Any age under old regime"],
+    "answer": 0,
+    "explain": "Under old regime, those aged 60-79 (senior citizens) have basic exemption up to ₹3,00,000. :contentReference[oaicite:5]{index=5}",
+    "sources": [
+      {
+        "title": "Income Tax Slabs and Rates for FY 2025-26 Under the New Regime",
+        "publisher": "IndiaFirst Life",
+        "url": "https://www.indiafirstlife.com/knowledge-center/tax-savings/income-tax-slabs-2025-26",
+        "date_accessed": "2025-09-23"
+      },
+      {
+        "title": "New Income Tax Slab and Rates - FY 2025-26 (AY 2026-27)",
+        "publisher": "Economic Times",
+        "url": "https://m.economictimes.com/wealth/income-tax-slabs",
+        "date_accessed": "2025-09-23"
+      }
+    ],
+    "answer_validation": {
+      "correct_option_text_matches_index": true,
+      "notes": "“Senior citizens (60-79 yrs)” corresponds to option A (index 0) which matches the source."
+    }
+  },
+  {
+    "cat": "Tax in India",
+    "difficulty": "Medium",
+    "q": "Which body administers direct taxes in India?",
+    "options": ["CBDT (Central Board of Direct Taxes)", "CBIC (Central Board of Indirect Taxes & Customs)", "State Government", "Reserve Bank of India"],
+    "answer": 0,
+    "explain": "Direct taxes (like income tax) are administered by the CBDT. :contentReference[oaicite:6]{index=6}",
+    "sources": [
+      {
+        "title": "Types Of Taxes In India: Direct Tax And Indirect Tax",
+        "publisher": "ClearTax",
+        "url": "https://cleartax.in/s/types-of-taxes-in-india-direct-and-indirect-tax",
+        "date_accessed": "2025-09-23"
+      },
+      {
+        "title": "A Key Pillar of Nation-Building Taxes are the backbone of ...",
+        "publisher": "EOI Paris",
+        "url": "https://www.eoiparis.gov.in/content/A-Key-Pillar-of-Nation-Building.pdf",
+        "date_accessed": "2025-09-23"
+      }
+    ],
+    "answer_validation": {
+      "correct_option_text_matches_index": true,
+      "notes": "“CBDT (Central Board of Direct Taxes)” is option A (index 0)."
+    }
+  },
+  {
+    "cat": "Tax in India",
+    "difficulty": "Hard",
+    "q": "What is the surcharge rate on income tax for resident individuals with total income between ₹1 crore and ₹10 crore under AY 2025-26?",
+    "options": ["10%", "15%", "25%", "5%"],
+    "answer": 0,
+    "explain": "For resident individual with income above ₹1 crore but ≤ ₹10 crore, surcharge is 10%. :contentReference[oaicite:7]{index=7}",
+    "sources": [
+      {
+        "title": "Individual - Taxes on personal income (PwC)",
+        "publisher": "PwC Tax Summaries",
+        "url": "https://taxsummaries.pwc.com/india/individual/taxes-on-personal-income",
+        "date_accessed": "2025-09-23"
+      },
+      {
+        "title": "Tax Rates – Income Tax Department",
+        "publisher": "Income Tax Department",
+        "url": "https://incometaxindia.gov.in/charts%20%20tables/tax%20rates.htm",
+        "date_accessed": "2025-09-23"
+      }
+    ],
+    "answer_validation": {
+      "correct_option_text_matches_index": true,
+      "notes": "“10%” is option A (index 0) which matches the official surcharge table."
+    }
+  },
+  {
+    "cat": "Tax in India",
+    "difficulty": "Hard",
+    "q": "What is the ‘Alternate Minimum Tax’ (AMT) rate for persons (other than companies) in India, excluding units in IFSC deriving income solely in convertible foreign exchange?",
+    "options": ["18.5%", "15%", "25%", "5%"],
+    "answer": 0,
+    "explain": "AMT for persons (other than companies) is 18.5% on adjusted total income. :contentReference[oaicite:8]{index=8}",
+    "sources": [
+      {
+        "title": "Individual - Taxes on personal income (PwC)",
+        "publisher": "PwC Tax Summaries",
+        "url": "https://taxsummaries.pwc.com/india/individual/taxes-on-personal-income",
+        "date_accessed": "2025-09-23"
+      },
+      {
+        "title": "Tax Rates – Income Tax Department",
+        "publisher": "Income Tax Department",
+        "url": "https://incometaxindia.gov.in/charts%20%20tables/tax%20rates.htm",
+        "date_accessed": "2025-09-23"
+      }
+    ],
+    "answer_validation": {
+      "correct_option_text_matches_index": true,
+      "notes": "“18.5%” is option A (index 0)."
+    }
+  },
+  {
+    "cat": "Tax in India",
+    "difficulty": "Hard",
+    "q": "As per GST 2.0 reforms effective from September 22, 2025, which slab rate is intended for 'luxury and sin goods'?",
+    "options": ["40%", "28%", "18%", "5%"],
+    "answer": 0,
+    "explain": "The new GST slab for luxury/sin goods is 40% under the reforms. :contentReference[oaicite:9]{index=9}",
+    "sources": [
+      {
+        "title": "Goods and Services Tax (India)",
+        "publisher": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Goods_and_Services_Tax_%28India%29",
+        "date_accessed": "2025-09-23"
+      },
+      {
+        "title": "GST 2.0 kicks in today! Check what the new tax reforms mean for you",
+        "publisher": "Times of India",
+        "url": "https://timesofindia.indiatimes.com/business/india-business/gst-2.0-kicks-in-today-check-what-the-new-tax-reforms-mean-for-you-heres-10-things-you should know/photostory/124046264.cms",
+        "date_accessed": "2025-09-23"
+      }
+    ],
+    "answer_validation": {
+      "correct_option_text_matches_index": true,
+      "notes": "“40%” is option A (index 0)."
+    }
+  },
+  {
+    "cat": "Tax in India",
+    "difficulty": "Medium",
+    "q": "Which tax is levied on income from capital gains for individual in India?",
+    "options": ["Capital Gains Tax", "Goods & Services Tax", "Customs Duty", "Professional Tax"],
+    "answer": 0,
+    "explain": "Income from capital gains is taxed under Capital Gains Tax, not GST or other indirect taxes. :contentReference[oaicite:10]{index=10}",
+    "sources": [
+      {
+        "title": "India – Overview – Capital gains tax rate",
+        "publisher": "PwC Tax Summaries",
+        "url": "https://taxsummaries.pwc.com/india",
+        "date_accessed": "2025-09-23"
+      },
+      {
+        "title": "Individual Income Tax in India - India Guide",
+        "publisher": "India Briefing",
+        "url": "https://www.india-briefing.com/doing-business-guide/india/taxation-and-accounting/individual-income-tax",
+        "date_accessed": "2025-09-23"
+      }
+    ],
+    "answer_validation": {
+      "correct_option_text_matches_index": true,
+      "notes": "“Capital Gains Tax” is option A (index 0)."
+    }
+  },
+  {
+    "cat": "Tax in India",
+    "difficulty": "Hard",
+    "q": "Which regime is default for individual taxpayers in India from FY 2025-26 onwards?",
+    "options": ["New Regime under section 115BAC", "Old Regime with deductions", "Old Regime mandatory for business income earners", "Pre-Budget regime"],
+    "answer": 0,
+    "explain": "Beginning FY 2025-26, the new tax regime (under Section 115BAC) is the default regime for individual taxpayers. :contentReference[oaicite:11]{index=11}",
+    "sources": [
+      {
+        "title": "Cleartax: Income Tax Changes From 1st April 2025",
+        "publisher": "ClearTax",
+        "url": "https://cleartax.in/s/income-tax-changes-from-april-2025",
+        "date_accessed": "2025-09-23"
+      },
+      {
+        "title": "New Income Tax Slab and Rates - FY 2025-26 (AY 2026-27)",
+        "publisher": "Economic Times",
+        "url": "https://m.economictimes.com/wealth/income-tax-slabs",
+        "date_accessed": "2025-09-23"
+      }
+    ],
+    "answer_validation": {
+      "correct_option_text_matches_index": true,
+      "notes": "“New Regime under section 115BAC” is option A (index 0)."
+    }
+  },
+  {
+    "cat": "Tax in India",
+    "difficulty": "Medium",
+    "q": "Under the old regime, what tax rate applies to income above ₹10,00,000 for individuals (resident, <60 yrs)?",
+    "options": ["30%", "20%", "25%", "5%"],
+    "answer": 0,
+    "explain": "In the old regime, income above ₹10,00,000 is taxed at 30%. :contentReference[oaicite:12]{index=12}",
+    "sources": [
+      {
+        "title": "Salaried Individuals for AY 2025-26 (IT Department)",
+        "publisher": "Income Tax Department",
+        "url": "https://www.incometax.gov.in/iec/foportal/help/individual/return-applicable-1",
+        "date_accessed": "2025-09-23"
+      },
+      {
+        "title": "Individual - Taxes on personal income (PwC)",
+        "publisher": "PwC Tax Summaries",
+        "url": "https://taxsummaries.pwc.com/india/individual/taxes-on-personal-income",
+        "date_accessed": "2025-09-23"
+      }
+    ],
+    "answer_validation": {
+      "correct_option_text_matches_index": true,
+      "notes": "“30%” is option A (index 0)."
+    }
+  }
 ]
